@@ -667,7 +667,7 @@
       "upstream_sha256": "ae8f7722333c009f1cfb972efb813340246cc641a38c7743cc1aa7ae79431191",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/composer.ts",
-      "vendored_sha256": "ae8f7722333c009f1cfb972efb813340246cc641a38c7743cc1aa7ae79431191"
+      "vendored_sha256": "5f90fa0d03da972b0c0cbd56abde53c712afd96feac9ab26d3e0c506ba6b5493"
     },
     {
       "path": "client/src/ui/context.ts",

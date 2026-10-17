@@ -11,6 +11,8 @@ document.documentElement.lang = getLocale();
 setAccess({remote:false,local:false,permissions:false,messages:false,terminal:false,spawn:false,world:false});
 const fixtureMode = import.meta.env.DEV && new URLSearchParams(location.search).get('fixture') === 'parity';
 const store = fixtureMode ? new OfficeStore({mock:false}) : new AgentVerseStore();
+// Fixture selection/history remains entirely local and never calls domain agent detail.
+if (fixtureMode) store.agentHistory = async id => store.agent(id)?.recent ?? [];
 const root = document.getElementById('ui')!;
 const world = createWorld(document.getElementById('world') as HTMLCanvasElement,store);
 createUI(root,store,world,undefined,{agentverse:true});

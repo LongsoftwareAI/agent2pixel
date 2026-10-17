@@ -15,3 +15,5 @@ Renderer/art/layout geometry are unchanged. Node server, CLI, deployment and hoo
 - client/src/ui/overlays.ts: additive AgentVerse empty/offline text; hide unsupported demo action. Default upstream behavior unchanged.
 
 - client/src/ui/character-editor.ts: AgentVerse character editing uses confirmed local access independently of unavailable upstream PTY/terminal feature. Original saveCharacter/resetCharacter HTTP methods remain unchanged; Python API validates and persists these requests.
+
+- client/src/ui/composer.ts: query optional dictation only when message composition is ready and messages access is allowed; avoids unsupported API calls in disabled AgentVerse composer.

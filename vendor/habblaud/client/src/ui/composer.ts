@@ -154,7 +154,7 @@ export class MessageComposer {
     this.row.classList.toggle('is-disabled', !ready);
     setHidden(this.sendBtn, !ready);
     // Consulta em cache (30 s): o Mac pode instalar o Whisper ou parar o auxiliar com a página aberta.
-    void dictationAvailable().then((ok) => {
+    if (ready && access().messages) void dictationAvailable().then((ok) => {
       if (ok === this.canDictate) return;
       this.canDictate = ok;
       this.ctx.invalidate();
