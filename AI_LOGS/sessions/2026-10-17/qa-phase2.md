@@ -54,3 +54,6 @@ Reviewer decision: PENDING
 - `python tests/phase2/office_interaction.py` PASS actualcanvas selection/zoom/pan, noHTTP/pageerrors after owner fixes. Fixture-only evidence labeled.
 - Initial visual checkpoint scoped APPROVE permits backend integration; finalacceptance pending furniture/appearance/runtime/control/safety/migration checks. Review report names source pin and limits.
 - Removed accidentally staged/generated reference/.vite cache and added ignoredcache rule; no application files modified.
+
+## Review correction
+- Frontend responsibilities textarea concern was a false positive from escaped tool JSON rendering. Independent raw-byte check confirms delimiter [39,92,110,39], valid JS newline; no application fix needed. Owner added multiline regression cc2d84d. Earlier concern withdrawn.
