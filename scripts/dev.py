@@ -18,18 +18,18 @@ children = []
 def stop(*_):
     for child in children:
         if child.poll() is None:
-            child.terminate()
+            os.killpg(child.pid, signal.SIGTERM)
     for child in children:
         try:
             child.wait(timeout=10)
         except subprocess.TimeoutExpired:
-            child.kill()
+            os.killpg(child.pid, signal.SIGKILL)
     raise SystemExit(0)
 signal.signal(signal.SIGINT, stop)
 signal.signal(signal.SIGTERM, stop)
 try:
-    children.append(subprocess.Popen([str(python), "-m", "uvicorn", "services.api.main:app", "--host", "127.0.0.1", "--port", "8000"]))
-    children.append(subprocess.Popen(["npm", "--prefix", "apps/web", "run", "dev", "--", "--host", "127.0.0.1", "--port", "3000", "--strictPort"]))
+    children.append(subprocess.Popen([str(python), "-m", "uvicorn", "services.api.main:app", "--host", "127.0.0.1", "--port", "8000"], start_new_session=True))
+    children.append(subprocess.Popen(["npm", "--prefix", "apps/web", "run", "dev", "--", "--host", "127.0.0.1", "--port", "3000", "--strictPort"], start_new_session=True))
     while all(child.poll() is None for child in children):
         time.sleep(0.4)
     code = next((child.returncode for child in children if child.poll() is not None), 1)
@@ -37,5 +37,5 @@ try:
 finally:
     for child in children:
         if child.poll() is None:
-            child.terminate()
+            os.killpg(child.pid, signal.SIGTERM)
 sys.exit(code)
