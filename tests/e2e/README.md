@@ -12,3 +12,11 @@ python3 -m venv /tmp/agentverse-qa-venv
 ```
 
 When system Chromium is installed, browser download is unnecessary. Set `CHROMIUM_PATH=/absolute/browser/path` to override; otherwise use system `chromium`/`chromium-browser`, then Playwright-managed Chromium. Root container adds Chromium no-sandbox launch only when required; application security policies are not disabled. Browser failures (including console.error) fail acceptance; initial failures are preserved as historical evidence, not counted as passing. Current structured results and pinned review report distinguish final passes from initial failures.
+
+QA additional backend integration checks (use root application venv):
+
+```sh
+.venv/bin/python -m pytest tests/e2e/runtime_security.py -q
+```
+
+These check actual condition true routing, wrong-workspace agent rejection, max-step failure, memory isolation, and cancellation during an in-flight real local provider HTTP request with no late completion.
