@@ -51,3 +51,13 @@ QA E2E và ảnh chụp: xem [hướng dẫn](tests/e2e/README.md), [review đ�
 - [Contracts](docs/contracts/API.md), [ownership/task board](TASKS.md), [agent rules](AGENTS.md), [AI logs](AI_LOGS/INDEX.md).
 
 Mỗi coding agent dùng branch/worktree riêng; một writer mỗi path. QA review độc lập, không tự sửa file owner khác. Không task nào DONE nếu thiếu commit, tests, session log, reviewer approval và integrator verification.
+
+## Ảnh giao diện localhost
+
+Ảnh chụp ứng dụng thực tế với MockBrain.
+
+![Văn phòng AgentVerse](docs/evidence/live-demo/office.png)
+
+![Workflow hoàn thành](docs/evidence/live-demo/workflow-completed.png)
+
+Review code: `services/api/`, `services/worker/`, `apps/web/src/`, `tests/`. Bằng chứng và giới hạn: [VALIDATION](docs/VALIDATION.md); [review độc lập](AI_LOGS/reviews/QA-001-review.md).
