@@ -1,0 +1,37 @@
+# Phase 2 planning session
+
+- timestamp: 2026-10-17T15:42:01.011753+00:00
+- session_id: architect-phase2-plan
+- agent_id: root
+- agent_role: Architect
+- model/provider: Codex/OpenAI; exact model unavailable
+- task_id: PLAN-P2
+- goal: concrete next-phase plan for exact Habblaud visual adoption and full Python agent architecture with clarified DeepSeekHarness
+- status: READY_FOR_REVIEW (plan only)
+- branch: work locally; remote review branch plan/phase-2-habblaud-runtime
+- base_commit: 230fbf2825a7c733daf6f383c398646248e70fb4
+- workspace: /workspace/agent2pixel; static research /workspace/reference-checkouts
+- owned_paths: docs/plans/, docs/reuse/HABBLAUD_PHASE2_REUSE_PLAN.md, ADR-0004, rootTASKS and ownsession
+- inputs: user request and clarification URL; requirements8/9/13; AGENTS; source/published package metadata
+- assumptions: localhost scope retained; new visual direction replaces v0.1 simplification; no phase2 code authorization inferred from plan request
+- constraints: no protected appsource changes, no key use/exposure, no upstream execution, no false integration/pass claims
+- plan: source/license review; visual/runtime separation; pinned reuse strategy; SDK contract spike; independent tasks/gates; commit/push reviewbranch
+- changes: phase2 plan, reuse delta, proposed architecture ADR, planned taskboard
+- decisions: direct upstream MIT art/Canvas2D slice; LangGraph team / Harness per-agent; same policy+memory registry; runtimeSDK preview gate
+- commands: git ls-remote; shallow git clone research; rg/sed README/LICENSE/source; read PyPI JSON metadata; docs diff/link checks
+- tests: source/static checks PASS for planning evidence; application/framework integration tests UNRUN (no implementation); no source build/install/model/tool execution attempted
+- risks: UI import closure, image-specific rights, SDKrelease vs HEAD gap, nativewheel compatibility, unsafe default tool surfaces, checkpoint/session divergence
+- blockers: no blocker to plan; implementation depends on explicit visual/SDK/policy gates
+- next_steps: reviewplan then executeP2-00/P2-01 and isolatedP2-02spike with owners
+- handoff_to: user/Architect; future Backend/Frontend/Pixel/Harness/QA owners
+- commit_sha: commit containing planning artifacts; applicationbaseline230fbf2
+- review_status: pending user review; no independent phase2 implementation approval claimed
+- Reference IDs: REF-01 Habblaud; REF-08 DeepSeekHarness; Python framework refs in reuse delta
+- Source URL: https://github.com/marmottajr/habblaud and https://github.com/deepseek-ai/deepseek-harness
+- Commit SHA: faa1a012b5fbf632c66dc6801c5383e53a542406;687f282e8625c6b8d11ff58211a90524be2e4317
+- Files inspected: full path list in HABBLAUD_PHASE2_REUSE_PLAN.md
+- Asset rights: MITcode confirmed; PNGper-file review gate; no newassets copied
+- Copied/Adapted/Inspiration-only: directreuse proposed, NOTYETCOPIED
+- Visual evidence: original reference images previously viewed; new controlled paritycaptures futuregate
+- Deviation from reference: Python agent runtime/configuration instead of CLI-only observation; localhost office scope
+- Reviewer decision: pending; planning status only
