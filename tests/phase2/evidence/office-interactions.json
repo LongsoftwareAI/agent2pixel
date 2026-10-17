@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "url": "http://127.0.0.1:3103/?fixture=parity",
+  "selection": {
+    "type": "agent",
+    "id": "agent-0"
+  },
+  "zoom": [
+    0.9449599621922604,
+    2
+  ],
+  "pan": [
+    {
+      "x": 216.48815112603114,
+      "y": 299.46830170465387
+    },
+    {
+      "x": 266.48815112603114,
+      "y": 316.96830170465387
+    }
+  ],
+  "page_errors": [],
+  "http_failures": [],
+  "fixture": true,
+  "runtime_execution": false
+}

@@ -48,3 +48,9 @@ Reviewer decision: PENDING
 - Provenance independent audit334 upstream+currentfileSHA256 andMITnotice match; FAIL2 patchledger paths abbreviated (world/index.ts andworld/sim/sim.ts); requested fullpath enumeration.
 - Frontend staticreview found responsibilities textarea splits literal backslash+n instead of newlines; owner correcting. Livebrowser pending integration.
 - No application APPROVE yet. Integrator reviews QA test code separately.
+
+## Corrected incremental checkpoint
+- Candidate5006e2e: provenance audit PASS334files,14 modifiedpaths ledger complete; MIT notice unchanged.
+- `python tests/phase2/office_interaction.py` PASS actualcanvas selection/zoom/pan, noHTTP/pageerrors after owner fixes. Fixture-only evidence labeled.
+- Initial visual checkpoint scoped APPROVE permits backend integration; finalacceptance pending furniture/appearance/runtime/control/safety/migration checks. Review report names source pin and limits.
+- Removed accidentally staged/generated reference/.vite cache and added ignoredcache rule; no application files modified.

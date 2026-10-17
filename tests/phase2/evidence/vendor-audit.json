@@ -3,7 +3,10 @@
   "files_checked": 334,
   "modified_files": [
     "client/src/net/store.ts",
+    "client/src/ui/character-editor.ts",
+    "client/src/ui/composer.ts",
     "client/src/ui/index.ts",
+    "client/src/ui/overlays.ts",
     "client/src/ui/provider.ts",
     "client/src/ui/settings.ts",
     "client/src/ui/topbar.ts",
@@ -14,9 +17,6 @@
     "shared/types.ts",
     "shared/world/office-from-world.ts"
   ],
-  "errors": [
-    "undeclared patch: client/src/world/index.ts",
-    "undeclared patch: client/src/world/sim/sim.ts"
-  ],
-  "passed": false
+  "errors": [],
+  "passed": true
 }
