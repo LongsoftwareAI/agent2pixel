@@ -43,3 +43,5 @@ tests_final: Node model suite PASS 4/4 including blocked route, overlap, out of 
 risks_final: Browser screenshots/console/persistence tests pending integration and independent QA. Movement occurs on actual assignment change, not periodic fake wandering. No keyboard canvas navigation yet. One-tile furniture occupancy matches API.
 next_steps_final: Integrator cherry-pick then QA browser capture and independent review.
 review_status_final: pending; not DONE.
+
+review_milestone: Architect requested centered floor, bounded pan and clearer zones. Implemented viewport/room/zoom recenter, pan bounds and visible zone threshold. Structural full-height wall deliberately omitted because server collision contract defines furniture only; decorative threshold/overhead partition remains passable. Re-ran strict typecheck PASS and model tests PASS 4/4. Independent browser review remains pending.

@@ -9,7 +9,7 @@ export function OfficeCanvas(props:Props){
  const [zoom,setZoom]=useState(1),[grid,setGrid]=useState(false),[tool,setTool]=useState('select'),[notice,setNotice]=useState('');
  const controls=useRef({zoom,grid,tool});controls.current={zoom,grid,tool};
  useEffect(()=>{
- if(!host.current)return;let stopped=false,ready=false;const app=new Application();let tick=0;let offset={x:24,y:34};let drag:Point|null=null;let draggedId:string|null=null;let draggedFrom:Point|null=null;
+ if(!host.current)return;let stopped=false,ready=false;const app=new Application();let tick=0;let offset={x:24,y:34};let viewport='';let drag:Point|null=null;let draggedId:string|null=null;let draggedFrom:Point|null=null;
  const positions=new Map<string,{point:Point;path:Point[];target:string}>();
  const world=new Container();const draw=new Graphics();world.addChild(draw);const labels=new Container();world.addChild(labels);
  const pointer=(e:PointerEvent)=>{const bounds=app.canvas.getBoundingClientRect();return {x:Math.floor((e.clientX-bounds.left-offset.x)/controls.current.zoom/TILE),y:Math.floor((e.clientY-bounds.top-offset.y)/controls.current.zoom/TILE)};};
@@ -28,11 +28,12 @@ export function OfficeCanvas(props:Props){
  void app.init({resizeTo:host.current,background:0xe8eee9,antialias:false,resolution:1,autoDensity:false,preference:'webgl'}).then(()=>{
  ready=true;if(stopped){app.destroy(true,{children:true});return;}host.current!.appendChild(app.canvas);app.canvas.style.imageRendering='pixelated';app.canvas.style.width='100%';app.canvas.style.height='100%';app.canvas.setAttribute('aria-label','Văn phòng pixel tương tác');app.canvas.setAttribute('role','img');app.stage.addChild(world);app.ticker.maxFPS=12;
  app.canvas.addEventListener('pointerdown',down);app.canvas.addEventListener('pointermove',move);app.canvas.addEventListener('pointerup',up);app.canvas.addEventListener('contextmenu',context);
- app.ticker.add(()=>{tick++;const {room,agents,selectedAgentId}=latest.current;if(!room)return;const z=controls.current.zoom;world.scale.set(z);world.position.set(Math.round(offset.x),Math.round(offset.y));draw.clear();labels.removeChildren().forEach(x=>x.destroy());
+ app.ticker.add(()=>{tick++;const {room,agents,selectedAgentId}=latest.current;if(!room)return;const z=controls.current.zoom;const viewKey=`${app.screen.width}:${app.screen.height}:${room.id}:${z}`;if(viewKey!==viewport){viewport=viewKey;offset={x:Math.max(12,Math.floor((app.screen.width-room.width*TILE*z)/2)),y:Math.max(30*z,Math.floor((app.screen.height-room.height*TILE*z)/2))};}offset.x=Math.min(app.screen.width-48,Math.max(48-room.width*TILE*z,offset.x));offset.y=Math.min(app.screen.height-48,Math.max(48-room.height*TILE*z,offset.y));world.scale.set(z);world.position.set(Math.round(offset.x),Math.round(offset.y));draw.clear();labels.removeChildren().forEach(x=>x.destroy());
  draw.rect(-6,-24,room.width*TILE+12,room.height*TILE+34).fill(0x718284);draw.rect(0,-20,room.width*TILE,20).fill(0xaebcc0);draw.rect(0,-3,room.width*TILE,5).fill(0x65777e);
  for(let y=0;y<room.height;y++)for(let x=0;x<room.width;x++){const warm=x<Math.floor(room.width*.6);draw.rect(x*TILE,y*TILE,TILE,TILE).fill(warm?((x+y)%2?0xdfc8a4:0xe5d0af):((x+y)%2?0xbacdd0:0xc4d5d7));if(warm)draw.rect(x*TILE,y*TILE+23,TILE,1).fill(0xc7ad89);if(controls.current.grid){draw.rect(x*TILE,y*TILE,TILE,TILE).stroke({color:0x83999d,width:1,alpha:.5});}}
  const text=(s:string,x:number,y:number,color=0x53666a,size=10)=>{const t=new Text({text:s,style:{fontFamily:'monospace',fontSize:size,fill:color}});t.position.set(x,y);labels.addChild(t);};
  text('STUDIO / FOCUS',8,-17);text('LOUNGE / IDEAS',Math.floor(room.width*.6)*TILE+8,-17);
+ const split=Math.floor(room.width*.6)*TILE;draw.rect(split-2,0,4,room.height*TILE).fill({color:0x839a9f,alpha:.3});draw.rect(split-6,Math.floor(room.height/2)*TILE-12,12,48).fill(0xe5d9bc);draw.rect(split-4,-22,8,26).fill(0x627d85);text('↔',split-5,Math.floor(room.height/2)*TILE+3,0x698680,10);
  // Original decorative wall shelves and windows; structural decor does not block walkable floor.
  for(const x of [2,7])furniture(draw,'bookshelf',x*TILE,-7);draw.rect((room.width-5)*TILE,-18,72,13).fill(0x627f90);draw.rect((room.width-5)*TILE+3,-16,66,8).fill(0xc2e3dc);
  const entities:{y:number;render:()=>void}[]=room.furniture.map(f=>({y:f.y,render:()=>furniture(draw,f.asset_id,f.x*TILE,f.y*TILE)}));
