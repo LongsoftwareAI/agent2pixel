@@ -4,7 +4,7 @@ import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 from dotenv import load_dotenv
 load_dotenv(Path(__file__).resolve().parents[2] / ".env", override=False)
 from services.api.store import Store, uid, now
@@ -30,6 +30,12 @@ class AgentInput(Input):
     memory_policy:str='workspace'
     workstation:dict=Field(default_factory=lambda:dict(x=3,y=3))
     enabled:bool=True
+    @field_validator('workstation')
+    @classmethod
+    def valid_workstation(cls,value):
+        if type(value.get('x')) is not int or type(value.get('y')) is not int or not 0<=value['x']<20 or not 0<=value['y']<14:
+            raise ValueError('Workstation must be an in-bounds integer tile')
+        return value
 class WorkflowInput(Input):
     workspace_id:str
     name:str=Field(min_length=1,max_length=100)
@@ -68,6 +74,7 @@ def create_app(data_dir=None):
                 room=store.list('room',ws['id'])[0]
                 room['assignments']={a['id']:a['workstation'] for a in agents}
                 room['furniture']=[dict(id=uid(),asset_id='desk',x=3+i*5,y=4,rotation=0) for i in range(3)]
+                room['furniture'] += [dict(id=uid(),asset_id=asset,x=x,y=y,rotation=0) for asset,x,y in [('chair',3,6),('chair',8,6),('chair',13,6),('plant',1,2),('plant',18,2),('plant',18,11),('bookshelf',2,1),('bookshelf',3,1),('bookshelf',4,1),('sofa',15,10),('sofa',16,10),('plant',14,10)]]
                 store.put('room',room)
                 nodes=[dict(id='start',type='start')]+[dict(id=a['role'].lower(),type='agent',agent_id=a['id']) for a in agents]+[dict(id='end',type='end')]
                 graph={'nodes':nodes,'edges':[{'source':a['id'],'target':b['id']} for a,b in zip(nodes,nodes[1:])]}
@@ -181,13 +188,14 @@ def create_app(data_dir=None):
     def layout(id:str,body:LayoutInput):
         value=get('room',id);occupied=set();ids=set()
         def position(item):
+            if not isinstance(item,dict):raise HTTPException(400,'Tile must be an object')
             x,y=item.get('x'),item.get('y')
             if type(x)!=int or type(y)!=int or not 0<=x<20 or not 0<=y<14:raise HTTPException(400,'Tile out of bounds')
             if (x,y) in occupied:raise HTTPException(409,'Tile collision')
             occupied.add((x,y))
         for item in body.furniture:
-            if item.get('asset_id') not in {a['id'] for a in ASSETS}:raise HTTPException(400,'Unknown asset')
-            if not item.get('id') or item['id'] in ids:raise HTTPException(400,'Duplicate or missing furniture id')
+            if item.get('asset_id') not in tuple(a['id'] for a in ASSETS):raise HTTPException(400,'Unknown asset')
+            if not isinstance(item.get('id'),str) or not item['id'] or item['id'] in ids:raise HTTPException(400,'Duplicate or missing furniture id')
             ids.add(item['id']);position(item)
             if item.get('rotation',0) not in (0,90,180,270):raise HTTPException(400,'Invalid rotation')
         for agent_id,item in body.assignments.items():

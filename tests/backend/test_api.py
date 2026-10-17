@@ -41,7 +41,7 @@ def test_crud_and_secrets(client):
     b=bootstrap(client);a=b['agents'][0]
     assert client.patch('/api/agents/'+a['id'],json={'name':'New name','skin':'purple'}).json()['name']=='New name'
     assert client.patch('/api/agents/'+a['id'],json={'brain':{'provider':'openai','api_key':'do-not-store'}}).status_code==422
-    assert client.patch('/api/agents/'+a['id'],json={'brain':{'provider':'openai','endpoint':'http://169.254.169.254'}}).status_code==403
+    assert client.patch('/api/agents/'+a['id'],json={'brain':{'provider':'openai','model':'test','endpoint':'http://169.254.169.254'}}).status_code==403
     assert client.patch('/api/agents/'+a['id'],json={'workspace_id':b['workspaces'][1]['id']}).status_code==403
     assert client.delete('/api/agents/'+a['id']).json()['enabled'] is False
     assert client.post('/api/workspaces',json={'name':''}).status_code==422
@@ -157,3 +157,50 @@ def test_original_bookshelf_sofa_layout(client):
     assert client.get(url).json()['furniture']==furniture
     furniture[1]['x']=1
     assert client.put(url,json={'furniture':furniture,'assignments':{}}).status_code==409
+
+def test_store_concurrent_transactions(client):
+    from concurrent.futures import ThreadPoolExecutor
+    from services.api.store import uid
+    store=client.app.state.store;ws=bootstrap(client)['workspaces'][0]['id']
+    def transaction(index):
+        value=dict(id=uid(),workspace_id=ws,kind='note',content=f'item {index}')
+        store.put('memory',value)
+        event=store.event(ws,'task.progress',{'index':index})
+        assert store.get('memory',value['id'])==value
+        assert store.list('memory',ws)
+        assert store.events(workspace=ws)
+        return event['seq']
+    with ThreadPoolExecutor(max_workers=12) as pool:
+        seq=list(pool.map(transaction,range(120)))
+    persisted=store.events(workspace=ws)
+    assert len(seq)==len(set(seq))==120
+    assert [e['seq'] for e in persisted]==sorted(seq)
+    assert len(store.list('memory',ws))==120
+
+def test_seed_room_rich_layout_and_preserve_user_changes(tmp_path):
+    with TestClient(create_app(tmp_path)) as client:
+        b=bootstrap(client);room=b['room'];url='/api/rooms/'+room['id']+'/layout'
+        assert {'desk','chair','plant','bookshelf','sofa'}.issubset({f['asset_id'] for f in room['furniture']})
+        positions=[(f['x'],f['y']) for f in room['furniture']]+[(p['x'],p['y']) for p in room['assignments'].values()]
+        assert len(positions)==len(set(positions))
+        assert all(0<=x<20 and 0<=y<14 for x,y in positions)
+        assert client.put(url,json={'furniture':room['furniture'],'assignments':room['assignments']}).status_code==200
+        custom={'furniture':[room['furniture'][0]],'assignments':{}}
+        assert client.put(url,json=custom).status_code==200
+    with TestClient(create_app(tmp_path)) as client:
+        loaded=client.get(url).json()
+        assert loaded['furniture']==custom['furniture'] and loaded['assignments']=={}
+
+@pytest.mark.parametrize('brain',[{'provider':'ollama','model':'x','endpoint':123},{'provider':'ollama','model':'x','secret_ref':123},{'provider':[]},{'provider':'openai'},{'provider':'ollama','model':False},{'provider':'ollama','model':'x','endpoint':'http://[bad'}])
+def test_malformed_brain_rejected(client,brain):
+    b=bootstrap(client);ws=b['workspaces'][0]['id']
+    assert client.post('/api/agents',json={'workspace_id':ws,'name':'invalid brain','brain':brain}).status_code==422
+    assert client.patch('/api/agents/'+b['agents'][0]['id'],json={'brain':brain}).status_code==422
+
+def test_malformed_layout_and_workstation_rejected(client):
+    b=bootstrap(client);url='/api/rooms/'+b['room']['id']+'/layout';a=b['agents'][0]
+    assert client.put(url,json={'furniture':[],'assignments':{a['id']:[]}}).status_code==400
+    assert client.put(url,json={'furniture':[{'id':[],'asset_id':'plant','x':1,'y':1}],'assignments':{}}).status_code==400
+    assert client.put(url,json={'furniture':[{'id':'x','asset_id':[],'x':1,'y':1}],'assignments':{}}).status_code==400
+    for point in ({'x':-1,'y':0},{'x':True,'y':1},{'x':2.5,'y':3}):
+        assert client.patch('/api/agents/'+a['id'],json={'workstation':point}).status_code==422

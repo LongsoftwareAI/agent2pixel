@@ -2,6 +2,8 @@
 import json
 import sqlite3
 import uuid
+import threading
+from functools import wraps
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -14,8 +16,17 @@ def now():
     return datetime.now(timezone.utc).isoformat()
 
 
+def synchronized(method):
+    @wraps(method)
+    def protected(self, *args, **kwargs):
+        with self.lock:
+            return method(self, *args, **kwargs)
+    return protected
+
+
 class Store:
     def __init__(self, root):
+        self.lock = threading.RLock()
         self.root = Path(root).resolve()
         self.root.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(self.root / 'agentverse.sqlite3', check_same_thread=False)
@@ -44,21 +55,25 @@ class Store:
                 self.put('run', run)
                 self.event(run['workspace_id'],'workflow.failed',{'error':'Runtime restarted'},run['id'])
 
+    @synchronized
     def put(self, kind, value):
         self.db.execute('INSERT INTO resources VALUES(?,?,?,?) ON CONFLICT(id) DO UPDATE SET kind=excluded.kind, workspace_id=excluded.workspace_id, body=excluded.body',
                         (kind, value['id'], value.get('workspace_id'), json.dumps(value)))
         self.db.commit()
         return value
 
+    @synchronized
     def get(self, kind, id):
         row = self.db.execute('SELECT body FROM resources WHERE kind=? AND id=?', (kind, id)).fetchone()
         return json.loads(row[0]) if row else None
 
+    @synchronized
     def list(self, kind, workspace=None):
         rows = self.db.execute('SELECT body FROM resources WHERE kind=?' + (' AND workspace_id=?' if workspace else ''),
                                (kind, workspace) if workspace else (kind,)).fetchall()
         return [json.loads(row[0]) for row in rows]
 
+    @synchronized
     def event(self, workspace, event_type, payload=None, run=None, agent=None):
         value = dict(id=uid(), schema_version=1, workspace_id=workspace, run_id=run,
                      agent_id=agent, event_type=event_type, payload=payload or {}, created_at=now())
@@ -69,6 +84,7 @@ class Store:
         self.db.commit()  # persist before websocket reads
         return value
 
+    @synchronized
     def events(self, workspace=None, run=None, after=0):
         rows = self.db.execute('SELECT body FROM events WHERE seq>?'+(' AND workspace_id=?' if workspace else '')+
                                (' AND run_id=?' if run else '')+' ORDER BY seq',

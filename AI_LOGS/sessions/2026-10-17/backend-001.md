@@ -39,3 +39,13 @@
 - changes: API original CC0 bookshelf/sofa catalog metadata; one-tile collision matches existing renderer contract
 - tests: `python -m pytest tests/backend -q` PASS16; `ruff check services tests/backend --select E9,F63,F7,F82` PASS; new regression checks catalog rights, persisted roundtrip, overlapping furniture409
 - next_steps: integrator cherry-pick, QA review; review_status: pending
+
+## Final concurrency/validation review corrections and scene seeding
+- timestamp: 2026-10-17T04:00:00Z; status: READY_FOR_REVIEW
+- changes: RLock serializes complete Store put/get/list/event/events operations across FastAPI threadpool and asyncio worker; malformed Brain types/models/URLs return422; malformed nested layout returns400; workstation integer/inbounds validation422
+- decisions: same synchronous connection retained with reentrant operation lock rather than per-request connection overhead; no await inside Store transaction
+- changes: fresh initial rooms additionally seed real chairs/plants/bookshelves/sofas on free cells; existing DB/user layouts never overwritten (Architect approved)
+- tests: `/tmp/agentverse-backend-venv/bin/python -m pytest tests/backend -q` PASS25; `/tmp/agentverse-backend-venv/bin/ruff check services tests/backend --select E9,F63,F7,F82` PASS
+- evidence: ThreadPoolExecutor12 workers/120 resource+event+read operations, unique persisted ordered seq; rich initial layout valid, restart preserves custom layout; malformed provider/layout/workstation regressions
+- failed intermediate check: existing endpoint-denial test omitted now-required model and correctly got422; provided valid model to isolate endpoint403 policy. No tests suppressed.
+- next_steps: Integrator cherry-pick and QA recheck; review_status: pending
