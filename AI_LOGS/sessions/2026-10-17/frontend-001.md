@@ -35,3 +35,10 @@
 - blockers: none; localhost screenshots and independent review pending QA, not claimed complete
 - next_steps: Integrator cherry-pick FE-only commit; QA localhost acceptance/screenshots; review corrections
 - handoff_to: QA/Integrator; commit_sha: 34fa7b407036bd5dd967de165e897e737af54a0d; review_status: pending
+
+## QA revision 1
+- timestamp: 2026-10-17T10:43:00Z; status: READY_FOR_REVIEW
+- request: QA observed automatic favicon 404; Integrator observed office crop in 1366x768.
+- changes: index.html original inline SVG favicon; App screen class; scoped compact Office/Furniture header and stats; 370px office host fits fourteen 24px rows and upper wall at zoom1.
+- tests: npm run lint PASS; npm test PASS8; npm run build PASS (existing chunk-size advisory).
+- review_status: pending QA rerun/browser screenshots; no console filtering or suppression added.
