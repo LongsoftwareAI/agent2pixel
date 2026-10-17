@@ -1,0 +1,11 @@
+{
+  "id": "agentverse-harness-bridge",
+  "version": "1.0.0",
+  "protocol": "agentverse-harness-bridge/1",
+  "sdk_runtime_version": "0.1.5rc1",
+  "entrypoint": "index.mjs",
+  "capabilities": ["approved-registry-dispatch"],
+  "local_execution": false,
+  "permission_source": "AgentVerse domain tool grants and approvals",
+  "installation": "reviewed absolute module path via explicit Cordis insert overlay; no package installation from agent input"
+}

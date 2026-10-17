@@ -5,6 +5,8 @@ permissions remain in AgentVerse; this profile deliberately has no tool producer
 """
 from __future__ import annotations
 import asyncio
+from contextlib import AsyncExitStack
+from .broker import ToolBroker
 import hashlib
 import importlib.metadata
 import json
@@ -47,6 +49,12 @@ def capabilities():
         bundled_runtime_path()
         result.update(available=True,reason='Official tool-less runtime; plugin tools unavailable')
         result['capabilities']['text']=True
+        try:
+            from services.worker.tools import dispatch_tool
+            if not callable(dispatch_tool): raise ImportError('Missing dispatcher')
+            result['capabilities'].update(tools=True,memory_bridge=True)
+            result['reason']='Official runtime with approved registry bridge'
+        except ImportError: pass
     except (ImportError, importlib.metadata.PackageNotFoundError, OSError, ValueError):
         pass
     return result
@@ -74,16 +82,31 @@ def isolated_environment(home, prompt, secret=None):
 
 
 async def terminate_group(process):
+    # Descendants can outlive an already-reaped SDK worker and ignore SIGTERM.
     try: os.killpg(process.pid,signal.SIGTERM)
-    except ProcessLookupError: pass
+    except ProcessLookupError: return
     if process.returncode is None:
-        try: os.killpg(process.pid,signal.SIGTERM)
-        except ProcessLookupError: pass
         try: await asyncio.wait_for(process.wait(),2)
-        except asyncio.TimeoutError:
-            try: os.killpg(process.pid,signal.SIGKILL)
-            except ProcessLookupError: pass
-            await process.wait()
+        except asyncio.TimeoutError: pass
+    await asyncio.sleep(.1)
+    try: os.killpg(process.pid,signal.SIGKILL)
+    except ProcessLookupError: pass
+    await process.wait()
+
+
+async def bounded_communicate(process,request):
+    process.stdin.write(json.dumps(request).encode())
+    await process.stdin.drain()
+    process.stdin.close()
+    chunks=[];size=0
+    while True:
+        chunk=await process.stdout.read(65536)
+        if not chunk:break
+        size+=len(chunk)
+        if size>MAX_OUTPUT:raise HarnessError('Harness response exceeded limit')
+        chunks.append(chunk)
+    await process.wait()
+    return b''.join(chunks)
 
 
 async def execute_assignment(agent, text, budget, store, run_id, emit):
@@ -96,7 +119,7 @@ async def execute_assignment(agent, text, budget, store, run_id, emit):
     persisted=store.get('agent',agent['id'])
     if not run or run.get('workspace_id') != agent['workspace_id'] or not persisted or persisted.get('workspace_id') != agent['workspace_id']:
         raise HarnessError('Harness assignment ownership mismatch')
-    if agent.get('execution',{}).get('profile') not in (None,'agentverse-tool-less-v1'):
+    if agent.get('execution',{}).get('profile') not in (None,'agentverse-tool-less-v1','agentverse-registry-v1'):
         raise HarnessError('Unapproved Harness profile')
     brain=agent.get('brain',{})
     if brain.get('provider') not in ('deepseek','openai'):
@@ -120,22 +143,36 @@ async def execute_assignment(agent, text, budget, store, run_id, emit):
              'endpoint':endpoint,'session_id':session,'home':str(home),'cwd':str(cwd),
              'patch':str(BRIDGE/'tool-less.patch.yml')}
     timeout=min(120,max(1,float(agent.get('execution',{}).get('timeout_seconds',60))))
-    async with CONCURRENCY:
+    tools=[g['id'] for g in agent.get('tool_grants',[]) if g.get('allow')]
+    if agent.get('execution',{}).get('profile')=='agentverse-tool-less-v1': tools=[]
+    if tools and not state['capabilities']['tools']: raise HarnessError('Harness registry bridge unavailable')
+    request['tools']=tools
+    request['bridge_module']=str(BRIDGE/'index.mjs')
+    env=isolated_environment(home,agent.get('system_prompt',''),secret)
+    async with CONCURRENCY, AsyncExitStack() as stack:
+        if tools:
+            from services.worker.tools import dispatch_tool
+            async def dispatch(tool,payload):
+                return await dispatch_tool(store,store.get('run',run_id),agent,tool,payload)
+            broker=await stack.enter_async_context(ToolBroker(session,dispatch,emit))
+            env.update(AGENTVERSE_HARNESS_BROKER=broker.endpoint,AGENTVERSE_HARNESS_BROKER_TOKEN=broker.token,
+                       AGENTVERSE_HARNESS_SESSION=session,AGENTVERSE_HARNESS_TOOL_IDS=json.dumps(tools))
         process=await asyncio.create_subprocess_exec(sys.executable,str(WORKER),stdin=asyncio.subprocess.PIPE,
             stdout=asyncio.subprocess.PIPE,stderr=asyncio.subprocess.DEVNULL,
-            env=isolated_environment(home,agent.get('system_prompt',''),secret),cwd=str(cwd),start_new_session=True,
+            env=env,cwd=str(cwd),start_new_session=True,
             limit=MAX_OUTPUT)
         try:
-            stdout,_=await asyncio.wait_for(process.communicate(json.dumps(request).encode()),timeout)
+            stdout=await asyncio.wait_for(bounded_communicate(process,request),timeout)
             if process.returncode != 0 or len(stdout)>MAX_OUTPUT: raise HarnessError('Harness worker failed')
             data=json.loads(stdout)
+            if data.get('error')=='budget_exhausted': raise HarnessError('Harness budget exhausted')
             if data.get('session_id') != session: raise HarnessError('Harness session mismatch')
             if data.get('finish_reason') != 'completed': raise HarnessError('Harness turn did not complete: '+str(data.get('finish_reason'))[:40])
             if not isinstance(data.get('output'),str): raise HarnessError('Harness output invalid')
             used=data.get('tokens')
             if type(used) is not int or used<0 or used>budget: raise HarnessError('Token budget exhausted')
             return data['output'],{'tokens':used,'token_accounting':data['token_accounting'],
-                'session_id':session,'engine_version':VERSION,'tools_enabled':False}
+                'session_id':session,'engine_version':VERSION,'tools_enabled':bool(tools)}
         except asyncio.TimeoutError: raise HarnessError('Harness deadline exceeded') from None
         except (json.JSONDecodeError,KeyError,TypeError): raise HarnessError('Harness protocol response invalid') from None
         finally:

@@ -17,3 +17,13 @@ Real SDK/runtime + loopback provider stub: PASS. Real paid/live provider: UNRUN 
 Run tests from checkout:
 `/path/to/sdk-venv/bin/python -m unittest discover -s tests/harness -v`
 Optional packages absent: runtime tests explicitly SKIP; unit boundary tests run.
+
+## Verified registry plugin increment
+
+`index.mjs` (version1.0.0, hash-pinned manifest) is a real Cordis plugin loaded by an explicit absolute `name` insert. No package-install command or extra Node runtime required. Actual released SDK binary loads it and advertises only `agentverse_dispatch` with tool_id enum of snapshotted permitted grants. Model functioncall executes plugin -> ephemeral authenticated loopback broker -> **services.worker.tools.dispatch_tool**, the same permission/namespace/action result dispatcher as native. Model cannot choose agent/workspace/run/session or broker endpoint/token. Broker token is random per assignment and excluded from saved logs/config; max16calls, schema/body/result bounds, deadlines. Disconnect/timeout/cancel closes broker and entire process group.
+
+Skills remain version-resolved prompt context from backend (not a second independent skill registry). Memory read actually invokes domain scoped service through plugin. Approved artifact/test actions are currently executed by LangGraph before assignment; plugin may obtain only their exact committed approved result, never independently execute a side effect or claim it created the file. New model-requested side effects require separate workflow approval and are rejected here. This is an explicit limitation of current mixed-engine acceptance scope.
+
+Capability tools/memory_bridge becomes true only when backend shared dispatcher is importable and SDK/runtime/bridge integrity pins match. Profile `agentverse-tool-less-v1` always disables plugin; `agentverse-registry-v1`/default uses declared grants. Unplugging the per-agent engine/profile preserves app data; old Harness sessions are not silently resumed. UUID assignment sessions prevent cross-retry stale completion.
+
+Own integration regression uses the **real official SDK/runtime and actual plugin** with provider stub and a dispatch-contract spy. Backend policy itself is separately tested; final combined domain-store/plugin integration requires Integrator/independent QA and is not implied by this contract spy. Live model UNRUN.

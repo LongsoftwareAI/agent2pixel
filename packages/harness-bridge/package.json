@@ -1,0 +1,9 @@
+{
+  "name": "@agentverse/harness-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": "./index.mjs",
+  "license": "MIT",
+  "description": "Dependency-free Cordis plugin for approved AgentVerse registry dispatch; no local tool execution"
+}
