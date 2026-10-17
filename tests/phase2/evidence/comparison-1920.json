@@ -1,0 +1,15 @@
+{
+  "reference": "tests/phase2/evidence/upstream-1920.png",
+  "actual": "tests/phase2/evidence/agentverse-1920.png",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "mismatch_pixels": 0,
+  "total_pixels": 2073600,
+  "threshold_pixels": 0,
+  "passed": true,
+  "reference_sha256": "170779b14988ec6517c629177f61e4a332409e39d80d19d35852b7c99552ba64",
+  "actual_sha256": "170779b14988ec6517c629177f61e4a332409e39d80d19d35852b7c99552ba64",
+  "contact_sheet": "tests/phase2/evidence/comparison-1920.png"
+}

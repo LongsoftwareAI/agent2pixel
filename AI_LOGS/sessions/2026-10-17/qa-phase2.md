@@ -40,3 +40,11 @@ Reviewer decision: PENDING
 - PASS `python tests/phase2/test_compare_visual.py`:2 checks using existing host Pillow12.3.0. No dependency installed.
 - Initial `/workspace/agent2pixel/.venv/bin/python -m pytest ...` collection FAIL: that venv lacks Pillow. Host Python has Pillow but lacks pytest; helper regression uses standard-library unittest to avoid changing shared dependencies.
 - Application visual gate remains UNRUN; comparator tests are test-tool validation only. Integrator must review QA code separately.
+
+## First independent visual milestone
+- Candidate Pixel commit b9892de961d92671752e28bea2f95cbed402d3b5, upstream faa1a012b5fbf632c66dc6801c5383e53a542406. Raw upstream host3102 imports original checkout, candidate3103 imports vendor. Source/assets fixture only, no backend claim.
+- PASS `python tests/phase2/capture_visual.py`: fullcanvas0pixel difference1366x768 and1920x1080, no masks, threshold0, exactcamera/insets and cleanHTTP/page errors. Contactsheet+upstream/app/fullpage PNG and JSON evidence saved. First capture with global seeded RNG differed only172/415px exteriorcar because UI consumes randomness differently; fixed global entropy to0.5 equally on both hosts while room/character seeded RNG unchanged, no threshold relaxation.
+- Actual canvas character hit, zoom and pan function; browsercleanHTTP gate FAIL `/api/dictation`404 and fixture `/api/agents/agent-0`404; sent Pixel for unsupported endpoint gating. First interaction interrupted by HMR; stable rerun identified HTTP issue.
+- Provenance independent audit334 upstream+currentfileSHA256 andMITnotice match; FAIL2 patchledger paths abbreviated (world/index.ts andworld/sim/sim.ts); requested fullpath enumeration.
+- Frontend staticreview found responsibilities textarea splits literal backslash+n instead of newlines; owner correcting. Livebrowser pending integration.
+- No application APPROVE yet. Integrator reviews QA test code separately.

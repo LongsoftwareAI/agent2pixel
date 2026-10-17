@@ -1,0 +1,66 @@
+[
+  {
+    "reference": "tests/phase2/evidence/upstream-1366.png",
+    "actual": "tests/phase2/evidence/agentverse-1366.png",
+    "viewport": [
+      1366,
+      768
+    ],
+    "mismatch_pixels": 0,
+    "total_pixels": 1049088,
+    "threshold_pixels": 0,
+    "passed": true,
+    "reference_sha256": "ef9a369fc7e31273c4b0d4347a69d46874264c4063c3a8582621e0ba754d8d63",
+    "actual_sha256": "ef9a369fc7e31273c4b0d4347a69d46874264c4063c3a8582621e0ba754d8d63",
+    "contact_sheet": "tests/phase2/evidence/comparison-1366.png",
+    "browser": "154.0.8037.57",
+    "records": [
+      {
+        "label": "upstream",
+        "url": "http://127.0.0.1:3102/",
+        "errors": [],
+        "http_failures": [],
+        "camera": "{\"x\":216.50224215246638,\"y\":299.46188340807174,\"zoom\":0.9612068965517241,\"viewW\":1366,\"viewH\":768,\"dpr\":1,\"minZoom\":0.9612068965517241,\"bounds\":{\"x\":-112,\"y\":-96,\"w\":992,\"h\":752},\"follow\":null,\"insets\":{\"top\":72,\"right\":0,\"bottom\":218,\"left\":322},\"anim\":null,\"freeZoom\":false}"
+      },
+      {
+        "label": "agentverse",
+        "url": "http://127.0.0.1:3103/?fixture=parity",
+        "errors": [],
+        "http_failures": [],
+        "camera": "{\"x\":216.50224215246638,\"y\":299.46188340807174,\"zoom\":0.9612068965517241,\"viewW\":1366,\"viewH\":768,\"dpr\":1,\"minZoom\":0.9612068965517241,\"bounds\":{\"x\":-112,\"y\":-96,\"w\":992,\"h\":752},\"follow\":null,\"insets\":{\"top\":72,\"right\":0,\"bottom\":218,\"left\":322},\"anim\":null,\"freeZoom\":false}"
+      }
+    ]
+  },
+  {
+    "reference": "tests/phase2/evidence/upstream-1920.png",
+    "actual": "tests/phase2/evidence/agentverse-1920.png",
+    "viewport": [
+      1920,
+      1080
+    ],
+    "mismatch_pixels": 0,
+    "total_pixels": 2073600,
+    "threshold_pixels": 0,
+    "passed": true,
+    "reference_sha256": "170779b14988ec6517c629177f61e4a332409e39d80d19d35852b7c99552ba64",
+    "actual_sha256": "170779b14988ec6517c629177f61e4a332409e39d80d19d35852b7c99552ba64",
+    "contact_sheet": "tests/phase2/evidence/comparison-1920.png",
+    "browser": "154.0.8037.57",
+    "records": [
+      {
+        "label": "upstream",
+        "url": "http://127.0.0.1:3102/",
+        "errors": [],
+        "http_failures": [],
+        "camera": "{\"x\":271.7747989276139,\"y\":278.52010723860593,\"zoom\":1.4346153846153846,\"viewW\":1920,\"viewH\":1080,\"dpr\":1,\"minZoom\":1,\"bounds\":{\"x\":-112,\"y\":-96,\"w\":992,\"h\":752},\"follow\":null,\"insets\":{\"top\":72,\"right\":0,\"bottom\":218,\"left\":322},\"anim\":null,\"freeZoom\":false}"
+      },
+      {
+        "label": "agentverse",
+        "url": "http://127.0.0.1:3103/?fixture=parity",
+        "errors": [],
+        "http_failures": [],
+        "camera": "{\"x\":271.7747989276139,\"y\":278.52010723860593,\"zoom\":1.4346153846153846,\"viewW\":1920,\"viewH\":1080,\"dpr\":1,\"minZoom\":1,\"bounds\":{\"x\":-112,\"y\":-96,\"w\":992,\"h\":752},\"follow\":null,\"insets\":{\"top\":72,\"right\":0,\"bottom\":218,\"left\":322},\"anim\":null,\"freeZoom\":false}"
+      }
+    ]
+  }
+]
