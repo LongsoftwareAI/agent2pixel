@@ -161,6 +161,9 @@ def create_app(data_dir=None):
     def events(workspace_id:str,after:int=0):workspace(workspace_id);return store().events(workspace=workspace_id,after=after)
     @app.websocket('/ws/workspaces/{id}/events')
     async def websocket(websocket:WebSocket,id:str,after:int=0):
+        origin=websocket.headers.get('origin')
+        if origin and origin not in ('http://localhost:3000','http://127.0.0.1:3000'):
+            await websocket.close(code=1008);return
         if not store().get('workspace',id):await websocket.close(code=1008);return
         await websocket.accept()
         try:

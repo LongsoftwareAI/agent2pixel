@@ -25,3 +25,10 @@
 - commands: `AGENTVERSE_DATA_DIR=/tmp/agentverse-backend-health /tmp/agentverse-backend-venv/bin/python -m uvicorn services.api.main:app --host 127.0.0.1 --port 8011`; `curl --fail --silent http://127.0.0.1:8011/health` PASS {status:ok,schema_version:1}
 - risks: no live external credentials/models; HTTP adapters validated against real localhost stub HTTP; SQLite aggregate model does not provide SQL field queries for embedded configs; mock generates deterministic task-dependent text, not executable source synthesis
 - blockers: none for backend; next_steps: independent QA/integration; handoff_to: QA/Integrator; review_status: pending; commit_sha: see git commit for this log
+
+## Independent review correction
+- timestamp: 2026-10-17T02:00:00Z; status: READY_FOR_REVIEW; reviewer: QA
+- findings: actual uvicorn had no installed WebSocket protocol despite TestClient passing; WebSocket Origin policy missing
+- changes: pin websockets15.0.1 (BSD-3-Clause; Architect approved); localhost browser Origin allowlist before handshake; real subprocess uvicorn handshake/replay and rejected foreign Origin regression
+- tests: `/tmp/agentverse-backend-venv/bin/python -m pytest tests/backend -q` PASS15; `/tmp/agentverse-backend-venv/bin/ruff check services tests/backend --select E9,F63,F7,F82` PASS
+- next_steps: integrator installs updated lock/restarts process, QA reconnect validation; review_status: pending
