@@ -2,5 +2,5 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 -m venv .venv
-.venv/bin/python -m pip install --disable-pip-version-check -r services/api/requirements.txt
+.venv/bin/python -m pip install --disable-pip-version-check -r services/api/requirements.lock
 npm --prefix apps/web ci
