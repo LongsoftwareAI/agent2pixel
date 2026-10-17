@@ -1,0 +1,37 @@
+# research-runtime research handoff (recorded by Integrator from agent report)
+
+- timestamp: 2026-10-17T17:36:23.983192+07:00
+- session_id: research-runtime-001
+- agent_id: research-runtime
+- agent_role: Research (no application implementation)
+- model/provider: Codex / OpenAI, exact model unavailable
+- task_id: REF-001
+- goal: inspect source, pinned commits, code/assets licensing before coding
+- status: SELF_TESTED (static inspection complete; independent audit review pending)
+- branch: research external checkout, no application branch edits
+- base_commit: a1f7d80
+- workspace: /workspace/reference-checkouts
+- owned_paths: external research checkouts and runtime-audit.md; Integrator records project docs
+- inputs: requirement v0.1, source URLs section 13
+- assumptions: README is a claim until verified in source
+- constraints: no code/art copying, no upstream script execution
+- plan: clone at exact commit, inspect README/LICENSE/source, inspect actual images where relevant, report
+- changes: research report integrated into docs/reuse/REUSE_AUDIT.md
+- decisions: inspiration-only; retain new runtime and original art
+- commands: git clone --depth 1 (reference URLs); git rev-parse HEAD; rg source/license; view_image for P0 visual references
+- tests: static source/license inspection PASS; upstream suites SKIPPED (not dependencies of AgentVerse, no implementation reuse)
+- risks: third-party art rights are not established by root code license
+- blockers: none for original implementation
+- next_steps: independent QA reviews audit and attribution
+- handoff_to: Architect, Backend, Frontend, Pixel, QA
+- commit_sha: audit integration 3d75d65 (Integrator-authored)
+- review_status: pending
+- Reference IDs: REF-03, REF-07
+- Source URL: exact links in docs/reuse/REUSE_AUDIT.md
+- Commit SHA: source-specific SHAs in audit
+- Files inspected: exact source/image paths in audit
+- Asset rights: no reuse permission assumed; upstream art excluded
+- Copied/Adapted/Inspiration-only: Inspiration-only
+- Visual evidence: linked/viewed files in visual board; no app verification claim
+- Deviation from reference: no SaaS/city/CLI watcher transplant; new localhost DAG runtime
+- Reviewer decision: pending QA
