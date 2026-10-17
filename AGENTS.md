@@ -9,3 +9,7 @@ Write AI_LOGS/sessions/2026-10-17/<role>-001.md at start, milestones, handoff, p
 Do not copy reference code or artwork before license audit. Original procedural pixel artwork is preferred. Backend events alone determine task completion. Bind to loopback, disable shell and external side effects, keep workspace roots isolated. No SaaS, city, multiplayer, cloud deployment.
 
 Lifecycle: BACKLOG -> READY -> IN_PROGRESS -> SELF_TESTED -> READY_FOR_REVIEW -> APPROVED/CHANGES_REQUESTED -> INTEGRATED -> DONE. DONE requires commit, tests, logs, independent reviewer approval, integrator verification. Reviewer cannot approve own work.
+
+## Phase 2 authorized implementation
+
+User explicitly approved phase2 coding. Current ownership/API coordination is docs/contracts/phase2/IMPLEMENTATION.md and supersedes earlier ownership for new paths. Direct MIT Habblaud source/art reuse is authorized after audit; retain notices, do not label upstreamart CC0. Phase2 plan is accepted for code; use actual Canvas2D upstream renderer rather than a visual imitation. Parallel backend work may proceed while firstvisualgate runs; default switch after independent review. Dedicated branch/worktrees remain required by user protocol.
