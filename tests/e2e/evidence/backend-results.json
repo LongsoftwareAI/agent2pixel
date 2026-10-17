@@ -1,0 +1,8 @@
+{
+  "candidate_commit": "826c74c",
+  "command": "/workspace/agent2pixel/.venv/bin/python -m pytest tests/backend tests/e2e/runtime_security.py -q",
+  "result": "PASS",
+  "passed": 29,
+  "warnings": ["Starlette TestClient AnyIO BlockingPortal deprecation"],
+  "duration_seconds": 5.58
+}

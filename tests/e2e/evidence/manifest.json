@@ -1,0 +1,65 @@
+{
+  "application_commit": "826c74c311023e62f42df8455171e8bdffeb4ed0",
+  "screenshots": [
+    {
+      "path": "tests/e2e/evidence/01-office-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "8e99ff96de71df723625f3379299ff348610dce12ddc21090947c683c9ee32a8"
+    },
+    {
+      "path": "tests/e2e/evidence/02-agent-studio-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "8de1f2710569ee2191ff536121506f199602049c2631edd354182eb79c813762"
+    },
+    {
+      "path": "tests/e2e/evidence/02b-agent-capabilities-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "59e94d50097eaf3a279f33a62f5e761e1cdfb66f971cb05f09005d11f1f2ac04"
+    },
+    {
+      "path": "tests/e2e/evidence/03-workflow-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "46c7b632b14604da1ef3d652eedce2bb9bee81e0fda27f8899988248fbe309f9"
+    },
+    {
+      "path": "tests/e2e/evidence/04-run-monitor-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "189db6c12e1439ec25f3c02c7c024b8de731f7a1fb5fcd3d1fa0fb9217bcde6e"
+    },
+    {
+      "path": "tests/e2e/evidence/04b-run-events-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "57f4c74501a583988ff44e469a9b05b37e8c4fc22b2aad91442e53aadfcc07f5"
+    },
+    {
+      "path": "tests/e2e/evidence/05-furniture-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "a9968d04c43f2e315d4e66f095537b7cea4740f11367b6736e8b579b6b57b0ca"
+    },
+    {
+      "path": "tests/e2e/evidence/06-settings-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "ebf3a6e7d3467450b276058654018f09e85b56f15c93a38075e5baa23d91f593"
+    },
+    {
+      "path": "tests/e2e/evidence/07-office-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "7dc53afed2f9094b6988c3ec0996ca47477c977ed69511e987b55f1a3e4f5e68"
+    },
+    {
+      "path": "tests/e2e/evidence/08-furniture-interaction-1366.png",
+      "width": 1366,
+      "height": 768,
+      "sha256": "c1e1643595912ac7f8bd0c36d2e20faa2311d8ca37135127af633b0f102ade92"
+    }
+  ]
+}

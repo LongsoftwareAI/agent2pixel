@@ -3,6 +3,7 @@
   "steps": [
     "Office loaded, interactive canvas and realtime connected",
     "Agent system instructions edited, persisted after reload, restored",
+    "Real workflow node drag and saved graph position persisted through API",
     "Saved workflow validated, executed, backend completed Reviewer output visible",
     "Original furniture inserted, backend persisted, survived reload, baseline restored",
     "Settings MockBrain adapter test succeeds",

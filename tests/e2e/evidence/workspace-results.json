@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "workspace": "e838353d-2f5d-4112-9961-8dcb3303f971",
+  "actions": [
+    "UI workspace creation",
+    "three agent creation with role/brain/skin",
+    "memory persistence",
+    "rapid workspace switch has no foreign agent/memory",
+    "agent soft disable"
+  ],
+  "console_errors": []
+}
