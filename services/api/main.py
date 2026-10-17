@@ -12,7 +12,7 @@ from services.api.policy import safe_document, validate_brain
 from services.worker.runtime import Runtime, validate_graph
 from services.worker.adapters import run_brain
 
-ASSETS=[dict(id=id,name=name,kind=kind,license='CC0-1.0',author='AgentVerse contributors') for id,name,kind in [('desk','Desk','furniture'),('chair','Chair','furniture'),('plant','Plant','furniture')]]
+ASSETS=[dict(id=id,name=name,kind=kind,license='CC0-1.0',author='AgentVerse contributors') for id,name,kind in [('desk','Desk','furniture'),('chair','Chair','furniture'),('plant','Plant','furniture'),('bookshelf','Bookshelf','furniture'),('sofa','Sofa','furniture')]]
 
 class Input(BaseModel):
     model_config=ConfigDict(extra='forbid')

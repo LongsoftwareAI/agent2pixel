@@ -146,3 +146,14 @@ def test_sqlite_foreign_keys(client):
     store.db.rollback()
     assert store.db.execute('PRAGMA foreign_key_check').fetchall()==[]
     assert len(store.db.execute('PRAGMA foreign_key_list(events)').fetchall())==3
+
+def test_original_bookshelf_sofa_layout(client):
+    b=bootstrap(client);url='/api/rooms/'+b['room']['id']+'/layout'
+    assets=client.get('/api/assets').json()
+    assert {'bookshelf','sofa'}.issubset({a['id'] for a in assets})
+    assert all(a['license']=='CC0-1.0' for a in assets)
+    furniture=[dict(id='shelf',asset_id='bookshelf',x=1,y=1,rotation=0),dict(id='sofa',asset_id='sofa',x=2,y=1,rotation=90)]
+    assert client.put(url,json={'furniture':furniture,'assignments':{}}).status_code==200
+    assert client.get(url).json()['furniture']==furniture
+    furniture[1]['x']=1
+    assert client.put(url,json={'furniture':furniture,'assignments':{}}).status_code==409

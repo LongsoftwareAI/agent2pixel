@@ -32,3 +32,10 @@
 - changes: pin websockets15.0.1 (BSD-3-Clause; Architect approved); localhost browser Origin allowlist before handshake; real subprocess uvicorn handshake/replay and rejected foreign Origin regression
 - tests: `/tmp/agentverse-backend-venv/bin/python -m pytest tests/backend -q` PASS15; `/tmp/agentverse-backend-venv/bin/ruff check services tests/backend --select E9,F63,F7,F82` PASS
 - next_steps: integrator installs updated lock/restarts process, QA reconnect validation; review_status: pending
+
+## Pixel catalog alignment
+- timestamp: 2026-10-17T03:00:00Z; status: READY_FOR_REVIEW
+- inputs: Architect-approved Pixel/QA furniture catalog correction
+- changes: API original CC0 bookshelf/sofa catalog metadata; one-tile collision matches existing renderer contract
+- tests: `python -m pytest tests/backend -q` PASS16; `ruff check services tests/backend --select E9,F63,F7,F82` PASS; new regression checks catalog rights, persisted roundtrip, overlapping furniture409
+- next_steps: integrator cherry-pick, QA review; review_status: pending
