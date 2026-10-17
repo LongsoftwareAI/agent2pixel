@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile.api
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      AGENTVERSE_DATA_DIR: /data
+      AGENTVERSE_OPENAI_API_KEY: ${AGENTVERSE_OPENAI_API_KEY:-}
+    volumes:
+      - agentverse-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+  web:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile.web
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      AGENTVERSE_API_PROXY: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  agentverse-data:
