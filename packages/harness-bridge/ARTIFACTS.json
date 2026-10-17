@@ -1,0 +1,19 @@
+{
+  "distribution_versions": {
+    "deepseek-harness-sdk": "0.1.5rc1",
+    "deepseek-harness-runtime-bin": "0.1.5rc1"
+  },
+  "source_repository": "https://github.com/deepseek-ai/deepseek-harness",
+  "source_sha": "NOT_ATTESTED_BY_WHEEL",
+  "file_sha256": {
+    "deepseek_harness/api.py": "9e24adee62987e38e0577c4ba051b15b015f61cd5d5412dc56882094f5e52c2b",
+    "deepseek_harness/client.py": "78193d6b88d49b87dc0057ec92cbc512426e7712f75c3e700f0fc7e0046d28fc",
+    "deepseek_harness_runtime/runtime/deepseek-harness-sdk-runtime-linux-x64": "6f68ce88d98307533ee8fa58a8125de4dc019ab16fac8b512cec141a2d1961f8",
+    "deepseek_harness_runtime/runtime/deepseek-harness-sdk-runtime-linux-x64-rg": "193906679498de4d939345b937fa24e0e69a03c244bd70c859f5e41232713f21"
+  },
+  "profile_sha256": "be0d48b16974afc7f4fd139ece2aa9c6210f57683837a96ac9a194e42972b53d",
+  "bridge_sha256": {
+    "tool-less.patch.yml": "366b31108fd1b6793d2b958c9f1bc13b63faaabf040311a66e3be4d300a4a5f8",
+    "release-0.1.5rc1.effective.yml": "67e9fb6b73affa8041ef4896b4d96aba31e5a3b18d47ad1869eb1f88113f6a7d"
+  }
+}

@@ -1,0 +1,14 @@
+# AgentVerse reviewed overlay for official SDK/runtime 0.1.5rc1 only.
+# No tool producer or OS execution service may remain enabled.
+- id: persistent-bash
+  disabled: true
+- id: persistent-pwsh
+  disabled: true
+- id: terminal-bash
+  disabled: true
+- id: terminal-pwsh
+  disabled: true
+- id: pty
+  disabled: true
+- id: subprocess
+  disabled: true
