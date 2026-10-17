@@ -17,7 +17,10 @@ def snapshot(db_path):
         resources.append(dict(kind=kind,id=identity,workspace_id=workspace))
         value=json.loads(body)
         if kind=='run' and value.get('state') in ('completed','failed','cancelled'):
-            history.append(dict(id=identity,sha256=hashlib.sha256(body.encode()).hexdigest()))
+            legacy = {key:value.get(key) for key in ('id','workspace_id','state','input','output')}
+            legacy['tasks'] = [{key:task.get(key) for key in ('id','agent_id','state','input','output')} for task in value.get('tasks',[])]
+            canonical=json.dumps(legacy,sort_keys=True,separators=(',',':'))
+            history.append(dict(id=identity,sha256=hashlib.sha256(canonical.encode()).hexdigest()))
     events=[dict(seq=seq,sha256=hashlib.sha256(body.encode()).hexdigest()) for seq,body in db.execute('SELECT seq,body FROM events ORDER BY seq')]
     db.close()
     return dict(resources=resources,terminal_runs=history,events=events)
@@ -25,13 +28,11 @@ def snapshot(db_path):
 
 def verify(before,after):
     errors=[]
-    for key in ('resources','events'):
-        index={row['id' if key=='resources' else 'seq']:row for row in after[key]}
+    for key in ('resources','events','terminal_runs'):
+        index={row['seq' if key=='events' else 'id']:row for row in after[key]}
         for row in before[key]:
-            identity=row['id' if key=='resources' else 'seq']
+            identity=row['seq' if key=='events' else 'id']
             if index.get(identity)!=row:errors.append(f'{key} identity/ownership/history changed: {identity}')
-    # Schema additions may alter serialized terminal runs; compare only legacy
-    # history output via explicit application checks rather than rejecting additions.
     return dict(passed=not errors,errors=errors,baseline_counts={k:len(v) for k,v in before.items()},after_counts={k:len(v) for k,v in after.items()})
 
 
