@@ -9,3 +9,10 @@ Reference: inspected actual overview.png source screenshot with image tool; corr
 Validation planned: build/typecheck, adapter success/failure tests; independent QA localhost screenshots and parity fixture.
 Risks: upstream extra controls must be disabled or routed to real control UI; no mocked agents on live route.
 Handoff: pending. No completion claim before independent QA.
+
+## Milestone 2
+- Commit b9892de: usable host, exact renderer/art/layout, MIT/OFL provenance.
+- Self checks PASS: Vite production build, TypeScript7 typecheck, 8 tests (live projection/revision/error/replay plus snapshot-driven working/waiting/persistent-idle and no fake social coins/rewards).
+- Independent QA reported canvas zero pixel differences at1366x768 and1920x1080 against original pinned checkout with shared deterministic fixture; verdict pending full handoff.
+- Live character editor now uses Python-backed local access and inherited save/reset endpoints independently of unavailable upstream terminal. No fake demo, history, city or PTY calls exposed.
+- Followup acceptance furniture editor under investigation; upstream has art/layout/collision but no editor. Root coordinating persisted layout contract.

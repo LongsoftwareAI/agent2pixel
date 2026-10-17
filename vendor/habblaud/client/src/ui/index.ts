@@ -280,11 +280,11 @@ export function createUI(root: HTMLElement, store: OfficeStore, world: WorldApi,
   const renamer = new RoomRenamer(ctx);
   if (!integration.agentverse) ctx.renameRoom = (id, at) => renamer.open(id, at);
   if (!integration.agentverse) world.onRoomContextMenu?.((id, at) => renamer.open(id, at));
-  const empty = new EmptyState(ctx);
+  const empty = new EmptyState(ctx, !!integration.agentverse);
   const banner = new ConnectionBanner(ctx);
   const update = new UpdateBanner(store);
   const tip = new HoverTip(ctx);
-  const splash = new Splash(ctx);
+  const splash = new Splash(ctx, !!integration.agentverse);
   timelapse = new TimelapsePlayer(ctx);
   const scrim = h('div', { class: 'ui-scrim', attrs: { 'aria-hidden': 'true' }, on: { click: () => ctx.togglePanel('sidebar', false) } });
 

@@ -3,7 +3,7 @@ import { EN } from '../../../vendor/habblaud/shared/locales/en';
 import './style.css';
 registerDictionary('en', EN);
 // Upstream UI modules read translations at module evaluation; import after dictionary registration.
-const [{createWorld},{createUI},{setAccess},{AgentVerseStore},{OfficeStore}] = await Promise.all([
+const [{createWorld},{createUI},{setAccess,loadAccess},{AgentVerseStore},{OfficeStore}] = await Promise.all([
  import('../../../vendor/habblaud/client/src/world'),import('../../../vendor/habblaud/client/src/ui'),
  import('../../../vendor/habblaud/client/src/net/access'),import('./adapter'),import('../../../vendor/habblaud/client/src/net/store'),
 ]);
@@ -30,6 +30,7 @@ if(fixtureMode){
  store.applySnapshot(parityFixture());store.connection='open';
  const badge=document.createElement('div');badge.className='av-fixture';badge.textContent='TEST FIXTURE — no live execution';root.append(badge);
 } else {
+ await loadAccess();
  void (store as InstanceType<typeof AgentVerseStore>).bootstrap().catch(error=>{
   console.error('[AgentVerse office]',error);
   const alert=document.createElement('div');alert.className='av-error';alert.role='alert';alert.textContent='Office data unavailable. Reconnecting to local backend…';root.append(alert);

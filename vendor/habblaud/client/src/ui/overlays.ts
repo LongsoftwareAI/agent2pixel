@@ -26,7 +26,7 @@ export class Splash implements UiComponent {
   private readonly startedAt = performance.now();
   private tick: ReturnType<typeof setTimeout> | null = null;
 
-  constructor(private ctx: UiContext) {
+  constructor(private ctx: UiContext, private readonly agentverse = false) {
     this.text = h('p', { class: 'ui-splash__text', text: tr('Conectando ao escritório…') });
     this.el = h(
       'div',
@@ -48,7 +48,9 @@ export class Splash implements UiComponent {
     }
     const waited = performance.now() - this.startedAt;
     let text = tr('Conectando ao escritório…');
-    if (waited > DISCONNECTED_BANNER_MS) text = tr('O servidor do Habblaud não responde. Confira se ele está rodando (npm run dev ou npm start); seguimos tentando.');
+    if (this.agentverse && waited > DISCONNECTED_BANNER_MS) text = 'AgentVerse backend unavailable. Start the local Python API on port 8000; reconnecting…';
+    else if (this.agentverse && store.connection === 'closed') text = 'AgentVerse backend disconnected. Reconnecting…';
+    else if (waited > DISCONNECTED_BANNER_MS) text = tr('O servidor do Habblaud não responde. Confira se ele está rodando (npm run dev ou npm start); seguimos tentando.');
     else if (store.connection === 'closed') text = tr('Não foi possível conectar ao servidor do Habblaud. Tentando de novo…');
     setText(this.text, text);
     // Reavalia o texto mesmo sem eventos novos.
@@ -74,7 +76,7 @@ export class EmptyState implements UiComponent {
   private demoBtn: HTMLButtonElement;
   private busy = false;
 
-  constructor(private ctx: UiContext) {
+  constructor(private ctx: UiContext, private readonly agentverse = false) {
     const art = h('div', { class: 'ui-empty__art', attrs: { 'aria-hidden': 'true' } });
     const img = h('img', { attrs: { src: '/assets/illustrations/empty-office.png', alt: '', draggable: 'false' } });
     img.addEventListener('error', () => {
@@ -108,9 +110,9 @@ export class EmptyState implements UiComponent {
     const show = officeIsEmpty(this.ctx);
     setHidden(this.el, !show);
     if (!show || !snap) return;
-    setText(this.hint, emptyOfficeHint(snap.accounts));
+    setText(this.hint, this.agentverse ? 'Create an agent and workspace in the Agents control panel to begin.' : emptyOfficeHint(snap.accounts));
     this.demoBtn.disabled = this.busy;
-    setHidden(this.demoBtn, store.mock);
+    setHidden(this.demoBtn, store.mock || this.agentverse);
   }
 
   private async startDemo(): Promise<void> {

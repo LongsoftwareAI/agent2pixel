@@ -20,6 +20,19 @@ describe('live projection boundary',()=>{
   const fetcher=vi.fn().mockResolvedValue({ok:true,json:async()=>parityFixture()});await store.bootstrap(fetcher);
   expect(fetcher.mock.calls[0][0]).toBe('/api/office/snapshot');expect(connect).toHaveBeenCalledOnce();expect(store.snapshot?.agents).toHaveLength(4);
  });
+ it('replays stream from latest durable sequence after manual reconnect',()=>{
+  const urls:string[]=[];
+  class ES {
+   readyState=1;
+   constructor(url:string){urls.push(url);}
+   addEventListener(){}
+   close(){}
+  }
+  vi.stubGlobal('EventSource',ES);
+  const store=new AgentVerseStore();store.applySnapshot({...parityFixture(),seq:42} as never);store.connect();store.reconnectNow();
+  expect(urls).toEqual(['/api/office/stream?after=42','/api/office/stream?after=42']);
+  store.disconnect();vi.unstubAllGlobals();
+ });
  it('reports failed bootstrap and connects for recovery without demo fallback',async()=>{
   const store=new AgentVerseStore();const connect=vi.spyOn(store,'connect').mockImplementation(()=>{});
   await expect(store.bootstrap(vi.fn().mockResolvedValue({ok:false,status:503}))).rejects.toThrow('503');

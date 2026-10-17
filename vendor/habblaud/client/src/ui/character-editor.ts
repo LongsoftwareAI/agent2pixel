@@ -75,7 +75,7 @@ export class CharacterEditor {
     const store = this.ctx.store;
     const allowed = canEditCharacter(a, {
       live,
-      terminal: !!store.snapshot?.meta.terminal,
+      terminal: a.provider === 'agentverse' || !!store.snapshot?.meta.terminal,
       local: access().local,
       replaying: store.replaying,
       mock: store.mock,

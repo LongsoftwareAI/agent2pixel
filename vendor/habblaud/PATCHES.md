@@ -8,6 +8,10 @@ Upstream pin: faa1a012b5fbf632c66dc6801c5383e53a542406. Original copyright/licen
 - client/src/ui/topbar.ts: hide unavailable timelapse for AgentVerse agents.
 - client/src/ui/settings.ts: omit server demo toggle in AgentVerse integration. Appearance, daylight, language, sound remain original.
 - client/src/ui/widgets.ts: show actual main-agent role, not generic Principal badge.
-- client/src/world/api.ts, world/sim/sim.ts, world/index.ts: additive ambientSocial option (upstream default unchanged); live host disables fictional conversations, wallet/rewards/gatherings and social drawer data, while preserving idle walking/coffee animation. Explicit test fixture retains upstream default.
+- client/src/world/api.ts, client/src/world/sim/sim.ts, client/src/world/index.ts: additive ambientSocial option (upstream default unchanged); live host disables fictional conversations, wallet/rewards/gatherings and social drawer data, while preserving idle walking/coffee animation. Explicit test fixture retains upstream default.
 
 Renderer/art/layout geometry are unchanged. Node server, CLI, deployment and hooks were not vendored. Entire client/shared closure is retained because UI imports pure shared world contract helpers; unused city view is never mounted by AgentVerse.
+
+- client/src/ui/overlays.ts: additive AgentVerse empty/offline text; hide unsupported demo action. Default upstream behavior unchanged.
+
+- client/src/ui/character-editor.ts: AgentVerse character editing uses confirmed local access independently of unavailable upstream PTY/terminal feature. Original saveCharacter/resetCharacter HTTP methods remain unchanged; Python API validates and persists these requests.

@@ -632,7 +632,7 @@
       "upstream_sha256": "f755b5565e6d478dc96cd1e177297ec33d56bda71bb6e4e66fda643285606bba",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/character-editor.ts",
-      "vendored_sha256": "f755b5565e6d478dc96cd1e177297ec33d56bda71bb6e4e66fda643285606bba"
+      "vendored_sha256": "a4d3fa2d2982e34aaad6016fce32261e5d8bc01282db9f07b27e179e9009dd49"
     },
     {
       "path": "client/src/ui/character-model.test.ts",
@@ -807,7 +807,7 @@
       "upstream_sha256": "623c6cdc78af93b7c9bff3484614082b18b2892ccb4275781caf21a52686ed72",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/index.ts",
-      "vendored_sha256": "50a8b6e81b06b2b4d50e2ca7b6cc5a0d645a604da92e413e27d59d8337f59131"
+      "vendored_sha256": "5e3a31721a409d3c3a1eb97d6c3d1ed5832ad54346cd1f5c3a8002b5303f51d9"
     },
     {
       "path": "client/src/ui/markdown.test.ts",
@@ -856,7 +856,7 @@
       "upstream_sha256": "509bd7b9e73899923506ad27ca4b3f24d5e3c52d12a137921f42592e578ee23d",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/overlays.ts",
-      "vendored_sha256": "509bd7b9e73899923506ad27ca4b3f24d5e3c52d12a137921f42592e578ee23d"
+      "vendored_sha256": "b82c7beaabc39325b09359c7c7eb1f468abd500a6f610be2153b5841e3954b49"
     },
     {
       "path": "client/src/ui/permission.test.ts",

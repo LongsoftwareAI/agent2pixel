@@ -17,11 +17,16 @@ export function validateProjection(value: unknown): Projection {
 
 /** Original Habblaud store, with live AgentVerse transport only. Never enables DemoSimulator. */
 export class AgentVerseStore extends OfficeStore {
+  private sequence = 0;
   constructor() {
-    super({ mock: false, eventSource: url => new EventSource(url) });
+    let current: AgentVerseStore | undefined;
+    super({ mock: false, eventSource: url => new EventSource(`${url}?after=${current?.sequence ?? 0}`) });
+    current = this;
   }
   override applySnapshot(snapshot: OfficeSnapshot): void {
-    super.applySnapshot(validateProjection(snapshot));
+    const valid = validateProjection(snapshot);
+    super.applySnapshot(valid);
+    this.sequence = Math.max(this.sequence, valid.seq ?? valid.rev);
   }
   override async agentHistory(id: string) {
     return this.agent(id)?.recent ?? [];
