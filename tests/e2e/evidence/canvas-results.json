@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "actions": [
+    "real canvas furniture drag",
+    "backend save",
+    "selected agent assignment via canvas",
+    "reload persistence",
+    "integer zoom controls",
+    "grid toggle",
+    "middle pointer pan"
+  ],
+  "page_errors": []
+}
