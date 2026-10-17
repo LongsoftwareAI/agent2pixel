@@ -46,3 +46,5 @@ review_status_final: pending; not DONE.
 
 review_milestone: Architect requested centered floor, bounded pan and clearer zones. Implemented viewport/room/zoom recenter, pan bounds and visible zone threshold. Structural full-height wall deliberately omitted because server collision contract defines furniture only; decorative threshold/overhead partition remains passable. Re-ran strict typecheck PASS and model tests PASS 4/4. Independent browser review remains pending.
 Test isolation: renamed Node-only model checks to model.check.ts so frontend Vitest default discovery does not treat node:test cases as Vitest suites. Exact command remains explicit node --test. No tests removed or suppressed.
+
+qa_response: QA reported parent wheel hint without a wheel handler; added passive:false wheel listener for bounded integer zoom (1–3) and cleanup. Re-ran strict typecheck PASS and node checks PASS4. QA also reported bookshelf/sofa API catalog mismatch; coordinated Backend root-approved catalog extension, pending their commit; no API files changed by Pixel.
