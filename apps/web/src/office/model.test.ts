@@ -1,0 +1,8 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {backendState,pathfind,validateLayout,type OfficeRoom} from './model.ts';
+const room=():OfficeRoom=>({id:'room',workspace_id:'w',width:5,height:5,furniture:[],assignments:{agent:{x:4,y:2}}});
+test('BFS deterministic route avoids occupied tile',()=>{const r=room();r.furniture=[{id:'desk',asset_id:'desk',x:1,y:2,rotation:0}];const path=pathfind(r,{x:0,y:2},{x:4,y:2});assert.equal(path.length,6);assert.deepEqual(path.at(-1),{x:4,y:2});assert.ok(path.every(p=>p.x!==1||p.y!==2));assert.deepEqual(pathfind(r,{x:0,y:2},{x:4,y:2}),path);});
+test('blocked/out of bounds destination fails',()=>{const r=room();r.furniture=[{id:'desk',asset_id:'desk',x:1,y:2,rotation:0}];assert.deepEqual(pathfind(r,{x:0,y:2},{x:1,y:2}),[]);assert.deepEqual(pathfind(r,{x:0,y:2},{x:6,y:2}),[]);});
+test('layout accepts legal placement and rejects collision and blocked access',()=>{const r=room();assert.equal(validateLayout(r),null);r.furniture=[{id:'a',asset_id:'plant',x:2,y:1,rotation:0},{id:'b',asset_id:'plant',x:2,y:1,rotation:0}];assert.match(validateLayout(r)!,/chồng/);r.furniture=Array.from({length:5},(_,y)=>({id:`wall${y}`,asset_id:'desk',x:2,y,rotation:0}));assert.match(validateLayout(r)!,/đường/);r.furniture=[{id:'a',asset_id:'desk',x:-1,y:0,rotation:0}];assert.match(validateLayout(r)!,/ngoài/);});
+test('backend states preserve failure/completion and unknown status never succeeds',()=>{assert.equal(backendState('running'),'working');assert.equal(backendState('queued'),'waiting');assert.equal(backendState('failed'),'error');assert.equal(backendState('completed'),'completed');assert.equal(backendState('disconnected'),'idle');assert.equal(backendState('cancelled'),'idle');});
