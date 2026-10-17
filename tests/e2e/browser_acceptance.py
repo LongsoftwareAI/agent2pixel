@@ -3,6 +3,7 @@ python tests/e2e/browser_acceptance.py --base http://127.0.0.1:3000 --output /tm
 """
 import argparse
 import json
+import time
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 from browser_support import launch_browser
@@ -19,8 +20,9 @@ def main():
     with sync_playwright() as p:
         browser = launch_browser(p)
         context = browser.new_context(viewport={'width': 1366, 'height': 768}, device_scale_factor=1)
-        context.add_init_script('''window.__qaSockets=[];const OriginalWS=window.WebSocket;
-            window.WebSocket=class extends OriginalWS {constructor(...args){super(...args);window.__qaSockets.push(this)}};''')
+        context.add_init_script('''window.__qaSockets=[];window.__qaMessages=[];const OriginalWS=window.WebSocket;
+            window.WebSocket=class extends OriginalWS {constructor(...args){super(...args);window.__qaSockets.push(this);
+              this.addEventListener('message',event=>{try{const data=JSON.parse(event.data);if(data.schema_version===1)window.__qaMessages.push(data)}catch{}})}};''')
         page = context.new_page()
         page.on('pageerror', lambda e: errors.append({'kind': 'pageerror', 'text': str(e)}))
         page.on('console', lambda msg: errors.append({'kind': 'console.error', 'text': msg.text}) if msg.type == 'error' else None)
@@ -104,12 +106,27 @@ def main():
         data = page.request.get(args.base+'/api/bootstrap?workspace_id='+current_workspace).json()
         response = page.request.post(args.base+'/api/workflows/'+data['workflows'][0]['id']+'/runs',data={'input':'QA reconnect replay check'})
         assert response.ok, response.text()
+        missed_run=response.json()
+        deadline=time.monotonic()+1.0
+        missed_events=[]
+        while time.monotonic()<deadline:
+            missed_events=page.request.get(args.base+'/api/runs/'+missed_run['id']+'/events').json()
+            terminal=[event for event in missed_events if event['event_type']=='workflow.completed']
+            if terminal:
+                break
+            page.wait_for_timeout(25)
+        assert terminal, missed_events
+        missed_terminal=terminal[-1]
+        # Prove completion was persisted during the actual socket gap.
+        expect(page.get_by_text('Disconnected · đang kết nối lại',exact=True)).to_be_visible()
+        assert not page.evaluate('(id)=>window.__qaMessages.some(event=>event.run_id===id)',missed_run['id'])
         expect(page.get_by_text('Realtime đã kết nối', exact=True)).to_be_visible(timeout=10000)
-        expect(page.get_by_text('workflow.completed',exact=True).first).to_be_visible(timeout=10000)
-        steps.append('Actual runtime WebSocket disconnected badge, reconnect and persisted missed workflow event replay')
+        page.wait_for_function('expected=>window.__qaMessages.some(event=>event.run_id===expected.run_id && event.seq===expected.seq && event.event_type==="workflow.completed")',arg={'run_id':missed_run['id'],'seq':missed_terminal['seq']},timeout=10000)
+        expect(page.locator('.activity .event-row').filter(has_text='#'+str(missed_terminal['seq']))).to_contain_text('workflow.completed')
+        steps.append('Actual socket gap: new run completes while disconnected; exact new run_id/seq replayed via WebSocket and rendered in activity')
         context.close()
         browser.close()
-    evidence = {'base':args.base, 'steps':steps,'console_errors':errors,'http_failures':failures}
+    evidence = {'base':args.base, 'steps':steps,'console_errors':errors,'http_failures':failures, 'replayed_event':{'run_id':missed_run['id'],'seq':missed_terminal['seq'],'event_type':'workflow.completed'}}
     (out/'browser-results.json').write_text(json.dumps(evidence,indent=2,ensure_ascii=False))
     print(json.dumps(evidence,indent=2,ensure_ascii=False))
     assert not errors, errors

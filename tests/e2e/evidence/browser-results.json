@@ -7,8 +7,13 @@
     "Saved workflow validated, executed, backend completed Reviewer output visible",
     "Original furniture inserted, backend persisted, survived reload, baseline restored",
     "Settings MockBrain adapter test succeeds",
-    "Actual runtime WebSocket disconnected badge, reconnect and persisted missed workflow event replay"
+    "Actual socket gap: new run completes while disconnected; exact new run_id/seq replayed via WebSocket and rendered in activity"
   ],
   "console_errors": [],
-  "http_failures": []
+  "http_failures": [],
+  "replayed_event": {
+    "run_id": "fadd1a90-f6c8-48f5-8ce7-ac604098ad3f",
+    "seq": 76,
+    "event_type": "workflow.completed"
+  }
 }

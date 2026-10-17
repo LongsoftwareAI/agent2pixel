@@ -5,7 +5,7 @@
       "path": "tests/e2e/evidence/01-office-1366.png",
       "width": 1366,
       "height": 768,
-      "sha256": "8e99ff96de71df723625f3379299ff348610dce12ddc21090947c683c9ee32a8"
+      "sha256": "ceb4c445e2fc089001f22ae9998df5ee291e1e2ee4d0b3627d2e033da40b70ff"
     },
     {
       "path": "tests/e2e/evidence/02-agent-studio-1366.png",
@@ -23,13 +23,13 @@
       "path": "tests/e2e/evidence/03-workflow-1366.png",
       "width": 1366,
       "height": 768,
-      "sha256": "46c7b632b14604da1ef3d652eedce2bb9bee81e0fda27f8899988248fbe309f9"
+      "sha256": "94e78f81d19f76c2d8b855da54f8ae02cb55b334f9f0d4b979edce5ec51eef64"
     },
     {
       "path": "tests/e2e/evidence/04-run-monitor-1366.png",
       "width": 1366,
       "height": 768,
-      "sha256": "189db6c12e1439ec25f3c02c7c024b8de731f7a1fb5fcd3d1fa0fb9217bcde6e"
+      "sha256": "a81211e27b06da923155c72dc8102c59b5b6f105817e56a84da85d80a309ad0a"
     },
     {
       "path": "tests/e2e/evidence/04b-run-events-1366.png",
@@ -41,19 +41,19 @@
       "path": "tests/e2e/evidence/05-furniture-1366.png",
       "width": 1366,
       "height": 768,
-      "sha256": "a9968d04c43f2e315d4e66f095537b7cea4740f11367b6736e8b579b6b57b0ca"
+      "sha256": "fa34e46d12ce47c52db3657ed920b01757b4bab73e2718a642e47f12c83a2a60"
     },
     {
       "path": "tests/e2e/evidence/06-settings-1366.png",
       "width": 1366,
       "height": 768,
-      "sha256": "ebf3a6e7d3467450b276058654018f09e85b56f15c93a38075e5baa23d91f593"
+      "sha256": "39dbacf664ef43408694e4ec8c312c8a10df034b1e293327262dd624ed31b6f8"
     },
     {
       "path": "tests/e2e/evidence/07-office-1920.png",
       "width": 1920,
       "height": 1080,
-      "sha256": "7dc53afed2f9094b6988c3ec0996ca47477c977ed69511e987b55f1a3e4f5e68"
+      "sha256": "0128da29728a77d66121440b15998fdaea3cff15edd7571ff40640ba2c895f75"
     },
     {
       "path": "tests/e2e/evidence/08-furniture-interaction-1366.png",
