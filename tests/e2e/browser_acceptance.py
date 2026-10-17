@@ -1,0 +1,83 @@
+"""Real localhost browser interaction, screenshots, and console evidence.
+python tests/e2e/browser_acceptance.py --base http://127.0.0.1:3000 --output /tmp/agentverse-evidence
+"""
+import argparse
+import json
+from pathlib import Path
+from playwright.sync_api import sync_playwright, expect
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--base', default='http://127.0.0.1:3000')
+    parser.add_argument('--output', default='/tmp/agentverse-evidence')
+    args = parser.parse_args()
+    out = Path(args.output)
+    out.mkdir(parents=True, exist_ok=True)
+    errors, failures, steps = [], [], []
+    with sync_playwright() as p:
+        browser = p.chromium.launch(executable_path='/usr/bin/chromium', headless=True, args=['--no-sandbox'])
+        context = browser.new_context(viewport={'width': 1366, 'height': 768}, device_scale_factor=1)
+        page = context.new_page()
+        page.on('pageerror', lambda e: errors.append({'kind': 'pageerror', 'text': str(e)}))
+        page.on('console', lambda msg: errors.append({'kind': 'console.error', 'text': msg.text}) if msg.type == 'error' else None)
+        page.on('response', lambda response: failures.append({'url': response.url, 'status': response.status}) if response.status >= 400 else None)
+        page.goto(args.base, wait_until='networkidle')
+        expect(page.get_by_role('heading', name='Văn phòng', exact=True)).to_be_visible()
+        expect(page.locator('canvas')).to_be_visible()
+        expect(page.get_by_text('Realtime đã kết nối', exact=True)).to_be_visible()
+        page.screenshot(path=str(out/'01-office-1366.png'), full_page=True)
+        steps.append('Office loaded, interactive canvas and realtime connected')
+        page.get_by_role('button', name='Planner', exact=False).first.click()
+        expect(page.get_by_role('button', name='Mở Agent Studio ↗')).to_be_visible()
+        page.get_by_role('button', name='Mở Agent Studio ↗').click()
+        expect(page.get_by_label('Tên agent', exact=True)).to_have_value('Planner')
+        page.screenshot(path=str(out/'02-agent-studio-1366.png'), full_page=True)
+        original = page.get_by_label('System instructions').input_value()
+        page.get_by_label('System instructions').fill(original + '\nQA persistence probe')
+        page.get_by_role('button', name='Lưu agent', exact=True).click()
+        expect(page.get_by_role('status')).to_contain_text('Đã lưu agent')
+        page.reload(wait_until='networkidle')
+        page.get_by_role('button', name='Agent Studio', exact=False).click()
+        page.locator('.agent-list').get_by_role('button', name='Planner', exact=False).click()
+        expect(page.get_by_label('System instructions')).to_have_value(original + '\nQA persistence probe')
+        page.get_by_label('System instructions').fill(original)
+        page.get_by_role('button', name='Lưu agent', exact=True).click()
+        steps.append('Agent system instructions edited, persisted after reload, restored')
+        page.get_by_role('button', name='Workflow', exact=True).click()
+        expect(page.locator('.react-flow')).to_be_visible()
+        page.get_by_role('button', name='✓ Validate đã lưu', exact=True).click()
+        expect(page.get_by_role('status')).to_contain_text('Đồ thị hợp lệ')
+        page.screenshot(path=str(out/'03-workflow-1366.png'), full_page=True)
+        page.get_by_label('Đầu vào workflow').fill('QA browser acceptance: create release verification checklist')
+        page.get_by_role('button', name='▶ Chạy workflow đã lưu', exact=True).click()
+        expect(page.get_by_role('heading', name='Run Monitor', exact=True)).to_be_visible()
+        expect(page.locator('.run-list .run-row').first).to_contain_text('Hoàn thành', timeout=30000)
+        expect(page.get_by_text('[MockBrain deterministic] Review:', exact=False).first).to_be_visible(timeout=10000)
+        page.screenshot(path=str(out/'04-run-monitor-1366.png'), full_page=True)
+        steps.append('Saved workflow validated, executed, backend completed Reviewer output visible')
+        page.get_by_role('button', name='Nội thất', exact=False).click()
+        page.get_by_label('Thêm nội thất').select_option('plant')
+        page.get_by_role('button', name='Lưu layout', exact=True).click()
+        expect(page.get_by_role('status')).to_contain_text('Đã lưu layout')
+        page.screenshot(path=str(out/'05-furniture-1366.png'), full_page=True)
+        steps.append('Original furniture inserted and persisted through backend')
+        page.get_by_role('button', name='Cài đặt', exact=False).click()
+        page.get_by_role('button', name='Kiểm tra kết nối', exact=True).click()
+        expect(page.get_by_role('status')).to_contain_text('Provider connection succeeded')
+        page.screenshot(path=str(out/'06-settings-1366.png'), full_page=True)
+        steps.append('Settings MockBrain adapter test succeeds')
+        page.get_by_role('button', name='Văn phòng', exact=False).click()
+        page.set_viewport_size({'width':1920,'height':1080})
+        page.screenshot(path=str(out/'07-office-1920.png'), full_page=True)
+        context.close()
+        browser.close()
+    evidence = {'base':args.base, 'steps':steps,'console_errors':errors,'http_failures':failures}
+    (out/'browser-results.json').write_text(json.dumps(evidence,indent=2,ensure_ascii=False))
+    print(json.dumps(evidence,indent=2,ensure_ascii=False))
+    assert not errors, errors
+    assert not failures, failures
+
+
+if __name__ == '__main__':
+    main()

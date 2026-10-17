@@ -1,0 +1,33 @@
+{
+  "workspace_id": "24fec401-d3ec-42cf-81e8-15b75fa0f6ff",
+  "checks": [
+    {
+      "name": "health schema",
+      "result": "PASS"
+    },
+    {
+      "name": "seed graph validates",
+      "result": "PASS"
+    },
+    {
+      "name": "actual persisted handoff, message envelope and replay",
+      "result": "PASS"
+    },
+    {
+      "name": "cyclic graph rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "workspace traversal denied",
+      "result": "PASS"
+    },
+    {
+      "name": "metadata does not expose raw secret",
+      "result": "PASS"
+    },
+    {
+      "name": "unknown provider rejected",
+      "result": "PASS"
+    }
+  ]
+}
