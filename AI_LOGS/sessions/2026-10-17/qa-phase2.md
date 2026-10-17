@@ -34,3 +34,9 @@ Copied/Adapted/Inspiration-only: no application changes; test-only source compar
 Visual evidence: UNRUN
 Deviation from reference: pending independent capture
 Reviewer decision: PENDING
+
+## Comparator preparation milestone
+- Added strict zero-tolerance visual comparator/contact-sheet writer with SHA256 input evidence and exact dimensions. No masks or adjustable threshold. Its regression checks reject one-pixel deltas and viewport mismatch.
+- PASS `python tests/phase2/test_compare_visual.py`:2 checks using existing host Pillow12.3.0. No dependency installed.
+- Initial `/workspace/agent2pixel/.venv/bin/python -m pytest ...` collection FAIL: that venv lacks Pillow. Host Python has Pillow but lacks pytest; helper regression uses standard-library unittest to avoid changing shared dependencies.
+- Application visual gate remains UNRUN; comparator tests are test-tool validation only. Integrator must review QA code separately.
