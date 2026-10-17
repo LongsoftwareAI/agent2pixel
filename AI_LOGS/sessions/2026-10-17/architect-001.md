@@ -1,6 +1,6 @@
 # Architect/Integrator session
 
-- timestamp: 2026-10-17T00:00:00+07:00 (session date; exact milestones in command evidence)
+- timestamp: 2026-10-17T17:44:00.736029+07:00
 - session_id: architect-001
 - agent_id: root
 - agent_role: Architect/Integrator
@@ -35,3 +35,6 @@
 - Visual evidence: pending reference inspection and later localhost captures
 - Deviation from reference: light dashboard and original procedural art
 - Reviewer decision: pending
+
+## Integration checkpoint
+Research and original implementations cherry-picked into candidate only; approval not assumed. Actual checks: backend16 PASS including live uvicorn WebSocket; frontend8 PASS; pixel4 PASS; Ruff and ESLint PASS; TypeScript/Vite build PASS. Independent QA browser found missing websocket dependency, favicon404 and CSS/backing coordinate mismatch; owners fixed and retest pending. Docker initial nested DNS/CA failures corrected with proxy hostname mapping and optional BuildKit CA secret; TLS remains enabled. Both images built; separate loopback13000/18000 Compose instance healthy; independent API script7PASS via web proxy. Default dev launcher runs3000/8000. Installer first failed unwritable default npm cache; corrected to writable /tmp cache and reinstalled using unchanged integrity lockfile successfully.
