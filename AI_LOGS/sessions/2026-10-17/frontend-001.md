@@ -42,3 +42,9 @@
 - changes: index.html original inline SVG favicon; App screen class; scoped compact Office/Furniture header and stats; 370px office host fits fourteen 24px rows and upper wall at zoom1.
 - tests: npm run lint PASS; npm test PASS8; npm run build PASS (existing chunk-size advisory).
 - review_status: pending QA rerun/browser screenshots; no console filtering or suppression added.
+
+## QA revision 2 — stale workspace isolation
+- timestamp: 2026-10-17T10:46:00Z; status: READY_FOR_REVIEW
+- changes: App workspace-keyed component lifecycle clears all room/agents/runs/documents/memory/audit/filter and selections on switch. Async API guard rejects late responses for inactive workspace. WebSocket callbacks reject disposed/foreign workspace events before seq or connection mutation; cleanup does not mutate new workspace connection.
+- tests: npm run lint PASS; npm test PASS9 including deferred workspace A response after B loaded and old socket task.completed/onopen ignored; npm run build PASS. Race unit uses mocked Pixi canvas (browser rendering still independently tested by QA).
+- review_status: pending independent QA; known bundle advisory unchanged.
