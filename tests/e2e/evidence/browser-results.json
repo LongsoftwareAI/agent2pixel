@@ -8,11 +8,6 @@
     "Settings MockBrain adapter test succeeds",
     "Actual runtime WebSocket disconnected badge, reconnect and persisted missed workflow event replay"
   ],
-  "console_errors": [
-    {
-      "kind": "console.error",
-      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
-    }
-  ],
+  "console_errors": [],
   "http_failures": []
 }

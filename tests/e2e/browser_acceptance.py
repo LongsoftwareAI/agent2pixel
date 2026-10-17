@@ -5,6 +5,7 @@ import argparse
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
+from browser_support import launch_browser
 
 
 def main():
@@ -16,7 +17,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     errors, failures, steps = [], [], []
     with sync_playwright() as p:
-        browser = p.chromium.launch(executable_path='/usr/bin/chromium', headless=True, args=['--no-sandbox'])
+        browser = launch_browser(p)
         context = browser.new_context(viewport={'width': 1366, 'height': 768}, device_scale_factor=1)
         context.add_init_script('''window.__qaSockets=[];const OriginalWS=window.WebSocket;
             window.WebSocket=class extends OriginalWS {constructor(...args){super(...args);window.__qaSockets.push(this)}};''')
@@ -50,6 +51,18 @@ def main():
         expect(page.locator('.react-flow')).to_be_visible()
         page.get_by_role('button', name='✓ Validate đã lưu', exact=True).click()
         expect(page.get_by_role('status')).to_contain_text('Đồ thị hợp lệ')
+        planner_node=page.locator('.react-flow__node[data-id="planner"]')
+        node_box=planner_node.bounding_box()
+        page.mouse.move(node_box['x']+node_box['width']/2,node_box['y']+node_box['height']/2)
+        page.mouse.down();page.mouse.move(node_box['x']+node_box['width']/2+24,node_box['y']+node_box['height']/2+20,steps=6);page.mouse.up()
+        page.get_by_role('button',name='Lưu đồ thị',exact=True).click()
+        expect(page.get_by_role('status')).to_contain_text('Đã lưu phiên bản workflow mới')
+        chosen_workflow=page.get_by_label('Workflow',exact=True).input_value()
+        current_workspace=page.get_by_label('Workspace',exact=True).input_value()
+        saved_workflows=page.request.get(args.base+'/api/workflows?workspace_id='+current_workspace).json()
+        saved_graph=next(w for w in saved_workflows if w['id']==chosen_workflow)['graph']
+        assert next(n for n in saved_graph['nodes'] if n['id']=='planner').get('position')
+        steps.append('Real workflow node drag and saved graph position persisted through API')
         page.screenshot(path=str(out/'03-workflow-1366.png'), full_page=False)
         page.get_by_label('Đầu vào workflow').fill('QA browser acceptance: create release verification checklist')
         page.get_by_role('button', name='▶ Chạy workflow đã lưu', exact=True).click()

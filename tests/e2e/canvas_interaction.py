@@ -2,11 +2,12 @@
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
+from browser_support import launch_browser
 
 BASE='http://127.0.0.1:3000'
 OUT=Path(__file__).parent/'evidence'
 with sync_playwright() as p:
-    browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
+    browser=launch_browser(p)
     page=browser.new_page(viewport={'width':1366,'height':768})
     errors=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
@@ -21,8 +22,8 @@ with sync_playwright() as p:
     def tile(x,y):
         box=canvas.bounding_box()
         size=canvas.evaluate('(c)=>({width:c.width,height:c.height})')
-        return (box['x']+max(12,(size['width']-20*24)//2)+(x+.5)*24,
-                box['y']+max(30,(size['height']-14*24)//2)+(y+.5)*24)
+        return (box['x']+(max(12,(size['width']-20*24)//2)+(x+.5)*24)*box['width']/size['width'],
+                box['y']+(max(58,(size['height']-14*24)//2)+(y+.5)*24)*box['height']/size['height'])
     desk=room['furniture'][0]
     source=tile(desk['x'],desk['y']);target=tile(desk['x']+1,desk['y'])
     page.mouse.move(*source);page.mouse.down();page.mouse.move(*target,steps=8);page.mouse.up()
