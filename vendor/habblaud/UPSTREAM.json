@@ -1,0 +1,2346 @@
+{
+  "repository": "https://github.com/marmottajr/habblaud",
+  "commit": "faa1a012b5fbf632c66dc6801c5383e53a542406",
+  "copyright": "2026 M\u00e1rcio Junior",
+  "scope": "client and shared only; no Node server/CLI imported",
+  "files": [
+    {
+      "path": "LICENSE",
+      "upstream_sha256": "5de137c2c07bd58a24cfaa423221fee7ef4a5955b140f4858c8e8169ae1dee9a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/LICENSE",
+      "vendored_sha256": "5de137c2c07bd58a24cfaa423221fee7ef4a5955b140f4858c8e8169ae1dee9a"
+    },
+    {
+      "path": "client/art-preview.html",
+      "upstream_sha256": "572d8a9c6d803b0e34bac83d9718cd0fb1201d22162c788e2c77df8a32c5a5f4",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/art-preview.html",
+      "vendored_sha256": "572d8a9c6d803b0e34bac83d9718cd0fb1201d22162c788e2c77df8a32c5a5f4"
+    },
+    {
+      "path": "client/index.html",
+      "upstream_sha256": "b2c6d09edb449817c39232243cb178fc06a109ef331730cb2496af14594b0c24",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/index.html",
+      "vendored_sha256": "b2c6d09edb449817c39232243cb178fc06a109ef331730cb2496af14594b0c24"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-abstract.png",
+      "upstream_sha256": "6cdd1058dff101dd25d8e84576a9b1f9136910093d726aaea041a1fbbdada09e",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-abstract.png",
+      "vendored_sha256": "6cdd1058dff101dd25d8e84576a9b1f9136910093d726aaea041a1fbbdada09e"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-beach.png",
+      "upstream_sha256": "8e3c7e4651c0e364ee158d3a71fdae9da102717606b449dcea35fdf5b3edad81",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-beach.png",
+      "vendored_sha256": "8e3c7e4651c0e364ee158d3a71fdae9da102717606b449dcea35fdf5b3edad81"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-cat.png",
+      "upstream_sha256": "d3f2c34df218514d452f58431468d677832e9110b92202ef42bfd6b6491b5210",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-cat.png",
+      "vendored_sha256": "d3f2c34df218514d452f58431468d677832e9110b92202ef42bfd6b6491b5210"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-city-night.png",
+      "upstream_sha256": "246b3e210f0e7cef511790b0fce3e8345b0902de78c29b4299d94662ffcbf6e1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-city-night.png",
+      "vendored_sha256": "246b3e210f0e7cef511790b0fce3e8345b0902de78c29b4299d94662ffcbf6e1"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-mountains.png",
+      "upstream_sha256": "06718279927fc091008040e4c96eec1ca6845e5759d8f8cee28b4ed851e7c5ca",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-mountains.png",
+      "vendored_sha256": "06718279927fc091008040e4c96eec1ca6845e5759d8f8cee28b4ed851e7c5ca"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-rio.png",
+      "upstream_sha256": "9831c0421b28bbbbb346ae49acccc55b38ee21cf65df0dc2888045dc1ceb41f9",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-rio.png",
+      "vendored_sha256": "9831c0421b28bbbbb346ae49acccc55b38ee21cf65df0dc2888045dc1ceb41f9"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-sunflowers.png",
+      "upstream_sha256": "4aabf5f8630b364c3173c5788d5b74f9c3d01200f821d5f3ce6673ab91f50587",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-sunflowers.png",
+      "vendored_sha256": "4aabf5f8630b364c3173c5788d5b74f9c3d01200f821d5f3ce6673ab91f50587"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-wave.png",
+      "upstream_sha256": "1e1cfcf00ec26f69fec450bd798f574a768de07806bfcc7058c35020031d8172",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-wave.png",
+      "vendored_sha256": "1e1cfcf00ec26f69fec450bd798f574a768de07806bfcc7058c35020031d8172"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-wide-aurora.png",
+      "upstream_sha256": "91a0713c5def2fbd0a69c53c448e8c34b4c2769702a3c52a14dc4d31c47d7874",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-wide-aurora.png",
+      "vendored_sha256": "91a0713c5def2fbd0a69c53c448e8c34b4c2769702a3c52a14dc4d31c47d7874"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-wide-color-fields.png",
+      "upstream_sha256": "d52d97934c4a767f3a1d2afc9ac5fc33c4bdff1787047ae6bbef2d3d6fab7d4d",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-wide-color-fields.png",
+      "vendored_sha256": "d52d97934c4a767f3a1d2afc9ac5fc33c4bdff1787047ae6bbef2d3d6fab7d4d"
+    },
+    {
+      "path": "client/public/assets/art/framed/painting-wide-forest-lake.png",
+      "upstream_sha256": "f814b14440685ab6002a65297b94eba510030933bef71873d832763742956984",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/framed/painting-wide-forest-lake.png",
+      "vendored_sha256": "f814b14440685ab6002a65297b94eba510030933bef71873d832763742956984"
+    },
+    {
+      "path": "client/public/assets/art/painting-abstract.png",
+      "upstream_sha256": "a64b3ec112ad52d6c54ab8cd28a1ece2db4a9753e6366c2ee007209bfd2d4581",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-abstract.png",
+      "vendored_sha256": "a64b3ec112ad52d6c54ab8cd28a1ece2db4a9753e6366c2ee007209bfd2d4581"
+    },
+    {
+      "path": "client/public/assets/art/painting-beach.png",
+      "upstream_sha256": "1a8bdfb290ce56b6c106a0f1a58af84d3dc0d7898e81cb40f19dc52bf9c13076",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-beach.png",
+      "vendored_sha256": "1a8bdfb290ce56b6c106a0f1a58af84d3dc0d7898e81cb40f19dc52bf9c13076"
+    },
+    {
+      "path": "client/public/assets/art/painting-cat.png",
+      "upstream_sha256": "3e784bb880da0d137395ee04e7c2e96d7d9951a70d467a8a6d0554794efc075b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-cat.png",
+      "vendored_sha256": "3e784bb880da0d137395ee04e7c2e96d7d9951a70d467a8a6d0554794efc075b"
+    },
+    {
+      "path": "client/public/assets/art/painting-city-night.png",
+      "upstream_sha256": "102377d4d3213d9d1c98f7c267410d757b0ac056be40d53225976ee35f7c4b39",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-city-night.png",
+      "vendored_sha256": "102377d4d3213d9d1c98f7c267410d757b0ac056be40d53225976ee35f7c4b39"
+    },
+    {
+      "path": "client/public/assets/art/painting-mountains.png",
+      "upstream_sha256": "ae890a113be3d910665a944560a16d9fca0262777725a8ee1165529c4c721acf",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-mountains.png",
+      "vendored_sha256": "ae890a113be3d910665a944560a16d9fca0262777725a8ee1165529c4c721acf"
+    },
+    {
+      "path": "client/public/assets/art/painting-rio.png",
+      "upstream_sha256": "788f6463ec77ee82a787ff6737c79401d1665d4c2e97fb7440bace5630dc927c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-rio.png",
+      "vendored_sha256": "788f6463ec77ee82a787ff6737c79401d1665d4c2e97fb7440bace5630dc927c"
+    },
+    {
+      "path": "client/public/assets/art/painting-sunflowers.png",
+      "upstream_sha256": "1d4dd4530137c15d2af16db60a1ffc5db58ff01c667351c43a08912445996558",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-sunflowers.png",
+      "vendored_sha256": "1d4dd4530137c15d2af16db60a1ffc5db58ff01c667351c43a08912445996558"
+    },
+    {
+      "path": "client/public/assets/art/painting-wave.png",
+      "upstream_sha256": "4a52d2b1e9bbca55e3247e82e1d88a91b932a7b98ae4ad0453e5e97768708939",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-wave.png",
+      "vendored_sha256": "4a52d2b1e9bbca55e3247e82e1d88a91b932a7b98ae4ad0453e5e97768708939"
+    },
+    {
+      "path": "client/public/assets/art/painting-wide-aurora.png",
+      "upstream_sha256": "7395486ea17a36597beffc21441f265eec8b8d23a2b5302315204f471ccb1666",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-wide-aurora.png",
+      "vendored_sha256": "7395486ea17a36597beffc21441f265eec8b8d23a2b5302315204f471ccb1666"
+    },
+    {
+      "path": "client/public/assets/art/painting-wide-color-fields.png",
+      "upstream_sha256": "0564524adcd6cea69ceca3d49a94b8d882fa45fddad983bdb5048809c4340212",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-wide-color-fields.png",
+      "vendored_sha256": "0564524adcd6cea69ceca3d49a94b8d882fa45fddad983bdb5048809c4340212"
+    },
+    {
+      "path": "client/public/assets/art/painting-wide-forest-lake.png",
+      "upstream_sha256": "351969c6a9f5a6241b27ccf35465a67bae0dd79c08008f225ae5077a9f35d666",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/painting-wide-forest-lake.png",
+      "vendored_sha256": "351969c6a9f5a6241b27ccf35465a67bae0dd79c08008f225ae5077a9f35d666"
+    },
+    {
+      "path": "client/public/assets/art/poster-bug.png",
+      "upstream_sha256": "9e275ff405f90f4b74bbec1cd784ac088823b3db9acb8d015dda181e11d06149",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/poster-bug.png",
+      "vendored_sha256": "9e275ff405f90f4b74bbec1cd784ac088823b3db9acb8d015dda181e11d06149"
+    },
+    {
+      "path": "client/public/assets/art/poster-cat.png",
+      "upstream_sha256": "4d6d8d1dd1767c3bc7fd02580a7b0f29f334afb10bcb5ff0b7ce718e778840c2",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/poster-cat.png",
+      "vendored_sha256": "4d6d8d1dd1767c3bc7fd02580a7b0f29f334afb10bcb5ff0b7ce718e778840c2"
+    },
+    {
+      "path": "client/public/assets/art/poster-code.png",
+      "upstream_sha256": "374fc09809b9f11f45db2c83d1c3ca8e91ab6d5b2ab2ceaeac9144615adb5d61",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/poster-code.png",
+      "vendored_sha256": "374fc09809b9f11f45db2c83d1c3ca8e91ab6d5b2ab2ceaeac9144615adb5d61"
+    },
+    {
+      "path": "client/public/assets/art/poster-coffee.png",
+      "upstream_sha256": "731b3220fae6b5b68d49fda8c9c0d2f0953dc9ffe11da1b69bb07da868499d5f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/poster-coffee.png",
+      "vendored_sha256": "731b3220fae6b5b68d49fda8c9c0d2f0953dc9ffe11da1b69bb07da868499d5f"
+    },
+    {
+      "path": "client/public/assets/art/poster-rocket.png",
+      "upstream_sha256": "3595e357962fa48ed3c40fc05d7c55f228f94bf73d4b0564e5bedf744a4cff5e",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/poster-rocket.png",
+      "vendored_sha256": "3595e357962fa48ed3c40fc05d7c55f228f94bf73d4b0564e5bedf744a4cff5e"
+    },
+    {
+      "path": "client/public/assets/art/poster-ship-it.png",
+      "upstream_sha256": "aad5de690975174140a27d39a00c2edcc03b05597f3bb0513d09dd327bd29df3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/art/poster-ship-it.png",
+      "vendored_sha256": "aad5de690975174140a27d39a00c2edcc03b05597f3bb0513d09dd327bd29df3"
+    },
+    {
+      "path": "client/public/assets/brand/apple-touch-icon.png",
+      "upstream_sha256": "b142d7ac61378194152df4ef16cae547c999da55bd0b60d15fe7864c6023909d",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/apple-touch-icon.png",
+      "vendored_sha256": "b142d7ac61378194152df4ef16cae547c999da55bd0b60d15fe7864c6023909d"
+    },
+    {
+      "path": "client/public/assets/brand/favicon-16.png",
+      "upstream_sha256": "3674cec879ae4b63abd3fc998e9d924860d303281898ac39f7d42c87a14a0153",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/favicon-16.png",
+      "vendored_sha256": "3674cec879ae4b63abd3fc998e9d924860d303281898ac39f7d42c87a14a0153"
+    },
+    {
+      "path": "client/public/assets/brand/favicon-32.png",
+      "upstream_sha256": "8e59ba72625928486424ec367ebfe3297f582f618e48e0a61d1835febec42b2f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/favicon-32.png",
+      "vendored_sha256": "8e59ba72625928486424ec367ebfe3297f582f618e48e0a61d1835febec42b2f"
+    },
+    {
+      "path": "client/public/assets/brand/icon-192.png",
+      "upstream_sha256": "64fdd88b509bd5306905ca25728cdb68c5cab97be4deb8b8369758a1e893bef3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/icon-192.png",
+      "vendored_sha256": "64fdd88b509bd5306905ca25728cdb68c5cab97be4deb8b8369758a1e893bef3"
+    },
+    {
+      "path": "client/public/assets/brand/icon-512.png",
+      "upstream_sha256": "30e71f5b25f475fc886674b0cfda3e307ef4f1ecff97ea68f5f2e983a1669af3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/icon-512.png",
+      "vendored_sha256": "30e71f5b25f475fc886674b0cfda3e307ef4f1ecff97ea68f5f2e983a1669af3"
+    },
+    {
+      "path": "client/public/assets/brand/logo-detailed.png",
+      "upstream_sha256": "32e31da00ea396b186d2fa04abd20a1ea095cdfd5f90af235d62e7dd02bc2bf4",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/logo-detailed.png",
+      "vendored_sha256": "32e31da00ea396b186d2fa04abd20a1ea095cdfd5f90af235d62e7dd02bc2bf4"
+    },
+    {
+      "path": "client/public/assets/brand/logo-mark.png",
+      "upstream_sha256": "8e59ba72625928486424ec367ebfe3297f582f618e48e0a61d1835febec42b2f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/logo-mark.png",
+      "vendored_sha256": "8e59ba72625928486424ec367ebfe3297f582f618e48e0a61d1835febec42b2f"
+    },
+    {
+      "path": "client/public/assets/brand/logo-mark@4x.png",
+      "upstream_sha256": "4d34d9be1f72c96c83e3e7711f4f84c343d22da40de185a7996b11fb34dc6c67",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/logo-mark@4x.png",
+      "vendored_sha256": "4d34d9be1f72c96c83e3e7711f4f84c343d22da40de185a7996b11fb34dc6c67"
+    },
+    {
+      "path": "client/public/assets/brand/signage.png",
+      "upstream_sha256": "ac5ed77cd068397804f504ed4197fb008e30839c8deaf834395fbf1cfce931a5",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/signage.png",
+      "vendored_sha256": "ac5ed77cd068397804f504ed4197fb008e30839c8deaf834395fbf1cfce931a5"
+    },
+    {
+      "path": "client/public/assets/brand/signage@4x.png",
+      "upstream_sha256": "ea75be25cecb6f5364b578c1e399d5c3987c5f8c6a2c6aac9d946980838078f4",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/brand/signage@4x.png",
+      "vendored_sha256": "ea75be25cecb6f5364b578c1e399d5c3987c5f8c6a2c6aac9d946980838078f4"
+    },
+    {
+      "path": "client/public/assets/illustrations/empty-office.png",
+      "upstream_sha256": "298c0066b8d93e629a010ba4a7a13e9e8ca12a9354a89c8be3a270a1bc9fee98",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/illustrations/empty-office.png",
+      "vendored_sha256": "298c0066b8d93e629a010ba4a7a13e9e8ca12a9354a89c8be3a270a1bc9fee98"
+    },
+    {
+      "path": "client/public/assets/manifest.json",
+      "upstream_sha256": "64d391c2bbe0e16af691492842e682d7f79682df080c2675dc4dbfa21bde0078",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/manifest.json",
+      "vendored_sha256": "64d391c2bbe0e16af691492842e682d7f79682df080c2675dc4dbfa21bde0078"
+    },
+    {
+      "path": "client/public/assets/og-image.png",
+      "upstream_sha256": "642541e2780002f2fb6ff37412afb6f31b63c7d2054c85128dbc3e63469f2080",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/assets/og-image.png",
+      "vendored_sha256": "642541e2780002f2fb6ff37412afb6f31b63c7d2054c85128dbc3e63469f2080"
+    },
+    {
+      "path": "client/public/manifest.webmanifest",
+      "upstream_sha256": "0bc6bbdee8141fe7c4f47317c68a750d45786d39ef60ee3363627b23d2f50893",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/public/manifest.webmanifest",
+      "vendored_sha256": "0bc6bbdee8141fe7c4f47317c68a750d45786d39ef60ee3363627b23d2f50893"
+    },
+    {
+      "path": "client/src/app.ts",
+      "upstream_sha256": "60f0561ac6216595d9903c6a30632f59ca8a6f1075b1ce888cf5e2401bbedcbe",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/app.ts",
+      "vendored_sha256": "60f0561ac6216595d9903c6a30632f59ca8a6f1075b1ce888cf5e2401bbedcbe"
+    },
+    {
+      "path": "client/src/art/api.ts",
+      "upstream_sha256": "66bf815e20559ec0823858b4e4f85c91d974c4abe41acc06f16c1e690a05bae7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/api.ts",
+      "vendored_sha256": "66bf815e20559ec0823858b4e4f85c91d974c4abe41acc06f16c1e690a05bae7"
+    },
+    {
+      "path": "client/src/art/art.test.ts",
+      "upstream_sha256": "6b1d2f5c91f693fdecb2070776d9af76dce45b6aa9e79edd065a647913024a47",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/art.test.ts",
+      "vendored_sha256": "6b1d2f5c91f693fdecb2070776d9af76dce45b6aa9e79edd065a647913024a47"
+    },
+    {
+      "path": "client/src/art/character/appearance-move.test.ts",
+      "upstream_sha256": "ca1224003b718ded99ead0d6731e0f51de86605f7c87da22a5786012c46514da",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/character/appearance-move.test.ts",
+      "vendored_sha256": "ca1224003b718ded99ead0d6731e0f51de86605f7c87da22a5786012c46514da"
+    },
+    {
+      "path": "client/src/art/character/appearance.ts",
+      "upstream_sha256": "9b16e584997c20a737d67ce546898f2d49099def444f5a0ee11879ed32032487",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/character/appearance.ts",
+      "vendored_sha256": "9b16e584997c20a737d67ce546898f2d49099def444f5a0ee11879ed32032487"
+    },
+    {
+      "path": "client/src/art/character/hair.ts",
+      "upstream_sha256": "945431f2ec343a27936328dbcf6f285d6112f2cd49b9480d9015b897cdc57948",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/character/hair.ts",
+      "vendored_sha256": "945431f2ec343a27936328dbcf6f285d6112f2cd49b9480d9015b897cdc57948"
+    },
+    {
+      "path": "client/src/art/character/render.ts",
+      "upstream_sha256": "f14c416982fb0a8ab1697588bb2df795c50c8edb493435d8d58186e36f4f2af6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/character/render.ts",
+      "vendored_sha256": "f14c416982fb0a8ab1697588bb2df795c50c8edb493435d8d58186e36f4f2af6"
+    },
+    {
+      "path": "client/src/art/core/color.ts",
+      "upstream_sha256": "fe2bf165690317c081dd5a23514476b3f97d1eecd126a3e3ed2ac0f970c2c122",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/core/color.ts",
+      "vendored_sha256": "fe2bf165690317c081dd5a23514476b3f97d1eecd126a3e3ed2ac0f970c2c122"
+    },
+    {
+      "path": "client/src/art/core/pixbuf.ts",
+      "upstream_sha256": "ba7d8ee74aec32fe064e7e7b6349eab9a4e3f8ad876d3959c19dc0318163a6a3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/core/pixbuf.ts",
+      "vendored_sha256": "ba7d8ee74aec32fe064e7e7b6349eab9a4e3f8ad876d3959c19dc0318163a6a3"
+    },
+    {
+      "path": "client/src/art/core/sprite.ts",
+      "upstream_sha256": "335182d1fd57143496848cd58776bc8ceafbf0d4e5ff3a77903fa298207e766b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/core/sprite.ts",
+      "vendored_sha256": "335182d1fd57143496848cd58776bc8ceafbf0d4e5ff3a77903fa298207e766b"
+    },
+    {
+      "path": "client/src/art/dynamic.ts",
+      "upstream_sha256": "ec61930f10d1e7a3b9de0e279b7371eebb328c892a412283df754caa706de7c6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/dynamic.ts",
+      "vendored_sha256": "ec61930f10d1e7a3b9de0e279b7371eebb328c892a412283df754caa706de7c6"
+    },
+    {
+      "path": "client/src/art/furniture/common.ts",
+      "upstream_sha256": "078a58c2b23031f5423cb7495bef68c87c8691b0c947f9aeb235abc82cdd3047",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/furniture/common.ts",
+      "vendored_sha256": "078a58c2b23031f5423cb7495bef68c87c8691b0c947f9aeb235abc82cdd3047"
+    },
+    {
+      "path": "client/src/art/furniture/index.ts",
+      "upstream_sha256": "0ebbfdab383a5fde98dc62e2d4813d188f109b56d09cc2cf4dd4dd8553ee3397",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/furniture/index.ts",
+      "vendored_sha256": "0ebbfdab383a5fde98dc62e2d4813d188f109b56d09cc2cf4dd4dd8553ee3397"
+    },
+    {
+      "path": "client/src/art/furniture/kit.ts",
+      "upstream_sha256": "0aa0367f5e246a7331d1172b0176d805e3c32f3d21e0112fbddfdd3d4a5c8f1f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/furniture/kit.ts",
+      "vendored_sha256": "0aa0367f5e246a7331d1172b0176d805e3c32f3d21e0112fbddfdd3d4a5c8f1f"
+    },
+    {
+      "path": "client/src/art/furniture/office.ts",
+      "upstream_sha256": "26583490d210f0228f29254ae488a0c63d5b844e6b3da699438340568ff3af65",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/furniture/office.ts",
+      "vendored_sha256": "26583490d210f0228f29254ae488a0c63d5b844e6b3da699438340568ff3af65"
+    },
+    {
+      "path": "client/src/art/furniture/wall.ts",
+      "upstream_sha256": "8a08485c3a511d389ab6e4286710ae90fe6f7be9868069842209edb0a03ef5aa",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/furniture/wall.ts",
+      "vendored_sha256": "8a08485c3a511d389ab6e4286710ae90fe6f7be9868069842209edb0a03ef5aa"
+    },
+    {
+      "path": "client/src/art/icons.ts",
+      "upstream_sha256": "a13a61f2d5e58579f99bdfe3e869a28faddd66e30442f8d6ae57e2bd2c22cbaa",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/icons.ts",
+      "vendored_sha256": "a13a61f2d5e58579f99bdfe3e869a28faddd66e30442f8d6ae57e2bd2c22cbaa"
+    },
+    {
+      "path": "client/src/art/index.ts",
+      "upstream_sha256": "d4b9e9839dcf1af377cba2e0ebab480b9afcff669fbb4fc849dabd8e1dc88243",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/index.ts",
+      "vendored_sha256": "d4b9e9839dcf1af377cba2e0ebab480b9afcff669fbb4fc849dabd8e1dc88243"
+    },
+    {
+      "path": "client/src/art/pixelfont.ts",
+      "upstream_sha256": "2803eb51f27414a08f546facedbb47243ad83ded409e729826bece0470c5b261",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/pixelfont.ts",
+      "vendored_sha256": "2803eb51f27414a08f546facedbb47243ad83ded409e729826bece0470c5b261"
+    },
+    {
+      "path": "client/src/art/preview.ts",
+      "upstream_sha256": "02cbbedad6073454842caf7cf8a10735b4cdbcc2523ce72a0ece5b8dc129130c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/preview.ts",
+      "vendored_sha256": "02cbbedad6073454842caf7cf8a10735b4cdbcc2523ce72a0ece5b8dc129130c"
+    },
+    {
+      "path": "client/src/art/seasonal.test.ts",
+      "upstream_sha256": "42b8a7b0324db72745bfa3a6ded5a60ccd9527fdc02bcd090fc41cbf1f2a527f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/seasonal.test.ts",
+      "vendored_sha256": "42b8a7b0324db72745bfa3a6ded5a60ccd9527fdc02bcd090fc41cbf1f2a527f"
+    },
+    {
+      "path": "client/src/art/seasonal.ts",
+      "upstream_sha256": "aa22522f207d7048d7d65fdcae8c31cd3c3110a7123282b34af1eac69e10ca5a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/seasonal.ts",
+      "vendored_sha256": "aa22522f207d7048d7d65fdcae8c31cd3c3110a7123282b34af1eac69e10ca5a"
+    },
+    {
+      "path": "client/src/art/surfaces/floor.ts",
+      "upstream_sha256": "c177f4788afd50d22c02a505026efd588a1302786df06cc033588de7a886acc2",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/surfaces/floor.ts",
+      "vendored_sha256": "c177f4788afd50d22c02a505026efd588a1302786df06cc033588de7a886acc2"
+    },
+    {
+      "path": "client/src/art/surfaces/rug.ts",
+      "upstream_sha256": "a326dbfe1381a595618b4e0eed3cf4b2b4d06e4a365747d10b80dfee15e4a292",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/surfaces/rug.ts",
+      "vendored_sha256": "a326dbfe1381a595618b4e0eed3cf4b2b4d06e4a365747d10b80dfee15e4a292"
+    },
+    {
+      "path": "client/src/art/surfaces/walls.ts",
+      "upstream_sha256": "c5a0038c9930ada47e3d7c1841912621e27fee11418c02d36679019e0d5548dd",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/surfaces/walls.ts",
+      "vendored_sha256": "c5a0038c9930ada47e3d7c1841912621e27fee11418c02d36679019e0d5548dd"
+    },
+    {
+      "path": "client/src/art/theme.ts",
+      "upstream_sha256": "8ed2fcbc35cc0abd96c089c56299e5e1fba4275c3201b9a24b6dec28c946ae3a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/art/theme.ts",
+      "vendored_sha256": "8ed2fcbc35cc0abd96c089c56299e5e1fba4275c3201b9a24b6dec28c946ae3a"
+    },
+    {
+      "path": "client/src/audio/board.ts",
+      "upstream_sha256": "5cad10803f3caf25075cfb0fe37697c0b5179ae62d74dc09881490eabd6b9c02",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/audio/board.ts",
+      "vendored_sha256": "5cad10803f3caf25075cfb0fe37697c0b5179ae62d74dc09881490eabd6b9c02"
+    },
+    {
+      "path": "client/src/audio/scheduler.test.ts",
+      "upstream_sha256": "863469f1eac8d3b69569da93de0ae20afb35363b66bad6dc3234db21bd272d22",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/audio/scheduler.test.ts",
+      "vendored_sha256": "863469f1eac8d3b69569da93de0ae20afb35363b66bad6dc3234db21bd272d22"
+    },
+    {
+      "path": "client/src/audio/scheduler.ts",
+      "upstream_sha256": "356683491dd9751f19877bdf56edfee866834cad1021d0007d265d4a0445fb66",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/audio/scheduler.ts",
+      "vendored_sha256": "356683491dd9751f19877bdf56edfee866834cad1021d0007d265d4a0445fb66"
+    },
+    {
+      "path": "client/src/audio/synth.ts",
+      "upstream_sha256": "2740e28573d4498d57c18ad532b41e0def078aedef5d7243550c13ee25bd7564",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/audio/synth.ts",
+      "vendored_sha256": "2740e28573d4498d57c18ad532b41e0def078aedef5d7243550c13ee25bd7564"
+    },
+    {
+      "path": "client/src/main.ts",
+      "upstream_sha256": "3b260fc4a21027a1b0842aff4efa710975bdfc055b6eb7a732f5a2d7461a72eb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/main.ts",
+      "vendored_sha256": "3b260fc4a21027a1b0842aff4efa710975bdfc055b6eb7a732f5a2d7461a72eb"
+    },
+    {
+      "path": "client/src/net/access.test.ts",
+      "upstream_sha256": "4eccdd3dae4ce073ce1219ae2a54c74227540bf8917277cab8220f9e9a944d71",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/access.test.ts",
+      "vendored_sha256": "4eccdd3dae4ce073ce1219ae2a54c74227540bf8917277cab8220f9e9a944d71"
+    },
+    {
+      "path": "client/src/net/access.ts",
+      "upstream_sha256": "b6fbaab6829863be6f9a5ba8a396ad3a5340e90a12b5912bb9f963fab6b2c9a1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/access.ts",
+      "vendored_sha256": "b6fbaab6829863be6f9a5ba8a396ad3a5340e90a12b5912bb9f963fab6b2c9a1"
+    },
+    {
+      "path": "client/src/net/store.test.ts",
+      "upstream_sha256": "9a9944a5afa5772a2652b9dc9688cf9e5699e53e9d9c48040f00f673bf2fbd26",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/store.test.ts",
+      "vendored_sha256": "9a9944a5afa5772a2652b9dc9688cf9e5699e53e9d9c48040f00f673bf2fbd26"
+    },
+    {
+      "path": "client/src/net/store.ts",
+      "upstream_sha256": "fd516292423a4732e2d113749a54b775c9335dabd4796ea46198f2a6b9428e0c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/store.ts",
+      "vendored_sha256": "11e04c3ac88a62c7451d7173f22cb699df07415ada53e7c819a4d1f6f55d3403"
+    },
+    {
+      "path": "client/src/net/timeline.test.ts",
+      "upstream_sha256": "3c0ad03d92f0a0e09307dc760e227ea0c6e3a86f80431aecb34d908d8250a3c7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/timeline.test.ts",
+      "vendored_sha256": "3c0ad03d92f0a0e09307dc760e227ea0c6e3a86f80431aecb34d908d8250a3c7"
+    },
+    {
+      "path": "client/src/net/timeline.ts",
+      "upstream_sha256": "51c6da569a2b96769024e7afdef94c525341f9e943635c8c53d1e81a68b9d2d1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/timeline.ts",
+      "vendored_sha256": "51c6da569a2b96769024e7afdef94c525341f9e943635c8c53d1e81a68b9d2d1"
+    },
+    {
+      "path": "client/src/net/world-stream.test.ts",
+      "upstream_sha256": "0c29b2382fc8c43aa22c58d936284cb8268157b12e17f84f8877cc60b9d76e86",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/world-stream.test.ts",
+      "vendored_sha256": "0c29b2382fc8c43aa22c58d936284cb8268157b12e17f84f8877cc60b9d76e86"
+    },
+    {
+      "path": "client/src/net/world-stream.ts",
+      "upstream_sha256": "e63b2632494c4006a7b74f698b9d9075d2a4ec343c0ac3a8a31f1deca36fc284",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/world-stream.ts",
+      "vendored_sha256": "e63b2632494c4006a7b74f698b9d9075d2a4ec343c0ac3a8a31f1deca36fc284"
+    },
+    {
+      "path": "client/src/net/world.test.ts",
+      "upstream_sha256": "c14de85f56a07789e9021451c0dbb412463bd34bd7ff53dd47bcb84df2655dfc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/world.test.ts",
+      "vendored_sha256": "c14de85f56a07789e9021451c0dbb412463bd34bd7ff53dd47bcb84df2655dfc"
+    },
+    {
+      "path": "client/src/net/world.ts",
+      "upstream_sha256": "3628754f97e4ea6b94a46eacf6be1a04101fd5aad6805d38ab186564a3a842fb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/net/world.ts",
+      "vendored_sha256": "3628754f97e4ea6b94a46eacf6be1a04101fd5aad6805d38ab186564a3a842fb"
+    },
+    {
+      "path": "client/src/ui/agentorder.ts",
+      "upstream_sha256": "5f29453f4bb9dbf08bcc21442887b40c6826fa3c8a1836be925d613ca0c0f75b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/agentorder.ts",
+      "vendored_sha256": "5f29453f4bb9dbf08bcc21442887b40c6826fa3c8a1836be925d613ca0c0f75b"
+    },
+    {
+      "path": "client/src/ui/appearance-fields.ts",
+      "upstream_sha256": "d103fb860573bae205f30ad5f0afa850ebb07373032b0dc0c0df0694c3584615",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/appearance-fields.ts",
+      "vendored_sha256": "d103fb860573bae205f30ad5f0afa850ebb07373032b0dc0c0df0694c3584615"
+    },
+    {
+      "path": "client/src/ui/avatar.ts",
+      "upstream_sha256": "a766e8e8e899bd71df02c0127d8d96786d6161311c3a0168a9a6c36718604582",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/avatar.ts",
+      "vendored_sha256": "a766e8e8e899bd71df02c0127d8d96786d6161311c3a0168a9a6c36718604582"
+    },
+    {
+      "path": "client/src/ui/character-editor.ts",
+      "upstream_sha256": "f755b5565e6d478dc96cd1e177297ec33d56bda71bb6e4e66fda643285606bba",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/character-editor.ts",
+      "vendored_sha256": "f755b5565e6d478dc96cd1e177297ec33d56bda71bb6e4e66fda643285606bba"
+    },
+    {
+      "path": "client/src/ui/character-model.test.ts",
+      "upstream_sha256": "0e4bc66083c580c2428b12010145ede329ca9f0a1e84029d510000a99cdda4e1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/character-model.test.ts",
+      "vendored_sha256": "0e4bc66083c580c2428b12010145ede329ca9f0a1e84029d510000a99cdda4e1"
+    },
+    {
+      "path": "client/src/ui/character-model.ts",
+      "upstream_sha256": "fb897b375b701efdb8b1baafdce698e807f76f8b6f52802b7438ae9317aa0861",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/character-model.ts",
+      "vendored_sha256": "fb897b375b701efdb8b1baafdce698e807f76f8b6f52802b7438ae9317aa0861"
+    },
+    {
+      "path": "client/src/ui/composer-model.test.ts",
+      "upstream_sha256": "187d580c7cd075d4c7b97290e17c0f966713f0ee01cd501f085c68b15f03d450",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/composer-model.test.ts",
+      "vendored_sha256": "187d580c7cd075d4c7b97290e17c0f966713f0ee01cd501f085c68b15f03d450"
+    },
+    {
+      "path": "client/src/ui/composer-model.ts",
+      "upstream_sha256": "2884ce03d0573545787687122ec56d8bfffee285104c9cb4a2982ec0a3922497",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/composer-model.ts",
+      "vendored_sha256": "2884ce03d0573545787687122ec56d8bfffee285104c9cb4a2982ec0a3922497"
+    },
+    {
+      "path": "client/src/ui/composer.ts",
+      "upstream_sha256": "ae8f7722333c009f1cfb972efb813340246cc641a38c7743cc1aa7ae79431191",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/composer.ts",
+      "vendored_sha256": "ae8f7722333c009f1cfb972efb813340246cc641a38c7743cc1aa7ae79431191"
+    },
+    {
+      "path": "client/src/ui/context.ts",
+      "upstream_sha256": "0ce29a64fd5eebbc09670655165229dc25c08c8bf0e6758cb88c074d94e73f59",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/context.ts",
+      "vendored_sha256": "0ce29a64fd5eebbc09670655165229dc25c08c8bf0e6758cb88c074d94e73f59"
+    },
+    {
+      "path": "client/src/ui/daystats-launcher.ts",
+      "upstream_sha256": "40f3df11dedb037e18d733609294d5951497b64efff6dfd74d9d230f16ab2067",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/daystats-launcher.ts",
+      "vendored_sha256": "40f3df11dedb037e18d733609294d5951497b64efff6dfd74d9d230f16ab2067"
+    },
+    {
+      "path": "client/src/ui/daystats-model.test.ts",
+      "upstream_sha256": "0dc3a1f3321de87d962fd78c63e1338644edcb680b9b7c15ecbafc8c8f852140",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/daystats-model.test.ts",
+      "vendored_sha256": "0dc3a1f3321de87d962fd78c63e1338644edcb680b9b7c15ecbafc8c8f852140"
+    },
+    {
+      "path": "client/src/ui/daystats-model.ts",
+      "upstream_sha256": "1fabf2f298e97d22a59441d015a60d0ab436ffb301a4961895dc2eca4e73ca02",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/daystats-model.ts",
+      "vendored_sha256": "1fabf2f298e97d22a59441d015a60d0ab436ffb301a4961895dc2eca4e73ca02"
+    },
+    {
+      "path": "client/src/ui/daystats.ts",
+      "upstream_sha256": "2187f0f6404dd8ae7e0b48663454b93cf291adb93faee2093b2edc4770f45574",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/daystats.ts",
+      "vendored_sha256": "2187f0f6404dd8ae7e0b48663454b93cf291adb93faee2093b2edc4770f45574"
+    },
+    {
+      "path": "client/src/ui/deliveries.test.ts",
+      "upstream_sha256": "28dc6ecf40a21706e03c22effff4e924d8bb2fa11d41d601691f8221b9a476e4",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/deliveries.test.ts",
+      "vendored_sha256": "28dc6ecf40a21706e03c22effff4e924d8bb2fa11d41d601691f8221b9a476e4"
+    },
+    {
+      "path": "client/src/ui/deliveries.ts",
+      "upstream_sha256": "3c630888eea391eb85f6d9afccbbed68c9c8d44961bc60795d1addebaa73c3cc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/deliveries.ts",
+      "vendored_sha256": "3c630888eea391eb85f6d9afccbbed68c9c8d44961bc60795d1addebaa73c3cc"
+    },
+    {
+      "path": "client/src/ui/dictation.ts",
+      "upstream_sha256": "eadbb9756596bf4e0b918707a224fee0e63ad8af07318ccda219aad7c2726184",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/dictation.ts",
+      "vendored_sha256": "eadbb9756596bf4e0b918707a224fee0e63ad8af07318ccda219aad7c2726184"
+    },
+    {
+      "path": "client/src/ui/dom.ts",
+      "upstream_sha256": "3f331ee9c7cceb13fbe8d379b206e867bd49616fb8c290ee2054d368f0a1cf9e",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/dom.ts",
+      "vendored_sha256": "3f331ee9c7cceb13fbe8d379b206e867bd49616fb8c290ee2054d368f0a1cf9e"
+    },
+    {
+      "path": "client/src/ui/drawer.ts",
+      "upstream_sha256": "99635187c6ebabaa252d73db7e9e75d960e4f0f24d5476275d34cf30138d2cab",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/drawer.ts",
+      "vendored_sha256": "99635187c6ebabaa252d73db7e9e75d960e4f0f24d5476275d34cf30138d2cab"
+    },
+    {
+      "path": "client/src/ui/feed.test.ts",
+      "upstream_sha256": "d5ca3564eda78dca4cd917912ceae38d53acce10104d596731472857bd06b223",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/feed.test.ts",
+      "vendored_sha256": "d5ca3564eda78dca4cd917912ceae38d53acce10104d596731472857bd06b223"
+    },
+    {
+      "path": "client/src/ui/feed.ts",
+      "upstream_sha256": "4489e3f0643aa63133196af66bb0fa89aaf5782591fb5c6de906117303db29f7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/feed.ts",
+      "vendored_sha256": "4489e3f0643aa63133196af66bb0fa89aaf5782591fb5c6de906117303db29f7"
+    },
+    {
+      "path": "client/src/ui/format.test.ts",
+      "upstream_sha256": "1d782853682aaacee78c5162508a855b437ffe6be989f4895db656b2456ab848",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/format.test.ts",
+      "vendored_sha256": "1d782853682aaacee78c5162508a855b437ffe6be989f4895db656b2456ab848"
+    },
+    {
+      "path": "client/src/ui/format.ts",
+      "upstream_sha256": "7c8a294d235074af686b5a31e83072321e3b2dc5d1de971d745bf25eb0149fa3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/format.ts",
+      "vendored_sha256": "7c8a294d235074af686b5a31e83072321e3b2dc5d1de971d745bf25eb0149fa3"
+    },
+    {
+      "path": "client/src/ui/help.ts",
+      "upstream_sha256": "c13261e05b14c12f736d953d09f4319533a343d30dc1900f39b4c0a374c8b536",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/help.ts",
+      "vendored_sha256": "c13261e05b14c12f736d953d09f4319533a343d30dc1900f39b4c0a374c8b536"
+    },
+    {
+      "path": "client/src/ui/history.test.ts",
+      "upstream_sha256": "2d8d404e44defcf6f163c99e8c2ea83d7d99e16345f21e2a219a27b113e87b5d",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/history.test.ts",
+      "vendored_sha256": "2d8d404e44defcf6f163c99e8c2ea83d7d99e16345f21e2a219a27b113e87b5d"
+    },
+    {
+      "path": "client/src/ui/history.ts",
+      "upstream_sha256": "f055ce6ca5fc2320d5c4bf96ea698379ef4dbd31db3041b1d2214912ec1899ff",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/history.ts",
+      "vendored_sha256": "f055ce6ca5fc2320d5c4bf96ea698379ef4dbd31db3041b1d2214912ec1899ff"
+    },
+    {
+      "path": "client/src/ui/hovertip.ts",
+      "upstream_sha256": "90a7046f65d8bcd01b94d1c6ac7e0f3486d967cdaa1f36dcf6761d28a9bde51c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/hovertip.ts",
+      "vendored_sha256": "90a7046f65d8bcd01b94d1c6ac7e0f3486d967cdaa1f36dcf6761d28a9bde51c"
+    },
+    {
+      "path": "client/src/ui/icons.ts",
+      "upstream_sha256": "ef18797d2e7348c321898919c97112958b0701805d43855282203e5eb896e369",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/icons.ts",
+      "vendored_sha256": "ef18797d2e7348c321898919c97112958b0701805d43855282203e5eb896e369"
+    },
+    {
+      "path": "client/src/ui/index.ts",
+      "upstream_sha256": "623c6cdc78af93b7c9bff3484614082b18b2892ccb4275781caf21a52686ed72",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/index.ts",
+      "vendored_sha256": "50a8b6e81b06b2b4d50e2ca7b6cc5a0d645a604da92e413e27d59d8337f59131"
+    },
+    {
+      "path": "client/src/ui/markdown.test.ts",
+      "upstream_sha256": "5e440a7b0647ca58fec080fcd7f853cf145b50e34da7be6a839cf4d083a110aa",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/markdown.test.ts",
+      "vendored_sha256": "5e440a7b0647ca58fec080fcd7f853cf145b50e34da7be6a839cf4d083a110aa"
+    },
+    {
+      "path": "client/src/ui/markdown.ts",
+      "upstream_sha256": "221d22a09a93d9ed36cf30a0a759f8e8b1ccdcbd6291c048fe7efb0a152d4279",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/markdown.ts",
+      "vendored_sha256": "221d22a09a93d9ed36cf30a0a759f8e8b1ccdcbd6291c048fe7efb0a152d4279"
+    },
+    {
+      "path": "client/src/ui/model.test.ts",
+      "upstream_sha256": "52a12765d0d1b2ffbc1729fe75c87f708f1b08f9e968d20b8ecec57c930a4e71",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/model.test.ts",
+      "vendored_sha256": "52a12765d0d1b2ffbc1729fe75c87f708f1b08f9e968d20b8ecec57c930a4e71"
+    },
+    {
+      "path": "client/src/ui/model.ts",
+      "upstream_sha256": "e53c1653d2e871b20b9260e524789dc60f56913eed6f402ea81c07a8d8ab3d2c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/model.ts",
+      "vendored_sha256": "e53c1653d2e871b20b9260e524789dc60f56913eed6f402ea81c07a8d8ab3d2c"
+    },
+    {
+      "path": "client/src/ui/movable.ts",
+      "upstream_sha256": "ae7e69e7fff567c6596ea5dfc4d4d5d98a90e0e96ed7c2bbf413d251f087d123",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/movable.ts",
+      "vendored_sha256": "ae7e69e7fff567c6596ea5dfc4d4d5d98a90e0e96ed7c2bbf413d251f087d123"
+    },
+    {
+      "path": "client/src/ui/notify.ts",
+      "upstream_sha256": "d148d96c586fe55ea631c5690a12420cec17648860e32571f660deb37695e8bb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/notify.ts",
+      "vendored_sha256": "d148d96c586fe55ea631c5690a12420cec17648860e32571f660deb37695e8bb"
+    },
+    {
+      "path": "client/src/ui/overlays.ts",
+      "upstream_sha256": "509bd7b9e73899923506ad27ca4b3f24d5e3c52d12a137921f42592e578ee23d",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/overlays.ts",
+      "vendored_sha256": "509bd7b9e73899923506ad27ca4b3f24d5e3c52d12a137921f42592e578ee23d"
+    },
+    {
+      "path": "client/src/ui/permission.test.ts",
+      "upstream_sha256": "4893bccba468e26024697500dd5cf59a6c4ab7c066133ccca27ea77c8628cdb8",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/permission.test.ts",
+      "vendored_sha256": "4893bccba468e26024697500dd5cf59a6c4ab7c066133ccca27ea77c8628cdb8"
+    },
+    {
+      "path": "client/src/ui/permission.ts",
+      "upstream_sha256": "3e7d33cb68a7e672a58d97a7b40bea51a5ee30cf09311c6c435b0f7aac750301",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/permission.ts",
+      "vendored_sha256": "3e7d33cb68a7e672a58d97a7b40bea51a5ee30cf09311c6c435b0f7aac750301"
+    },
+    {
+      "path": "client/src/ui/prefs.test.ts",
+      "upstream_sha256": "c966dc778dfe387fdfaf3f8d9e40484be5594de3ed82f0afaf9e02f3e0bf6c0f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/prefs.test.ts",
+      "vendored_sha256": "c966dc778dfe387fdfaf3f8d9e40484be5594de3ed82f0afaf9e02f3e0bf6c0f"
+    },
+    {
+      "path": "client/src/ui/prefs.ts",
+      "upstream_sha256": "d1ee8f54caa90e468a8d1c2a76b76c296fdffa95d8edc946170e01577ee79477",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/prefs.ts",
+      "vendored_sha256": "d1ee8f54caa90e468a8d1c2a76b76c296fdffa95d8edc946170e01577ee79477"
+    },
+    {
+      "path": "client/src/ui/provider.test.ts",
+      "upstream_sha256": "f023104503d47ec8ec0d597c053963ae7c38e555547820cda689d7b3e52accfc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/provider.test.ts",
+      "vendored_sha256": "f023104503d47ec8ec0d597c053963ae7c38e555547820cda689d7b3e52accfc"
+    },
+    {
+      "path": "client/src/ui/provider.ts",
+      "upstream_sha256": "055693466ef465d032717e391b63800dcacf9f92569cadaa4ca050ed68967430",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/provider.ts",
+      "vendored_sha256": "fb1651161f2cf86f7ffb85199f11461898c1803d6410b872654da92ebdb3c8b7"
+    },
+    {
+      "path": "client/src/ui/pty.ts",
+      "upstream_sha256": "be7e3a124d1e31de9aed2abff54c8606fdfa1fadb6d46ce9002c9464bc38e39b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/pty.ts",
+      "vendored_sha256": "be7e3a124d1e31de9aed2abff54c8606fdfa1fadb6d46ce9002c9464bc38e39b"
+    },
+    {
+      "path": "client/src/ui/ptyapi.ts",
+      "upstream_sha256": "1a1eb11e77794f2be4a2b8503753af79a4cf50364e074528552254e90ba8f897",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/ptyapi.ts",
+      "vendored_sha256": "1a1eb11e77794f2be4a2b8503753af79a4cf50364e074528552254e90ba8f897"
+    },
+    {
+      "path": "client/src/ui/ptypane.ts",
+      "upstream_sha256": "2a6d75116ae7aefebdc472cc0b1a492a89941452e1833bd3552dc89acc69d1ad",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/ptypane.ts",
+      "vendored_sha256": "2a6d75116ae7aefebdc472cc0b1a492a89941452e1833bd3552dc89acc69d1ad"
+    },
+    {
+      "path": "client/src/ui/roomorder.ts",
+      "upstream_sha256": "84be7033a9d16d068ee50e21b7ce6bc310a0e2b76562d0cd094f926994b5ba46",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/roomorder.ts",
+      "vendored_sha256": "84be7033a9d16d068ee50e21b7ce6bc310a0e2b76562d0cd094f926994b5ba46"
+    },
+    {
+      "path": "client/src/ui/roomrename.ts",
+      "upstream_sha256": "e10e7d221d49b05afc638339a4a0c82ad3eb12d0cc08c3be29eeef01fa343d42",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/roomrename.ts",
+      "vendored_sha256": "e10e7d221d49b05afc638339a4a0c82ad3eb12d0cc08c3be29eeef01fa343d42"
+    },
+    {
+      "path": "client/src/ui/rows.ts",
+      "upstream_sha256": "2bba8a29959ded408c065ca6660e06571192bf7bee921477f316524d4c71630d",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/rows.ts",
+      "vendored_sha256": "2bba8a29959ded408c065ca6660e06571192bf7bee921477f316524d4c71630d"
+    },
+    {
+      "path": "client/src/ui/settings-sound.ts",
+      "upstream_sha256": "9ea731a5703a4b758c12a7fbd16153bbe27f64d98ea45873a2118afb3b4af765",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/settings-sound.ts",
+      "vendored_sha256": "9ea731a5703a4b758c12a7fbd16153bbe27f64d98ea45873a2118afb3b4af765"
+    },
+    {
+      "path": "client/src/ui/settings.ts",
+      "upstream_sha256": "76a9c276d15f25211d03dbe311ea65945a345950982a5e3ca04c395e2482b8b8",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/settings.ts",
+      "vendored_sha256": "5b54b16f05cae357458abc08cc9699c5f696f6544ca8523f240c24c997c7b642"
+    },
+    {
+      "path": "client/src/ui/sidebar.ts",
+      "upstream_sha256": "10a23c05e1f4cf54728f3f041fffd3b67f1da4759ed508734358356870e9b5bc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/sidebar.ts",
+      "vendored_sha256": "10a23c05e1f4cf54728f3f041fffd3b67f1da4759ed508734358356870e9b5bc"
+    },
+    {
+      "path": "client/src/ui/social.ts",
+      "upstream_sha256": "8115de57b7e348c0c6ddbb21789a17c986f25560b4dd9bab344e9db8d3131c86",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/social.ts",
+      "vendored_sha256": "8115de57b7e348c0c6ddbb21789a17c986f25560b4dd9bab344e9db8d3131c86"
+    },
+    {
+      "path": "client/src/ui/sound.ts",
+      "upstream_sha256": "c7fef036c31cd7290aa56c323c4af5e4c675cba9491e05e438c2fa790e95e78a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/sound.ts",
+      "vendored_sha256": "c7fef036c31cd7290aa56c323c4af5e4c675cba9491e05e438c2fa790e95e78a"
+    },
+    {
+      "path": "client/src/ui/spawn.test.ts",
+      "upstream_sha256": "5a6af8b830564463a4062778679a50393edcf5856f4d6741f6a95b7be1681dbb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/spawn.test.ts",
+      "vendored_sha256": "5a6af8b830564463a4062778679a50393edcf5856f4d6741f6a95b7be1681dbb"
+    },
+    {
+      "path": "client/src/ui/spawn.ts",
+      "upstream_sha256": "549aeb105645b86debe5651c8c9d30b3e0f57e5bccee8a8e26c7c03eda4ed894",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/spawn.ts",
+      "vendored_sha256": "549aeb105645b86debe5651c8c9d30b3e0f57e5bccee8a8e26c7c03eda4ed894"
+    },
+    {
+      "path": "client/src/ui/styles.css",
+      "upstream_sha256": "c1c74424bce01d4ae1d0b202f91c04a0a6fbbed2629733498feedf20da6b99e3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/styles.css",
+      "vendored_sha256": "c1c74424bce01d4ae1d0b202f91c04a0a6fbbed2629733498feedf20da6b99e3"
+    },
+    {
+      "path": "client/src/ui/termactions.ts",
+      "upstream_sha256": "e4da0a643baab3e00a956f5023b74b226f2d5ff39cc0c524c1ff093f6152c171",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/termactions.ts",
+      "vendored_sha256": "e4da0a643baab3e00a956f5023b74b226f2d5ff39cc0c524c1ff093f6152c171"
+    },
+    {
+      "path": "client/src/ui/terminal.test.ts",
+      "upstream_sha256": "345da2aea9109fbdffbfe966395d881d65b539b8b5cd5d1b43943f257e69b656",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/terminal.test.ts",
+      "vendored_sha256": "345da2aea9109fbdffbfe966395d881d65b539b8b5cd5d1b43943f257e69b656"
+    },
+    {
+      "path": "client/src/ui/terminal.ts",
+      "upstream_sha256": "5a958cc8b2558c0453d43f0c0c944c9d6c405ede896d4a9b15cfb6a381ec3510",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/terminal.ts",
+      "vendored_sha256": "5a958cc8b2558c0453d43f0c0c944c9d6c405ede896d4a9b15cfb6a381ec3510"
+    },
+    {
+      "path": "client/src/ui/termtabs.ts",
+      "upstream_sha256": "a2b825d55588b321c216ba73bf26b7b7da7fc2a5e891eea6b4f53b4980716c1c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/termtabs.ts",
+      "vendored_sha256": "a2b825d55588b321c216ba73bf26b7b7da7fc2a5e891eea6b4f53b4980716c1c"
+    },
+    {
+      "path": "client/src/ui/termtools.test.ts",
+      "upstream_sha256": "acb686a05758194c6e62af42f712e5d046da19458a8981fb6b3ee1cf80ea0ae2",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/termtools.test.ts",
+      "vendored_sha256": "acb686a05758194c6e62af42f712e5d046da19458a8981fb6b3ee1cf80ea0ae2"
+    },
+    {
+      "path": "client/src/ui/termtools.ts",
+      "upstream_sha256": "91faf6ff0f607b7baef9a4c59cc978e1158614ade97e73501ffcafba3af1fa0b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/termtools.ts",
+      "vendored_sha256": "91faf6ff0f607b7baef9a4c59cc978e1158614ade97e73501ffcafba3af1fa0b"
+    },
+    {
+      "path": "client/src/ui/timelapse-speed.test.ts",
+      "upstream_sha256": "46313a717839014854061cb70036b8e2415825422c2cd938cd1db3bf90c9bcdc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/timelapse-speed.test.ts",
+      "vendored_sha256": "46313a717839014854061cb70036b8e2415825422c2cd938cd1db3bf90c9bcdc"
+    },
+    {
+      "path": "client/src/ui/timelapse.test.ts",
+      "upstream_sha256": "81549d91ca0eb5c68e4614bd3197cd0f320698f3cf36755eeff046ff8582e88c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/timelapse.test.ts",
+      "vendored_sha256": "81549d91ca0eb5c68e4614bd3197cd0f320698f3cf36755eeff046ff8582e88c"
+    },
+    {
+      "path": "client/src/ui/timelapse.ts",
+      "upstream_sha256": "b86d12d46f8c86f8f73b410e468df56546d34620bf239164102693f253efdd35",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/timelapse.ts",
+      "vendored_sha256": "b86d12d46f8c86f8f73b410e468df56546d34620bf239164102693f253efdd35"
+    },
+    {
+      "path": "client/src/ui/toasts.ts",
+      "upstream_sha256": "40116ed0439ab1e0e0e55308e94a987794a4b0608bd1639dfaeeac7d1740edee",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/toasts.ts",
+      "vendored_sha256": "40116ed0439ab1e0e0e55308e94a987794a4b0608bd1639dfaeeac7d1740edee"
+    },
+    {
+      "path": "client/src/ui/topbar.ts",
+      "upstream_sha256": "f35323ae14fbe2aed7d189175db8e1ef434240477915e73b315e71ea45961e62",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/topbar.ts",
+      "vendored_sha256": "9ede90cdc3380598880b671acc02933fbc270093054d4b5b5b9a1d1035c8b71a"
+    },
+    {
+      "path": "client/src/ui/update.ts",
+      "upstream_sha256": "333d348dbb5b6ce3f51cd63764d8930b2cb992401bab40ca90487f6da9501003",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/update.ts",
+      "vendored_sha256": "333d348dbb5b6ce3f51cd63764d8930b2cb992401bab40ca90487f6da9501003"
+    },
+    {
+      "path": "client/src/ui/usage-row.test.ts",
+      "upstream_sha256": "9ea9daf0f09cf9b735db8e3a46ac02c81a5387fc3c1aeb191527c562e7a5152e",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/usage-row.test.ts",
+      "vendored_sha256": "9ea9daf0f09cf9b735db8e3a46ac02c81a5387fc3c1aeb191527c562e7a5152e"
+    },
+    {
+      "path": "client/src/ui/usage-row.ts",
+      "upstream_sha256": "3ef3540247fb098181b798c0fb38a19ed0e90ee73bcaf677f18f203a146a6341",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/usage-row.ts",
+      "vendored_sha256": "3ef3540247fb098181b798c0fb38a19ed0e90ee73bcaf677f18f203a146a6341"
+    },
+    {
+      "path": "client/src/ui/usage-source.test.ts",
+      "upstream_sha256": "fd499e03c78363d4b1c589d0bda537c05c7a9349ce1fb1d64fa1d80f21d71343",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/usage-source.test.ts",
+      "vendored_sha256": "fd499e03c78363d4b1c589d0bda537c05c7a9349ce1fb1d64fa1d80f21d71343"
+    },
+    {
+      "path": "client/src/ui/usage.ts",
+      "upstream_sha256": "c47fdc4502b1f89ac0f9341dd3f10a6a2ea066e2dc63dc61bd3e8d0c0ec922c1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/usage.ts",
+      "vendored_sha256": "c47fdc4502b1f89ac0f9341dd3f10a6a2ea066e2dc63dc61bd3e8d0c0ec922c1"
+    },
+    {
+      "path": "client/src/ui/version.test.ts",
+      "upstream_sha256": "c007fc7a55f4a5de99070204f93050e14276e029e5c73f548cde9b349a1ac00b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/version.test.ts",
+      "vendored_sha256": "c007fc7a55f4a5de99070204f93050e14276e029e5c73f548cde9b349a1ac00b"
+    },
+    {
+      "path": "client/src/ui/version.ts",
+      "upstream_sha256": "67f068b6b0f3b61e3b8ce7a782f459d57586cf95e12f3a5ca13c929b13dce351",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/version.ts",
+      "vendored_sha256": "67f068b6b0f3b61e3b8ce7a782f459d57586cf95e12f3a5ca13c929b13dce351"
+    },
+    {
+      "path": "client/src/ui/viewport.test.ts",
+      "upstream_sha256": "bb124f2d84a21d62ae5baf9e34db9e17396d192ce92acad16e700490c70bc086",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/viewport.test.ts",
+      "vendored_sha256": "bb124f2d84a21d62ae5baf9e34db9e17396d192ce92acad16e700490c70bc086"
+    },
+    {
+      "path": "client/src/ui/viewport.ts",
+      "upstream_sha256": "dbe9212f857e88a9763134109f687667d081ac565ef0cb1874bcb9f4e9365f14",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/viewport.ts",
+      "vendored_sha256": "dbe9212f857e88a9763134109f687667d081ac565ef0cb1874bcb9f4e9365f14"
+    },
+    {
+      "path": "client/src/ui/widgets.ts",
+      "upstream_sha256": "7eed6c11f6d89f76ade2ee983903e480f2ce0d0637e62c50313fb8ca44c2fdd8",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/widgets.ts",
+      "vendored_sha256": "0e0ce66ecb24c7ff68b188f8930719be6348701fdcccd81ce5a5433070b7f4e4"
+    },
+    {
+      "path": "client/src/ui/world/away-summary.ts",
+      "upstream_sha256": "4f5dac7589572df0dceeeed6ebeca737b23ac86b5203238fce85a866af623124",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/away-summary.ts",
+      "vendored_sha256": "4f5dac7589572df0dceeeed6ebeca737b23ac86b5203238fce85a866af623124"
+    },
+    {
+      "path": "client/src/ui/world/blocked.ts",
+      "upstream_sha256": "0e7691466a04dcf1ffd2d514aaa08508447fe5a126ec827b700ccf5b0fdb5d53",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/blocked.ts",
+      "vendored_sha256": "0e7691466a04dcf1ffd2d514aaa08508447fe5a126ec827b700ccf5b0fdb5d53"
+    },
+    {
+      "path": "client/src/ui/world/building.ts",
+      "upstream_sha256": "e3c4e13933135cc7a67fc87eed9d3ba6a62cf683efcc2abb79c2b858db07e31c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/building.ts",
+      "vendored_sha256": "e3c4e13933135cc7a67fc87eed9d3ba6a62cf683efcc2abb79c2b858db07e31c"
+    },
+    {
+      "path": "client/src/ui/world/links.ts",
+      "upstream_sha256": "9cc6a7862a4d78306625c16ac173a69d889ea6858b92880bfb9590a0af1ed507",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/links.ts",
+      "vendored_sha256": "9cc6a7862a4d78306625c16ac173a69d889ea6858b92880bfb9590a0af1ed507"
+    },
+    {
+      "path": "client/src/ui/world/scene-switch.test.ts",
+      "upstream_sha256": "997b6a9a14a285a6589c29c4e2bf2630bf8af9eb6656717fe15794dfa9051127",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/scene-switch.test.ts",
+      "vendored_sha256": "997b6a9a14a285a6589c29c4e2bf2630bf8af9eb6656717fe15794dfa9051127"
+    },
+    {
+      "path": "client/src/ui/world/scene-switch.ts",
+      "upstream_sha256": "5020be59d95d77c35494bef2f0e6863ccbf3764d49f2c226edb8d241cbd863c8",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/scene-switch.ts",
+      "vendored_sha256": "5020be59d95d77c35494bef2f0e6863ccbf3764d49f2c226edb8d241cbd863c8"
+    },
+    {
+      "path": "client/src/ui/world/settings-world.ts",
+      "upstream_sha256": "4e6cd7017c7a95fe5a2b0d76f919b849e5d3404928735ba2e2fb048dc30052cd",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/settings-world.ts",
+      "vendored_sha256": "4e6cd7017c7a95fe5a2b0d76f919b849e5d3404928735ba2e2fb048dc30052cd"
+    },
+    {
+      "path": "client/src/ui/world/social.css",
+      "upstream_sha256": "d0d6efc328a72d36c9947db9eedcb3cfba3e9abacfdd4249b4b7b1e355fcf2f2",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/social.css",
+      "vendored_sha256": "d0d6efc328a72d36c9947db9eedcb3cfba3e9abacfdd4249b4b7b1e355fcf2f2"
+    },
+    {
+      "path": "client/src/ui/world/social.test.ts",
+      "upstream_sha256": "1126e9d932e2a7a6ee94c9f47612ee0815bd7f786c2cf7ffd9f89032396a67e7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/social.test.ts",
+      "vendored_sha256": "1126e9d932e2a7a6ee94c9f47612ee0815bd7f786c2cf7ffd9f89032396a67e7"
+    },
+    {
+      "path": "client/src/ui/world/world-chip.ts",
+      "upstream_sha256": "5eb9a7f3c8e8eb2660ae21836e524941605f63e11c529e5e9429f7beea95a830",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/world-chip.ts",
+      "vendored_sha256": "5eb9a7f3c8e8eb2660ae21836e524941605f63e11c529e5e9429f7beea95a830"
+    },
+    {
+      "path": "client/src/ui/world/world-dialog.ts",
+      "upstream_sha256": "b80c3684067f76cda04cacc1527179003dbcc4123d8f33802396ea2461d2216e",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/world-dialog.ts",
+      "vendored_sha256": "b80c3684067f76cda04cacc1527179003dbcc4123d8f33802396ea2461d2216e"
+    },
+    {
+      "path": "client/src/ui/world/world-model.test.ts",
+      "upstream_sha256": "043d1b159e329d770ae30155688c8244bd49c355f9e4cbfbbb155127e10936dc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/world-model.test.ts",
+      "vendored_sha256": "043d1b159e329d770ae30155688c8244bd49c355f9e4cbfbbb155127e10936dc"
+    },
+    {
+      "path": "client/src/ui/world/world-model.ts",
+      "upstream_sha256": "f1c1461738e733a0e9b1a05b72809b2211339f49e09f95bcb1323ef1007bfd86",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/world-model.ts",
+      "vendored_sha256": "f1c1461738e733a0e9b1a05b72809b2211339f49e09f95bcb1323ef1007bfd86"
+    },
+    {
+      "path": "client/src/ui/world/world-popups.ts",
+      "upstream_sha256": "d5f526f42527c70774b9bff15bd1003c1d4463b50ffdfa57c97aac24149660cf",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/world/world-popups.ts",
+      "vendored_sha256": "d5f526f42527c70774b9bff15bd1003c1d4463b50ffdfa57c97aac24149660cf"
+    },
+    {
+      "path": "client/src/world/api.ts",
+      "upstream_sha256": "c93e464a365f10fb05302c6c1e4b99b544ed5de4d9ba316c53e5e9a6bcb71cbb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/api.ts",
+      "vendored_sha256": "c3f2b14105b5fad3becef4ddd1fa20079b531770d6cc20b3fd59c4cc70b1b42f"
+    },
+    {
+      "path": "client/src/world/assets.ts",
+      "upstream_sha256": "8372ce86e5e25153a1481a879f6d07bef0df2320d6979b2c1569a507f6538cee",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/assets.ts",
+      "vendored_sha256": "8372ce86e5e25153a1481a879f6d07bef0df2320d6979b2c1569a507f6538cee"
+    },
+    {
+      "path": "client/src/world/camera.ts",
+      "upstream_sha256": "ea95e7d151fbdfc006e86e6ef0283fed641067d87a9210f48541978e05364255",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/camera.ts",
+      "vendored_sha256": "ea95e7d151fbdfc006e86e6ef0283fed641067d87a9210f48541978e05364255"
+    },
+    {
+      "path": "client/src/world/city/cards.test.ts",
+      "upstream_sha256": "530507334c36befac33d40f9a36d727495a5fe17bf03cb7d0e393175f851623c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/cards.test.ts",
+      "vendored_sha256": "530507334c36befac33d40f9a36d727495a5fe17bf03cb7d0e393175f851623c"
+    },
+    {
+      "path": "client/src/world/city/cards.ts",
+      "upstream_sha256": "c87f4385a74163183d18ae52f52136f2b73c6e577f3069b24bbda2d4d21ddc10",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/cards.ts",
+      "vendored_sha256": "c87f4385a74163183d18ae52f52136f2b73c6e577f3069b24bbda2d4d21ddc10"
+    },
+    {
+      "path": "client/src/world/city/facade.test.ts",
+      "upstream_sha256": "f919016d30130c69804328733f307be53a756cfa32aa263422b1a9001e3c0596",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/facade.test.ts",
+      "vendored_sha256": "f919016d30130c69804328733f307be53a756cfa32aa263422b1a9001e3c0596"
+    },
+    {
+      "path": "client/src/world/city/facade.ts",
+      "upstream_sha256": "90f61915d5901eeead918533bd2831e2d71eb4bd3950f9b5475af7280d4f39dc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/facade.ts",
+      "vendored_sha256": "90f61915d5901eeead918533bd2831e2d71eb4bd3950f9b5475af7280d4f39dc"
+    },
+    {
+      "path": "client/src/world/city/fireworks.ts",
+      "upstream_sha256": "e83a08775739c2068cb164626c8b600a8618ff7000eca5b900bf43cc651d2e52",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/fireworks.ts",
+      "vendored_sha256": "e83a08775739c2068cb164626c8b600a8618ff7000eca5b900bf43cc651d2e52"
+    },
+    {
+      "path": "client/src/world/city/greetings.ts",
+      "upstream_sha256": "739a14ffd63f39c5afe5543ccbd842719c8cc17cc8c8d777ef70f0ff27986fd7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/greetings.ts",
+      "vendored_sha256": "739a14ffd63f39c5afe5543ccbd842719c8cc17cc8c8d777ef70f0ff27986fd7"
+    },
+    {
+      "path": "client/src/world/city/ground.ts",
+      "upstream_sha256": "f92330baf273748083069b99a714ae85a88a8a0b39bf09ca0a6336b81e6230b5",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/ground.ts",
+      "vendored_sha256": "f92330baf273748083069b99a714ae85a88a8a0b39bf09ca0a6336b81e6230b5"
+    },
+    {
+      "path": "client/src/world/city/index.ts",
+      "upstream_sha256": "ee5f89adf011f04b0932b7c937ac8385f07b8cc75c5ed9ae3b1a60f9f14ba736",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/index.ts",
+      "vendored_sha256": "ee5f89adf011f04b0932b7c937ac8385f07b8cc75c5ed9ae3b1a60f9f14ba736"
+    },
+    {
+      "path": "client/src/world/city/input.test.ts",
+      "upstream_sha256": "709f79525decc271b809b57a79f2411c9aab62efde148e21eb917ad9a6266085",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/input.test.ts",
+      "vendored_sha256": "709f79525decc271b809b57a79f2411c9aab62efde148e21eb917ad9a6266085"
+    },
+    {
+      "path": "client/src/world/city/input.ts",
+      "upstream_sha256": "59a76b44a18b1659ffa8cfc2a7d1e13bbecf01cbe174f243a5026d135f8aff87",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/input.ts",
+      "vendored_sha256": "59a76b44a18b1659ffa8cfc2a7d1e13bbecf01cbe174f243a5026d135f8aff87"
+    },
+    {
+      "path": "client/src/world/city/layout.test.ts",
+      "upstream_sha256": "dcd4c301c78d78dc20d975c05a2fe0055e346de141182983e46a06bdf0a44f8f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/layout.test.ts",
+      "vendored_sha256": "dcd4c301c78d78dc20d975c05a2fe0055e346de141182983e46a06bdf0a44f8f"
+    },
+    {
+      "path": "client/src/world/city/layout.ts",
+      "upstream_sha256": "5187d317be0476a9b0e58f748a255580eb38afdc0ed0e05ffdac99cbbea1d0e7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/layout.ts",
+      "vendored_sha256": "5187d317be0476a9b0e58f748a255580eb38afdc0ed0e05ffdac99cbbea1d0e7"
+    },
+    {
+      "path": "client/src/world/city/likes.ts",
+      "upstream_sha256": "b3b70c99eea467dee0509db7013634376857b585962dad3d6ea4ba95527aa163",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/likes.ts",
+      "vendored_sha256": "b3b70c99eea467dee0509db7013634376857b585962dad3d6ea4ba95527aa163"
+    },
+    {
+      "path": "client/src/world/city/minimap.test.ts",
+      "upstream_sha256": "decc545bbc3fadb7fd2ed5f2f29c1b715007f9351b587e86d375b1cd491407e1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/minimap.test.ts",
+      "vendored_sha256": "decc545bbc3fadb7fd2ed5f2f29c1b715007f9351b587e86d375b1cd491407e1"
+    },
+    {
+      "path": "client/src/world/city/minimap.ts",
+      "upstream_sha256": "4878666a89f4ca9abf523e28be619476b3eaa06e59fd8f9bad3ebadbaacb7e56",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/minimap.ts",
+      "vendored_sha256": "4878666a89f4ca9abf523e28be619476b3eaa06e59fd8f9bad3ebadbaacb7e56"
+    },
+    {
+      "path": "client/src/world/city/notice.test.ts",
+      "upstream_sha256": "39ae6fb2cbd79f0f5116012684aaeffa2f6fcf866dbe963f7bd6c8edb2baafb6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/notice.test.ts",
+      "vendored_sha256": "39ae6fb2cbd79f0f5116012684aaeffa2f6fcf866dbe963f7bd6c8edb2baafb6"
+    },
+    {
+      "path": "client/src/world/city/notice.ts",
+      "upstream_sha256": "1bb68106176374534a6762bdb4704fa12eedb99e9722d94294da170b0164cda0",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/notice.ts",
+      "vendored_sha256": "1bb68106176374534a6762bdb4704fa12eedb99e9722d94294da170b0164cda0"
+    },
+    {
+      "path": "client/src/world/city/players.test.ts",
+      "upstream_sha256": "27511cf8367b667bb666ea1d60bf6431e52e4c0a7a97fb1948719233eeb7b8ff",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/players.test.ts",
+      "vendored_sha256": "27511cf8367b667bb666ea1d60bf6431e52e4c0a7a97fb1948719233eeb7b8ff"
+    },
+    {
+      "path": "client/src/world/city/players.ts",
+      "upstream_sha256": "3247818c33cfbe46a56af462de273c47e6f49eece5b65b2e4c21dfb997437abb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/players.ts",
+      "vendored_sha256": "3247818c33cfbe46a56af462de273c47e6f49eece5b65b2e4c21dfb997437abb"
+    },
+    {
+      "path": "client/src/world/city/resume.test.ts",
+      "upstream_sha256": "1841348e474a2cd5e33c76f5574d1bc7180e99d3c3c7db8cee90474833ccd44a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/resume.test.ts",
+      "vendored_sha256": "1841348e474a2cd5e33c76f5574d1bc7180e99d3c3c7db8cee90474833ccd44a"
+    },
+    {
+      "path": "client/src/world/city/resume.ts",
+      "upstream_sha256": "f16e8fd38d1af7f913c1d6fefa967a0ed47d43be1cc630de07b47adf5de11e9b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/resume.ts",
+      "vendored_sha256": "f16e8fd38d1af7f913c1d6fefa967a0ed47d43be1cc630de07b47adf5de11e9b"
+    },
+    {
+      "path": "client/src/world/city/scene.ts",
+      "upstream_sha256": "e8acb89fccf2393b423840f316717c5907e87763bfc66f5bf8cee950ecc481e8",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/scene.ts",
+      "vendored_sha256": "e8acb89fccf2393b423840f316717c5907e87763bfc66f5bf8cee950ecc481e8"
+    },
+    {
+      "path": "client/src/world/city/social-pure.test.ts",
+      "upstream_sha256": "b803ae57bd7e586af0b8a63f0bb673ee2167bd6fd530b27069710e6abe80cf3a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/social-pure.test.ts",
+      "vendored_sha256": "b803ae57bd7e586af0b8a63f0bb673ee2167bd6fd530b27069710e6abe80cf3a"
+    },
+    {
+      "path": "client/src/world/city/social.css",
+      "upstream_sha256": "3f80f20a1067716e24f389ebd5f61876f6bebebfe92a785530a44705f41313d1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/social.css",
+      "vendored_sha256": "3f80f20a1067716e24f389ebd5f61876f6bebebfe92a785530a44705f41313d1"
+    },
+    {
+      "path": "client/src/world/city/social.ts",
+      "upstream_sha256": "e882757f1c8bd90a3020d2eafc5c33ea6b5ae11554e8997bf21e71ba1a3be82c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/social.ts",
+      "vendored_sha256": "e882757f1c8bd90a3020d2eafc5c33ea6b5ae11554e8997bf21e71ba1a3be82c"
+    },
+    {
+      "path": "client/src/world/city/state.test.ts",
+      "upstream_sha256": "4f3b15a228adb1c665d3bc0554d1d8f945de05d34c4c28196829f60343641dc9",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/state.test.ts",
+      "vendored_sha256": "4f3b15a228adb1c665d3bc0554d1d8f945de05d34c4c28196829f60343641dc9"
+    },
+    {
+      "path": "client/src/world/city/state.ts",
+      "upstream_sha256": "a03a5c8a955ab3cfd82d1c15c75c17f7be78bbf12001b8cfa518e3aaecc17ef7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/state.ts",
+      "vendored_sha256": "a03a5c8a955ab3cfd82d1c15c75c17f7be78bbf12001b8cfa518e3aaecc17ef7"
+    },
+    {
+      "path": "client/src/world/city/teleport.ts",
+      "upstream_sha256": "8fdd2d28dde004e8217caa88ce65f0d78da1256e6ce466fed5cb3889633ae0f3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/teleport.ts",
+      "vendored_sha256": "8fdd2d28dde004e8217caa88ce65f0d78da1256e6ce466fed5cb3889633ae0f3"
+    },
+    {
+      "path": "client/src/world/city/tokens-facade.ts",
+      "upstream_sha256": "939984830d8029f78a2544ed2e9c725742a63f211c9dff6c5082d6bd6a649b81",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/city/tokens-facade.ts",
+      "vendored_sha256": "939984830d8029f78a2544ed2e9c725742a63f211c9dff6c5082d6bd6a649b81"
+    },
+    {
+      "path": "client/src/world/constants.ts",
+      "upstream_sha256": "4b5c218f048142608371bfd7ad54cdfce2a969a8ee68759609fcdbabb33c396d",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/constants.ts",
+      "vendored_sha256": "4b5c218f048142608371bfd7ad54cdfce2a969a8ee68759609fcdbabb33c396d"
+    },
+    {
+      "path": "client/src/world/debug.ts",
+      "upstream_sha256": "a3c18b5642e73d33069fcb1c74bae1ba06b176c42d9ba6cb2162237b5168044e",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/debug.ts",
+      "vendored_sha256": "a3c18b5642e73d33069fcb1c74bae1ba06b176c42d9ba6cb2162237b5168044e"
+    },
+    {
+      "path": "client/src/world/index.ts",
+      "upstream_sha256": "d7ed3dfe26c3fa6a931b40bab0aaf17e0e6b3354ab888481fc5905f113feddbc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/index.ts",
+      "vendored_sha256": "9cc70ccb265046667242917aa6c28f561b955ccfed1c75986b78d60983f1e2b1"
+    },
+    {
+      "path": "client/src/world/input.test.ts",
+      "upstream_sha256": "f449a7e8d4f6c73f13ea5c2435b7bfdb166b098dfde4ca0490421f2863380f33",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/input.test.ts",
+      "vendored_sha256": "f449a7e8d4f6c73f13ea5c2435b7bfdb166b098dfde4ca0490421f2863380f33"
+    },
+    {
+      "path": "client/src/world/input.ts",
+      "upstream_sha256": "2b87f928aca08e2d3f38f92806ec15ede232d63da849afa302de2ceaeb3f2b16",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/input.ts",
+      "vendored_sha256": "2b87f928aca08e2d3f38f92806ec15ede232d63da849afa302de2ceaeb3f2b16"
+    },
+    {
+      "path": "client/src/world/layout/builder.ts",
+      "upstream_sha256": "2ff0bd6dcb3fafd3302c25b913f886f9b6c7b5c12bcb4ad386f2254b23c7e8d1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/builder.ts",
+      "vendored_sha256": "2ff0bd6dcb3fafd3302c25b913f886f9b6c7b5c12bcb4ad386f2254b23c7e8d1"
+    },
+    {
+      "path": "client/src/world/layout/building.ts",
+      "upstream_sha256": "8bf518b02cfd61109b28c836cc878a72a05b151b8d91521b48f93bdf0d7215ad",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/building.ts",
+      "vendored_sha256": "8bf518b02cfd61109b28c836cc878a72a05b151b8d91521b48f93bdf0d7215ad"
+    },
+    {
+      "path": "client/src/world/layout/core.ts",
+      "upstream_sha256": "084583b9deceeb034f58c08600d92f6ba3b8c006fe0af7dfe6507ee4e20fcecb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/core.ts",
+      "vendored_sha256": "084583b9deceeb034f58c08600d92f6ba3b8c006fe0af7dfe6507ee4e20fcecb"
+    },
+    {
+      "path": "client/src/world/layout/corridor.ts",
+      "upstream_sha256": "3f7faffb6f925430c27ffa1e29116f40271725f55f52907051804423b1197248",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/corridor.ts",
+      "vendored_sha256": "3f7faffb6f925430c27ffa1e29116f40271725f55f52907051804423b1197248"
+    },
+    {
+      "path": "client/src/world/layout/exterior.ts",
+      "upstream_sha256": "92e918a83213412557e5da0cd93a5d42f622091e17b0f053840bd0a33bc18382",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/exterior.ts",
+      "vendored_sha256": "92e918a83213412557e5da0cd93a5d42f622091e17b0f053840bd0a33bc18382"
+    },
+    {
+      "path": "client/src/world/layout/geometry.ts",
+      "upstream_sha256": "ba163c0c49485ba57732aa7e241fc3c8f769e5ce0a47e146e7eeb49859515cf0",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/geometry.ts",
+      "vendored_sha256": "ba163c0c49485ba57732aa7e241fc3c8f769e5ce0a47e146e7eeb49859515cf0"
+    },
+    {
+      "path": "client/src/world/layout/layout.test.ts",
+      "upstream_sha256": "72214406cee47336ca9b80454b2f4b868ebb097b6dddd76680bc49a203631ed9",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/layout.test.ts",
+      "vendored_sha256": "72214406cee47336ca9b80454b2f4b868ebb097b6dddd76680bc49a203631ed9"
+    },
+    {
+      "path": "client/src/world/layout/room.ts",
+      "upstream_sha256": "584a5c5e58c9117a0732296fbeb52eeef32b2850270ce41ded2b39a0f4f9f250",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/room.ts",
+      "vendored_sha256": "584a5c5e58c9117a0732296fbeb52eeef32b2850270ce41ded2b39a0f4f9f250"
+    },
+    {
+      "path": "client/src/world/layout/types.ts",
+      "upstream_sha256": "9ad4212e0749e2402fc10953f6a66c6a38852bc255564fb853092949a6f8ccb1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/layout/types.ts",
+      "vendored_sha256": "9ad4212e0749e2402fc10953f6a66c6a38852bc255564fb853092949a6f8ccb1"
+    },
+    {
+      "path": "client/src/world/path/astar.test.ts",
+      "upstream_sha256": "32de0a31cd8dff8a8b76ead7f682e00265543d1d92fbf48ffbdc5b86b63bbdfd",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/path/astar.test.ts",
+      "vendored_sha256": "32de0a31cd8dff8a8b76ead7f682e00265543d1d92fbf48ffbdc5b86b63bbdfd"
+    },
+    {
+      "path": "client/src/world/path/astar.ts",
+      "upstream_sha256": "187522d2e50bc46dbd162d146bd6c45eee0659b126a7f7b7e72c362977457bd5",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/path/astar.ts",
+      "vendored_sha256": "187522d2e50bc46dbd162d146bd6c45eee0659b126a7f7b7e72c362977457bd5"
+    },
+    {
+      "path": "client/src/world/path/grid.ts",
+      "upstream_sha256": "198e2f4a197556c99c5ebf84b586665dbb7f48d212ed39c4364a337f73513d63",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/path/grid.ts",
+      "vendored_sha256": "198e2f4a197556c99c5ebf84b586665dbb7f48d212ed39c4364a337f73513d63"
+    },
+    {
+      "path": "client/src/world/playback.test.ts",
+      "upstream_sha256": "847239440d36a4e81024f00de2245e68aba63234e95486f5eed52445701ebd07",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/playback.test.ts",
+      "vendored_sha256": "847239440d36a4e81024f00de2245e68aba63234e95486f5eed52445701ebd07"
+    },
+    {
+      "path": "client/src/world/playback.ts",
+      "upstream_sha256": "28696ba27487d892e334c98ea81c344f5d17c6dbfd483219cc481605fc211ef6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/playback.ts",
+      "vendored_sha256": "28696ba27487d892e334c98ea81c344f5d17c6dbfd483219cc481605fc211ef6"
+    },
+    {
+      "path": "client/src/world/render/anim.ts",
+      "upstream_sha256": "0597f71a078e74daefb82e24c4c457a9067e0c975b9d1ad62a85f8a699131de2",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/anim.ts",
+      "vendored_sha256": "0597f71a078e74daefb82e24c4c457a9067e0c975b9d1ad62a85f8a699131de2"
+    },
+    {
+      "path": "client/src/world/render/daylight.test.ts",
+      "upstream_sha256": "aede4c9d27fd4a9463d52dff5c862a109a959019a6a53d4010d97684ae173779",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/daylight.test.ts",
+      "vendored_sha256": "aede4c9d27fd4a9463d52dff5c862a109a959019a6a53d4010d97684ae173779"
+    },
+    {
+      "path": "client/src/world/render/daylight.ts",
+      "upstream_sha256": "92d842b47b6973ed958af3f3c049b30ca06797f495911707cdc3f9f9124dc382",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/daylight.ts",
+      "vendored_sha256": "92d842b47b6973ed958af3f3c049b30ca06797f495911707cdc3f9f9124dc382"
+    },
+    {
+      "path": "client/src/world/render/github-fx.ts",
+      "upstream_sha256": "922a7295d9e78885dadd1619b225adb78a5229c8b011068031e7a065b53d58ca",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/github-fx.ts",
+      "vendored_sha256": "922a7295d9e78885dadd1619b225adb78a5229c8b011068031e7a065b53d58ca"
+    },
+    {
+      "path": "client/src/world/render/lighting.ts",
+      "upstream_sha256": "9117a0fe4eaf91e5e3cece5f43dfbca5ebf33c78a23ca77801616e05ee4ed9e3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/lighting.ts",
+      "vendored_sha256": "9117a0fe4eaf91e5e3cece5f43dfbca5ebf33c78a23ca77801616e05ee4ed9e3"
+    },
+    {
+      "path": "client/src/world/render/overlay.test.ts",
+      "upstream_sha256": "391e88a4e022bbea7ec2c89874215572b91ba40580f4295a88880eeb5417b0a6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/overlay.test.ts",
+      "vendored_sha256": "391e88a4e022bbea7ec2c89874215572b91ba40580f4295a88880eeb5417b0a6"
+    },
+    {
+      "path": "client/src/world/render/overlay.ts",
+      "upstream_sha256": "4cb03be61ef494215b0f32792034df6b8757b3e5e56e99fd7fe0c28e1063030b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/overlay.ts",
+      "vendored_sha256": "4cb03be61ef494215b0f32792034df6b8757b3e5e56e99fd7fe0c28e1063030b"
+    },
+    {
+      "path": "client/src/world/render/particles.test.ts",
+      "upstream_sha256": "353c8bb0212332e5cb0f296f24795b9edc0be450c1785163be5533201a94112b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/particles.test.ts",
+      "vendored_sha256": "353c8bb0212332e5cb0f296f24795b9edc0be450c1785163be5533201a94112b"
+    },
+    {
+      "path": "client/src/world/render/particles.ts",
+      "upstream_sha256": "fddb14d6bba38b0151e1ca2d3e904494499fc809e085ed96d875ba6bae19a5d0",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/particles.ts",
+      "vendored_sha256": "fddb14d6bba38b0151e1ca2d3e904494499fc809e085ed96d875ba6bae19a5d0"
+    },
+    {
+      "path": "client/src/world/render/props.ts",
+      "upstream_sha256": "884a3d5d215c374f143de1cdae23fd32985b7c649f4b34c2c759c2eca1b89ffb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/props.ts",
+      "vendored_sha256": "884a3d5d215c374f143de1cdae23fd32985b7c649f4b34c2c759c2eca1b89ffb"
+    },
+    {
+      "path": "client/src/world/render/renderer.ts",
+      "upstream_sha256": "83773da0be16af33af3b26d6df02fa64e029384c99e958f91bb9be2608e30d85",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/renderer.ts",
+      "vendored_sha256": "83773da0be16af33af3b26d6df02fa64e029384c99e958f91bb9be2608e30d85"
+    },
+    {
+      "path": "client/src/world/render/scene.ts",
+      "upstream_sha256": "ebb3e876e0d943dc4c0477ca52975272f5721bb16e45e3de02abc8546b28e383",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/scene.ts",
+      "vendored_sha256": "ebb3e876e0d943dc4c0477ca52975272f5721bb16e45e3de02abc8546b28e383"
+    },
+    {
+      "path": "client/src/world/render/seasonal.ts",
+      "upstream_sha256": "77fd9cd8db777c7dc6776a121c9e197a612e8371fc4d5e4aeb14b0899e1a4728",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/seasonal.ts",
+      "vendored_sha256": "77fd9cd8db777c7dc6776a121c9e197a612e8371fc4d5e4aeb14b0899e1a4728"
+    },
+    {
+      "path": "client/src/world/render/shell-sprites.ts",
+      "upstream_sha256": "3d9784c68af9bf8d1cd87b37938d3fe664ddfa4360ef4e383f6cc94d85e8e93a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/render/shell-sprites.ts",
+      "vendored_sha256": "3d9784c68af9bf8d1cd87b37938d3fe664ddfa4360ef4e383f6cc94d85e8e93a"
+    },
+    {
+      "path": "client/src/world/seasonal-world.test.ts",
+      "upstream_sha256": "a0841a11c5a795fcbd9fcbaf40aebac8185eaebbfbc5aa8714b088d1870bb8d6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/seasonal-world.test.ts",
+      "vendored_sha256": "a0841a11c5a795fcbd9fcbaf40aebac8185eaebbfbc5aa8714b088d1870bb8d6"
+    },
+    {
+      "path": "client/src/world/sim/behavior.ts",
+      "upstream_sha256": "9f9b8d5ed90638faeaefb0a5029f7bb2e71df1883b53978eedc59e25aad628f2",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/behavior.ts",
+      "vendored_sha256": "9f9b8d5ed90638faeaefb0a5029f7bb2e71df1883b53978eedc59e25aad628f2"
+    },
+    {
+      "path": "client/src/world/sim/character.ts",
+      "upstream_sha256": "d597eff5454752975ae71e8058c53d9a5a565b2d871f451a4278a0a67a63b3f6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/character.ts",
+      "vendored_sha256": "d597eff5454752975ae71e8058c53d9a5a565b2d871f451a4278a0a67a63b3f6"
+    },
+    {
+      "path": "client/src/world/sim/elevator.ts",
+      "upstream_sha256": "9c75fdec836bad0bcff5d9220280cab985a95ae2a2599e0c697c4b75383ed1aa",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/elevator.ts",
+      "vendored_sha256": "9c75fdec836bad0bcff5d9220280cab985a95ae2a2599e0c697c4b75383ed1aa"
+    },
+    {
+      "path": "client/src/world/sim/github.test.ts",
+      "upstream_sha256": "65aad16c5c1b2b074a2847bfcf43723d61735190baed26ebb6e3940779828ef0",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/github.test.ts",
+      "vendored_sha256": "65aad16c5c1b2b074a2847bfcf43723d61735190baed26ebb6e3940779828ef0"
+    },
+    {
+      "path": "client/src/world/sim/github.ts",
+      "upstream_sha256": "30e06e40badbad7f945b8db44e992521e414b9d8a9f29e09b0856aff66ebd0e0",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/github.ts",
+      "vendored_sha256": "30e06e40badbad7f945b8db44e992521e414b9d8a9f29e09b0856aff66ebd0e0"
+    },
+    {
+      "path": "client/src/world/sim/room-state.ts",
+      "upstream_sha256": "da507e111088c5e43c3474f6a82c83fb96cea728b7dc72201beb301a70f52ebc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/room-state.ts",
+      "vendored_sha256": "da507e111088c5e43c3474f6a82c83fb96cea728b7dc72201beb301a70f52ebc"
+    },
+    {
+      "path": "client/src/world/sim/shell.test.ts",
+      "upstream_sha256": "354e20029fe3d6b1a22179085104e8fa78dc24acd49dc2abb00206c564ad5999",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/shell.test.ts",
+      "vendored_sha256": "354e20029fe3d6b1a22179085104e8fa78dc24acd49dc2abb00206c564ad5999"
+    },
+    {
+      "path": "client/src/world/sim/shell.ts",
+      "upstream_sha256": "7708e20ce405bb4cdfb514d6dafabe4a445c9c5223fb4371e7b3b9833b961ff3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/shell.ts",
+      "vendored_sha256": "7708e20ce405bb4cdfb514d6dafabe4a445c9c5223fb4371e7b3b9833b961ff3"
+    },
+    {
+      "path": "client/src/world/sim/sim-pure.test.ts",
+      "upstream_sha256": "569863a99210af448e0455cf20a2f73c8232d8b87dcffb213e58bf644b957614",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/sim-pure.test.ts",
+      "vendored_sha256": "569863a99210af448e0455cf20a2f73c8232d8b87dcffb213e58bf644b957614"
+    },
+    {
+      "path": "client/src/world/sim/sim.test.ts",
+      "upstream_sha256": "8770e521b9c59031aae426b6b02caef26175c700ade091322859a65d855e6ea8",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/sim.test.ts",
+      "vendored_sha256": "8770e521b9c59031aae426b6b02caef26175c700ade091322859a65d855e6ea8"
+    },
+    {
+      "path": "client/src/world/sim/sim.ts",
+      "upstream_sha256": "dbca4f39a9908e28bf0690674a118a95d84afb49230029e4e99cbd17ddcfcd97",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/sim.ts",
+      "vendored_sha256": "7a647bc717a8a4a0a334cb903d230841b617fdcc7f3f4f933c1afc0d157d4171"
+    },
+    {
+      "path": "client/src/world/sim/spots.ts",
+      "upstream_sha256": "1b65ff80ac4a68d8ca8e72e9aebffd5e0e4ce84d21d874f22398c65a2b2cd1b7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/spots.ts",
+      "vendored_sha256": "1b65ff80ac4a68d8ca8e72e9aebffd5e0e4ce84d21d874f22398c65a2b2cd1b7"
+    },
+    {
+      "path": "client/src/world/sim/steps.ts",
+      "upstream_sha256": "ba88744d08b508483c468f626d5c5f34316904cd83327b11a72274fdeabe814f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/steps.ts",
+      "vendored_sha256": "ba88744d08b508483c468f626d5c5f34316904cd83327b11a72274fdeabe814f"
+    },
+    {
+      "path": "client/src/world/sim/visitor.ts",
+      "upstream_sha256": "cbb53131f1ce34f390a7acf910362f8ae6313fbb0e3c144df16ec85dc221fcd4",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/visitor.ts",
+      "vendored_sha256": "cbb53131f1ce34f390a7acf910362f8ae6313fbb0e3c144df16ec85dc221fcd4"
+    },
+    {
+      "path": "client/src/world/sim/world-visit.test.ts",
+      "upstream_sha256": "ee45f890dfb358f2c6862934102526985802c36c85ae2848c8b6f4dea37e68bd",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/world-visit.test.ts",
+      "vendored_sha256": "ee45f890dfb358f2c6862934102526985802c36c85ae2848c8b6f4dea37e68bd"
+    },
+    {
+      "path": "client/src/world/social/gathering.ts",
+      "upstream_sha256": "e2c77aebc39a40708c6415c34cbd76484308e5789bc9db664a7e521a8230293f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/social/gathering.ts",
+      "vendored_sha256": "e2c77aebc39a40708c6415c34cbd76484308e5789bc9db664a7e521a8230293f"
+    },
+    {
+      "path": "client/src/world/social/lines.ts",
+      "upstream_sha256": "5b593137955d6e0f19863e9431d421c38bf17688cfc5483214d4d0e35125dba8",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/social/lines.ts",
+      "vendored_sha256": "5b593137955d6e0f19863e9431d421c38bf17688cfc5483214d4d0e35125dba8"
+    },
+    {
+      "path": "client/src/world/social/persona.ts",
+      "upstream_sha256": "75414ceb47225c781ea012b223a846efe95463db91cc224f2fa375def58ca405",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/social/persona.ts",
+      "vendored_sha256": "75414ceb47225c781ea012b223a846efe95463db91cc224f2fa375def58ca405"
+    },
+    {
+      "path": "client/src/world/social/social-pure.test.ts",
+      "upstream_sha256": "6bee7ff26333b578e6d7e953a0894a3a494d391fac5fa1d069c0e34c6f8ce47a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/social/social-pure.test.ts",
+      "vendored_sha256": "6bee7ff26333b578e6d7e953a0894a3a494d391fac5fa1d069c0e34c6f8ce47a"
+    },
+    {
+      "path": "client/src/world/social/social.test.ts",
+      "upstream_sha256": "616f0d2046971ab43e4e05a533e20cf7b02cd4286173c24f9c8a30dbd8a11226",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/social/social.test.ts",
+      "vendored_sha256": "616f0d2046971ab43e4e05a533e20cf7b02cd4286173c24f9c8a30dbd8a11226"
+    },
+    {
+      "path": "client/src/world/social/social.ts",
+      "upstream_sha256": "cf4262d6d65dbf1eb6b8a87523354cf2f724574454154c15056bb5fa8486d2c4",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/social/social.ts",
+      "vendored_sha256": "cf4262d6d65dbf1eb6b8a87523354cf2f724574454154c15056bb5fa8486d2c4"
+    },
+    {
+      "path": "client/src/world/social/wallet.ts",
+      "upstream_sha256": "5381d407d28a346b92ee07a7cc27a5a851ac91f86dc3469548839c72c7beea7f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/social/wallet.ts",
+      "vendored_sha256": "5381d407d28a346b92ee07a7cc27a5a851ac91f86dc3469548839c72c7beea7f"
+    },
+    {
+      "path": "client/src/world/sound-cues.ts",
+      "upstream_sha256": "06a48a5ca4022165a97e7969101aa8df4512bbae85b58aa61f3e67f9872d4b7f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sound-cues.ts",
+      "vendored_sha256": "06a48a5ca4022165a97e7969101aa8df4512bbae85b58aa61f3e67f9872d4b7f"
+    },
+    {
+      "path": "client/src/world/theme.test.ts",
+      "upstream_sha256": "17c1ee9d7a5c18132555b650e31240fc667d06ceecee7b97db0be75cdb16249f",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/theme.test.ts",
+      "vendored_sha256": "17c1ee9d7a5c18132555b650e31240fc667d06ceecee7b97db0be75cdb16249f"
+    },
+    {
+      "path": "client/src/world/visit/controller.ts",
+      "upstream_sha256": "f6d2d6674ce273cc6508cd42a1e63ff119da33fd8bcdf25c7a573a81d3133e16",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/visit/controller.ts",
+      "vendored_sha256": "f6d2d6674ce273cc6508cd42a1e63ff119da33fd8bcdf25c7a573a81d3133e16"
+    },
+    {
+      "path": "client/src/world/visit/index.ts",
+      "upstream_sha256": "b5e2b03d2151b6f54ab7f89e0fce564cef43e1d6991f9a7c5b596d01d6e5e0af",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/visit/index.ts",
+      "vendored_sha256": "b5e2b03d2151b6f54ab7f89e0fce564cef43e1d6991f9a7c5b596d01d6e5e0af"
+    },
+    {
+      "path": "client/src/world/visit/model.ts",
+      "upstream_sha256": "0f904010dd74eaeb035e0c489af077b00baa3e19482dcf52c95c7b5dec0325e7",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/visit/model.ts",
+      "vendored_sha256": "0f904010dd74eaeb035e0c489af077b00baa3e19482dcf52c95c7b5dec0325e7"
+    },
+    {
+      "path": "client/src/world/visit/visit.test.ts",
+      "upstream_sha256": "ca77973244e7c5ade569dd3f131e4b80c7ab50b7980102fb5dae260c0ed582e6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/visit/visit.test.ts",
+      "vendored_sha256": "ca77973244e7c5ade569dd3f131e4b80c7ab50b7980102fb5dae260c0ed582e6"
+    },
+    {
+      "path": "client/src/world/visit-social.css",
+      "upstream_sha256": "bbb7c0102543452e41c4d73fc48e3459c6909284dd20a084c6a1e4e530006b46",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/visit-social.css",
+      "vendored_sha256": "bbb7c0102543452e41c4d73fc48e3459c6909284dd20a084c6a1e4e530006b46"
+    },
+    {
+      "path": "client/src/world/visit-social.test.ts",
+      "upstream_sha256": "7397352523bb35ef65e14091482f2c0fefab387fe740d31cc671edaad15ebd35",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/visit-social.test.ts",
+      "vendored_sha256": "7397352523bb35ef65e14091482f2c0fefab387fe740d31cc671edaad15ebd35"
+    },
+    {
+      "path": "client/src/world/visit-social.ts",
+      "upstream_sha256": "a205b18443e100f20f392734b870d0ab6e3f5a1b5f2e84de6f9b3247f59db399",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/visit-social.ts",
+      "vendored_sha256": "a205b18443e100f20f392734b870d0ab6e3f5a1b5f2e84de6f9b3247f59db399"
+    },
+    {
+      "path": "shared/activity.test.ts",
+      "upstream_sha256": "4715ec8c3a52278622a9cca92fa56a1bc48cdc9ae3ffe5f05b50798cb66abf12",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/activity.test.ts",
+      "vendored_sha256": "4715ec8c3a52278622a9cca92fa56a1bc48cdc9ae3ffe5f05b50798cb66abf12"
+    },
+    {
+      "path": "shared/activity.ts",
+      "upstream_sha256": "0411e3b74cc61c64ffe1733d132bc7a5ae8436d35fcc7900f4f57f024d0bb587",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/activity.ts",
+      "vendored_sha256": "0411e3b74cc61c64ffe1733d132bc7a5ae8436d35fcc7900f4f57f024d0bb587"
+    },
+    {
+      "path": "shared/answers.test.ts",
+      "upstream_sha256": "b90792d2a2f4bdaf793927319f634c165e762088ccb6fd940ad39971cbd2aec1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/answers.test.ts",
+      "vendored_sha256": "b90792d2a2f4bdaf793927319f634c165e762088ccb6fd940ad39971cbd2aec1"
+    },
+    {
+      "path": "shared/answers.ts",
+      "upstream_sha256": "65a87f8c94f1e593787355ea837279f9bee23c3d03b22e3e3472176a0cb1c528",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/answers.ts",
+      "vendored_sha256": "65a87f8c94f1e593787355ea837279f9bee23c3d03b22e3e3472176a0cb1c528"
+    },
+    {
+      "path": "shared/appearance.test.ts",
+      "upstream_sha256": "1ec795e9d36cf541873a9c964d0a26e94790b510a3f7cd26e8cf0898073a1347",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/appearance.test.ts",
+      "vendored_sha256": "1ec795e9d36cf541873a9c964d0a26e94790b510a3f7cd26e8cf0898073a1347"
+    },
+    {
+      "path": "shared/appearance.ts",
+      "upstream_sha256": "5bd070434db88f6a72da323309c13471a262969c459316935dd55ba05d50e797",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/appearance.ts",
+      "vendored_sha256": "5bd070434db88f6a72da323309c13471a262969c459316935dd55ba05d50e797"
+    },
+    {
+      "path": "shared/daystats.test.ts",
+      "upstream_sha256": "b58dcf1ba39fd6a77fb40f39a910a23d1ce1bf105ab48adc3289fbf76897cba2",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/daystats.test.ts",
+      "vendored_sha256": "b58dcf1ba39fd6a77fb40f39a910a23d1ce1bf105ab48adc3289fbf76897cba2"
+    },
+    {
+      "path": "shared/daystats.ts",
+      "upstream_sha256": "40d64ab7db4e43bda48f64d18488f8fe26a0a2d6000fc7529296749840b9c7b5",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/daystats.ts",
+      "vendored_sha256": "40d64ab7db4e43bda48f64d18488f8fe26a0a2d6000fc7529296749840b9c7b5"
+    },
+    {
+      "path": "shared/demo/daystats.test.ts",
+      "upstream_sha256": "44b32d84d6cbf77798f3f45288e848f5dcca6385120ed2e3a9e22c78d53fa011",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/daystats.test.ts",
+      "vendored_sha256": "44b32d84d6cbf77798f3f45288e848f5dcca6385120ed2e3a9e22c78d53fa011"
+    },
+    {
+      "path": "shared/demo/daystats.ts",
+      "upstream_sha256": "b8d5a52d9330a093520728daf166d905a24657830b651da745899a1d75ff5d5c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/daystats.ts",
+      "vendored_sha256": "b8d5a52d9330a093520728daf166d905a24657830b651da745899a1d75ff5d5c"
+    },
+    {
+      "path": "shared/demo/github.test.ts",
+      "upstream_sha256": "efe3315ec19d8af7f5eec3b2e807e6d3363cc8c9b2feda98788e9d0f4ae74a88",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/github.test.ts",
+      "vendored_sha256": "efe3315ec19d8af7f5eec3b2e807e6d3363cc8c9b2feda98788e9d0f4ae74a88"
+    },
+    {
+      "path": "shared/demo/github.ts",
+      "upstream_sha256": "dc309a63f75de7f88e4640fb55cb71e4f268b8c28b58a00a92685cc5e68b2281",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/github.ts",
+      "vendored_sha256": "dc309a63f75de7f88e4640fb55cb71e4f268b8c28b58a00a92685cc5e68b2281"
+    },
+    {
+      "path": "shared/demo/permission.test.ts",
+      "upstream_sha256": "71c8999e33ef822f8064f9e09ec977d89a150b72e231ca76ec833ee62b0c1650",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/permission.test.ts",
+      "vendored_sha256": "71c8999e33ef822f8064f9e09ec977d89a150b72e231ca76ec833ee62b0c1650"
+    },
+    {
+      "path": "shared/demo/permission.ts",
+      "upstream_sha256": "fb246cd1b46893214899d3d767b700bc18039071bd2f5635d0da042917ffd626",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/permission.ts",
+      "vendored_sha256": "fb246cd1b46893214899d3d767b700bc18039071bd2f5635d0da042917ffd626"
+    },
+    {
+      "path": "shared/demo/simulator.test.ts",
+      "upstream_sha256": "d2cf7479b294959f698b04bcb0000d8df79177957dad6be6aad4ab48bd946b80",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/simulator.test.ts",
+      "vendored_sha256": "d2cf7479b294959f698b04bcb0000d8df79177957dad6be6aad4ab48bd946b80"
+    },
+    {
+      "path": "shared/demo/simulator.ts",
+      "upstream_sha256": "9f242d20d0c8d95e704427b5071b1cfe4ee2516539af178c5b7c79620316d85c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/simulator.ts",
+      "vendored_sha256": "9f242d20d0c8d95e704427b5071b1cfe4ee2516539af178c5b7c79620316d85c"
+    },
+    {
+      "path": "shared/demo/terminal.test.ts",
+      "upstream_sha256": "59d7d7af7a9e02c208fc634d6b6c4aff51415301d782b84320292edd30fa8d13",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/terminal.test.ts",
+      "vendored_sha256": "59d7d7af7a9e02c208fc634d6b6c4aff51415301d782b84320292edd30fa8d13"
+    },
+    {
+      "path": "shared/demo/terminal.ts",
+      "upstream_sha256": "9677f98f11cc988a4e5e9fc1f89eab04108e39641223ccbea1e441331ec4dd9e",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/demo/terminal.ts",
+      "vendored_sha256": "9677f98f11cc988a4e5e9fc1f89eab04108e39641223ccbea1e441331ec4dd9e"
+    },
+    {
+      "path": "shared/github.test.ts",
+      "upstream_sha256": "f10d5cae26e433a4c5303123a9e236ceca0ac0a45c69ad4408a0e1c62300f853",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/github.test.ts",
+      "vendored_sha256": "f10d5cae26e433a4c5303123a9e236ceca0ac0a45c69ad4408a0e1c62300f853"
+    },
+    {
+      "path": "shared/github.ts",
+      "upstream_sha256": "e86e089c34f5f750852e6d099fd27d53327588f5e49ec31cad2daca83d1b38a1",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/github.ts",
+      "vendored_sha256": "e86e089c34f5f750852e6d099fd27d53327588f5e49ec31cad2daca83d1b38a1"
+    },
+    {
+      "path": "shared/hash.ts",
+      "upstream_sha256": "e7f09437e9967d519ffa0887e84eab2bbfbe1a01f37e2b00a0c0f07c361fa0bb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/hash.ts",
+      "vendored_sha256": "e7f09437e9967d519ffa0887e84eab2bbfbe1a01f37e2b00a0c0f07c361fa0bb"
+    },
+    {
+      "path": "shared/i18n.test.ts",
+      "upstream_sha256": "d435e35b58d20bff307cd396f84a2d50115f964e30d46dc34575c674b8a969f3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/i18n.test.ts",
+      "vendored_sha256": "d435e35b58d20bff307cd396f84a2d50115f964e30d46dc34575c674b8a969f3"
+    },
+    {
+      "path": "shared/i18n.ts",
+      "upstream_sha256": "f6524dfcc9d70d801eff204b747bd865de7ac0e02ef3a4861df0456266df4417",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/i18n.ts",
+      "vendored_sha256": "f6524dfcc9d70d801eff204b747bd865de7ac0e02ef3a4861df0456266df4417"
+    },
+    {
+      "path": "shared/locales/all.ts",
+      "upstream_sha256": "92eac792950f9fc0610c3f8afb1c15a665655cf4ea2b81ef267e85ef592ac41d",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/locales/all.ts",
+      "vendored_sha256": "92eac792950f9fc0610c3f8afb1c15a665655cf4ea2b81ef267e85ef592ac41d"
+    },
+    {
+      "path": "shared/locales/en.ts",
+      "upstream_sha256": "0b997af9ea595d384dd55e3e9fef51fa2e4ebfecb98dee142566a9e35db383af",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/locales/en.ts",
+      "vendored_sha256": "0b997af9ea595d384dd55e3e9fef51fa2e4ebfecb98dee142566a9e35db383af"
+    },
+    {
+      "path": "shared/locales/es.ts",
+      "upstream_sha256": "b768b26cbc17c9028ab0359b0d9035be9bdaa75c0efaf56f5f34a16081837531",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/locales/es.ts",
+      "vendored_sha256": "b768b26cbc17c9028ab0359b0d9035be9bdaa75c0efaf56f5f34a16081837531"
+    },
+    {
+      "path": "shared/locales/fr.ts",
+      "upstream_sha256": "8c537b294fe171135db14dcf5b3c1060b49c0003c4b4cc5156b35896722e2449",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/locales/fr.ts",
+      "vendored_sha256": "8c537b294fe171135db14dcf5b3c1060b49c0003c4b4cc5156b35896722e2449"
+    },
+    {
+      "path": "shared/locales/none.ts",
+      "upstream_sha256": "f222a049dfa67c5d01f3bfb25cfc2ededa6d6ac3a5fa8548151b95fd0ff04723",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/locales/none.ts",
+      "vendored_sha256": "f222a049dfa67c5d01f3bfb25cfc2ededa6d6ac3a5fa8548151b95fd0ff04723"
+    },
+    {
+      "path": "shared/messages.ts",
+      "upstream_sha256": "eaee6a84f9f3611536d4f5b0a17102379c042890fd50078aba8dae86d93e3abb",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/messages.ts",
+      "vendored_sha256": "eaee6a84f9f3611536d4f5b0a17102379c042890fd50078aba8dae86d93e3abb"
+    },
+    {
+      "path": "shared/names.ts",
+      "upstream_sha256": "335411bfabce55c0295d5fabe6f183345a96a761b59a4a78b325877bcc060da6",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/names.ts",
+      "vendored_sha256": "335411bfabce55c0295d5fabe6f183345a96a761b59a4a78b325877bcc060da6"
+    },
+    {
+      "path": "shared/timeline.test.ts",
+      "upstream_sha256": "2e833aad5b7cb071684fa1ca22f153ae2bfa03cfc11c302dd728eb07f00d176b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/timeline.test.ts",
+      "vendored_sha256": "2e833aad5b7cb071684fa1ca22f153ae2bfa03cfc11c302dd728eb07f00d176b"
+    },
+    {
+      "path": "shared/timeline.ts",
+      "upstream_sha256": "2030ba6ec0f8b5ebce18763c5e788ffa5509ab05a99a77963c95395f08e52a93",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/timeline.ts",
+      "vendored_sha256": "2030ba6ec0f8b5ebce18763c5e788ffa5509ab05a99a77963c95395f08e52a93"
+    },
+    {
+      "path": "shared/types.ts",
+      "upstream_sha256": "086fe77a4fea492f457a069b506ce7306426c79c0d5ce1c734094fba16ddc9ae",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/types.ts",
+      "vendored_sha256": "1c861a5088e8eff13d9e13ebb8681f13cc004a2ccf2e8b6166865a38dc3ae36e"
+    },
+    {
+      "path": "shared/world/README.md",
+      "upstream_sha256": "0e10c7ce78e1a065599efd12982b660aff94e0ae8a4a4eebb25a1db0fa6ae3ae",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/README.md",
+      "vendored_sha256": "0e10c7ce78e1a065599efd12982b660aff94e0ae8a4a4eebb25a1db0fa6ae3ae"
+    },
+    {
+      "path": "shared/world/api.test.ts",
+      "upstream_sha256": "47bc9d8ea4e285d255736b20f5232f8fbaaee66c8c57cca4bd80aca2629fa92a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/api.test.ts",
+      "vendored_sha256": "47bc9d8ea4e285d255736b20f5232f8fbaaee66c8c57cca4bd80aca2629fa92a"
+    },
+    {
+      "path": "shared/world/api.ts",
+      "upstream_sha256": "b4d38c07e16b52f207591f262821f410a495261d823ca36dc52bd731fa1b6004",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/api.ts",
+      "vendored_sha256": "b4d38c07e16b52f207591f262821f410a495261d823ca36dc52bd731fa1b6004"
+    },
+    {
+      "path": "shared/world/appearance-flat.test.ts",
+      "upstream_sha256": "f0de118cb7160256287bf5c07fcf9522e4bbb133b4968c031b894a3055adadc3",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/appearance-flat.test.ts",
+      "vendored_sha256": "f0de118cb7160256287bf5c07fcf9522e4bbb133b4968c031b894a3055adadc3"
+    },
+    {
+      "path": "shared/world/appearance-flat.ts",
+      "upstream_sha256": "d4ad3d34e9cfd18c7941ac4b3b8ba94fabf73c78f28d032b6cf97b64aaddf19b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/appearance-flat.ts",
+      "vendored_sha256": "d4ad3d34e9cfd18c7941ac4b3b8ba94fabf73c78f28d032b6cf97b64aaddf19b"
+    },
+    {
+      "path": "shared/world/city.test.ts",
+      "upstream_sha256": "12dba6255567cf9484621471351bd499b05d7c42a97e066fbde3459d05299f83",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/city.test.ts",
+      "vendored_sha256": "12dba6255567cf9484621471351bd499b05d7c42a97e066fbde3459d05299f83"
+    },
+    {
+      "path": "shared/world/city.ts",
+      "upstream_sha256": "837377452624d69ddecde95fd8cd207512c079c11d8debfa826ae4c2e0a7ac38",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/city.ts",
+      "vendored_sha256": "837377452624d69ddecde95fd8cd207512c079c11d8debfa826ae4c2e0a7ac38"
+    },
+    {
+      "path": "shared/world/floor-labels.test.ts",
+      "upstream_sha256": "27c291b324a11746e845d80f48539b091d686de6fe36848bd21b512f67a866ee",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/floor-labels.test.ts",
+      "vendored_sha256": "27c291b324a11746e845d80f48539b091d686de6fe36848bd21b512f67a866ee"
+    },
+    {
+      "path": "shared/world/floor-labels.ts",
+      "upstream_sha256": "c79136fd20871fe23188e3a6ddf02cdafd10f33a778ee064b00fb70f0123060c",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/floor-labels.ts",
+      "vendored_sha256": "c79136fd20871fe23188e3a6ddf02cdafd10f33a778ee064b00fb70f0123060c"
+    },
+    {
+      "path": "shared/world/floor-names.ts",
+      "upstream_sha256": "1cc82a2a5adfd89c0483f7ee4efb3eae694a633d31502c08da2e21078bc559ac",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/floor-names.ts",
+      "vendored_sha256": "1cc82a2a5adfd89c0483f7ee4efb3eae694a633d31502c08da2e21078bc559ac"
+    },
+    {
+      "path": "shared/world/intro.ts",
+      "upstream_sha256": "95406d286db8addf919c202fe3ba8c6e6a67e466e9e6c20003cf2d92fb4bcaca",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/intro.ts",
+      "vendored_sha256": "95406d286db8addf919c202fe3ba8c6e6a67e466e9e6c20003cf2d92fb4bcaca"
+    },
+    {
+      "path": "shared/world/labels.test.ts",
+      "upstream_sha256": "459c755f871fdf1f394abb8c4b957dd344118c89652216d4de17961a61ae6939",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/labels.test.ts",
+      "vendored_sha256": "459c755f871fdf1f394abb8c4b957dd344118c89652216d4de17961a61ae6939"
+    },
+    {
+      "path": "shared/world/names-rules.test.ts",
+      "upstream_sha256": "30a3e291b1a9c5de857ba267b1138236e67d87d3365dc24202aec4e095208516",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/names-rules.test.ts",
+      "vendored_sha256": "30a3e291b1a9c5de857ba267b1138236e67d87d3365dc24202aec4e095208516"
+    },
+    {
+      "path": "shared/world/names-rules.ts",
+      "upstream_sha256": "4df84f3c861fd1203114e93a84000173304533b82a9048c08e05243af1da69c2",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/names-rules.ts",
+      "vendored_sha256": "4df84f3c861fd1203114e93a84000173304533b82a9048c08e05243af1da69c2"
+    },
+    {
+      "path": "shared/world/office-from-world.test.ts",
+      "upstream_sha256": "3b405e1e35bbb1314ecafc81f446a47b5a245fd6c8dd59add3956e4750db5741",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/office-from-world.test.ts",
+      "vendored_sha256": "3b405e1e35bbb1314ecafc81f446a47b5a245fd6c8dd59add3956e4750db5741"
+    },
+    {
+      "path": "shared/world/office-from-world.ts",
+      "upstream_sha256": "fa811aea5dd1df5f7a10508086dbc65def17a013704a9b4c3f3208a9a59cb9bf",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/office-from-world.ts",
+      "vendored_sha256": "7b2024d76309723a62e966195dadec5a1fbc866f9f952106f96091068688b153"
+    },
+    {
+      "path": "shared/world/projection.test.ts",
+      "upstream_sha256": "2f9067252cbdd085e5c213765931d80e3bab97e7abfaaeae14b3cb990e781394",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/projection.test.ts",
+      "vendored_sha256": "2f9067252cbdd085e5c213765931d80e3bab97e7abfaaeae14b3cb990e781394"
+    },
+    {
+      "path": "shared/world/projection.ts",
+      "upstream_sha256": "f1e31478e1722f69ecd504b12f6fbcbf163a1d24f2cfe85d7c373ed3c9ccf60b",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/projection.ts",
+      "vendored_sha256": "f1e31478e1722f69ecd504b12f6fbcbf163a1d24f2cfe85d7c373ed3c9ccf60b"
+    },
+    {
+      "path": "shared/world/protocol.test.ts",
+      "upstream_sha256": "2a0bcf78aaa0c7aaf7df25d7aaf9194cd7458ce42c3631cc7675cf9743ad3b36",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/protocol.test.ts",
+      "vendored_sha256": "2a0bcf78aaa0c7aaf7df25d7aaf9194cd7458ce42c3631cc7675cf9743ad3b36"
+    },
+    {
+      "path": "shared/world/protocol.ts",
+      "upstream_sha256": "31fa3f54de250dfd1f64bbe5c7e3a15cb5a79200c0cc7c17c426885f298f8e96",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/protocol.ts",
+      "vendored_sha256": "31fa3f54de250dfd1f64bbe5c7e3a15cb5a79200c0cc7c17c426885f298f8e96"
+    },
+    {
+      "path": "shared/world/scene.test.ts",
+      "upstream_sha256": "40fc4d8fc094fa584e89147b10dbe5fdd95acca4bf13d13110d920e73ec54507",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/scene.test.ts",
+      "vendored_sha256": "40fc4d8fc094fa584e89147b10dbe5fdd95acca4bf13d13110d920e73ec54507"
+    },
+    {
+      "path": "shared/world/scene.ts",
+      "upstream_sha256": "47ca2bbdc4228c568b002f122abc2d9f11fd943992081d8d2803de4a9369dcf4",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/scene.ts",
+      "vendored_sha256": "47ca2bbdc4228c568b002f122abc2d9f11fd943992081d8d2803de4a9369dcf4"
+    },
+    {
+      "path": "shared/world/schema-validator.ts",
+      "upstream_sha256": "4c60b87db598232b852fa24f483335105a66cd49351a2f37cedf5cbe6b0eed8a",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/schema-validator.ts",
+      "vendored_sha256": "4c60b87db598232b852fa24f483335105a66cd49351a2f37cedf5cbe6b0eed8a"
+    },
+    {
+      "path": "shared/world/schema.json",
+      "upstream_sha256": "bee961590c4ee3a5092f00f98348361e164749e3a9c90760d626a2fdbaad2c06",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/schema.json",
+      "vendored_sha256": "bee961590c4ee3a5092f00f98348361e164749e3a9c90760d626a2fdbaad2c06"
+    },
+    {
+      "path": "shared/world/social-labels.ts",
+      "upstream_sha256": "a079dbc76b4e9b152cc330a522f502c8a0c085e7baa195209a5c7cf2bb793ae0",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/social-labels.ts",
+      "vendored_sha256": "a079dbc76b4e9b152cc330a522f502c8a0c085e7baa195209a5c7cf2bb793ae0"
+    },
+    {
+      "path": "shared/world/traits.ts",
+      "upstream_sha256": "fbab93044930a4e7f34ce36e56f70a55115272e0d06ebdea96e7b0e9a099cecc",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/traits.ts",
+      "vendored_sha256": "fbab93044930a4e7f34ce36e56f70a55115272e0d06ebdea96e7b0e9a099cecc"
+    },
+    {
+      "path": "shared/world/visit-sample.ts",
+      "upstream_sha256": "4cdccd54b211bce61a901445854ff11890b15570bb82701e7bf8b5cc50d50f63",
+      "license": "MIT",
+      "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/world/visit-sample.ts",
+      "vendored_sha256": "4cdccd54b211bce61a901445854ff11890b15570bb82701e7bf8b5cc50d50f63"
+    }
+  ]
+}
