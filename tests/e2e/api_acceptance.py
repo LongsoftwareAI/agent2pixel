@@ -42,11 +42,18 @@ def main():
     workspace = request('/api/workspaces', 'POST', {'name': 'QA-' + str(uuid.uuid4())[:8]}, [200, 201])
     wid = workspace['id']
     bootstrap = request('/api/bootstrap?workspace_id=' + wid)
-    agents = bootstrap['agents']
-    assert len(agents) >= 3, agents
-    workflows = bootstrap['workflows']
-    assert workflows, bootstrap
-    wf = workflows[0]
+    agents = []
+    for role in ('Planner', 'Developer', 'Reviewer'):
+        agents.append(request('/api/agents', 'POST', {
+            'workspace_id': wid, 'name': 'QA ' + role, 'role': role,
+            'brain': {'provider': 'mock', 'model': 'mock-v1'},
+        }, [200, 201]))
+    nodes = [{'id': 'start', 'type': 'start'}]
+    nodes += [{'id': agent['role'].lower(), 'type': 'agent', 'agent_id': agent['id']} for agent in agents]
+    nodes += [{'id': 'end', 'type': 'end'}]
+    edges = [{'source': left['id'], 'target': right['id']} for left, right in zip(nodes, nodes[1:])]
+    wf = request('/api/workflows', 'POST', {'workspace_id': wid, 'name': 'QA handoff',
+        'graph': {'nodes': nodes, 'edges': edges}}, [200, 201])
     check('seed graph validates', lambda: require(request('/api/workflows/' + wf['id'] + '/validate', 'POST')['valid']))
 
     def runtime():
