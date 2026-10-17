@@ -49,3 +49,9 @@
 - evidence: ThreadPoolExecutor12 workers/120 resource+event+read operations, unique persisted ordered seq; rich initial layout valid, restart preserves custom layout; malformed provider/layout/workstation regressions
 - failed intermediate check: existing endpoint-denial test omitted now-required model and correctly got422; provided valid model to isolate endpoint403 policy. No tests suppressed.
 - next_steps: Integrator cherry-pick and QA recheck; review_status: pending
+
+## Null provider-model validation correction
+- timestamp: 2026-10-17T05:00:00Z; status: READY_FOR_REVIEW
+- QA finding: explicit null model reached string.strip and500; changes: null/blank model for non-mock providers returns422
+- tests: `python -m pytest tests/backend -q` PASS27 including POST/PATCH null and whitespace model regressions; `ruff check services tests/backend --select E9,F63,F7,F82` PASS
+- next_steps: QA/Integrator validation; review_status: pending

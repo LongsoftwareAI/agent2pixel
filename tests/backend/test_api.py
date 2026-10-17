@@ -191,7 +191,7 @@ def test_seed_room_rich_layout_and_preserve_user_changes(tmp_path):
         loaded=client.get(url).json()
         assert loaded['furniture']==custom['furniture'] and loaded['assignments']=={}
 
-@pytest.mark.parametrize('brain',[{'provider':'ollama','model':'x','endpoint':123},{'provider':'ollama','model':'x','secret_ref':123},{'provider':[]},{'provider':'openai'},{'provider':'ollama','model':False},{'provider':'ollama','model':'x','endpoint':'http://[bad'}])
+@pytest.mark.parametrize('brain',[{'provider':'ollama','model':'x','endpoint':123},{'provider':'ollama','model':'x','secret_ref':123},{'provider':[]},{'provider':'openai'},{'provider':'openai','model':None},{'provider':'ollama','model':'  '},{'provider':'ollama','model':False},{'provider':'ollama','model':'x','endpoint':'http://[bad'}])
 def test_malformed_brain_rejected(client,brain):
     b=bootstrap(client);ws=b['workspaces'][0]['id']
     assert client.post('/api/agents',json={'workspace_id':ws,'name':'invalid brain','brain':brain}).status_code==422

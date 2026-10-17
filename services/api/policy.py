@@ -23,7 +23,7 @@ def validate_brain(brain):
         value=brain.get(field)
         if value is not None and not isinstance(value,str):
             raise HTTPException(422,f'{field} must be a string or null')
-    if brain.get('provider','mock') != 'mock' and not brain.get('model','').strip():
+    if brain.get('provider','mock') != 'mock' and not (brain.get('model') or '').strip():
         raise HTTPException(422,'A provider model is required')
     if set(brain) - {'provider', 'model', 'endpoint', 'secret_ref'}:
         raise HTTPException(422, 'Only environment secret references are accepted')
