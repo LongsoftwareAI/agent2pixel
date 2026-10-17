@@ -94,7 +94,9 @@ def test_layout_and_websocket(client):
     assert client.put(url,json={'furniture':room['furniture'],'assignments':{}}).status_code==400
     a=b['agents'][0]
     result=client.post('/api/agents',json={k:v for k,v in a.items() if k not in ('id','status')}).json()
-    with client.websocket_connect('/ws/workspaces/'+a['workspace_id']+'/events?after=0') as socket:
+    events=client.get('/api/events',params={'workspace_id':a['workspace_id']}).json()
+    cursor=next(e['seq'] for e in events if e['event_type']=='room.layout.updated')
+    with client.websocket_connect('/ws/workspaces/'+a['workspace_id']+'/events?after='+str(cursor)) as socket:
         assert socket.receive_json()['event_type']=='agent.created'
 
 def test_disk_restart(tmp_path):
