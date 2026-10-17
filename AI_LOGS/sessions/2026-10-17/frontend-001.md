@@ -34,4 +34,4 @@
 - risks: production chunk warning 730 kB (Pixi/ReactFlow); frontend initial validation intentionally basic, server performs DAG/ownership/cycle validation. Mock provider explicitly labelled.
 - blockers: none; localhost screenshots and independent review pending QA, not claimed complete
 - next_steps: Integrator cherry-pick FE-only commit; QA localhost acceptance/screenshots; review corrections
-- handoff_to: QA/Integrator; commit_sha: see FE-001 handoff final commit; review_status: pending
+- handoff_to: QA/Integrator; commit_sha: 34fa7b407036bd5dd967de165e897e737af54a0d; review_status: pending
