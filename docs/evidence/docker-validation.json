@@ -1,0 +1,44 @@
+{
+  "application_candidate": "826c74c",
+  "build_tls_verification": "enabled; optional trusted CA secret",
+  "build_proxy": "existing binding, hostname mapping; values omitted",
+  "compose": "same service config, separate QA project and loopback ports13000/18000",
+  "images": {
+    "api": "sha256:4a8d78e227a68d53abc7cfeb5cc3aecbde54450ae492e58983ad17e53a021ee4",
+    "web": "sha256:6344fc6b62590e13b343a7de2d75760bd9fcbd87068f37bc9f147fe1246fbf53"
+  },
+  "api_acceptance": {
+    "workspace_id": "88a2ae68-d20f-4db7-93cd-e37641ad4d94",
+    "checks": [
+      {
+        "name": "health schema",
+        "result": "PASS"
+      },
+      {
+        "name": "seed graph validates",
+        "result": "PASS"
+      },
+      {
+        "name": "actual persisted handoff, message envelope and replay",
+        "result": "PASS"
+      },
+      {
+        "name": "cyclic graph rejected",
+        "result": "PASS"
+      },
+      {
+        "name": "workspace traversal denied",
+        "result": "PASS"
+      },
+      {
+        "name": "metadata does not expose raw secret",
+        "result": "PASS"
+      },
+      {
+        "name": "unknown provider rejected",
+        "result": "PASS"
+      }
+    ]
+  },
+  "startup_note": "First probe before Vite ready reset connection; after /health readiness, all checks passed."
+}
