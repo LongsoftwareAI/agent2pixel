@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentVerse AI session entry",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "session_id",
+    "agent_id",
+    "agent_role",
+    "task_id",
+    "goal",
+    "status",
+    "branch",
+    "base_commit",
+    "workspace",
+    "owned_paths",
+    "inputs",
+    "assumptions",
+    "constraints",
+    "plan",
+    "changes",
+    "decisions",
+    "commands",
+    "tests",
+    "risks",
+    "blockers",
+    "next_steps",
+    "handoff_to",
+    "commit_sha",
+    "review_status"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "owned_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

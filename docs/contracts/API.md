@@ -1,0 +1,20 @@
+# AgentVerse API v1 — implementation contract
+
+Base /api, JSON snake_case. IDs UUID strings. SQLite migration-ready modular monolith; FastAPI API and background worker package in one process. SQLite persists before WebSocket broadcast. Vite proxies /api, /health, /ws to 127.0.0.1:8000. Frontend localhost:3000. Backend startup `python -m uvicorn services.api.main:app --host 127.0.0.1 --port 8000`.
+
+GET /health -> {status:"ok",schema_version:1}.
+GET /api/workspaces -> Workspace[]. POST /api/workspaces {name} -> Workspace. Workspace={id,name,root_path,created_at}. GET /api/bootstrap?workspace_id=ID -> {workspaces,agents,workflows,room,assets,runs}. Seed Coding + Research, three agents per workspace, one room per workspace, sample graph.
+
+Agent={id,workspace_id,name,role,system_prompt,brain:{provider,model,endpoint,secret_ref},skin,status,skills:string[],tools:string[],memory_policy,workstation:{x,y},enabled}. GET /api/agents?workspace_id=; POST /api/agents same fields excluding id/status optional defaults; GET/PATCH/DELETE /api/agents/{id}; delete soft-disables. No raw API keys accepted or returned. Provider mock/openai/ollama. Endpoint restricted to localhost Ollama or configured external HTTPS hosts.
+
+GET /api/workflows?workspace_id= -> Workflow[]. POST /api/workflows {workspace_id,name,graph} -> Workflow. Graph={nodes:[{id,type:"start"|"agent"|"condition"|"end",agent_id?,position?:{x,y},condition?:{field,equals}}],edges:[{source,target,label?:"true"|"false"}]}. Workflow={id,workspace_id,name,version,graph}. POST /api/workflows/{id}/validate -> {valid,errors:string[]}. DAG, one start, at least end, reachable nodes, valid agent ownership, max 32 nodes, branches true/false.
+
+POST /api/workflows/{id}/runs {input:string,max_steps?:number,token_budget?:number,retry_limit?:number} -> Run. GET /api/runs/{id} -> Run with tasks; GET /api/runs?workspace_id= -> Run[]. Run={id,workflow_id,workspace_id,state,input,output,error,started_at,ended_at,tasks:Task[]}. Task={id,node_id,agent_id,state,input,output,retry_count,error}. POST /api/runs/{id}/cancel -> Run. POST /api/runs/{id}/retry -> new Run. States queued/running/completed/failed/cancelled.
+
+GET /api/runs/{id}/messages -> Message[]. Message={id,run_id,sender,recipient,payload,timestamp,correlation_id}. GET /api/runs/{id}/events -> Event[]. GET /api/events?workspace_id=ID&after=SEQ -> Event[]. WS /ws/workspaces/{id}/events?after=SEQ streams Event individually with replay after seq. Event={id,seq,schema_version:1,workspace_id,run_id:null|string,agent_id:null|string,event_type,payload,created_at}. Types per requirements. Agent states idle/walk/working/waiting/error/completed derive backend events only. UI disconnected badge on lost connection.
+
+Room={id,workspace_id,width:20,height:14,furniture:[{id,asset_id,x,y,rotation}],assignments:{agent_id:{x,y}}}. GET/PUT /api/rooms/{id}/layout returns Room; PUT {furniture,assignments}. Reject duplicate blocked tiles, out of bounds and collision. GET /api/assets -> [{id,name,kind,license:"CC0-1.0",author:"AgentVerse contributors"}] for original procedural artwork.
+
+GET /api/memories?workspace_id= -> memory[]. POST /api/memories {workspace_id,content,kind?,agent_id?}. GET /api/documents?workspace_id= -> document metadata[]; GET /api/documents/content?workspace_id=&path= -> {path,content}; safe read-only access workspace-root only, reject traversal and symlink escape. GET /api/settings -> provider readiness/policy metadata only; POST /api/providers/test {provider,model,endpoint?} -> {ok,message}. GET /api/audit?workspace_id= -> audit[].
+
+Errors FastAPI {detail:string|validation errors}, 400 validation, 404 missing resource, 409 conflicting run/layout, 422 invalid input, 403 policy. Shell/file writes/network tools denied by default; approval requests recorded and cannot execute side effects. Mock adapter explicitly labeled deterministic but runs actual node execution, messages, persisted outputs and artifacts. OpenAI and Ollama adapters execute HTTP calls with timeout and budget; mock provider HTTP tests mandatory.
