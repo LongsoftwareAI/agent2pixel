@@ -1,0 +1,19 @@
+{
+  "base": "http://127.0.0.1:3000",
+  "steps": [
+    "Office loaded, interactive canvas and realtime connected",
+    "Agent system instructions edited, persisted after reload, restored",
+    "Real workflow node drag and saved graph position persisted through API",
+    "Saved workflow validated, executed, backend completed Reviewer output visible",
+    "Original furniture inserted, backend persisted, survived reload, baseline restored",
+    "Settings MockBrain adapter test succeeds",
+    "Actual socket gap: new run completes while disconnected; exact new run_id/seq replayed via WebSocket and rendered in activity"
+  ],
+  "console_errors": [],
+  "http_failures": [],
+  "replayed_event": {
+    "run_id": "8dfc90fb-cd3c-4ce0-985a-b22b18831f70",
+    "seq": 96,
+    "event_type": "workflow.completed"
+  }
+}

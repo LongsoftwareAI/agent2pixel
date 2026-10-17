@@ -13,5 +13,5 @@ Commit b1bafd02896d90d83457266575a1e8e5011ce997. Viewed `webview-ui/public/offic
 
 Backend status -> visual: idle stationary; walk path travel; working keyboard movement; waiting speech ellipsis; error red mark; completed green check, triggered only by persisted backend events. Connection loss visibly disconnected. No optimistic task completion.
 
-## Acceptance evidence (must be filled by QA)
-For Office, Agent Studio, Workflow Builder, Furniture Editor, Run Monitor and Settings: capture localhost at 1366x768, interaction Playwright test, no-console-error check, commit/task/log links and comparison deviations. Screenshots and implementation tests are pending; this board is research evidence only.
+## Acceptance evidence — independently reviewed
+For Office, Agent Studio, Workflow Builder, Furniture Editor, Run Monitor and Settings: capture localhost at 1366x768, interaction Playwright test, no-console-error check, commit/task/log links and comparison deviations. Actual screenshots and functional evidence are now committed in `tests/e2e/evidence/` at application candidate `826c74c`; see `AI_LOGS/reviews/QA-001-review.md` for independent visual comparison, exact commands, resolved findings and APPROVE verdict. Research images above remain reference-only. Each screen has real localhost capture at1366×768; office also1920×1080. Capability and event detail supplemental captures cover below-fold controls. Final console/HTTP errors are empty; initial failing evidence is retained separately.

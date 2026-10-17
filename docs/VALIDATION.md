@@ -37,7 +37,7 @@ QA owns `tests/e2e/` and `AI_LOGS/reviews/`, independently of application author
 - [Settings 1366×768](../tests/e2e/evidence/06-settings-1366.png)
 - [Office 1920×1080](../tests/e2e/evidence/07-office-1920.png)
 
-The visual reference comparison and final verdict must be read with the independent review. Original procedural CC0 artwork, no upstream sprites copied. Habblaud room zoning/feed and Pixel Agents top-down workstation/furniture are design inspirations, with intentional light dashboard chrome and a smaller single-floor scope.
+Independent application verdict **APPROVE** is recorded in [QA-001 review](../AI_LOGS/reviews/QA-001-review.md) at candidate826c74c. Integrator reviewed the QA tests separately, tightened exact new-run replay proof, and reran browser7interactions with clean console/HTTP; result [here](evidence/integrator-browser-results.json). All10 screenshot hashes and dimensions match the committed manifest. The visual comparison and final verdict must be read with that review. Original procedural CC0 artwork, no upstream sprites copied. Habblaud room zoning/feed and Pixel Agents top-down workstation/furniture are design inspirations, with intentional light dashboard chrome and a smaller single-floor scope.
 
 ## Real failures investigated
 
@@ -48,7 +48,7 @@ The visual reference comparison and final verdict must be read with the independ
 
 ## Docker evidence and cloud trust configuration
 
-Docker28.4 is available. Both pinned images built successfully and Compose started API healthy + web in a separate QA project with alternate loopback ports18000/13000. The same independent 7-check API script passed through the **web proxy**, exercising persistent workflow output, not just health. Final images were rebuilt from the application candidate. QA project data is separate from development data.
+Docker28.4 is available. Both pinned images built successfully and Compose started API healthy + web in a separate QA project with alternate loopback ports18000/13000. The same independent 7-check API script passed through the **web proxy**, exercising persistent workflow output, not just health. Final images were rebuilt from the application candidate. QA project data is separate from development data; owned QA containers were stopped after validation, volumes preserved. Final image IDs and7-check results are committed in [Docker evidence](evidence/docker-validation.json).
 
 This cloud machine has nested Docker DNS and a TLS-intercepting proxy. Unmodified build initially failed DNS, then certificate verification after adding proxy DNS mapping. Corrected using supported Docker `--add-host` for the already configured proxy hostname, predefined `--build-arg HTTP_PROXY --build-arg HTTPS_PROXY --build-arg NO_PROXY`, and optional BuildKit secret `--secret id=build_ca,src=<existing trusted CA bundle>`. Dockerfiles use that ephemeral CA for pip/npm only. No credentials or CA values were committed, no trust verification disabled, and no changed artifact checksums. `DOCKER_CONFIG=/tmp/agentverse-docker` avoided the unwritable default buildx cache. These are environment-specific build prerequisites; the ordinary documented dev command was validated directly. Do not claim the unmodified Compose build ran successfully in this proxied cloud machine.
 

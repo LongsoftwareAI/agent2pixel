@@ -42,7 +42,7 @@ npm --prefix apps/web test
 npm --prefix apps/web run build
 ```
 
-QA E2E và ảnh chụp: xem `tests/e2e/` cùng báo cáo trong `AI_LOGS/reviews/` sau integration. Kết quả chính xác, SHA được review và các giới hạn được ghi trong `docs/VALIDATION.md`; không coi checklist yêu cầu là kết quả test.
+QA E2E và ảnh chụp: xem [hướng dẫn](tests/e2e/README.md), [review độc lập APPROVE](AI_LOGS/reviews/QA-001-review.md) và `tests/e2e/evidence/`. Kết quả chính xác, SHA được review và các giới hạn được ghi trong `docs/VALIDATION.md`; không coi checklist yêu cầu là kết quả test.
 
 ## Nguồn tham khảo và cộng tác
 
