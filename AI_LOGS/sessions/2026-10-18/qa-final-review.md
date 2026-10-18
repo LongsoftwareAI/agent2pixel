@@ -1,0 +1,24 @@
+# Phase 3 QA continuation and final independent production review
+
+- timestamp: 2026-10-18T08:05:00Z
+- session_id: qa-final-review-20261018
+- agent_id / agent_role: resume_harness / reassigned independent Phase 3 production reviewer
+- task_id: P3-QA-FINAL
+- goal: Finish independent production review and commit preserved/new real localhost acceptance evidence after prior QA stopped.
+- status: READY_FOR_REVIEW / production verdict APPROVE at77a1db8; Integrator reviews test contributions separately.
+- branch / base_commit / workspace: agent/qa/P2-08 /35f624a / /workspace/worktrees/p2-qa
+- owned_paths: tests/phase3/ excluding runtime; AI_LOGS/reviews/P3-*; own review session log. Reassigned by Integrator explicitly; previous QA stopped.
+- inputs: root task, application77a1db8, phase3 contract, previous QA actual HTTP/editor/browser JSON/screenshots/helpers, current production source.
+- assumptions: Prior QA output is attributed rather than claimed as independently rerun; localhost77a1db8 production source unchanged in current Integrator checkout.
+- constraints: No production app modification; preserve582920c failed evidence and notices; never independently approve own Harness test work; no live model claim.
+- plan: Inspect production delta; inspect prior evidence/helper assertions; rerun production tests/control checks and actual pointer browser/editor flows; preserve all evidence; write independent verdict.
+- changes: Added P3-FINAL-review.md, own log; retained prior uncommitted evidence and live_editor.py; new77a1db8/review-browser and review-editor JSON/screenshots.
+- decisions: APPROVE bounded localhost production delta only. Own Harness tests remain subject to Integrator independent review. Human endpoint QA automation is not real user acceptance.
+- commands: Rootvenv python -m pytest -q tests/backend tests/phase2/runtime tests/phase3/runtime; npm run test/lint/build in apps/web; system python tests/phase3/live_browser.py --sha77a1db8 --output .../review-browser; system python tests/phase3/live_editor.py --sha77a1db8 --output .../review-editor --browser-result .../review-browser/live-browser.json.
+- tests:61PythonPASS43.77s;27controlPASS;lint/type/buildPASS. Fresh browserPASS, editorPASS (actual create rolemapping/change objective/filename/save/newversion/reload persistence); page_errors/http_failures empty for both. First browser invocation with rootvenv lacked Playwright, reran using preinstalled system Python Playwright, no install or trust bypass. Viewed screenshots personally.
+- risks: MockBrain/local provider fixtures only, no live research/model validation; bounded tools/DAG, localhost single user; artifact crash reconciliation limitation; upstream Harness SBOM limitation; large frontend bundle and AnyIO deprecation warnings. Workboard default link styling has low contrast but no blocking functionality.
+- blockers: None for production scoped verdict; Integrator test review/user acceptance remain distinct.
+- next_steps / handoff_to: Integrator cherry-pick QA commit, independently review QA helper/Harness tests and update final user status with evidence links.
+- commit_sha: Source commit containing this log.
+- review_status: Independent production APPROVE; own tests not self-approved.
+- reference_repository/version/license: Existing Habblaud MIT source/art and official Harness notices unchanged; no new source/art/dependency copied.

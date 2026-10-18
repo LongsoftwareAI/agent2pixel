@@ -1,0 +1,273 @@
+{
+  "passed": false,
+  "finding": "Original work brief and acceptance criteria absent from second assignment; preceding output is compact and does not echo them. Node-specific instructions and source docs remain present.",
+  "severity": "medium",
+  "run_id": "88fbbc02-2e29-47f3-b665-756774a7b8a7",
+  "application_sha": "582920c",
+  "restart_proof": {
+    "passed": true,
+    "provider_requests_after_restart_before_approval": 1,
+    "same_generated_task_output_tokens": true
+  },
+  "run": {
+    "id": "88fbbc02-2e29-47f3-b665-756774a7b8a7",
+    "workflow_id": "8ec1ca10-6af5-46f2-b076-07e10246a9a0",
+    "workspace_id": "c3e6dc8c-26c3-4331-a5bc-6936f7d2e48c",
+    "state": "waiting_approval",
+    "output": "",
+    "error": null,
+    "started_at": "2026-10-18T03:39:06.693854+00:00",
+    "ended_at": null,
+    "tasks": [
+      {
+        "id": "b285c6a1-4e9e-4906-bb09-94b98dbfcece",
+        "node_id": "step-0",
+        "agent_id": "04ff29c9-fe23-46a4-b64b-dfa6c1af7d48",
+        "state": "completed",
+        "input": "P3_QA_CUSTOM_BRIEF\n\nBRIEF_QA: prepare a factual internal service report.\n\nAcceptance criteria:\n- CRITERION_QA: report both satisfaction and unresolved cases\n- Explicitly disclose missing data",
+        "output": "[LOCAL PROVIDER STUB \u2014 not live inference]\nRequest SHA256: 90c511ec572232c9d6e7e7282aa50fb81e8f64073ff32fbed0c6688c578db2c9\nSource received: True\nFixture findings: satisfaction 82 percent; 17 support cases open. Missing data remains unverified.",
+        "retry_count": 0,
+        "error": null,
+        "tokens": 30,
+        "output_generated_at": "2026-10-18T03:39:07.256189+00:00"
+      },
+      {
+        "id": "62e6477a-31c2-46bd-813e-0399f75653dc",
+        "node_id": "step-1",
+        "agent_id": "25f98170-31e8-43f4-a306-5f6cf3833d86",
+        "state": "running",
+        "input": "[LOCAL PROVIDER STUB \u2014 not live inference]\nRequest SHA256: 90c511ec572232c9d6e7e7282aa50fb81e8f64073ff32fbed0c6688c578db2c9\nSource received: True\nFixture findings: satisfaction 82 percent; 17 support cases open. Missing data remains unverified.",
+        "output": "[LOCAL PROVIDER STUB \u2014 not live inference]\nRequest SHA256: fbd615c010dccfbc1663d50cae77985b0e037fd5106915be278250055452734d\nSource received: True\nFixture findings: satisfaction 82 percent; 17 support cases open. Missing data remains unverified.",
+        "retry_count": 0,
+        "error": null,
+        "tokens": 30,
+        "output_generated_at": "2026-10-18T03:39:36.017817+00:00"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "start",
+          "type": "start"
+        },
+        {
+          "id": "step-0",
+          "type": "agent",
+          "agent_id": "04ff29c9-fe23-46a4-b64b-dfa6c1af7d48",
+          "instructions": "NODE_RESEARCH_QA: summarize only supplied source facts; identify missing information.",
+          "deliverable": {
+            "filename": "brief.md"
+          }
+        },
+        {
+          "id": "step-1",
+          "type": "agent",
+          "agent_id": "25f98170-31e8-43f4-a306-5f6cf3833d86",
+          "instructions": "NODE_EDIT_QA: edit the preceding handoff; preserve factual limitations and list acceptance evidence.",
+          "deliverable": {
+            "filename": "edited.txt"
+          }
+        },
+        {
+          "id": "end",
+          "type": "end"
+        }
+      ],
+      "edges": [
+        {
+          "source": "start",
+          "target": "step-0"
+        },
+        {
+          "source": "step-0",
+          "target": "step-1"
+        },
+        {
+          "source": "step-1",
+          "target": "end"
+        }
+      ]
+    },
+    "input": "P3_QA_CUSTOM_BRIEF\n\nBRIEF_QA: prepare a factual internal service report.\n\nAcceptance criteria:\n- CRITERION_QA: report both satisfaction and unresolved cases\n- Explicitly disclose missing data",
+    "max_steps": 32,
+    "token_budget": 12000,
+    "retry_limit": 1,
+    "actions": [],
+    "agent_specs": {
+      "04ff29c9-fe23-46a4-b64b-dfa6c1af7d48": {
+        "workspace_id": "c3e6dc8c-26c3-4331-a5bc-6936f7d2e48c",
+        "name": "P3 QA Researcher",
+        "role": "Researcher",
+        "system_prompt": "Complete the assigned task faithfully.",
+        "brain": {
+          "provider": "ollama",
+          "model": "qa-local-stub",
+          "endpoint": "http://127.0.0.1:38523"
+        },
+        "skin": "blue",
+        "skills": [],
+        "tools": [],
+        "memory_policy": "workspace",
+        "workstation": {
+          "x": 3,
+          "y": 3
+        },
+        "enabled": true,
+        "execution": {
+          "engine": "langchain",
+          "version": 1
+        },
+        "skill_bindings": [],
+        "tool_grants": [
+          {
+            "id": "documents.read",
+            "allow": true
+          },
+          {
+            "id": "documents.list",
+            "allow": true
+          },
+          {
+            "id": "artifacts.write_text",
+            "allow": true
+          }
+        ],
+        "role_config": {
+          "id": "researcher",
+          "version": 1,
+          "instructions": "Complete the assigned task faithfully.",
+          "responsibilities": []
+        },
+        "memory_config": {
+          "scope": "workspace"
+        },
+        "appearance": {
+          "seed": "blue"
+        },
+        "id": "04ff29c9-fe23-46a4-b64b-dfa6c1af7d48",
+        "status": "idle",
+        "resolved_skills": []
+      },
+      "25f98170-31e8-43f4-a306-5f6cf3833d86": {
+        "workspace_id": "c3e6dc8c-26c3-4331-a5bc-6936f7d2e48c",
+        "name": "P3 QA Editor",
+        "role": "Editor",
+        "system_prompt": "Complete the assigned task faithfully.",
+        "brain": {
+          "provider": "ollama",
+          "model": "qa-local-stub",
+          "endpoint": "http://127.0.0.1:38523"
+        },
+        "skin": "blue",
+        "skills": [],
+        "tools": [],
+        "memory_policy": "workspace",
+        "workstation": {
+          "x": 3,
+          "y": 3
+        },
+        "enabled": true,
+        "execution": {
+          "engine": "langchain",
+          "version": 1
+        },
+        "skill_bindings": [],
+        "tool_grants": [
+          {
+            "id": "documents.read",
+            "allow": true
+          },
+          {
+            "id": "documents.list",
+            "allow": true
+          },
+          {
+            "id": "artifacts.write_text",
+            "allow": true
+          }
+        ],
+        "role_config": {
+          "id": "editor",
+          "version": 1,
+          "instructions": "Complete the assigned task faithfully.",
+          "responsibilities": []
+        },
+        "memory_config": {
+          "scope": "workspace"
+        },
+        "appearance": {
+          "seed": "blue"
+        },
+        "id": "25f98170-31e8-43f4-a306-5f6cf3833d86",
+        "status": "idle",
+        "resolved_skills": []
+      }
+    },
+    "artifacts": [
+      {
+        "id": "437f98b2-00fd-4cc6-b28f-0999f37b2acf",
+        "path": "artifacts/88fbbc02-2e29-47f3-b665-756774a7b8a7/brief.md",
+        "sha256": "87d537eac517f4e9fc15b00489e8a48154f656d63ee742c2f6093f0efd5760c2",
+        "size": 246,
+        "tool": "artifacts.write_text",
+        "agent_id": "04ff29c9-fe23-46a4-b64b-dfa6c1af7d48",
+        "run_id": "88fbbc02-2e29-47f3-b665-756774a7b8a7",
+        "node_id": "step-0",
+        "created_at": "2026-10-18T03:39:35.358321+00:00"
+      }
+    ],
+    "engine_version": "langgraph-1.2.16",
+    "checkpoint": {
+      "engine": "langgraph",
+      "thread_id": "c3e6dc8c-26c3-4331-a5bc-6936f7d2e48c:88fbbc02-2e29-47f3-b665-756774a7b8a7",
+      "resumable": true
+    },
+    "token_spent": 60,
+    "work_item_id": "4013d085-3ec9-4a90-be44-118bf2f31b6d",
+    "brief_revision": 1,
+    "brief_snapshot": {
+      "title": "P3_QA_CUSTOM_BRIEF",
+      "description": "BRIEF_QA: prepare a factual internal service report.",
+      "acceptance_criteria": [
+        "CRITERION_QA: report both satisfaction and unresolved cases",
+        "Explicitly disclose missing data"
+      ]
+    }
+  },
+  "approvals": [
+    {
+      "id": "7c77ef23-840b-436d-af47-91bfb5c21dae",
+      "workspace_id": "c3e6dc8c-26c3-4331-a5bc-6936f7d2e48c",
+      "run_id": "88fbbc02-2e29-47f3-b665-756774a7b8a7",
+      "agent_id": "04ff29c9-fe23-46a4-b64b-dfa6c1af7d48",
+      "action_id": "88fbbc02-2e29-47f3-b665-756774a7b8a7:node:step-0",
+      "tool": "artifacts.write_text",
+      "payload": {
+        "filename": "brief.md",
+        "content": "[LOCAL PROVIDER STUB \u2014 not live inference]\nRequest SHA256: 90c511ec572232c9d6e7e7282aa50fb81e8f64073ff32fbed0c6688c578db2c9\nSource received: True\nFixture findings: satisfaction 82 percent; 17 support cases open. Missing data remains unverified."
+      },
+      "payload_hash": "9714c907b9c7fced682a7444c65bd1951b97bae7683f522455756ef7100ee0bf",
+      "node_id": "step-0",
+      "status": "consumed",
+      "created_at": "2026-10-18T03:39:07.261223+00:00",
+      "expires_at": "2026-10-18T03:54:07.261233+00:00"
+    },
+    {
+      "id": "29d595a1-f0dd-4c48-90d5-fe88614303d4",
+      "workspace_id": "c3e6dc8c-26c3-4331-a5bc-6936f7d2e48c",
+      "run_id": "88fbbc02-2e29-47f3-b665-756774a7b8a7",
+      "agent_id": "25f98170-31e8-43f4-a306-5f6cf3833d86",
+      "action_id": "88fbbc02-2e29-47f3-b665-756774a7b8a7:node:step-1",
+      "tool": "artifacts.write_text",
+      "payload": {
+        "filename": "edited.txt",
+        "content": "[LOCAL PROVIDER STUB \u2014 not live inference]\nRequest SHA256: fbd615c010dccfbc1663d50cae77985b0e037fd5106915be278250055452734d\nSource received: True\nFixture findings: satisfaction 82 percent; 17 support cases open. Missing data remains unverified."
+      },
+      "payload_hash": "99dd941365efef7e700707537e1b0ac1c4f970ea6ff6d81bcfa5453d2ba9ae48",
+      "node_id": "step-1",
+      "status": "pending",
+      "created_at": "2026-10-18T03:39:36.020319+00:00",
+      "expires_at": "2026-10-18T03:54:36.020329+00:00"
+    }
+  ]
+}

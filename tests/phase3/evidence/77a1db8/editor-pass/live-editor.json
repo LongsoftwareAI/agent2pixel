@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "application_sha": "77a1db8",
+  "workspace_id": "837f820f-f17c-41b7-8151-287d1c4a12d8",
+  "created_workflow_id": "9877edaa-8478-4dac-99c3-14e5b1fb362d",
+  "saved_workflow_id": "1b003d24-cdc6-4b9a-acee-038c2c7ebf7c",
+  "node": {
+    "id": "step-0",
+    "type": "agent",
+    "position": {
+      "x": 220,
+      "y": 100
+    },
+    "agent_id": "0bf652de-04f1-4f11-912b-8ec07d6ae0ab",
+    "instructions": "UI_SAVED_CUSTOM_OBJECTIVE: list operational risks only from supplied documents.",
+    "deliverable": {
+      "filename": "custom-operations.md"
+    }
+  },
+  "checks": [
+    "actual role mapping creates editable template graph",
+    "missing artifact grant warning visible",
+    "roles and grants unchanged",
+    "node instruction and filename saved as new workflow",
+    "reload preserves saved instruction and filename"
+  ],
+  "page_errors": [],
+  "http_failures": []
+}

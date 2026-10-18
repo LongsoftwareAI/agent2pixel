@@ -1,0 +1,183 @@
+{
+  "passed": true,
+  "application_sha": "77a1db8",
+  "provider": "local HTTP Ollama-compatible stub; no live inference",
+  "runtime": "actual API/LangGraph/SQLite/output export",
+  "workspace_id": "34c94901-5c5e-4b19-a035-207caa1c2e51",
+  "work_item_id": "af8f06f8-3f1a-4ba2-8f29-081e8ae257c0",
+  "run_id": "38139ca9-457e-41cb-8050-eda065517a4b",
+  "provider_requests": 7,
+  "concurrent_launch_statuses": [
+    200,
+    409
+  ],
+  "first_run_provider_requests": 2,
+  "rerun_provider_requests": 2,
+  "restart_checked": true,
+  "approvals": [
+    "703018f5-4b5e-412a-9007-cd99a2a9cb7b",
+    "2f0b098f-ebe6-491c-9313-e358b600019d"
+  ],
+  "artifacts": [
+    {
+      "id": "adfc2b29-1176-4bb6-ba1f-63fe7dcf5a3a",
+      "path": "artifacts/38139ca9-457e-41cb-8050-eda065517a4b/brief.md",
+      "sha256": "f4f249d1726360f7ee288f11090453f87f7266486a5d694ada6a4011b192e38f",
+      "size": 246,
+      "tool": "artifacts.write_text",
+      "agent_id": "81c4b92c-8629-48b8-b619-f59758a5a6a4",
+      "run_id": "38139ca9-457e-41cb-8050-eda065517a4b",
+      "node_id": "step-0",
+      "created_at": "2026-10-18T03:42:03.008967+00:00"
+    },
+    {
+      "id": "34b8360b-4643-4444-bb5b-0b9c92b7126d",
+      "path": "artifacts/38139ca9-457e-41cb-8050-eda065517a4b/edited.txt",
+      "sha256": "060fb2515342c55a410bcd146bc354ac53c026c6364f65b9638bcc8234f4f6aa",
+      "size": 246,
+      "tool": "artifacts.write_text",
+      "agent_id": "0c34513f-5134-44dd-a3a4-4e2fbc26a07f",
+      "run_id": "38139ca9-457e-41cb-8050-eda065517a4b",
+      "node_id": "step-1",
+      "created_at": "2026-10-18T03:42:03.559873+00:00"
+    }
+  ],
+  "operations_example": {
+    "template": "operations-report",
+    "run_id": "a86c8436-12d9-435d-a44e-9ef9f072d0b3",
+    "provider_requests": 2,
+    "artifacts": [
+      {
+        "id": "1e92eee0-c6d0-49c8-84d3-a8f9a5a8c6dd",
+        "path": "artifacts/a86c8436-12d9-435d-a44e-9ef9f072d0b3/operations-report.md",
+        "sha256": "3bbdacf8c5d7d703003933d36aa5d26b4a9ad1b9b50fc336cb4a6ad09188ffd9",
+        "size": 246,
+        "tool": "artifacts.write_text",
+        "agent_id": "f0ac413b-78a7-4cf8-be89-b5ab3ad125bb",
+        "run_id": "a86c8436-12d9-435d-a44e-9ef9f072d0b3",
+        "node_id": "ops-0",
+        "created_at": "2026-10-18T03:42:05.565624+00:00"
+      },
+      {
+        "id": "b34ca64b-5203-4424-9b88-8d2af4998d35",
+        "path": "artifacts/a86c8436-12d9-435d-a44e-9ef9f072d0b3/operations-review.md",
+        "sha256": "b0fb8977c078dac8761f3064eac89144fb9fdf325feaf0b2ef00dabdbf06dc68",
+        "size": 246,
+        "tool": "artifacts.write_text",
+        "agent_id": "e977cf30-f493-44d6-80b7-544bf70d23ca",
+        "run_id": "a86c8436-12d9-435d-a44e-9ef9f072d0b3",
+        "node_id": "ops-1",
+        "created_at": "2026-10-18T03:42:06.040086+00:00"
+      }
+    ],
+    "human_review": {
+      "workspace_id": "34c94901-5c5e-4b19-a035-207caa1c2e51",
+      "workflow_id": "8aa7c936-704e-446c-8bf3-5f16e1af5985",
+      "title": "QA actual operations report",
+      "description": "BRIEF_QA: prepare a factual internal service report.",
+      "acceptance_criteria": [
+        "CRITERION_QA: report both satisfaction and unresolved cases",
+        "Explicitly disclose missing data"
+      ],
+      "id": "d496a613-c321-4ba0-9557-bbeba75062d7",
+      "run_ids": [
+        "a86c8436-12d9-435d-a44e-9ef9f072d0b3"
+      ],
+      "latest_run_id": "a86c8436-12d9-435d-a44e-9ef9f072d0b3",
+      "reviews": [
+        {
+          "decision": "accepted",
+          "comment": "Human QA reviewed operations evidence and limitations",
+          "reviewer": "human",
+          "run_id": "a86c8436-12d9-435d-a44e-9ef9f072d0b3",
+          "created_at": "2026-10-18T03:42:06.102902+00:00"
+        }
+      ],
+      "brief_revision": 1,
+      "created_at": "2026-10-18T03:42:05.092657+00:00",
+      "updated_at": "2026-10-18T03:42:06.102915+00:00",
+      "status": "done"
+    }
+  },
+  "human_review": {
+    "workspace_id": "34c94901-5c5e-4b19-a035-207caa1c2e51",
+    "workflow_id": "7f9db948-f459-43b8-b6dd-9bb16227f0a6",
+    "title": "P3_QA revised brief",
+    "description": "BRIEF_QA: prepare a factual internal service report.",
+    "acceptance_criteria": [
+      "CRITERION_QA: report both satisfaction and unresolved cases",
+      "Explicitly disclose missing data"
+    ],
+    "id": "af8f06f8-3f1a-4ba2-8f29-081e8ae257c0",
+    "run_ids": [
+      "38139ca9-457e-41cb-8050-eda065517a4b",
+      "bdb69cdf-9c33-4a98-9f35-d26bfcb1d207"
+    ],
+    "latest_run_id": "bdb69cdf-9c33-4a98-9f35-d26bfcb1d207",
+    "reviews": [
+      {
+        "decision": "changes_requested",
+        "comment": "HUMAN_QA: clarify limitations before acceptance",
+        "reviewer": "human",
+        "run_id": "38139ca9-457e-41cb-8050-eda065517a4b",
+        "created_at": "2026-10-18T03:42:03.593435+00:00"
+      },
+      {
+        "decision": "accepted",
+        "comment": "HUMAN_QA: inspected exact generated exports and source limitations",
+        "reviewer": "human",
+        "run_id": "bdb69cdf-9c33-4a98-9f35-d26bfcb1d207",
+        "created_at": "2026-10-18T03:42:04.595511+00:00"
+      }
+    ],
+    "brief_revision": 2,
+    "created_at": "2026-10-18T03:41:35.114986+00:00",
+    "updated_at": "2026-10-18T03:42:04.595521+00:00",
+    "status": "done"
+  },
+  "changes_requested": {
+    "workspace_id": "34c94901-5c5e-4b19-a035-207caa1c2e51",
+    "workflow_id": "7f9db948-f459-43b8-b6dd-9bb16227f0a6",
+    "title": "P3_QA_CUSTOM_BRIEF",
+    "description": "BRIEF_QA: prepare a factual internal service report.",
+    "acceptance_criteria": [
+      "CRITERION_QA: report both satisfaction and unresolved cases",
+      "Explicitly disclose missing data"
+    ],
+    "id": "af8f06f8-3f1a-4ba2-8f29-081e8ae257c0",
+    "run_ids": [
+      "38139ca9-457e-41cb-8050-eda065517a4b"
+    ],
+    "latest_run_id": "38139ca9-457e-41cb-8050-eda065517a4b",
+    "reviews": [
+      {
+        "decision": "changes_requested",
+        "comment": "HUMAN_QA: clarify limitations before acceptance",
+        "reviewer": "human",
+        "run_id": "38139ca9-457e-41cb-8050-eda065517a4b",
+        "created_at": "2026-10-18T03:42:03.593435+00:00"
+      }
+    ],
+    "brief_revision": 1,
+    "created_at": "2026-10-18T03:41:35.114986+00:00",
+    "updated_at": "2026-10-18T03:42:03.593446+00:00",
+    "status": "backlog"
+  },
+  "revised_run_id": "bdb69cdf-9c33-4a98-9f35-d26bfcb1d207",
+  "no_grant_run_id": "7e713bc2-3740-4728-8de2-1a997a857912",
+  "checks": [
+    "actual operations template Analyst\u2192Reviewer run and exports",
+    "custom instructions/source docs/brief/criteria reach actual provider",
+    "exact actual output export after approval only",
+    "no regeneration or duplicate file",
+    "artifact bytes/hash/size",
+    "completed means review, human accepted means done",
+    "GET does not mutate raw stored item",
+    "changes requested returns backlog; revised run accepted",
+    "missing export grant fails without artifact",
+    "active duplicate/edit and premature review denied",
+    "cross-workspace workflow denied",
+    "traversal/executable/absolute filename denied",
+    "approval reuse denied"
+  ]
+}

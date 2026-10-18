@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "application_sha": "582920c",
+  "brain": "actual deterministic MockBrain backend; no live model inference",
+  "workspace_id": "837f820f-f17c-41b7-8151-287d1c4a12d8",
+  "work_item_id": "bdf89445-0bd8-47b6-8e32-e47d0ccf8923",
+  "run_id": "14ab1bdb-216f-475a-b7aa-11f0fcb1966d",
+  "artifact": {
+    "id": "15acd06c-ccd3-4d24-95dc-85dc25477837",
+    "path": "artifacts/14ab1bdb-216f-475a-b7aa-11f0fcb1966d/browser-report.md",
+    "sha256": "c71e2550f82ff9d81ba6a3aa95cde61561dd532d340a98ed92f296a22bdb6c40",
+    "size": 492,
+    "tool": "artifacts.write_text",
+    "agent_id": "0bf652de-04f1-4f11-912b-8ec07d6ae0ab",
+    "run_id": "14ab1bdb-216f-475a-b7aa-11f0fcb1966d",
+    "node_id": "report",
+    "created_at": "2026-10-18T03:40:16.760291+00:00"
+  },
+  "human_review": [
+    {
+      "decision": "accepted",
+      "comment": "Human QA reviewed generated output and its limitations; approved exact payload.",
+      "reviewer": "human",
+      "run_id": "14ab1bdb-216f-475a-b7aa-11f0fcb1966d",
+      "created_at": "2026-10-18T03:40:18.568493+00:00"
+    }
+  ],
+  "checks": [
+    "office header Work board link",
+    "actual UI create and edit brief",
+    "actual UI launch",
+    "post-generation exact payload approval",
+    "actual export evidence",
+    "human review done",
+    "editable node instructions"
+  ],
+  "page_errors": [],
+  "http_failures": []
+}
