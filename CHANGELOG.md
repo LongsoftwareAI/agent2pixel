@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 review candidate — multi-purpose company workspace
+
+- Durable work briefs/criteria, linked workflow runs, revision history and explicit human acceptance.
+- Work board discoverable from Habblaud office; configurable per-node objectives/output files and four role-mapped business templates.
+- Actual generated text exports after exact-content approval; persisted output prevents regeneration/double charging after approval-wait restart.
+- Original brief and acceptance criteria supplied to every downstream agent; native and Harness engines share the policy.
+- 109 Python +27 control +10 office checks PASS; actual source-based research/editorial and operations workflows exercised with labeled local provider stub.
+- Live paid inference remains UNRUN; additional external tools/connectors, arbitrary-code sandbox, unlimited graph loops and parallel scheduling remain future work. No universal-task completion claim.
+
 ## 0.2.0 review candidate — Habblaud and persisted agent runtime
 
 - Actual MIT Habblaud graphics/UI, persistent agents, native furniture and character editor; preserved v0.1 data.
