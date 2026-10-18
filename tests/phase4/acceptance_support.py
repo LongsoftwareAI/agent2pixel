@@ -78,7 +78,7 @@ class API:
         return status
 
     def wait(self, run_id, states=('completed', 'failed', 'cancelled', 'waiting_approval')):
-        for _ in range(1000):
+        for _ in range(2500):
             value = self.ok('/api/runs/' + run_id)
             if value['state'] in states:
                 return value

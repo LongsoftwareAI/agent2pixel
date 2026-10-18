@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "application_sha": "70aa6e0",
+  "provider": "local HTTP fixture, not live inference",
+  "scope": "queue-only; source/memory/diff not run",
+  "workspace_id": "cfb482ae-de3d-4307-8995-cb53575ac690",
+  "dispatch_statuses": [
+    200,
+    409
+  ],
+  "chosen_work_item_id": "82230268-8323-4655-8def-30b87f840d34",
+  "queue_order": [
+    "high-first",
+    "high-later",
+    "low"
+  ],
+  "checks": [
+    "actual priority/due queue",
+    "concurrent dispatch200/409 and pending retention",
+    "worker load from actual run states"
+  ]
+}

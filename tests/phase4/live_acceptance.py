@@ -91,6 +91,10 @@ def run(args):
         item, execution = launch(api, ws, researcher, nodes, 'QA source research')
         result = finish(api, item, execution, provider)
         envelope = tool_envelope(provider.requests[0])
+        durable_tools = api.ok('/api/runs/'+execution['id']+'/tool-results')
+        assert len(durable_tools) == 1 and durable_tools[0]['status'] == 'completed'
+        assert json.loads(durable_tools[0]['output']) == envelope
+        assert type(durable_tools[0]['duration_ms']) is int
         assert envelope['tool'] == 'sources.read'
         assert envelope['result']['id'] == source['id'] and envelope['result']['sha256'] == source['sha256']
         assert source_text in envelope['result']['content']
@@ -110,6 +114,8 @@ def run(args):
         item, execution = launch(api, ws, analyst, nodes, 'QA CSV operations')
         result = finish(api, item, execution, provider)
         analysis = tool_envelope(provider.requests[request_index])['result']
+        durable_csv = api.ok('/api/runs/'+execution['id']+'/tool-results')
+        assert len(durable_csv) == 1 and json.loads(durable_csv[0]['output'])['result'] == analysis
         summary = analysis['columns']['amount']
         assert summary['count'] == 5 and summary['numeric_count'] == 3 and summary['missing'] == 1 and summary['non_numeric'] == 1, summary
         assert Decimal(summary['sum']) == Decimal('2.00')
@@ -165,6 +171,44 @@ def run(args):
         assert len({a['path'] for a in result['artifacts']}) == 2
         assert len(provider.requests) == request_index+2
         results['workflows'].append({'kind': 'content_revision', 'run_id': execution['id'], 'gates': api.ok('/api/runs/'+execution['id']+'/gates'), 'artifacts': result['artifacts'], 'bounded_rework': True, 'actual_process_restart_checked': bool(args.restart_marker)})
+        # Foreign source ownership must be denied by the actual tool dispatcher,
+        # before any model request, regardless of imported source instructions.
+        foreign_ws = api.ok('/api/workspaces', {'name': 'Foreign P4 source '+str(time.time_ns())})
+        foreign_source = api.ok('/api/sources', {'workspace_id': foreign_ws['id'], 'name': 'Foreign evidence', 'content': 'DO_NOT_LEAK_FOREIGN_SOURCE', 'media_type': 'text/plain'})
+        requests_before = len(provider.requests)
+        nodes = [{'id': 'foreign', 'type': 'tool', 'agent_id': researcher['id'], 'tool': {'id': 'sources.read', 'payload': {'source_id': foreign_source['id']}}},
+            {'id': 'must-not-run', 'type': 'agent', 'agent_id': researcher['id']}]
+        _item, execution = launch(api, ws, researcher, nodes, 'QA foreign source denial')
+        denied = api.wait(execution['id'])
+        assert denied['state'] == 'failed' and len(provider.requests) == requests_before, denied
+        assert any(e['event_type'] == 'tool.failed' for e in api.ok('/api/runs/'+execution['id']+'/events'))
+        api.denied('/api/sources/'+source['id']+'?workspace_id='+foreign_ws['id'])
+        for url in ['https://127.0.0.1/', 'http://www.python.org/', 'https://www.python.org/?token=not-a-real-secret', 'https://user:password@www.python.org/']:
+            api.denied('/api/sources/web', {'workspace_id': ws['id'], 'url': url})
+        api.denied('/api/sources', {'workspace_id': ws['id'], 'name': 'Too large', 'content': 'x'*(1024*1024+1), 'media_type': 'text/plain'})
+        api.denied('/api/sources', {'workspace_id': ws['id'], 'name': 'Malformed CSV', 'content': 'a,b\n1,2,3\n', 'media_type': 'text/csv'})
+        results['security'] = {'foreign_source_denied_before_model': True, 'url_credentials_query_plaintext_loopback_denied': True, 'source_body_bounds_and_malformed_csv_denied': True}
+        # Exercise real request cancellation and the adapter's actual20s timeout.
+        provider.delay = 1.5
+        cancellation = api.ok('/api/workflows', {'workspace_id': ws['id'], 'name': 'QA actual cancellation', 'graph': graph([{'id': 'slow', 'type': 'agent', 'agent_id': researcher['id']}])})
+        requests_before = len(provider.requests)
+        cancelled_run = api.ok('/api/workflows/'+cancellation['id']+'/runs', {'input': 'QA cancellation fixture', 'retry_limit': 0})
+        for _ in range(200):
+            if len(provider.requests) > requests_before:
+                break
+            time.sleep(.01)
+        assert len(provider.requests) == requests_before+1
+        api.ok('/api/runs/'+cancelled_run['id']+'/cancel', {}, 'POST')
+        cancelled = api.wait(cancelled_run['id'])
+        assert cancelled['state'] == 'cancelled' and cancelled['artifacts'] == []
+        provider.delay = 21
+        timeout_started = time.monotonic()
+        timed_run = api.ok('/api/workflows/'+cancellation['id']+'/runs', {'input': 'QA real20s adapter timeout fixture', 'retry_limit': 0})
+        timed = api.wait(timed_run['id'])
+        timeout_elapsed = time.monotonic()-timeout_started
+        assert timed['state'] == 'failed' and timed['artifacts'] == [], timed
+        assert 18 <= timeout_elapsed <= 30, timeout_elapsed
+        results['runtime_failure'] = {'cancelled_run_id': cancelled_run['id'], 'timeout_run_id': timed_run['id'], 'actual_timeout_seconds': round(timeout_elapsed, 3), 'provider_delay_seconds': 21}
         results['passed'] = True
         results['provider_requests'] = len(provider.requests)
         (out/'live-acceptance.json').write_text(json.dumps(results, indent=2)+'\n')
