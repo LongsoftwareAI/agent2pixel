@@ -1,5 +1,6 @@
 """Independent Phase3 real-HTTP acceptance; local provider stub, never live-model evidence."""
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import sqlite3
@@ -22,7 +23,7 @@ class LocalProvider(BaseHTTPRequestHandler):
         body = json.loads(self.rfile.read(int(self.headers['Content-Length'])))
         self.requests.append(body)
         content = body['messages'][-1]['content']
-        output = '[LOCAL PROVIDER STUB — not live inference]\n' + content
+        output = '[LOCAL PROVIDER STUB — not live inference]\nRequest SHA256: ' + hashlib.sha256(content.encode()).hexdigest() + '\nSource received: ' + str('LOCAL_SOURCE_QA' in content) + '\nFixture findings: satisfaction 82 percent; 17 support cases open. Missing data remains unverified.'
         self.outputs.append(output)
         encoded = json.dumps({'message': {'content': output}, 'prompt_eval_count': 13, 'eval_count': 17}).encode()
         self.send_response(200)
@@ -98,7 +99,10 @@ def run(args):
                  'workflow_id': workflow['id'], 'acceptance_criteria': ['CRITERION_QA: report both satisfaction and unresolved cases', 'Explicitly disclose missing data']}
         item = api.ok('/api/work-items', brief)
         assert item['status'] == 'backlog', item
-        run = api.ok('/api/work-items/' + item['id'] + '/runs', {})
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            launches = list(pool.map(lambda _index: api.request('/api/work-items/' + item['id'] + '/runs', {}), range(2)))
+        assert sorted(status for status, _value in launches) == [200, 409], launches
+        run = next(value for status, value in launches if status == 200)
         run_id = run['id']
         api.denied('/api/work-items/' + item['id'] + '/runs', {})
         api.denied('/api/work-items/' + item['id'], {'title': 'Cannot edit active brief'}, 'PATCH')
@@ -168,6 +172,7 @@ def run(args):
             assert hashlib.sha256(data).hexdigest() == artifact['sha256'] and len(data) == artifact['size'], artifact
             assert artifact['node_id'] == 'step-' + str(index) and artifact['agent_id'] == agents[index]['id'] and artifact['run_id'] == run_id, artifact
             artifacts.append(artifact)
+        assert LocalProvider.outputs[0] in LocalProvider.requests[1]['messages'][-1]['content'], 'First node output not handed to second node'
         review_item = api.ok('/api/work-items/' + item['id'])
         assert review_item['status'] == 'review', review_item
         changed = api.ok('/api/work-items/' + item['id'] + '/review', {'decision': 'changes_requested', 'comment': 'HUMAN_QA: clarify limitations before acceptance'})
@@ -199,10 +204,44 @@ def run(args):
             bad_nodes = [dict(node) for node in nodes]
             bad_nodes[1] = {**bad_nodes[1], 'deliverable': {'filename': filename}}
             api.denied('/api/workflows', {'workspace_id': ws['id'], 'name': 'Invalid export', 'graph': {**graph, 'nodes': bad_nodes}})
+        operations_template = next(t for t in templates if t['id'] == 'operations-report')
+        ops_agents = []
+        for role in operations_template['roles']:
+            ops_agents.append(api.ok('/api/agents', {'workspace_id': ws['id'], 'name': 'P3 QA Ops ' + role, 'role': role,
+                'brain': {'provider': 'ollama', 'model': 'qa-local-stub', 'endpoint': f'http://127.0.0.1:{server.server_port}'},
+                'tool_grants': [{'id': t, 'allow': True} for t in ('documents.read', 'artifacts.write_text')]}))
+        role_agents = {a['role']: a for a in ops_agents}
+        ops_nodes = [{'id': 'start', 'type': 'start'}]
+        ops_nodes += [dict(step, id='ops-' + str(i), type='agent', agent_id=role_agents[step['role']]['id']) for i, step in enumerate(operations_template['steps'])]
+        for node in ops_nodes[1:]:
+            node.pop('role', None)
+        ops_nodes.append({'id': 'end', 'type': 'end'})
+        ops_workflow = api.ok('/api/workflows', {'workspace_id': ws['id'], 'name': 'QA actual operations template',
+            'graph': {'nodes': ops_nodes, 'edges': [{'source': a['id'], 'target': b['id']} for a, b in zip(ops_nodes, ops_nodes[1:])]}})
+        ops_item = api.ok('/api/work-items', {**brief, 'title': 'QA actual operations report', 'workflow_id': ops_workflow['id']})
+        before_ops = len(LocalProvider.requests)
+        ops_run = api.ok('/api/work-items/' + ops_item['id'] + '/runs', {})
+        for _ in operations_template['steps']:
+            pending_run = api.wait(ops_run['id'])
+            assert pending_run['state'] == 'waiting_approval', pending_run
+            pending = [a for a in api.ok('/api/runs/' + ops_run['id'] + '/approvals') if a['status'] == 'pending']
+            assert len(pending) == 1
+            api.ok('/api/approvals/' + pending[0]['id'] + '/decision', {'decision': 'approved'})
+        ops_result = api.wait(ops_run['id'])
+        assert ops_result['state'] == 'completed' and len(ops_result['artifacts']) == 2, ops_result
+        assert len(LocalProvider.requests) - before_ops == 2
+        for i, step in enumerate(operations_template['steps']):
+            assert step['instructions'] in LocalProvider.requests[before_ops + i]['messages'][-1]['content']
+            artifact = ops_result['artifacts'][i]
+            data = (Path(ws['root_path']) / artifact['path']).read_bytes()
+            assert data.decode() == LocalProvider.outputs[before_ops + i] and hashlib.sha256(data).hexdigest() == artifact['sha256']
+        assert LocalProvider.outputs[before_ops] in LocalProvider.requests[before_ops + 1]['messages'][-1]['content']
+        ops_review = api.ok('/api/work-items/' + ops_item['id'] + '/review', {'decision': 'accepted', 'comment': 'Human QA reviewed operations evidence and limitations'})
+        assert ops_review['status'] == 'done'
         evidence = {'passed': True, 'application_sha': args.sha, 'provider': 'local HTTP Ollama-compatible stub; no live inference',
                     'runtime': 'actual API/LangGraph/SQLite/output export', 'workspace_id': ws['id'], 'work_item_id': item['id'], 'run_id': run_id,
-                    'provider_requests': len(LocalProvider.requests), 'first_run_provider_requests': 2, 'rerun_provider_requests': 2, 'restart_checked': restart_checked, 'approvals': approvals,
-                    'artifacts': artifacts, 'human_review': accepted, 'changes_requested': changed, 'revised_run_id': second['id'], 'no_grant_run_id': no_grant['id'], 'checks': ['custom instructions/source docs/brief/criteria reach actual provider',
+                    'provider_requests': len(LocalProvider.requests), 'concurrent_launch_statuses': sorted(status for status, _value in launches), 'first_run_provider_requests': 2, 'rerun_provider_requests': 2, 'restart_checked': restart_checked, 'approvals': approvals,
+                    'artifacts': artifacts, 'operations_example': {'template': operations_template['id'], 'run_id': ops_run['id'], 'provider_requests': 2, 'artifacts': ops_result['artifacts'], 'human_review': ops_review}, 'human_review': accepted, 'changes_requested': changed, 'revised_run_id': second['id'], 'no_grant_run_id': no_grant['id'], 'checks': ['actual operations template Analyst→Reviewer run and exports', 'custom instructions/source docs/brief/criteria reach actual provider',
                     'exact actual output export after approval only', 'no regeneration or duplicate file', 'artifact bytes/hash/size', 'completed means review, human accepted means done',
                     'GET does not mutate raw stored item', 'changes requested returns backlog; revised run accepted', 'missing export grant fails without artifact', 'active duplicate/edit and premature review denied', 'cross-workspace workflow denied', 'traversal/executable/absolute filename denied', 'approval reuse denied']}
         (out / 'live-acceptance.json').write_text(json.dumps(evidence, indent=2) + '\n')
