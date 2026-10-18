@@ -52,8 +52,9 @@ export function createRoleBadge(): HTMLElement {
   return h('span', { class: 'ui-role' });
 }
 
-export function updateRoleBadge(badge: HTMLElement, agent: Pick<AgentInfo, 'kind' | 'role' | 'background'>): void {
-  setText(badge, agent.role || (agent.kind === 'main' ? tr('Principal') : tr('Subagente')));
+export function updateRoleBadge(badge: HTMLElement, agent: Pick<AgentInfo, 'kind' | 'role' | 'background' | 'domainStatus'>): void {
+  setText(badge, `${agent.domainStatus === 'error' ? '⚠ Failed · ' : ''}${agent.role || (agent.kind === 'main' ? tr('Principal') : tr('Subagente'))}`);
+  badge.classList.toggle('av-agent-error', agent.domainStatus === 'error');
   setVariant(badge, 'ui-role--', agent.kind);
   setTitle(badge, agent.kind === 'main' ? tr('Agente principal') : tr('Subagente: {0}{1}', [agent.role, agent.background ? tr(' (em segundo plano)') : '']));
 }

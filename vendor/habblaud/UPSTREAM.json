@@ -1143,7 +1143,7 @@
       "upstream_sha256": "7eed6c11f6d89f76ade2ee983903e480f2ce0d0637e62c50313fb8ca44c2fdd8",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/widgets.ts",
-      "vendored_sha256": "0e0ce66ecb24c7ff68b188f8930719be6348701fdcccd81ce5a5433070b7f4e4"
+      "vendored_sha256": "8ac921af5848c19345f01bf76eedda4092834212b7457a842958906878f5d843"
     },
     {
       "path": "client/src/ui/world/away-summary.ts",
