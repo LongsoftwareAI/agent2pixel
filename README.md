@@ -14,7 +14,15 @@ python3 scripts/dev.py
 
 Mở localhost port 3000 trong trình duyệt. API port 8000; tất cả port dev bind 127.0.0.1. Office Habblaud port 3000, trang cấu hình `/control/` được proxy đến port 3001. Ctrl-C dừng cả ba service. Dùng `python3 scripts/dev.py --legacy` để chạy giao diện v0.1. SQLite và workspace files trong `var/`, bị Git bỏ qua. Không xóa `var/` nếu muốn giữ dữ liệu. MockBrain không cần key hoặc model. Nó thực thi workflow thật với output deterministic; không được hiểu là model AI bên ngoài đã được gọi.
 
-## Phase 2 đang review
+## Công ty agent đa nhiệm — Phase 3
+
+Định hướng mới: giao công việc đa dạng cho đội ngũ agent, không chỉ lập trình. [Kế hoạch](docs/plans/PHASE_3_COMPANY_WORKSPACE.md) mô tả Work board, brief/tiêu chí nghiệm thu, flow có hướng dẫn riêng từng bước, sản phẩm tài liệu và human review. Work board ở `/control/#workboard`, có nút mở từ office. Bằng chứng nghiệm thu Phase3 được ghi riêng, không suy từ test Phase2.
+
+Research, nội dung, vận hành và coding là các mẫu flow chỉnh được. Khả năng làm việc thực tế phụ thuộc model, nguồn dữ liệu và tool được cấp. Template không tự tạo quyền tìm web, gửi email hoặc đăng bài. Không tự nhận hỗ trợ mọi task khi tool tương ứng chưa có.
+
+Để giao việc: mở **Công việc**, nhập brief/tiêu chí và chọn workflow. Trong **Workflow**, dùng template hoặc kéo nối node, chọn agent, thêm hướng dẫn và tên file bàn giao `.md/.txt/.json/.csv`. Cấp `artifacts.write_text` trong Agent Studio nếu cần xuất file. Chạy việc → xem output thực tế trong Run Monitor → duyệt đúng nội dung trước khi lưu → quay lại Work board để nghiệm thu hoặc yêu cầu sửa. Sửa brief tạo revision mới và yêu cầu bằng chứng chạy mới.
+
+## Nền tảng Phase 2
 
 Tái sử dụng renderer, giao diện và đồ họa procedural Canvas2D Habblaud theo MIT; giữ nguyên attribution và font OFL trong `vendor/habblaud/`. Agent có role, skill, tool grants, memory và execution engine riêng. LangGraph lưu checkpoint SQLite; DeepSeek Harness dùng SDK/runtime chính thức và Cordis bridge giới hạn quyền. [Phạm vi và bằng chứng Phase 2](docs/PHASE_2_VALIDATION.md).
 
@@ -41,7 +49,7 @@ Shell và tool có side effect bị chặn mặc định. Không có auth: giữ
 ## Kiểm thử
 
 ```sh
-.venv/bin/python -m pytest tests/backend tests/phase2/runtime tests/harness tests/projection tests/office_layout -q
+.venv/bin/python -m pytest tests/backend tests/phase2/runtime tests/phase3/runtime tests/harness tests/projection tests/office_layout -q
 npm --prefix apps/web test
 npm --prefix apps/web run build
 ```
