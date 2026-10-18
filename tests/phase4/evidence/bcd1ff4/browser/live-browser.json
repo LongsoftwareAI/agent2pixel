@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "application_sha": "bcd1ff4",
+  "brain": "actual MockBrain; no live inference",
+  "workspace_id": "1f0ec8a5-985e-4d3d-bcc8-6119191253ce",
+  "run_id": "5634babf-665e-43e3-9d88-f3863553867a",
+  "source_id": "1fe662c3-0b77-49a2-8531-87c9a6ff2368",
+  "artifacts": [
+    {
+      "id": "1f2167a7-4cfb-49b0-8db0-73369d8b460e",
+      "path": "artifacts/5634babf-665e-43e3-9d88-f3863553867a/ui-csv.md",
+      "sha256": "d49b82c67e048fe651d53a8bea1b14f17b567c7890cdf857e16ae06942bb3d13",
+      "size": 1873,
+      "tool": "artifacts.write_text",
+      "agent_id": "1e5fb6e7-2a39-4bf2-89ab-c554d5e0d8a7",
+      "run_id": "5634babf-665e-43e3-9d88-f3863553867a",
+      "node_id": "draft",
+      "created_at": "2026-10-18T16:26:31.008781+00:00"
+    },
+    {
+      "id": "c50b3a59-9d7d-428f-a731-1c6a7052f89f",
+      "path": "artifacts/5634babf-665e-43e3-9d88-f3863553867a/ui-csv-review-r1.md",
+      "sha256": "46cf5eea12238e8ded0546f7f088df7cb404ef44326054922caeaedc34a67ab3",
+      "size": 2409,
+      "tool": "artifacts.write_text",
+      "agent_id": "1e5fb6e7-2a39-4bf2-89ab-c554d5e0d8a7",
+      "run_id": "5634babf-665e-43e3-9d88-f3863553867a",
+      "node_id": "draft~review~r1",
+      "created_at": "2026-10-18T16:26:34.961186+00:00"
+    }
+  ],
+  "checks": [
+    "actual UI CSV import and provenance preview",
+    "work priority/deadline/owner and queue manual dispatch",
+    "actual csv tool result then generated output approval",
+    "human bounded review/rework then approval",
+    "artifact text retrieval and actual two-run diff",
+    "memory provenance edit/history/delete",
+    "tool JSON and bounded review editor save/reload"
+  ],
+  "page_errors": [],
+  "http_failures": []
+}

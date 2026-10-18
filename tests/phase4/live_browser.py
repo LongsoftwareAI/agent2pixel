@@ -54,6 +54,8 @@ def run(args):
             'edges': [{'source': 'start', 'target': 'calculate'}, {'source': 'calculate', 'target': 'draft'}, {'source': 'draft', 'target': 'review'}, {'source': 'review', 'target': 'end'}]}
         workflow = api('/api/workflows', {'workspace_id': ws['id'], 'name': 'QA UI CSV/review workflow', 'graph': graph}, 'POST')
         page.goto(args.base+'/control/#workboard')
+        # Workflow was seeded outside this mounted UI; reload its workspace catalog.
+        page.reload()
         page.get_by_label('Tiêu đề công việc', exact=True).fill('QA UI actual CSV report')
         page.get_by_label('Brief', exact=True).fill('Use only imported CSV and preserve unknown operational facts.')
         page.get_by_label('Tiêu chí nghiệm thu', exact=True).fill('Report sum2.00 from actual tool\nDo not invent additional sources')
@@ -157,6 +159,7 @@ def run(args):
         assert review_node['max_revisions'] == 2 and review_node['instructions'].startswith('QA_UI_EDITED_REVIEW')
         page.reload()
         page.get_by_label('Workflow', exact=True).select_option(saved[0]['id'])
+        page.get_by_role('button', name='Fit View', exact=True).click()
         page.locator('.react-flow__node').filter(has_text='REVIEW').click()
         assert page.get_by_label('Giới hạn sửa lại', exact=True).input_value() == '2'
         page.screenshot(path=str(out/'tool-review-editor-persisted-1920.png'), full_page=True)

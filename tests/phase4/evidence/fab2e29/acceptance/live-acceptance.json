@@ -1,0 +1,168 @@
+{
+  "application_sha": "fab2e29",
+  "provider": "loopback HTTP Ollama-compatible fixture, no live inference",
+  "passed": true,
+  "workflows": [
+    {
+      "kind": "research",
+      "run_id": "5997a140-ac08-4fec-ae85-1d2a064da560",
+      "source_id": "dbe560ee-f5c0-46e2-99a7-b919f56fec23",
+      "artifacts": [
+        {
+          "id": "02833885-a695-44ee-a048-be2f8dfad1c2",
+          "path": "artifacts/5997a140-ac08-4fec-ae85-1d2a064da560/research.md",
+          "sha256": "360839a637763c9fe71692a6dd495d930f23ceaf709ccb3582c155e436c6b60d",
+          "size": 234,
+          "tool": "artifacts.write_text",
+          "agent_id": "dc94801f-c5e7-4ea4-9b62-48c584b61b7e",
+          "run_id": "5997a140-ac08-4fec-ae85-1d2a064da560",
+          "node_id": "research",
+          "created_at": "2026-10-18T16:22:15.299147+00:00"
+        }
+      ],
+      "hostile_source_did_not_mutate_grants": true
+    },
+    {
+      "kind": "csv",
+      "run_id": "0e1352d1-5919-4289-87d4-28b1bdbd0bce",
+      "analysis": {
+        "source_id": "4d9cdeee-73f4-478d-bbd5-08eb218b8464",
+        "sha256": "38aa5432c38048c49d9dd038d4e7fe2a3a591407fbb64cb1211e97e50d7f8df5",
+        "row_count": 5,
+        "columns": {
+          "amount": {
+            "count": 5,
+            "numeric_count": 3,
+            "missing": 1,
+            "non_numeric": 1,
+            "min": "0.10",
+            "max": "1.70",
+            "sum": "2.00",
+            "mean": "0.6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667"
+          }
+        },
+        "numeric_representation": "decimal strings; repeating means rounded to 220 significant digits",
+        "untrusted": true,
+        "groups": {
+          "A": {
+            "amount": {
+              "count": 3,
+              "numeric_count": 2,
+              "missing": 0,
+              "non_numeric": 1,
+              "min": "0.10",
+              "max": "0.20",
+              "sum": "0.30",
+              "mean": "0.15"
+            }
+          },
+          "B": {
+            "amount": {
+              "count": 2,
+              "numeric_count": 1,
+              "missing": 1,
+              "non_numeric": 0,
+              "min": "1.70",
+              "max": "1.70",
+              "sum": "1.70",
+              "mean": "1.70"
+            }
+          }
+        }
+      },
+      "artifacts": [
+        {
+          "id": "5ecc1d46-b4c6-475e-850d-62869cb13adb",
+          "path": "artifacts/0e1352d1-5919-4289-87d4-28b1bdbd0bce/csv-report.md",
+          "sha256": "7b0330d8b1c5c08eef11f2ff0a3e01c589d41996618c89d9316cf78284ca4a65",
+          "size": 234,
+          "tool": "artifacts.write_text",
+          "agent_id": "ef32ea19-889e-4648-8867-c53d361c15cc",
+          "run_id": "0e1352d1-5919-4289-87d4-28b1bdbd0bce",
+          "node_id": "report",
+          "created_at": "2026-10-18T16:22:15.919932+00:00"
+        }
+      ],
+      "formula_non_numeric_not_executed": true
+    },
+    {
+      "kind": "content_revision",
+      "run_id": "3b8cf265-8642-47af-b356-cd16f576f9b6",
+      "gates": [
+        {
+          "id": "3b8cf265-8642-47af-b356-cd16f576f9b6:gate:editor:0",
+          "workspace_id": "4de8e6b7-4882-442e-a072-3689629e5ff6",
+          "run_id": "3b8cf265-8642-47af-b356-cd16f576f9b6",
+          "node_id": "editor",
+          "status": "rework",
+          "instructions": "Demand explicit uncertainty before acceptance.",
+          "input": "[LOCAL HTTP PROVIDER FIXTURE; NOT LIVE INFERENCE]\nAssignment SHA256: a0e3c75d16611dd571c1eb64bc9e7597cd8408f656e0b1318adbe0b1b77ee14e\nRevision feedback present: False\nReport supplied evidence only; all unprovided facts remain unknown.",
+          "revision": 0,
+          "created_at": "2026-10-18T16:22:16.481789+00:00",
+          "allowed_decisions": [
+            "approved",
+            "denied",
+            "rework"
+          ],
+          "comment": "QA_REWORK_COMMENT: explicitly list unknown reviewer capacity.",
+          "decided_at": "2026-10-18T16:23:17.608385+00:00"
+        },
+        {
+          "id": "3b8cf265-8642-47af-b356-cd16f576f9b6:gate:editor:1",
+          "workspace_id": "4de8e6b7-4882-442e-a072-3689629e5ff6",
+          "run_id": "3b8cf265-8642-47af-b356-cd16f576f9b6",
+          "node_id": "editor",
+          "status": "approved",
+          "instructions": "Demand explicit uncertainty before acceptance.",
+          "input": "[LOCAL HTTP PROVIDER FIXTURE; NOT LIVE INFERENCE]\nAssignment SHA256: 7b81e5f3ceb7f2faa29b6525df0e6ca096d5ec5bc7bfc7525121186260dbe3a4\nRevision feedback present: True\nReport supplied evidence only; all unprovided facts remain unknown.",
+          "revision": 1,
+          "created_at": "2026-10-18T16:23:18.756958+00:00",
+          "allowed_decisions": [
+            "approved",
+            "denied"
+          ],
+          "comment": "QA automation checks corrected fixture output; not real user acceptance.",
+          "decided_at": "2026-10-18T16:23:18.776537+00:00"
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "6dc8902d-76ad-41fa-904c-e70e9a3a9607",
+          "path": "artifacts/3b8cf265-8642-47af-b356-cd16f576f9b6/content.md",
+          "sha256": "04e024fc49d32e9ca6b45999a4ecdf594822df686404cd4e159b6b2a52b589e6",
+          "size": 234,
+          "tool": "artifacts.write_text",
+          "agent_id": "607ed936-503e-4dd9-a487-f66bb3e56f97",
+          "run_id": "3b8cf265-8642-47af-b356-cd16f576f9b6",
+          "node_id": "draft",
+          "created_at": "2026-10-18T16:22:16.469571+00:00"
+        },
+        {
+          "id": "2719c00b-baad-41aa-a95a-a57b1d7c04b1",
+          "path": "artifacts/3b8cf265-8642-47af-b356-cd16f576f9b6/content-editor-r1.md",
+          "sha256": "af2dee983188d7c2feb568c1c6daa5d98cd2221943ec92717932d76365ba920c",
+          "size": 233,
+          "tool": "artifacts.write_text",
+          "agent_id": "607ed936-503e-4dd9-a487-f66bb3e56f97",
+          "run_id": "3b8cf265-8642-47af-b356-cd16f576f9b6",
+          "node_id": "draft~editor~r1",
+          "created_at": "2026-10-18T16:23:18.741510+00:00"
+        }
+      ],
+      "bounded_rework": true,
+      "actual_process_restart_checked": true
+    }
+  ],
+  "security": {
+    "foreign_source_denied_before_model": true,
+    "url_credentials_query_plaintext_loopback_denied": true,
+    "source_body_bounds_and_malformed_csv_denied": true
+  },
+  "runtime_failure": {
+    "cancelled_run_id": "624d21af-1f50-4a31-97bb-207a86801de4",
+    "timeout_run_id": "bed5d490-0de3-468d-ae66-6d68a86c41e6",
+    "actual_timeout_seconds": 20.44,
+    "provider_delay_seconds": 21
+  },
+  "provider_requests": 6
+}

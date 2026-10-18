@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "application_sha": "fab2e29",
+  "provider": "local HTTP fixture, not live inference",
+  "workspace_id": "510fc508-9351-46ba-989c-fd51dd3c83ae",
+  "dispatch_statuses": [
+    200,
+    409
+  ],
+  "chosen_work_item_id": "27af2224-997a-47c6-88bd-9d3d78a423da",
+  "queue_order": [
+    "high-first",
+    "high-later",
+    "low"
+  ],
+  "memory_history": [
+    {
+      "action": "edited",
+      "editor": "human",
+      "created_at": "2026-10-18T16:22:25.947566+00:00",
+      "before": {
+        "id": "7121fbe2-5a23-4695-8d14-86b7441a6bbf",
+        "created_at": "2026-10-18T16:22:25.922218+00:00",
+        "provenance": {
+          "source_id": "27434eeb-b933-419a-96b5-d809909a867d",
+          "sha256": "a111564c6dc9a24bbd5a262c551f3ff614738707d91f704097ae0b7806d76599"
+        },
+        "workspace_id": "510fc508-9351-46ba-989c-fd51dd3c83ae",
+        "content": "Initial supplied observation",
+        "kind": "note",
+        "agent_id": "26021aa8-0b2f-4f81-b2d2-e731532072c0",
+        "scope": "agent",
+        "source_id": "27434eeb-b933-419a-96b5-d809909a867d"
+      }
+    },
+    {
+      "action": "deleted",
+      "editor": "human",
+      "created_at": "2026-10-18T16:22:25.971118+00:00",
+      "before": {
+        "id": "7121fbe2-5a23-4695-8d14-86b7441a6bbf",
+        "created_at": "2026-10-18T16:22:25.922218+00:00",
+        "provenance": {
+          "source_id": "27434eeb-b933-419a-96b5-d809909a867d",
+          "sha256": "a111564c6dc9a24bbd5a262c551f3ff614738707d91f704097ae0b7806d76599",
+          "url": null,
+          "recorded_at": "2026-10-18T16:22:25.947552+00:00"
+        },
+        "workspace_id": "510fc508-9351-46ba-989c-fd51dd3c83ae",
+        "content": "Revised supplied observation",
+        "kind": "note",
+        "agent_id": "26021aa8-0b2f-4f81-b2d2-e731532072c0",
+        "scope": "agent",
+        "source_id": "27434eeb-b933-419a-96b5-d809909a867d",
+        "updated_at": "2026-10-18T16:22:25.947561+00:00",
+        "editor": "human"
+      }
+    }
+  ],
+  "comparison": {
+    "previous_run_id": "0f12f5ad-3a9a-40ba-95a7-acb10f645fce",
+    "current_run_id": "0819f371-c681-4631-8f40-ff7b6ba4ede4",
+    "diffs": [
+      {
+        "name": "output",
+        "previous_artifact_id": null,
+        "current_artifact_id": null,
+        "diff": "--- previous/output\n+++ current/output\n@@ -1,4 +1,4 @@\n [LOCAL HTTP PROVIDER FIXTURE; NOT LIVE INFERENCE]\n-Assignment SHA256: 1d76fa96da2eeb8e82e8e8309e2c4f994bf68fa2a5c2c556a47d75b494828db6\n+Assignment SHA256: 19feba9a78bc1f2f8c04a6ae6b743c3d4ced34497e13ed643426972136fc4d45\n Revision feedback present: False\n Report supplied evidence only; all unprovided facts remain unknown."
+      }
+    ],
+    "acceptance_criteria": [
+      "State unknowns"
+    ],
+    "reviews": [
+      {
+        "decision": "changes_requested",
+        "comment": "Need revised briefing evidence.",
+        "reviewer": "human",
+        "run_id": "0f12f5ad-3a9a-40ba-95a7-acb10f645fce",
+        "created_at": "2026-10-18T16:22:25.982715+00:00"
+      }
+    ]
+  },
+  "checks": [
+    "actual priority/due queue",
+    "concurrent dispatch200/409 and pending retention",
+    "worker load from actual run states",
+    "same-scope provenance and foreign source denial",
+    "memory edit/delete retained history and hidden deleted item",
+    "actual revised-run exact unified diff and foreign-run denial"
+  ]
+}

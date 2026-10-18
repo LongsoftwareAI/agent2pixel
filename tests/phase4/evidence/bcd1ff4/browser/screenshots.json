@@ -1,0 +1,50 @@
+[
+  {
+    "file": "actual-artifact-diff-1920.png",
+    "width": 1920,
+    "height": 3088,
+    "sha256": "7ff7dbefa14cdda44808321d1f529c02ef7231188710ab66c82013a2a5b62a96"
+  },
+  {
+    "file": "actual-tool-review-gate-1366.png",
+    "width": 1366,
+    "height": 3451,
+    "sha256": "be93212daf9e3cc7ed43d9a60c2d8a8fcc3f99bd3829fa7e1187b663e799c241"
+  },
+  {
+    "file": "artifact-text-tool-trace-1366.png",
+    "width": 1366,
+    "height": 3987,
+    "sha256": "2d1d1249d5be946a7ee3ad9153136969bb2e66809fd63e9a19d526f7d32c79b9"
+  },
+  {
+    "file": "habblaud-office-navigation-1366.png",
+    "width": 1366,
+    "height": 768,
+    "sha256": "4c7628f71dd2b9b1e4cdacc4bb8548f63ec142b694a047f7920f9d7a04c9d31c"
+  },
+  {
+    "file": "memory-provenance-history-1920.png",
+    "width": 1920,
+    "height": 2130,
+    "sha256": "05ed007cac8e0c4779f81d9af3f0dd839771ca2c897ec486c007b8080fd8aab7"
+  },
+  {
+    "file": "queue-manual-dispatch-1366.png",
+    "width": 1366,
+    "height": 1825,
+    "sha256": "d56981b1e264007ac35b51983cbee74c7592bb67dc45fed2a63cc6dc97e05bda"
+  },
+  {
+    "file": "sources-csv-provenance-1366.png",
+    "width": 1366,
+    "height": 1132,
+    "sha256": "efb20373145358807c4e89e4e7b0a5072a5d329d67e05fbd2c18b9af0135675b"
+  },
+  {
+    "file": "tool-review-editor-persisted-1920.png",
+    "width": 1920,
+    "height": 1740,
+    "sha256": "c83658a2c55da01722d1272bf261d7bd939f1514b94aa97066aa190a5163e405"
+  }
+]
