@@ -176,6 +176,10 @@ def validate_spec(value, store):
         not isinstance(execution["profile"], str) or len(execution["profile"]) > 128
     ):
         raise HTTPException(422, "Invalid engine profile")
+    if execution.get("version") is not None and (
+        type(execution["version"]) is not int or execution["version"] < 1
+    ):
+        raise HTTPException(422, "Invalid engine version")
     role = value["role_config"]
     if (
         not isinstance(role, dict)
@@ -212,7 +216,10 @@ def validate_spec(value, store):
             def refs(item):
                 if isinstance(item, dict):
                     return (
-                        "$ref" in item and not str(item["$ref"]).startswith("#")
+                        any(
+                            key in item and not str(item[key]).startswith("#")
+                            for key in ("$ref", "$dynamicRef", "$recursiveRef")
+                        )
                     ) or any(refs(v) for v in item.values())
                 return any(refs(v) for v in item) if isinstance(item, list) else False
 
@@ -225,7 +232,10 @@ def validate_spec(value, store):
         if (
             not isinstance(binding, dict)
             or set(binding) != {"id", "version"}
+            or not isinstance(binding.get("id"), str)
+            or not binding["id"]
             or type(binding.get("version")) is not int
+            or binding["version"] < 1
         ):
             raise HTTPException(422, "Invalid skill binding")
         if (store.get("skill", binding.get("id")) or {}).get(
@@ -238,6 +248,10 @@ def validate_spec(value, store):
             or set(grant) - {"id", "allow", "approval_required"}
             or not any(t["id"] == grant.get("id") for t in TOOLS)
             or type(grant.get("allow")) is not bool
+            or (
+                "approval_required" in grant
+                and type(grant["approval_required"]) is not bool
+            )
         ):
             raise HTTPException(422, "Unknown or invalid tool grant")
     memory = value["memory_config"]

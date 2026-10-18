@@ -426,6 +426,8 @@ class Runtime:
             )
         used_total = 0
         for attempt in range(task["retry_count"], run["retry_limit"] + 1):
+            if store.get("run", id).get("token_spent", 0) >= run["token_budget"]:
+                raise ValueError("Token budget exhausted")
             try:
                 accounting = {}
                 if engine == "deepseek_harness":

@@ -213,6 +213,10 @@ def create_app(data_dir=None):
                     and parsed.hostname in ("localhost", "127.0.0.1", "::1")
                     and not parsed.username
                     and not parsed.password
+                    and not parsed.path
+                    and not parsed.query
+                    and not parsed.fragment
+                    and (parsed.port is None or 1 <= parsed.port <= 65535)
                 )
             except ValueError:
                 valid = False

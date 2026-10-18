@@ -44,3 +44,18 @@ Handoff: pending.
 - Visual evidence: owned by Pixel/QA, not claimed here.
 - Deviation from reference: Python runtime intentionally replaces upstream transcript-watching Node backend.
 - Reviewer decision: pending independent QA.
+
+## Resume milestone — adversarial security and durability
+- timestamp: 2026-10-18 (client date)
+- session_id: resume-backend-phase2
+- agent_id: resume_backend; role: Backend Domain + Runtime; model/provider: Codex inherited
+- task_id: P2-03/P2-04; branch: agent/backend/P2-03; base_commit: ecb8e3c
+- inputs: current ownership contract, existing runtime and tests, original milestone above.
+- changes: validate nested skill IDs and explicit approval flags; reject noninteger engine versions and remote dynamic schema references; parse Origin ports and reject URL paths/query/fragments; bind shared result broker to run/workspace/agent/tool identities; stop provider retries after exhausted token budget.
+- validation: root existing .venv Python, pytest tests/backend tests/phase2/runtime -q => 43 passed (one third-party Starlette deprecation warning); baseline37 rerun passed before edits; ruff format selected owned paths and ruff check --select F passed.
+- new behavior checks: malformed nested input returns422 without changing persisted agent; malformed localhost Origin403; tampered approval hash never writes; process restart between2 approved actions completes each write once; exhausted budget makes one provider call only; additive v1 migration preserves identity/history/settings and leaves unhydrated pre-schema-v2 recovery backup.
+- boundaries: untracked office_projection.py left untouched; no external model smoke, screenshot, or independent approval claimed; Harness source owner integrates separately.
+- risks: deterministic fixture tools remain intentionally limited; arbitrary model-generated Python is not executable. Crash after consume-before-write remains fail closed and requires operator reconciliation rather than automatic replay.
+- decisions/references: existing LangGraph/LangChain SDK dependencies unchanged, no source/assets copied and no dependency change.
+- next_steps/handoff_to: Integrator cherry-pick this commit after ecb8e3c equivalent; QA independent runtime/security review; Harness owner shared broker signature unchanged.
+- lifecycle/reviewer: READY_FOR_REVIEW; no self approval.

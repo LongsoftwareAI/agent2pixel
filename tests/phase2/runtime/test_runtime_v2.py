@@ -444,3 +444,210 @@ def test_shared_broker_refuses_grants_scope_override_and_unapproved_write(tmp_pa
             )
         value["state"] = "completed"
         store.put("run", value)
+
+
+def test_nested_adversarial_config_returns_422_not_500(tmp_path):
+    with TestClient(create_app(tmp_path)) as client:
+        b = setup(client)
+        agent = b["agents"][0]
+        for patch in [
+            {"skill_bindings": [{"id": {"malformed": True}, "version": 1}]},
+            {"skill_bindings": [{"id": [], "version": 1}]},
+            {
+                "tool_grants": [
+                    {"id": "memory.read", "allow": True, "approval_required": "false"}
+                ]
+            },
+            {"execution": {"engine": "langchain", "version": True}},
+            {"execution": {"engine": "langchain", "version": {}}},
+            {
+                "role_config": dict(
+                    agent["role_config"],
+                    output_schema={
+                        "type": "object",
+                        "$dynamicRef": "https://example.invalid/schema",
+                    },
+                )
+            },
+        ]:
+            response = client.patch("/api/agents/" + agent["id"], json=patch)
+            assert response.status_code == 422, (patch, response.text)
+        assert client.get("/api/agents/" + agent["id"]).json() == agent
+
+
+def test_malformed_local_origin_cannot_mutate(tmp_path):
+    with TestClient(create_app(tmp_path)) as client:
+        for origin in [
+            "http://localhost:invalid",
+            "http://localhost:99999",
+            "http://localhost/path",
+            "http://localhost?query=x",
+            "http://localhost#fragment",
+            "http://user@localhost",
+        ]:
+            response = client.post(
+                "/api/workspaces", json={"name": "denied"}, headers={"Origin": origin}
+            )
+            assert response.status_code == 403, origin
+        assert (
+            client.post(
+                "/api/workspaces",
+                json={"name": "allowed"},
+                headers={"Origin": "http://localhost:3000"},
+            ).status_code
+            == 200
+        )
+
+
+def test_approval_tamper_binding_never_writes(tmp_path):
+    with TestClient(create_app(tmp_path)) as client:
+        b = setup(client)
+        developer = b["agents"][1]
+        grant(client, developer)
+        run = start(client, b, actions=actions_for(developer)[:1])
+        assert wait(client, run["id"])["state"] == "waiting_approval"
+        approval = client.get("/api/runs/" + run["id"] + "/approvals").json()[0]
+        approval["payload_hash"] = "0" * 64
+        client.app.state.store.put("approval", approval)
+        assert (
+            client.post(
+                "/api/approvals/" + approval["id"] + "/decision",
+                json={"decision": "approved"},
+            ).status_code
+            == 200
+        )
+        result = wait(client, run["id"], ("failed",))
+        assert "Approval binding mismatch" in result["error"]
+        assert not list(Path(b["workspaces"][0]["root_path"]).rglob("calculator.py"))
+
+
+def test_restart_then_approve_checkpoint_executes_each_action_once(tmp_path):
+    with TestClient(create_app(tmp_path)) as client:
+        b = setup(client)
+        developer = b["agents"][1]
+        grant(client, developer)
+        run = start(client, b, actions=actions_for(developer)[:2])
+        assert wait(client, run["id"])["state"] == "waiting_approval"
+        approval = client.get("/api/runs/" + run["id"] + "/approvals").json()[0]
+        client.post(
+            "/api/approvals/" + approval["id"] + "/decision",
+            json={"decision": "approved"},
+        )
+        assert wait(client, run["id"])["state"] == "waiting_approval"
+    with TestClient(create_app(tmp_path)) as client:
+        pending = [
+            a
+            for a in client.get("/api/runs/" + run["id"] + "/approvals").json()
+            if a["status"] == "pending"
+        ]
+        assert len(pending) == 1
+        assert (
+            client.post(
+                "/api/approvals/" + pending[0]["id"] + "/decision",
+                json={"decision": "approved"},
+            ).status_code
+            == 200
+        )
+        result = wait(client, run["id"], ("completed", "failed"))
+        assert result["state"] == "completed", result
+        assert len(result["artifacts"]) == 2
+        events = client.get("/api/runs/" + run["id"] + "/events").json()
+        assert (
+            len(
+                [
+                    e
+                    for e in events
+                    if e["event_type"] == "tool.completed"
+                    and e["payload"]["tool"] == "artifacts.write_python"
+                ]
+            )
+            == 2
+        )
+
+
+def test_budget_exhaustion_never_retries_provider_with_zero_budget(
+    tmp_path, monkeypatch
+):
+    calls = []
+
+    async def brain(agent, text, budget, metadata):
+        calls.append(budget)
+        metadata["token_accounting"] = "estimated"
+        return "spent", 2
+
+    monkeypatch.setattr("services.worker.runtime.run_brain", brain)
+    with TestClient(create_app(tmp_path)) as client:
+        b = setup(client)
+        result = wait(client, start(client, b, token_budget=1, retry_limit=3)["id"])
+        assert result["state"] == "failed"
+        assert "budget exhausted" in result["error"]
+        assert result["token_spent"] == 2
+        assert calls == [1]
+
+
+def test_v1_additive_migration_preserves_ids_history_settings_and_backup(tmp_path):
+    import json
+    import sqlite3
+
+    from services.api.store import Store
+
+    with TestClient(create_app(tmp_path)) as client:
+        b = setup(client)
+        store = client.app.state.store
+        expected_ids = {
+            kind: [v["id"] for v in store.list(kind)]
+            for kind in ("workspace", "agent", "workflow", "room")
+        }
+        marker = store.event(
+            b["workspaces"][0]["id"], "migration.fixture", {"sentinel": "preserve"}
+        )
+        store.put(
+            "settings",
+            {"id": "legacy-settings", "provider": "ollama", "model": "keep-me"},
+        )
+        # Reconstruct persisted v1 records by removing only new optional spec fields.
+        for agent in store.list("agent"):
+            for key in (
+                "execution",
+                "role_config",
+                "skill_bindings",
+                "tool_grants",
+                "memory_config",
+                "appearance",
+            ):
+                agent.pop(key, None)
+            store.put("agent", agent)
+        store.db.execute("DELETE FROM schema_migrations WHERE version=2")
+        store.db.commit()
+    with TestClient(create_app(tmp_path)) as client:
+        store = client.app.state.store
+        assert {
+            kind: [v["id"] for v in store.list(kind)] for kind in expected_ids
+        } == expected_ids
+        assert marker in store.events()
+        assert store.get("settings", "legacy-settings")["model"] == "keep-me"
+        assert all(
+            agent["execution"]["engine"] == "langchain" for agent in store.list("agent")
+        )
+        assert (
+            store.db.execute(
+                "SELECT count(*) FROM schema_migrations WHERE version=2"
+            ).fetchone()[0]
+            == 1
+        )
+    with sqlite3.connect(tmp_path / "pre-schema-v2.sqlite3") as backup:
+        legacy = json.loads(
+            backup.execute(
+                "SELECT body FROM resources WHERE kind='agent' LIMIT 1"
+            ).fetchone()[0]
+        )
+        assert "execution" not in legacy
+        assert (
+            backup.execute(
+                "SELECT count(*) FROM schema_migrations WHERE version=2"
+            ).fetchone()[0]
+            == 0
+        )
+    store = Store(tmp_path)
+    assert store.get("settings", "legacy-settings")["model"] == "keep-me"
+    store.db.close()

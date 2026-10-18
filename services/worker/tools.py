@@ -269,8 +269,14 @@ async def dispatch_tool(store, run, agent, tool_id, payload):
             if (
                 approval
                 and approval["status"] == "consumed"
+                and approval.get("run_id") == live_run["id"]
+                and approval.get("workspace_id") == live_run["workspace_id"]
+                and approval.get("agent_id") == agent["id"]
+                and approval.get("tool") == tool_id
                 and approval["payload_hash"] == payload_hash(payload)
                 and result
+                and result.get("run_id") == live_run["id"]
+                and result.get("workspace_id") == live_run["workspace_id"]
             ):
                 return result["result"]
     raise ValueError("Side effect requires exact approved committed workflow action")
