@@ -57,3 +57,9 @@ Reviewer decision: PENDING
 
 ## Review correction
 - Frontend responsibilities textarea concern was a false positive from escaped tool JSON rendering. Independent raw-byte check confirms delimiter [39,92,110,39], valid JS newline; no application fix needed. Owner added multiline regression cc2d84d. Earlier concern withdrawn.
+
+## Resumed independent QA 2026-10-18
+- Task P2-08 remains READY_FOR_REVIEW only for prior visual checkpoint; final Phase2 acceptance pending integrated source SHA and live stack. Role QA; branch agent/qa/P2-08; ownership tests/phase2 except runtime and independent review logs.
+- Added live localhost browser capture runner for actual office + Agent Studio/Workflows/Runs/Settings at1366/1920, recording source SHA, nonfixture projection metadata, room/agent counts, HTTP/page errors. Screenshots do not assert model execution.
+- PASS comparator regressions2 using host Python. No application code modified, no dependency changes, no assets copied. Existing evidence preserved.
+- Handoff Integrator: review QA runner separately; live acceptance UNRUN until startup handoff. Reference remains Habblaud MIT pinned faa1a012 and Harness pin per original log. Visual deviations/final decision pending captures.
