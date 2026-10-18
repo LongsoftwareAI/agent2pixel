@@ -1,0 +1,25 @@
+# Harness generalized workflow validation
+
+- timestamp: 2026-10-18T04:00:00Z
+- session_id: harness-phase3-20261018
+- agent_id / agent_role: resume_harness / Harness Integration
+- task_id: P3-HARNESS
+- goal: Verify general noncoding objectives/outputs cross official Harness without code-only assumptions; verify post-generation approval integration with Backend.
+- status: SELF_TESTED adapter increment; integrated export pending
+- branch / workspace: agent/harness/P2-02 / /workspace/worktrees/p2-harness
+- base_commit: ebeec83; dependency sync7993475 merge5f2eb7e (root-owned projection conflicts resolved to exact root versions).
+- owned_paths: services/worker/executors/harness/, packages/harness-bridge/, tests/harness/, own logs.
+- inputs: docs/contracts/phase3/IMPLEMENTATION.md; root assignment; current SDK adapter and domain contract.
+- assumptions: Harness is optional provider engine; actual official SDK against local deterministic provider only.
+- constraints: No new direct sideeffects; Backend owns shared dispatcher and output exports; no live model/research claims, no new dependency.
+- plan: Inspect forwarding/tool surface; verify arbitrary noncoding output and perobjective isolation; integrate Backend phase3 and test exact generated content approved exports.
+- changes: New actual SDK regression for distinct operations objectives using same agent, role preserved, arbitrary Markdown output unmodified, sessions isolated.
+- decisions: No plugin change required: tool enum follows grants. Orchestrator owns post-generation export; shared dispatcher must reject unapproved model-origin write_text attempts.
+- commands / tests: `/workspace/agent2pixel/.venv/bin/python -m pytest -q tests/harness/test_executor.py`:13PASS (23.84s), verified pinned SDK/runtime0.1.5rc1.
+- risks: Model final text can follow denied tool. Output is untrusted data and must never be executed; source citations require actual supplied evidence. Full binary SBOM limitation unchanged.
+- blockers: Integrated per-node/export test awaits Backend phase3 commit; adapter-only test cannot establish orchestration correctness.
+- next_steps: Run actual integrated noncoding node export approval/restart tests after Backend handoff; independent QA.
+- handoff_to: Backend, Integrator, independent QA.
+- commit_sha: See source commit containing this log.
+- review_status: Pending; not self-approved.
+- reference_repository/version/license: deepseek-ai/deepseek-harness; installed pinned PyPI pair0.1.5rc1, existing artifact hashes/notices; no new upstream source copied.

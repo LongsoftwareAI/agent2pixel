@@ -13,7 +13,7 @@ from services.worker.executors.harness import capabilities,execute_assignment,Ha
 from services.worker.executors.harness.executor import isolated_environment,owned_directory
 
 class Stub(BaseHTTPRequestHandler):
-    finish_reason='stop'; requests=[]; delay=0; http_status=200
+    finish_reason='stop'; requests=[]; delay=0; http_status=200; response='REAL_HARNESS_OK'
     def log_message(self,*a): pass
     def do_POST(self):
         body=json.loads(self.rfile.read(int(self.headers['Content-Length'])))
@@ -25,7 +25,7 @@ class Stub(BaseHTTPRequestHandler):
             self.wfile.write(b'{"error":{"message":"provider private detail","type":"authentication_error"}}');return
         self.send_response(200); self.send_header('Content-Type','text/event-stream');self.end_headers()
         chunks=[{'id':'chat_stub','object':'chat.completion.chunk','model':'stub',
-            'choices':[{'index':0,'delta':{'role':'assistant','content':'REAL_HARNESS_OK'},'finish_reason':None}]},
+            'choices':[{'index':0,'delta':{'role':'assistant','content':self.response},'finish_reason':None}]},
             {'id':'chat_stub','object':'chat.completion.chunk','model':'stub','choices':[{'index':0,'delta':{},'finish_reason':self.finish_reason}],
              'usage':{'prompt_tokens':10,'completion_tokens':6,'total_tokens':16}}]
         if body.get('tools') and not any(m.get('role')=='tool' for m in body.get('messages',[])):
@@ -57,7 +57,7 @@ class Boundaries(unittest.TestCase):
 class RealRuntime(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
         self.temp=tempfile.TemporaryDirectory();self.store=Store(self.temp.name)
-        Stub.finish_reason='stop';Stub.requests=[];Stub.delay=0;Stub.http_status=200
+        Stub.finish_reason='stop';Stub.requests=[];Stub.delay=0;Stub.http_status=200;Stub.response='REAL_HARNESS_OK'
         self.server=ThreadingHTTPServer(('127.0.0.1',0),Stub)
         threading.Thread(target=self.server.serve_forever,daemon=True).start()
         self.agent={'id':'agent','workspace_id':'ws','system_prompt':'You are a reviewer.',
@@ -68,13 +68,27 @@ class RealRuntime(unittest.IsolatedAsyncioTestCase):
     async def asyncTearDown(self):
         self.env.stop();self.server.shutdown();self.server.server_close();self.temp.cleanup()
     async def execute(self,**kw):
-        return await execute_assignment(kw.get('agent',self.agent),'Hello',kw.get('budget',256),self.store,'run',None)
+        return await execute_assignment(kw.get('agent',self.agent),kw.get('text','Hello'),kw.get('budget',256),self.store,'run',None)
     async def test_actual_runtime_smoke_and_tool_surface(self):
         output,usage=await self.execute()
         self.assertEqual(output,'REAL_HARNESS_OK');self.assertEqual(usage['tokens'],16)
         self.assertEqual(usage['token_accounting'],'provider')
         self.assertTrue(Stub.requests);self.assertFalse(Stub.requests[0].get('tools'))
         self.assertIn('You are a reviewer.',json.dumps(Stub.requests[0]))
+    async def test_general_objectives_and_markdown_output_are_preserved(self):
+        # Adapter contract: no coding-only assumptions or template replacement.
+        Stub.response = '# Operations report\n\nDemand: 12 cases.\nRecommendation: schedule two reviewers.'
+        first = 'Node objective: summarize supplied support evidence; acceptance: cite case counts.'
+        second = 'Node objective: propose staffing from prior report; no external research.'
+        sessions = []
+        for objective in (first, second):
+            output, usage = await self.execute(text=objective)
+            self.assertEqual(output, Stub.response)
+            self.assertIn(objective, json.dumps(Stub.requests[-1]))
+            self.assertIn('You are a reviewer.', json.dumps(Stub.requests[-1]))
+            sessions.append(usage['session_id'])
+        self.assertNotEqual(*sessions)
+
     async def test_real_plugin_routes_to_shared_dispatch_seam(self):
         # Actual SDK/runtime/plugin/HTTP transport; domain dispatcher is a contract spy here.
         # Shared domain grants/namespace regression is covered by backend tests.
