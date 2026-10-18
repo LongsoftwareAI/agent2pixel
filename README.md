@@ -2,6 +2,10 @@
 
 Văn phòng pixel cho agent thực thi workflow có lưu lịch sử. Phạm vi: một người dùng trên localhost, một tòa nhà, hai workspace độc lập; không SaaS/thành phố. Requirement gốc: [v0.1](docs/requirements/AGENTVERSE_REQUIREMENTS_v0.1.md).
 
+## Phase 5 — requirement mới, chưa triển khai
+
+Theo video người dùng: làm đầy đủ console vận hành AI trước, CRM sau. [Requirement v0.5](docs/requirements/AGENTVERSE_REQUIREMENTS_v0.5.md), [video reference board](docs/references/VIDEO_CONSOLE_REFERENCE_BOARD.md) và [kế hoạch Phase 5](docs/plans/PHASE_5_VIDEO_CONSOLE.md). App hiện tại vẫn là Phase 4; tài liệu kế hoạch không phải bằng chứng tính năng mới đã hoạt động.
+
 ## Chạy development
 
 Cần Python 3.12+, Node 24 và npm. Từ thư mục repository:

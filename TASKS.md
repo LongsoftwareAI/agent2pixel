@@ -66,3 +66,7 @@ Plan docs/plans/PHASE_3_COMPANY_WORKSPACE.md; contract docs/contracts/phase3/IMP
 Contract docs/contracts/phase4/IMPLEMENTATION.md. No live provider credential present; secure optional DeepSeek binding saved as draft. Real-model acceptance remains UNRUN until configured, never replaced by a stub claim. Parallel branch support must be tested if implemented, otherwise explicit remaining gap. No automatic outbound messages/public deployment.
 
 Phase4 evidence: docs/PHASE_4_VALIDATION.md. Full live-service acceptance remains open; localhost production review is not universal task/live-provider approval. Main unchanged; no SaaS/public deployment.
+
+## Phase 5 — chuẩn bị từ video, chưa triển khai
+
+P5-PLAN: APPROVED documentation scope (independent reviewer p5_video_review); application implementation not started. User chốt đầy đủ AI operations console trước, CRM sau. Canonical spec: docs/requirements/AGENTVERSE_REQUIREMENTS_v0.5.md; evidence: docs/references/VIDEO_CONSOLE_REFERENCE_BOARD.md; milestones/ownership: docs/plans/PHASE_5_VIDEO_CONSOLE.md. P5-01…P5-19 hiện BACKLOG, không đánh dấu DONE từ video hoặc test Phase4. M0 cần khóa exact API/migration/ownership contract trước coding. Cron monitor only; Habblaud office giữ riêng.
