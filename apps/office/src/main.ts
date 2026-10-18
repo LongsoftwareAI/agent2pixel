@@ -21,7 +21,7 @@ world.setOptions({theme:'none',ambientSocial:fixtureMode});
 const name = root.querySelector('.ui-brand__name');
 if (name) {name.textContent='AgentVerse';name.setAttribute('aria-label','AgentVerse');}
 const links = document.createElement('nav'); links.className='av-controls';links.setAttribute('aria-label','AgentVerse controls');
-for(const [label,hash] of [['Agents','agents'],['Workflows','workflows'],['Runs','runs'],['Settings','settings']]) {
+for(const [label,hash] of [['Work board','workboard'],['Agents','agents'],['Workflows','workflows'],['Runs','runs'],['Settings','settings']]) {
  const a=document.createElement('a');a.href=`/control/#${hash}`;a.textContent=label;links.append(a);
 }
 root.querySelector('.ui-topbar__right')?.prepend(links);
