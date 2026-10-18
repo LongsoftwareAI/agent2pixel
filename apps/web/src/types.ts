@@ -19,4 +19,4 @@ export interface Engine {id:string;available:boolean;reason?:string;version?:str
 export interface Catalog {roles:RegistryRole[];skills:RegistrySkill[];tools:RegistryTool[];engines:Engine[]}
 
 export interface WorkflowTemplate {id:string;name:string;description:string;roles:string[];steps:{role:string;instructions:string;deliverable?:{filename:string}}[]}
-export interface WorkItem {id:string;workspace_id:string;title:string;description:string;workflow_id:string;acceptance_criteria:string[];status:string;run_ids:string[];latest_run_id:string|null;reviews:{decision:string;comment:string;run_id?:string;reviewed_at?:string}[]}
+export interface WorkItem {id:string;workspace_id:string;title:string;description:string;workflow_id:string;acceptance_criteria:string[];status:string;run_ids:string[];latest_run_id:string|null;brief_revision?:number;reviews:{decision:string;comment:string;run_id?:string;reviewed_at?:string}[]}
