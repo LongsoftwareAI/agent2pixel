@@ -12,6 +12,7 @@ from datetime import datetime
 from fastapi import APIRouter, HTTPException, Query, Request
 from fastapi.responses import StreamingResponse
 from services.api.store import synchronized
+from services.api.office_layout import create_office_layout_router, room_furniture, seed_for_room
 
 SCHEMA_VERSION = 2
 HAIR = {'short','buzz','spiky','side_part','curly','afro','bob','long','ponytail','bun','pigtails','mohawk','bald','wavy'}
@@ -59,14 +60,17 @@ def activity(event):
 @synchronized
 def project(store, workspace_id=None):
     workspaces=store.list('workspace')
+    slots={w['id']:i for i,w in enumerate(workspaces)}
+    workspace_created={w['id']:epoch(w.get('created_at')) for w in workspaces}
     if workspace_id:
         workspaces=[w for w in workspaces if w['id']==workspace_id]
         if not workspaces:
             raise HTTPException(404,'Workspace not found')
     ids={w['id'] for w in workspaces}
     events=[e for e in store.events() if e['workspace_id'] in ids]
-    rooms=[dict(id=w['id'],name=w['name'],path=w['root_path'],slot=i,
-                seed=seed_for(w['id']),createdAt=epoch(w.get('created_at')))
+    rooms=[dict(id=w['id'],name=w['name'],path=w['root_path'],slot=slots[w['id']],
+                seed=seed_for_room(w['id']),createdAt=epoch(w.get('created_at')),
+                customFurniture=room_furniture(store,w['id'])['items'],layoutVersion=room_furniture(store,w['id'])['version'])
            for i,w in enumerate(workspaces)]
     agents=[]
     all_agents=[a for a in store.list('agent') if a['workspace_id'] in ids and a.get('enabled',True)]
@@ -79,14 +83,16 @@ def project(store, workspace_id=None):
             for task in run.get('tasks',[]):
                 if task.get('agent_id')==a['id']:
                     state=task['state']
-                    tasks.append(dict(id=task['id'],title=task.get('node_id','Task'),status='completed' if state=='completed' else 'in_progress' if state in ('running','waiting_approval') else 'pending',domainState=state))
+                    tasks.append(dict(id=task['id'],title=task.get('node_id','Task'),status=state if state in ('completed','failed','cancelled') else 'in_progress' if state in ('running','waiting_approval') else 'pending',domainState=state))
         original=a.get('status','idle')
         state='working' if original in ('working','running') else 'waiting' if original in ('waiting','waiting_approval','queued') else 'idle'
         appearance=a.get('appearance') or {}
         agent_seed=appearance.get('seed',seed_for(a['id']))
+        if type(agent_seed)!=int or not 0<=agent_seed<=0xFFFFFFFF:
+            agent_seed=seed_for(agent_seed)
         execution=a.get('execution') or {'engine':'langchain'}
         last=recent_events[-1] if recent_events else None
-        start=epoch(a.get('created_at'))
+        start=epoch(a.get('created_at'),workspace_created.get(a['workspace_id'],0))
         agents.append(dict(id=a['id'],kind='main',provider='agentverse',roomId=a['workspace_id'],
             name=a['name'],look='f' if agent_seed%2 else 'm',role=a.get('role','Agent'),
             title=a.get('role','Agent'),sessionId=a['id'],account='agentverse',status=state,
@@ -219,4 +225,5 @@ def create_office_router(app):
                     yield ': heartbeat\n\n'
                 await asyncio.sleep(.25)
         return StreamingResponse(generate(),media_type='text/event-stream',headers={'Cache-Control':'no-cache','X-Accel-Buffering':'no'})
+    router.include_router(create_office_layout_router(app))
     return router

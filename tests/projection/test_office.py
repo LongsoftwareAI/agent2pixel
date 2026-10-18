@@ -71,3 +71,20 @@ def test_replay_pages_never_drop_earliest_missing_event(tmp_path):
     assert len(second)==5 and second[-1]['activity']['seq']==205
     assert client.get('/api/office/stream',headers={'Last-Event-ID':'-1'}).status_code==400
     s.db.close()
+
+
+def test_room_slots_seed_and_terminal_task_semantics(tmp_path):
+    s,client=setup(tmp_path)
+    s.put('run',dict(id='run',workspace_id='coding',tasks=[dict(id='bad',agent_id='planner',node_id='review',state='failed'),dict(id='cancel',agent_id='planner',node_id='review',state='cancelled')]))
+    a=s.get('agent','planner');a['status']='error';a['appearance']={'seed':'configured-text-seed'};s.put('agent',a)
+    snapshot=project(s)
+    agent=next(a for a in snapshot['agents'] if a['id']=='planner')
+    assert [t['status'] for t in agent['tasks']]==['failed','cancelled']
+    assert agent['domainStatus']=='error' and type(agent['seed'])==int
+    assert agent['startedAt']>0
+    other=project(s,'research')['rooms'][0]
+    assert other['slot']==1 and 1<=other['seed']<=8
+    assert other['customFurniture']==[] and other['layoutVersion']==0
+    layout=client.get('/api/office/rooms/coding/furniture')
+    assert layout.status_code==200 and layout.json()['version']==0
+    s.db.close()

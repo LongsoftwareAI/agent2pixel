@@ -1,7 +1,11 @@
 FROM node:24-alpine@sha256:44fce696f38ba8c987c4db89954051000bbd05ffd8d8659ba15ed4a8602e937f
-WORKDIR /app/apps/web
-COPY apps/web/package*.json ./
-RUN --mount=type=secret,id=build_ca if [ -f /run/secrets/build_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/build_ca; fi; npm ci
-COPY apps/web ./
+WORKDIR /app
+COPY apps/web/package*.json ./apps/web/
+COPY apps/office/package*.json ./apps/office/
+RUN --mount=type=secret,id=build_ca if [ -f /run/secrets/build_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/build_ca; fi; npm --prefix apps/web ci && npm --prefix apps/office ci
+COPY apps/web ./apps/web
+COPY apps/office ./apps/office
+COPY vendor/habblaud ./vendor/habblaud
+COPY infra/web-entry.mjs ./infra/web-entry.mjs
 EXPOSE 3000
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "3000", "--strictPort"]
+CMD ["node", "infra/web-entry.mjs"]
