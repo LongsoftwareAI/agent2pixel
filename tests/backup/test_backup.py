@@ -40,9 +40,10 @@ def test_refuses_tampered_backup_existing_destination_and_symlink(tmp_path):
     with pytest.raises(ValueError,match='Symlinks'):backup(data,tmp_path/'bad')
 
 
-def test_refuses_active_run_and_nested_destination(tmp_path):
+@pytest.mark.parametrize('state',['running','waiting_approval','waiting_review'])
+def test_refuses_active_run_and_nested_destination(tmp_path,state):
     data=seed(tmp_path/'original')
     with sqlite3.connect(data/'agentverse.sqlite3') as db:
-        db.execute('UPDATE resources SET body=? WHERE id=?',(json.dumps({'id':'r','state':'waiting_approval'}),'r'))
+        db.execute('UPDATE resources SET body=? WHERE id=?',(json.dumps({'id':'r','state':state}),'r'))
     with pytest.raises(ValueError,match='active runs'):backup(data,tmp_path/'backup')
     with pytest.raises(ValueError,match='outside'):backup(data,data/'backup')

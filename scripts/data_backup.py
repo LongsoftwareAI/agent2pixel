@@ -41,7 +41,7 @@ def validate_db(path):
 
 def quiescent(db):
     for (body,) in db.execute("SELECT body FROM resources WHERE kind='run'"):
-        if json.loads(body)['state'] in ('queued', 'running', 'waiting_approval'):
+        if json.loads(body)['state'] in ('queued', 'running', 'waiting_approval', 'waiting_review'):
             raise ValueError('Finish/cancel active runs and stop application before backup')
 
 
