@@ -69,6 +69,31 @@ def run(args):
             foreign_actor = agent(api, foreign, provider, 'Foreign Synthetic Analyst', [])
             api.denied('/api/console/conversations', {'workspace_id': wid, 'agent_id': foreign_actor['id'], 'title': 'Rejected mixed scope'})
             report['checks'].append('foreign agent cannot bind conversation')
+            prefs_path = '/api/console/preferences?workspace_id='+wid
+            prefs = api.ok(prefs_path)
+            updated = api.ok(prefs_path, {'revision': prefs['revision'], 'theme': 'light', 'refresh': 'off'}, 'PATCH')
+            assert updated['revision'] > prefs['revision'] and api.ok(prefs_path)['theme'] == 'light'
+            assert api.request(prefs_path, {'revision': prefs['revision'], 'theme': 'dark'}, 'PATCH')[0] == 409
+            api.denied(prefs_path, {'revision': updated['revision'], 'theme': 'invented'}, 'PATCH')
+            soul_path = '/api/console/agents/'+actor['id']+'/soul?workspace_id='+wid
+            soul = api.ok(soul_path)
+            changed = api.ok(soul_path, {'revision': soul['revision'], 'content': 'QA reviewed future-only instructions.'}, 'PATCH')
+            assert changed['revision'] == soul['revision'] + 1
+            assert api.request(soul_path, {'revision': soul['revision'], 'content': 'Stale edit'}, 'PATCH')[0] == 409
+            assert api.request('/api/console/agents/'+actor['id']+'/soul?workspace_id='+foreign['id'])[0] == 404
+            report['checks'].append('settings and SOUL actual persisted revisions, stale writes rejected, foreign SOUL hidden')
+            for kind in ('system', 'audit'):
+                log_path = '/api/console/logs?workspace_id='+wid+'&kind='+kind
+                rows = api.ok(log_path+'&limit=1')
+                assert len(rows['items']) <= 1
+                assert all('payload' not in row and 'content' not in row for row in rows['items'])
+                api.denied(log_path+'&limit=0')
+                api.denied(log_path+'&before=not-a-valid-cursor')
+                if rows['next_cursor']:
+                    next_page = api.ok(log_path+'&limit=1&before='+rows['next_cursor'])
+                    assert not ({row['id'] for row in rows['items']} & {row['id'] for row in next_page['items']})
+            report['checks'].append('system/audit bounded pagination without payload dumps, invalid cursors/limits denied')
+
             report.update(passed=True, workspace_id=wid, conversation_id=cid, run_id=run['id'], work_item_id=item['id'])
     except Exception as exc:
         report['failure'] = repr(exc)
