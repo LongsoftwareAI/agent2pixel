@@ -13,3 +13,7 @@ Lifecycle: BACKLOG -> READY -> IN_PROGRESS -> SELF_TESTED -> READY_FOR_REVIEW ->
 ## Phase 2 authorized implementation
 
 User explicitly approved phase2 coding. Current ownership/API coordination is docs/contracts/phase2/IMPLEMENTATION.md and supersedes earlier ownership for new paths. Direct MIT Habblaud source/art reuse is authorized after audit; retain notices, do not label upstreamart CC0. Phase2 plan is accepted for code; use actual Canvas2D upstream renderer rather than a visual imitation. Parallel backend work may proceed while firstvisualgate runs; default switch after independent review. Dedicated branch/worktrees remain required by user protocol.
+
+## Phase 3 company workspace
+
+User authorized multi-purpose company workflows, not coding-only. docs/contracts/phase3/IMPLEMENTATION.md defines current ownership and shared API. Existing resume_layout agent is reassigned sole Frontend writer apps/web (except old office subtree); Backend resume_backend owns domain/runtime; Harness adapter owner unchanged; independent QA owns tests/phase3 except runtime. Root owns docs/config/integration/projection. Preserve all prior data and MIT/OFL notices. No automatic external publication/messages or self-granted tool permissions. General text artifacts are actual outputs and never executed. Approval binds exact content; human review is required to accept work. Do not report arbitrary universal task execution or live models from deterministic/provider-stub tests.

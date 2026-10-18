@@ -39,3 +39,15 @@ User authorized coding. Ownership/contracts: docs/contracts/phase2/IMPLEMENTATIO
 | P2-09 localhost integration/review branch | Integrator | INTEGRATED; 88 Python +10 office +17 control pass; scoped independent APPROVE, GitHub review branch `phase-2/habblaud-runtime` pushed; main unchanged |
 
 No SaaS/city/public deployment. Live paid model verification UNRUN without credentials. Native approved fixed calculator actions execute before Harness retrieves results; do not report autonomous general coding complete.
+
+## Phase 3 — company workspace, authorized
+
+| Task | Owner | State |
+|---|---|---|
+| P3-01 task/domain/approval output runtime | Backend | IN_PROGRESS |
+| P3-02 company Work board and configurable flow | Frontend (resume_layout reassigned) | IN_PROGRESS |
+| P3-03 Harness noncoding instruction/output verification | Harness | IN_PROGRESS |
+| P3-04 independent multitask acceptance and screenshots | QA | IN_PROGRESS |
+| P3-05 integration/data preservation/review branch | Root | IN_PROGRESS |
+
+Plan docs/plans/PHASE_3_COMPANY_WORKSPACE.md; contract docs/contracts/phase3/IMPLEMENTATION.md. This is a foundation for diverse company tasks; external connectors/sandboxed arbitrary code and unrestricted graph loops remain future work unless separately implemented and verified.
