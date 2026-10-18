@@ -22,6 +22,8 @@ Research, nội dung, vận hành và coding là các mẫu flow chỉnh đượ
 
 Để giao việc: mở **Công việc**, nhập brief/tiêu chí và chọn workflow. Trong **Workflow**, dùng template hoặc kéo nối node, chọn agent, thêm hướng dẫn và tên file bàn giao `.md/.txt/.json/.csv`. Cấp `artifacts.write_text` trong Agent Studio nếu cần xuất file. Chạy việc → xem output thực tế trong Run Monitor → duyệt đúng nội dung trước khi lưu → quay lại Work board để nghiệm thu hoặc yêu cầu sửa. Sửa brief tạo revision mới và yêu cầu bằng chứng chạy mới.
 
+Để dùng model thật, đặt key qua environment settings hoặc `.env` cục bộ (không commit). Với DeepSeek, đặt `AGENTVERSE_DEEPSEEK_API_KEY`, khai báo secret_ref cùng tên trong Agent Studio, model/endpoint phù hợp và provider host được phép. Engine Harness nhận cấu hình OpenAI-compatible với endpoint DeepSeek. Test bằng provider stub không chứng minh tài khoản/model thật hoạt động.
+
 ## Nền tảng Phase 2
 
 Tái sử dụng renderer, giao diện và đồ họa procedural Canvas2D Habblaud theo MIT; giữ nguyên attribution và font OFL trong `vendor/habblaud/`. Agent có role, skill, tool grants, memory và execution engine riêng. LangGraph lưu checkpoint SQLite; DeepSeek Harness dùng SDK/runtime chính thức và Cordis bridge giới hạn quyền. [Phạm vi và bằng chứng Phase 2](docs/PHASE_2_VALIDATION.md).
