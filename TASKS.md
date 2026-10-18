@@ -51,3 +51,16 @@ No SaaS/city/public deployment. Live paid model verification UNRUN without crede
 | P3-05 integration/data preservation/review branch | Root | INTEGRATED; 109 Python +27 control +10 office PASS; phase-3/company-workspace pushed, main unchanged |
 
 Plan docs/plans/PHASE_3_COMPANY_WORKSPACE.md; contract docs/contracts/phase3/IMPLEMENTATION.md. This is a foundation for diverse company tasks; external connectors/sandboxed arbitrary code and unrestricted graph loops remain future work unless separately implemented and verified.
+
+## Phase 4 — tools and company operations, authorized
+
+| Task | Owner | State |
+|---|---|---|
+| P4-01 tool/review/rework runtime and timing | Runtime Backend | IN_PROGRESS |
+| P4-02 source/web/CSV tools and isolation | Tools | IN_PROGRESS |
+| P4-03 queue/workload/review artifacts/memory provenance | Operations | IN_PROGRESS |
+| P4-04 frontend controls/product review/dependency audit | Frontend | IN_PROGRESS |
+| P4-05 independent execution/failure/browser acceptance | QA | IN_PROGRESS |
+| P4-06 Docker/backup/restore/reproducibility/integration | Root | IN_PROGRESS; backup3checksPASS, independentreview pending |
+
+Contract docs/contracts/phase4/IMPLEMENTATION.md. No live provider credential present; secure optional DeepSeek binding saved as draft. Real-model acceptance remains UNRUN until configured, never replaced by a stub claim. Parallel branch support must be tested if implemented, otherwise explicit remaining gap. No automatic outbound messages/public deployment.
