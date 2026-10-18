@@ -38,7 +38,7 @@ def tool_context(store, workspace_id, tools, agent=None):
                 else [
                     m
                     for m in store.list("memory", workspace_id)
-                    if not m.get("agent_id")
+                    if not m.get("agent_id") and not m.get("deleted_at")
                 ]
             )[:10]
         ]
@@ -55,7 +55,7 @@ def scoped_memories(store, workspace_id, agent):
     values = [
         m
         for m in store.list("memory", workspace_id)
-        if (
+        if not m.get("deleted_at") and (
             m.get("agent_id") == agent["id"]
             if scope == "agent"
             else not m.get("agent_id")
@@ -259,6 +259,7 @@ async def dispatch_tool(store, run, agent, tool_id, payload):
     if (
         not live_run
         or not live_agent
+        or live_agent.get("enabled") is False
         or live_run["workspace_id"] != live_agent["workspace_id"]
         or live_run["state"] != "running"
     ):
@@ -269,6 +270,21 @@ async def dispatch_tool(store, run, agent, tool_id, payload):
     if not isinstance(payload, dict):
         raise ValueError("Tool payload must be an object")
     root = Path(store.get("workspace", live_run["workspace_id"])["root_path"])
+    from services.worker.data_tools import scoped_source, analyze_csv, fetch_web
+    if tool_id in ("sources.read", "csv.analyze"):
+        permitted = {"source_id"} if tool_id == "sources.read" else {"source_id", "column", "group_by"}
+        if "source_id" not in payload or set(payload) - permitted or any(not isinstance(v, str) for v in payload.values()):
+            raise ValueError("Invalid source tool payload")
+        source = scoped_source(store, live_run["workspace_id"], payload["source_id"])
+        return source if tool_id == "sources.read" else analyze_csv(source, payload)
+    if tool_id == "web.read":
+        if set(payload) != {"url"}:
+            raise ValueError("web.read requires only url")
+        import asyncio
+        from services.worker.data_tools import create_source
+        result = await asyncio.to_thread(fetch_web, payload["url"])
+        source = create_source(store, live_run["workspace_id"], result["url"], result["content"], result["media_type"], result["url"], result["retrieved_at"])
+        return source
     if tool_id == "memory.read":
         if payload:
             raise ValueError("Memory scope comes from agent configuration")
@@ -329,6 +345,9 @@ async def dispatch_tool(store, run, agent, tool_id, payload):
 async def native_context(store, run, agent, tools):
     values = {}
     for tool in tools:
+        # Data tools require explicit arguments from a tool node, never implicit fetch.
+        if tool in ("sources.read", "csv.analyze", "web.read"):
+            continue
         if tool == "documents.read":
             root = Path(store.get("workspace", run["workspace_id"])["root_path"])
             docs = []
