@@ -155,6 +155,12 @@ def create_operations_router(app, start_run=None, run_model=None):
         get("workspace", workspace_id)
         runs = active(workspace_id)
         agents = []
+        active_ids = {run["id"] for run in runs}
+        tool_calls = [
+            record
+            for record in store().list("flow_tool_result", workspace_id)
+            if record.get("status") == "started" and record.get("run_id") in active_ids
+        ]
         for agent in store().list("agent", workspace_id):
             matching = [
                 (run, task)
@@ -162,12 +168,19 @@ def create_operations_router(app, start_run=None, run_model=None):
                 for task in run.get("tasks", [])
                 if task.get("agent_id") == agent["id"] and task.get("state") in ACTIVE
             ]
+            matching_tools = [
+                record for record in tool_calls if record.get("agent_id") == agent["id"]
+            ]
             agents.append(
                 {
                     "agent_id": agent["id"],
                     "name": agent["name"],
                     "active_tasks": len(matching),
-                    "active_run_ids": sorted({run["id"] for run, _ in matching}),
+                    "active_tool_calls": len(matching_tools),
+                    "active_run_ids": sorted(
+                        {run["id"] for run, _ in matching}
+                        | {record["run_id"] for record in matching_tools}
+                    ),
                 }
             )
         return {

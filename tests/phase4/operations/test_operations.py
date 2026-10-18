@@ -299,3 +299,40 @@ def test_strict_create_metadata_and_epoch_deadline(env):
     assert [
         item["id"] for item in client.get("/api/work-queue?workspace_id=w").json()
     ] == [epoch["id"], no_deadline["id"]]
+
+
+def test_workload_reports_tools_separately_and_ignores_stale_or_foreign(env):
+    client, store = env
+    for id, ws, state in [
+        ("active", "w", "running"),
+        ("done", "w", "completed"),
+        ("other", "foreign", "running"),
+    ]:
+        store.put("run", {"id": id, "workspace_id": ws, "state": state, "tasks": []})
+    for id, ws, run_id, status in [
+        ("real", "w", "active", "started"),
+        ("stale", "w", "done", "started"),
+        ("completed", "w", "active", "completed"),
+        ("foreign-call", "foreign", "active", "started"),
+        ("foreign-run", "w", "other", "started"),
+    ]:
+        store.put(
+            "flow_tool_result",
+            {
+                "id": id,
+                "workspace_id": ws,
+                "run_id": run_id,
+                "agent_id": "agent-w",
+                "status": status,
+            },
+        )
+    data = client.get("/api/operations?workspace_id=w").json()["agents"][0]
+    assert data["active_tasks"] == 0
+    assert data["active_tool_calls"] == 1
+    assert data["active_run_ids"] == ["active"]
+    run = store.get("run", "active")
+    run["state"] = "cancelled"
+    store.put("run", run)
+    data = client.get("/api/operations?workspace_id=w").json()["agents"][0]
+    assert data["active_tool_calls"] == 0
+    assert data["active_run_ids"] == []
