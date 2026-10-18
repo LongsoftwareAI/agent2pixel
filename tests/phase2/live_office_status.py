@@ -31,6 +31,8 @@ def run(base,output,sha):
   assert page.get_by_text('Execution failed',exact=True).is_visible()
   page.screenshot(path=str(out/'live-failed-drawer-1366.png'))
   text=page.locator('body').inner_text();unknown_usage=text.count('N/A')>=2
+  if unknown_usage:
+   page.get_by_text('N/A',exact=True).first.scroll_into_view_if_needed();page.screenshot(path=str(out/'live-unknown-usage-1366.png'))
   req('/api/agents/'+a['id'],{'execution':{'engine':'langchain'},'brain':{'provider':'mock','model':'deterministic'},'tool_grants':[{'id':'artifacts.write_python','allow':True,'approval_required':True}]},'PATCH')
   cancel=req('/api/workflows/'+w['id']+'/runs',{'input':'Cancel at real approval wait','actions':[{'agent_id':a['id'],'tool':'artifacts.write_python','payload':{'filename':'calculator.py','template':'calculator-v1'}}]},'POST')
   for _ in range(200):

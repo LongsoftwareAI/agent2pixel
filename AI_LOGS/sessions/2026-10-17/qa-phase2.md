@@ -81,3 +81,9 @@ Reviewer decision: PENDING
 - CHANGES_REQUESTED LOW provenanceaudit334files modified15: newclient/src/ui/drawer.ts notdeclaredPATCHESledger. SentPixelownerforcorrection.
 - Actualcancel55e9118d fromwaitingapproval appearscancelledtask, no inventedcompletion. Providersecretfailure neverfallbackmock.
 - Freshunmaskedupstreamparityrunning; finaldecisionpendingtwofixesandparity. QAcode still requires Integrator review.
+
+## Final corrected acceptance 3b7b138
+- PASS independent provenance audit 334 files /15 adapted paths /MIT notice intact /no errors after Pixel full-path ledger correction5883027.
+- PASS actual browser failed Harness missing-key run2dbd75d3 and approval-wait cancellationd9058761: visible Execution failed, failed/cancelled task states, stats.usageKnownfalse and N/A usage. No page errors. Original failed evidence01f8f80 retained unchanged.
+- Final review APPROVE only implemented localhost scope; arbitrary/model-originated code writes notimplemented and livepaidprovider UNRUN. Exact visual parity and complete live/nativeedit captures remain pinned01f8f80; affected corrections retested3b7b138. No unrelated full suite repeats.
+- QA code/evidence remains subject to independent Integrator review. Handoff Integrator for final verification, integration and user-facing honest scope report.

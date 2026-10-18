@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "application_sha": "3b7b138",
+  "fixture": false,
+  "failed_run_id": "693c98f6-de01-41f2-b8f3-6ec40acacba6",
+  "failed_error": "Harness provider secret reference is not configured",
+  "cancelled_run_id": "7728b5e0-e17d-4424-927b-c3ee376482f1",
+  "failed_badge_visible": true,
+  "cancelled_task_projected": true,
+  "unknown_usage_NA": true,
+  "agent_stats": {
+    "usageKnown": false,
+    "toolCalls": 0,
+    "tokensIn": 0,
+    "tokensOut": 0,
+    "subagents": 0
+  },
+  "page_errors": []
+}

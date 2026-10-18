@@ -1,13 +1,13 @@
 # Phase 2 independent review
 
-Reviewer: independent QA. Candidate: `01f8f80`. QA did not modify application code. Integrator must independently review QA helpers and evidence.
+Reviewer: independent QA. Final candidate: `3b7b138`. Earlier full visual/browser/native-edit checkpoint: `01f8f80`. QA did not modify application code. Integrator must independently review QA helpers and evidence.
 
-**Decision: CHANGES_REQUESTED** for the two findings below. Fresh visual comparison passes.
+**Decision: APPROVE the implemented localhost scope**, with the limitations below. Both previously blocking findings were corrected and independently retested against `3b7b138`. This is not approval of unimplemented arbitrary/model-originated coding or untested live-provider inference.
 
-| Severity | Finding | Reproduction |
+| Resolved severity | Original finding | Independent resolution |
 |---|---|---|
-| Medium | Projection puts `usageKnown:false` on the agent, while the drawer reads `a.stats.usageKnown`. Unknown token usage therefore appears as zero instead of N/A. | `live_office_status.py`; retained failed JSON and drawer PNG under `evidence/01f8f80`. |
-| Low | Adapted `client/src/ui/drawer.ts` is missing its full path in the vendor patch ledger. MIT notice remains intact. | `audit_vendor.py`: 334 files checked, 15 adapted files, one undeclared path. |
+| Medium | Projection puts `usageKnown:false` on the agent, while the drawer reads `a.stats.usageKnown`. Unknown token usage therefore appears as zero instead of N/A. | Root adds the flag to stats and a projection regression. Actual drawer now renders N/A. Failed and corrected JSON/PNG evidence retained under `evidence/01f8f80` and `evidence/3b7b138`. |
+| Low | Adapted `client/src/ui/drawer.ts` is missing its full path in the vendor patch ledger. MIT notice remains intact. | Pixel declares exact adapted path. Audit rerun at `3b7b138`: 334 files checked, 15 adapted files, no errors; original failure retained. |
 
 ## Independently executed checks
 
@@ -26,4 +26,8 @@ Reviewed coding actions support fixed, reviewed calculator templates. LangGraph 
 
 Integrator reports 88 Python checks, 10 office checks and 17 control checks passing; these are not presented as independently rerun by QA. QA independently ran the specific browser, API, migration, parity and two Harness integration checks above.
 
-Evidence: `tests/phase2/evidence/01f8f80/`, with earlier live API evidence in `tests/phase2/evidence/final/`. Existing failures are retained; no threshold was relaxed or test suppressed.
+Evidence: `tests/phase2/evidence/3b7b138/` for corrections, `tests/phase2/evidence/01f8f80/` for complete visual/browser/native editing, with earlier live API evidence in `tests/phase2/evidence/final/`. Existing failures are retained; no threshold was relaxed or test suppressed.
+
+## Final handoff
+
+No unresolved blocking finding remains within the implemented scope. Final changes from the prior full-capture checkpoint affect stats metadata, provenance documentation and integration configuration; therefore only the two affected gates were rerun. Original zero-pixel visual evidence and complete live screenshots remain pinned to their recorded source SHA. Integrator independently reviews QA contribution before integration/DONE.
