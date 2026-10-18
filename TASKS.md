@@ -44,10 +44,10 @@ No SaaS/city/public deployment. Live paid model verification UNRUN without crede
 
 | Task | Owner | State |
 |---|---|---|
-| P3-01 task/domain/approval output runtime | Backend | IN_PROGRESS |
-| P3-02 company Work board and configurable flow | Frontend (resume_layout reassigned) | IN_PROGRESS |
-| P3-03 Harness noncoding instruction/output verification | Harness | IN_PROGRESS |
-| P3-04 independent multitask acceptance and screenshots | QA | IN_PROGRESS |
-| P3-05 integration/data preservation/review branch | Root | IN_PROGRESS |
+| P3-01 task/domain/approval output runtime | Backend | INTEGRATED; scoped independent APPROVE77a1db8 |
+| P3-02 company Work board and configurable flow | Frontend (resume_layout reassigned) | INTEGRATED; 27 tests + independent pointer QA |
+| P3-03 Harness noncoding instruction/output verification | Harness | INTEGRATED; 22 real SDK/provider-stub checks, root independent test review |
+| P3-04 independent multitask acceptance and screenshots | QA | APPROVED production slice77a1db8; source/browser/HTTP/restart evidence committed |
+| P3-05 integration/data preservation/review branch | Root | INTEGRATED; 109 Python +27 control +10 office PASS; phase-3/company-workspace pushed, main unchanged |
 
 Plan docs/plans/PHASE_3_COMPANY_WORKSPACE.md; contract docs/contracts/phase3/IMPLEMENTATION.md. This is a foundation for diverse company tasks; external connectors/sandboxed arbitrary code and unrestricted graph loops remain future work unless separately implemented and verified.
