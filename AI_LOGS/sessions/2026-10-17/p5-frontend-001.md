@@ -14,3 +14,7 @@
 - Verification: npm run test --prefix apps/web 61 PASS (48 prior +13 new); production build PASS; ESLint PASS. No new dependencies. Vite warns main bundle >500kB, retained existing engine/editor chunk surface.
 - Reference evidence inspected: original video frame011, independent QA precommit localhost overview1108x636; nonblank, sidebar200px/header58px. Refined inherited global CSS, chart width, original monochrome SVG symbols. No private video frames copied into repo.
 - Open: independent pinned review, final screenshots and integration; live browser STT/model/provider UNRUN without actual configured runtime.
+
+## QA follow-up
+- QA identified user-message card inferred running state despite completed runtime. Fixed by reconciling run IDs against actual scoped sessions on every conversation read. Cancel only explicit running/queued/waiting approval/review; unknown remains unknown, no cancel action.
+- Added success/completed/active/cancelled regression check; frontend62 PASS. Also fixed mention whitespace matching and keyed bot skill profile to prevent stale selected-agent state. Independent screenshots pending pin to follow-up commit.
