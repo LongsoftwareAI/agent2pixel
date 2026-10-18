@@ -24,9 +24,11 @@ class BrokerPolicy(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(calls,['memory.read'])
     async def test_domain_denial_is_sanitized(self):
         async def deny(tool,payload):raise ValueError('SECRET not authorized')
-        async with ToolBroker('owned',deny) as broker:
+        events=[]
+        async with ToolBroker('owned',deny,lambda kind,payload:events.append(kind)) as broker:
             status,body=await self.request(broker)
             self.assertEqual(status,403);self.assertNotIn('SECRET',str(body))
+            self.assertEqual(events,['harness.tool.started','harness.tool.failed'])
 
 class ProcessCleanup(unittest.IsolatedAsyncioTestCase):
     async def test_reaps_descendant_when_parent_already_exited(self):
@@ -44,3 +46,20 @@ class ProcessCleanup(unittest.IsolatedAsyncioTestCase):
             await asyncio.sleep(.1)
             stat=Path(f'/proc/{child}/stat')
             self.assertTrue(not stat.exists() or stat.read_text().split()[2]=='Z','Descendant remains executing')
+
+class BrokerLimits(unittest.IsolatedAsyncioTestCase):
+    request = BrokerPolicy.request
+
+    async def test_oversize_result_fails_closed(self):
+        async def dispatch(tool,payload):return 'x'*65000
+        async with ToolBroker('owned',dispatch) as broker:
+            status,body=await self.request(broker)
+            self.assertEqual(status,403);self.assertFalse(body['ok'])
+
+    async def test_completion_event_failure_is_not_success(self):
+        async def dispatch(tool,payload):return 'ok'
+        def event(kind,payload):
+            if kind=='harness.tool.completed':raise RuntimeError('storage unavailable')
+        async with ToolBroker('owned',dispatch,event) as broker:
+            status,body=await self.request(broker)
+            self.assertEqual(status,403);self.assertFalse(body['ok'])

@@ -1,4 +1,4 @@
-# AgentVerse Harness bridge — verified tool-less foundation
+# AgentVerse Harness bridge — pinned SDK and shared policy registry
 
 Official PyPI SDK and runtime **0.1.5rc1**, Linux x86_64/Python3.12. Install both exact pins; SDK requires pydantic>=2.12,<3. No upstream source build or unverified fallback. `ARTIFACTS.json` pins the actual installed executable, rg sidecar and SDK client/API hashes. Release wheel does not attest its source commit; do not equate it with inspected HEAD687f282. Wheel metadata internally says0.0.0-dev; distribution pair is0.1.5rc1. `release-*.yml` are actual official runtime `--dump-default-config` / `--dump-config` outputs, not hand-written approximation.
 
@@ -12,10 +12,10 @@ No runtime binary or optional Office/Claude/Web payload copied into repository. 
 
 ## Gate status
 
-Real SDK/runtime + loopback provider stub: PASS. Real paid/live provider: UNRUN (no credential requirement added for optional engine). Text-only engine works. Full Cordis tool/skill/memory bridge P2-07: IN PROGRESS; capability tools/memory_bridge false until real plugin broker test passes. No unsafe sdk/default profile selectable.
+Real SDK/runtime + loopback provider stub: PASS. Real paid/live provider: UNRUN (no credential requirement added for optional engine). Text-only engine works. Cordis registry bridge P2-07: SELF_TESTED using the real shared dispatcher and domain Store; independent review pending. Capability tools/memory_bridge remains false if the shared dispatcher or pinned artifacts are unavailable. No unsafe sdk/default profile selectable.
 
 Run tests from checkout:
-`/path/to/sdk-venv/bin/python -m unittest discover -s tests/harness -v`
+`/path/to/sdk-venv/bin/python -m pytest -q tests/harness`
 Optional packages absent: runtime tests explicitly SKIP; unit boundary tests run.
 
 ## Verified registry plugin increment
@@ -26,4 +26,4 @@ Skills remain version-resolved prompt context from backend (not a second indepen
 
 Capability tools/memory_bridge becomes true only when backend shared dispatcher is importable and SDK/runtime/bridge integrity pins match. Profile `agentverse-tool-less-v1` always disables plugin; `agentverse-registry-v1`/default uses declared grants. Unplugging the per-agent engine/profile preserves app data; old Harness sessions are not silently resumed. UUID assignment sessions prevent cross-retry stale completion.
 
-Own integration regression uses the **real official SDK/runtime and actual plugin** with provider stub and a dispatch-contract spy. Backend policy itself is separately tested; final combined domain-store/plugin integration requires Integrator/independent QA and is not implied by this contract spy. Live model UNRUN.
+`tests/harness/test_domain_integration.py` runs the **real official SDK/runtime and actual plugin** against the actual SQLite Store, shared domain dispatcher, FastAPI API and persisted LangGraph workflow. The only model substitute is a loopback OpenAI-compatible provider stub; no paid/live model is claimed. Native Planner → Harness Developer → native Reviewer completes after three explicit approvals commit reviewed fixtures and execute pytest. Actual plugin calls retrieve agent-scoped memory, read workspace text, and retrieve the committed approved test result. Provider request capture verifies role/skill instructions, tool-result delivery, and absence of foreign agent/workspace memories. Negative calls attempt path traversal, changed test payload and memory namespace override; all emit sanitized `harness.tool.failed` and create no additional artifact. A model can still emit final text after a denied tool; final text alone is never evidence that a rejected operation succeeded. Final independent review and root integration remain required. Live model UNRUN.

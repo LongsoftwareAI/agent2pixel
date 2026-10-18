@@ -99,6 +99,17 @@ class RealRuntime(unittest.IsolatedAsyncioTestCase):
     async def test_cross_workspace_rejected(self):
         agent={**self.agent,'workspace_id':'other'}
         with self.assertRaisesRegex(HarnessError,'ownership'):await self.execute(agent=agent)
+    async def test_unassigned_agent_rejected_before_provider(self):
+        for run_record in ({'agent_specs': {}}, {'tasks': []}):
+            original = self.store.get
+            def get(kind, ident):
+                value = original(kind, ident)
+                return {**value, **run_record} if kind == 'run' else value
+            with patch.object(self.store, 'get', get):
+                with self.assertRaisesRegex(HarnessError, 'not assigned'):
+                    await self.execute()
+        self.assertEqual(Stub.requests, [])
+
     async def test_profile_override_rejected(self):
         agent={**self.agent,'execution':{'profile':'sdk'}}
         with self.assertRaisesRegex(HarnessError,'profile'):await self.execute(agent=agent)

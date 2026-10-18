@@ -29,6 +29,7 @@ class ToolBroker:
             if inspect.isawaitable(result):await result
     async def _handle(self,reader,writer):
         task=asyncio.current_task();self.clients.add(task)
+        tool=None
         status=403;body={'ok':False,'error':'Tool request rejected'}
         try:
             raw=await asyncio.wait_for(reader.readuntil(b'\r\n\r\n'),2)
@@ -50,6 +51,7 @@ class ToolBroker:
             if not isinstance(request['tool_id'],str) or not isinstance(request['payload'],dict):raise ValueError('schema')
             self.calls+=1
             if self.calls>self.max_calls:raise ValueError('budget')
+            tool=request['tool_id']
             await self.event('harness.tool.started',{'tool':request['tool_id'],'session_id':self.session})
             result=await self.dispatch(request['tool_id'],request['payload'])
             body={'protocol':PROTOCOL,'session_id':self.session,'ok':True,'result':result}
@@ -59,7 +61,10 @@ class ToolBroker:
             await self.event('harness.tool.completed',{'tool':request['tool_id'],'session_id':self.session})
         except (Exception,asyncio.CancelledError):
             # Never expose model text, SQL, filesystem paths, secret refs or dispatcher errors.
-            body={'ok':False,'error':'Tool request rejected'}
+            status=403;body={'ok':False,'error':'Tool request rejected'}
+            if tool is not None:
+                try: await self.event('harness.tool.failed',{'tool':tool,'session_id':self.session,'error':'Policy or tool rejected request'})
+                except Exception: pass
         finally:
             encoded=json.dumps(body).encode()
             writer.write(f'HTTP/1.1 {status} Result\r\nContent-Type: application/json\r\nContent-Length: {len(encoded)}\r\nConnection: close\r\n\r\n'.encode()+encoded)

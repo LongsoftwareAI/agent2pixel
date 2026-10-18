@@ -1,7 +1,7 @@
-"""Run a tool-less, pinned Harness process with an explicit isolated home.
+"""Run pinned Harness in an isolated SDK process with an optional policy broker.
 
-The synchronous official SDK lives only in a sanitized outer process. All app
-permissions remain in AgentVerse; this profile deliberately has no tool producer.
+The synchronous official SDK lives in a sanitized outer process. AgentVerse
+retains tool permissions; the tool-less profile disables the registry bridge.
 """
 from __future__ import annotations
 import asyncio
@@ -119,6 +119,10 @@ async def execute_assignment(agent, text, budget, store, run_id, emit):
     persisted=store.get('agent',agent['id'])
     if not run or run.get('workspace_id') != agent['workspace_id'] or not persisted or persisted.get('workspace_id') != agent['workspace_id']:
         raise HarnessError('Harness assignment ownership mismatch')
+    if isinstance(run.get('agent_specs'),dict) and agent['id'] not in run['agent_specs']:
+        raise HarnessError('Harness agent is not assigned to run')
+    if isinstance(run.get('tasks'),list) and agent['id'] not in [task.get('agent_id') for task in run['tasks']]:
+        raise HarnessError('Harness agent is not assigned to task')
     if agent.get('execution',{}).get('profile') not in (None,'agentverse-tool-less-v1','agentverse-registry-v1'):
         raise HarnessError('Unapproved Harness profile')
     brain=agent.get('brain',{})

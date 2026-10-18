@@ -1,0 +1,30 @@
+# Harness Phase 2 resumed integration
+
+- timestamp: 2026-10-18T03:15:00Z
+- session_id: harness-resume-20261018
+- agent_id / agent_role: resume_harness / Harness Integration
+- task_id: P2-02 / P2-07 integration
+- goal: Prove actual SDK/Cordis plugin and shared Store/domain workflow integration; retain explicit approval boundaries.
+- status: SELF_TESTED / READY_FOR_REVIEW, not DONE.
+- branch: agent/harness/P2-02
+- base_commit: 990f649; integration dependencies 09675a4, ecb8e3c, 5e86981 cherry-picked without editing other owners' files.
+- workspace: /workspace/worktrees/p2-harness
+- owned_paths: services/worker/executors/harness/, packages/harness-bridge/, tests/harness/, own logs.
+- inputs: docs/contracts/phase2/IMPLEMENTATION.md; P2-02-P2-07 handoff; Backend shared dispatcher; root assignment.
+- assumptions: Loopback provider stub is test-only. No live credentials/models are available or claimed.
+- constraints: No arbitrary shell/model code execution, no API ownership edits, no credential logging, official exact SDK/runtime pair with artifact verification.
+- plan: Preserve pending broker/assignment guards; test actual mixed-engine workflow; verify role/skills, scoped memory/docs and approved result retrieval; rerun against hardened backend; handoff for independent review.
+- changes: Reject agents absent from run/task assignment; durable sanitized harness.tool.failed on rejection; reset HTTP status to403 when result/completion emission fails. Update adapter description and bridge docs. New real mixed-workflow regression and membership/event/output bounds regressions.
+- decisions: Do not use dispatch spies for integrated acceptance. Provider stub alone supplies deterministic model outputs; every actual workflow/tool/domain path uses production implementation. Model final text after tool failure is allowed but never treated as evidence of tool success.
+- commands: .venv/bin/python -m pytest -q tests/harness; .venv/bin/python -m pytest -q tests/harness/test_domain_integration.py; .venv/bin/python -m ruff check --select F services/worker/executors/harness tests/harness
+- tests: Full Harness suite19 PASS (30.03s). Two actual Store/LangGraph/SDK/plugin integration variants rerun after backend5e86981:2 PASS (11.63s). Ruff F checks PASS. Starlette/AnyIO deprecation warning only. Cancellation/provider failure/session/budget/identity and orphan process regression remain passing.
+- evidence: tests/harness/test_domain_integration.py captures actual provider requests: role/skill instructions, own memory only, real document content, actual 2-passed pytest report. Three consumed approvals create fixed reviewed calculator+tests and execute pytest before Harness; actual Harness plugin retrieves committed result. Negative calls deny traversal, altered test payload and namespace override; three failure events, no additional artifact. Durable SQLite checkpoint and all three task.completed verified.
+- reference_repository: https://github.com/deepseek-ai/deepseek-harness
+- reference_version: Official PyPI SDK/runtime0.1.5rc1; artifact hashes in packages/harness-bridge/ARTIFACTS.json. Inspected upstream687f282 not asserted as wheel source commit.
+- reuse/license: Existing own adapter/plugin; official wheel-installed dependencies; no copied new upstream code/art. Retained wheel MIT/broad notices unchanged. No new dependency.
+- risks: Full binary transitive SBOM upstream remains incomplete. Current Harness cannot originate a new side effect; it retrieves approved LangGraph results. Live model UNRUN. Model text may follow denied tool; failures remain durable and explicit.
+- blockers: None for local provider integration; live model requires optional configured provider credentials, not requested in chat.
+- next_steps: Root cherry-picks own commit only; independent QA review and root full-suite/screenshot gates.
+- handoff_to: Integrator and resume_qa
+- commit_sha: See git commit containing this log.
+- review_status: Pending independent review; no self-approval.
