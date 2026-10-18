@@ -1,0 +1,15 @@
+{
+  "reference": "tests/phase2/evidence/01f8f80/parity/upstream-1366.png",
+  "actual": "tests/phase2/evidence/01f8f80/parity/agentverse-1366.png",
+  "viewport": [
+    1366,
+    768
+  ],
+  "mismatch_pixels": 0,
+  "total_pixels": 1049088,
+  "threshold_pixels": 0,
+  "passed": true,
+  "reference_sha256": "ef9a369fc7e31273c4b0d4347a69d46874264c4063c3a8582621e0ba754d8d63",
+  "actual_sha256": "ef9a369fc7e31273c4b0d4347a69d46874264c4063c3a8582621e0ba754d8d63",
+  "contact_sheet": "tests/phase2/evidence/01f8f80/parity/comparison-1366.png"
+}

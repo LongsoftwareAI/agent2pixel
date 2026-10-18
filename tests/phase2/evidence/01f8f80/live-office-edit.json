@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "application_sha": "01f8f80",
+  "fixture": false,
+  "room_id": "2fddc09a-ef37-4244-80d9-6562c59fae88",
+  "initial": {
+    "items": [],
+    "version": 0,
+    "seed": 7
+  },
+  "added": {
+    "items": [
+      {
+        "id": "27332625-0fa2-448b-9fe8-61b5f1f58c6b",
+        "kind": "floor_lamp",
+        "x": 2,
+        "y": 2
+      }
+    ],
+    "version": 1,
+    "seed": 7
+  },
+  "moved": {
+    "items": [
+      {
+        "id": "27332625-0fa2-448b-9fe8-61b5f1f58c6b",
+        "kind": "floor_lamp",
+        "x": 4,
+        "y": 2
+      }
+    ],
+    "version": 2,
+    "seed": 7
+  },
+  "collision_rejection": "Furniture overlaps a fixture, doorway or agent access tile",
+  "reload_persisted": true,
+  "appearance_agent_id": "6be98d4a-3f86-44e9-a98e-842ce8159c56",
+  "appearance_seed": 1845642137,
+  "appearance_reload_persisted": true,
+  "restored_original_user_data": true,
+  "page_errors": []
+}

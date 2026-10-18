@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "errors": [],
+  "baseline_counts": {
+    "resources": 63,
+    "terminal_runs": 11,
+    "events": 116
+  },
+  "after_counts": {
+    "resources": 115,
+    "terminal_runs": 15,
+    "events": 201
+  }
+}

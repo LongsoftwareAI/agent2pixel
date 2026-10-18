@@ -71,3 +71,13 @@ Reviewer decision: PENDING
 - Earlier e1626a63 run memorycount0 retained honestly; strengthened plannergrant proves actualmemorycall. First helper expected422 but legitimate403 denial; corrected to accept either deniedHTTP result, not relaxed any successfulaccess.
 - v1 migration evidence supplied by Integrator copied unchanged:63resources/11terminalruns/116events retain IDs/ownership/historysha. Additive6registryrecords. QA direct readonly verification next final.
 - Final review PENDING latest furniture/harness and owner adversarial corrections. QA code requires independent Integrator review.
+
+## Independent latest-source checkpoint01f8f80
+- PASS livebrowser10captures actualoffice/control at1366/1920 with explicitSSEconnectionopen and noHTTP/pageerrors.
+- PASS nativeUI furniture add/move/reload/delete; collision rejected withoutservermutation. PASS actualcanvascharacterhit+name/randomize/save/reload; restored originalname/appearance and removed testdecoration afterward.
+- PASS officialHarness integration2variants independently using rootvenv:8.93s. ActualSDK/runtime/Cordis+Store+LangGraph; localstubprovideronly. Toolbridge reads ownscopedmemory/documents and retrieves previouslyapprovedpytest result; deniedtraversal/mutatedtestpayload/foreignmemory cannotwrite. Doesnot prove modeloriginarbitrarycoding.
+- PASS QA directreadonly migrationverify old63resources/11terminalruns/116events untouched; new115resources/15terminalruns/201events additive.
+- CHANGES_REQUESTED MEDIUM: stats unknownusageflag is onagent whereasdrawerrendersa.stats.usageKnown. ActualfailedHarness missingkeyrun d37269bb drawerExecutionfailed visible; N/Anotvisible andfake0tokenvalues. Reported rootprojectionowner; originalfailureJSON/screenshots retained.
+- CHANGES_REQUESTED LOW provenanceaudit334files modified15: newclient/src/ui/drawer.ts notdeclaredPATCHESledger. SentPixelownerforcorrection.
+- Actualcancel55e9118d fromwaitingapproval appearscancelledtask, no inventedcompletion. Providersecretfailure neverfallbackmock.
+- Freshunmaskedupstreamparityrunning; finaldecisionpendingtwofixesandparity. QAcode still requires Integrator review.
