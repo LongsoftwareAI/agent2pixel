@@ -1,0 +1,16 @@
+{
+  "live_inference": {
+    "status": "UNRUN",
+    "reason": "No usable provider credential present; local Ollama service unavailable",
+    "credential_names_checked_only": ["AGENTVERSE_DEEPSEEK_API_KEY", "AGENTVERSE_OPENAI_API_KEY", "DEEPSEEK_API_KEY", "OPENAI_API_KEY"]
+  },
+  "public_https_reader": {
+    "status": "FAILED_ENVIRONMENT_DNS",
+    "attempted_urls": ["https://www.python.org/", "https://raw.githubusercontent.com/python/cpython/main/README.rst"],
+    "attempts": "Default sandbox and escalated execution both attempted; neither resolved the public hostname",
+    "error": "[Errno -3] Temporary failure in name resolution",
+    "tls_http_success": false,
+    "verification_weakened": false,
+    "policy_transport_tests": "30 source/tool tests PASS with actual CSV and controlled DNS/HTTP boundary; not live internet evidence"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "routes": [
+    "/",
+    "/control/",
+    "/health",
+    "/api/catalog",
+    "/api/workflow-templates"
+  ],
+  "actual_csv_sum": "0.30",
+  "run_id": "eeeb94ba-5104-460b-83bc-16aad047b710",
+  "tool_status": "completed",
+  "scope": "isolated Docker API/web, no original data mounted",
+  "final_web_image": "67d5205cd02f9aa5b111ca7ad39602ddd92331fde4f116e5409734c8e42c2978",
+  "api_image": "d0fbdff1c3aeafcceb87c6934cfae62cf92d068ccc0ceb8164d48e45901936db",
+  "final_tool_workload_module_verified": true
+}

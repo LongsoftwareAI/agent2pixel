@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: '24'
       - run: bash scripts/install.sh
-      - run: .venv/bin/python -m pytest tests/backend tests/phase2/runtime tests/phase3/runtime tests/phase4 tests/backup tests/harness tests/projection tests/office_layout -q
+      - run: .venv/bin/python -m pytest tests/backend tests/phase2/runtime tests/phase3/runtime tests/phase4 tests/backup tests/integration tests/harness tests/projection tests/office_layout -q
       - run: npm --prefix apps/web run build
       - run: npm --prefix apps/web test
       - run: .venv/bin/python -m ruff check --select E9,F63,F7,F82 services tests/backend
