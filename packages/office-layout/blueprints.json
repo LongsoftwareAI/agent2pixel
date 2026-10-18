@@ -1,0 +1,10219 @@
+{
+  "schema_version": 1,
+  "upstream": {
+    "repository": "https://github.com/marmottajr/habblaud",
+    "commit": "faa1a012b5fbf632c66dc6801c5383e53a542406",
+    "license": "MIT",
+    "copyright": "2026 Márcio Junior"
+  },
+  "footprints": {
+    "plant_tall": {
+      "mount": "floor",
+      "footprint": {
+        "w": 1,
+        "h": 1
+      },
+      "blocks": true,
+      "variants": [
+        "palm",
+        "ficus",
+        "monstera",
+        "bonsai"
+      ]
+    },
+    "bookshelf": {
+      "mount": "floor",
+      "footprint": {
+        "w": 2,
+        "h": 1
+      },
+      "blocks": true
+    },
+    "floor_lamp": {
+      "mount": "floor",
+      "footprint": {
+        "w": 1,
+        "h": 1
+      },
+      "blocks": true
+    }
+  },
+  "rooms": [
+    {
+      "seed": 1,
+      "slot": 0,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f37:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 13,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f49:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f52:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f53:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 10
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 11,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s34:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s36:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 14,
+          "y": 3
+        },
+        {
+          "id": "room#s41:window",
+          "kind": "window",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "id": "room#s51:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "slot": 1,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f37:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 10,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:plant_small",
+          "kind": "plant_small",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f49:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f52:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f53:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 2
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 13,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s34:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s36:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 11,
+          "y": 3
+        },
+        {
+          "id": "room#s51:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 2,
+      "slot": 0,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f37:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 13,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:beanbag",
+          "kind": "beanbag",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f47:beanbag",
+          "kind": "beanbag",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f49:plant_small",
+          "kind": "plant_small",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_tall",
+          "kind": "plant_tall",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f52:plant_small",
+          "kind": "plant_small",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 10
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 11,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s34:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s36:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 14,
+          "y": 3
+        },
+        {
+          "id": "room#s41:window",
+          "kind": "window",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "id": "room#s46:nook",
+          "kind": "nook",
+          "x": 13,
+          "y": 10
+        },
+        {
+          "id": "room#s48:nook",
+          "kind": "nook",
+          "x": 11,
+          "y": 10
+        },
+        {
+          "id": "room#s53:stand",
+          "kind": "stand",
+          "x": 4,
+          "y": 9
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s57:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 2,
+      "slot": 1,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f37:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 10,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:plant_small",
+          "kind": "plant_small",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:printer",
+          "kind": "printer",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:beanbag",
+          "kind": "beanbag",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f47:beanbag",
+          "kind": "beanbag",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f49:plant_small",
+          "kind": "plant_small",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_tall",
+          "kind": "plant_tall",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f52:plant_small",
+          "kind": "plant_small",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 2
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 13,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s34:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s36:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 11,
+          "y": 3
+        },
+        {
+          "id": "room#s46:nook",
+          "kind": "nook",
+          "x": 13,
+          "y": 10
+        },
+        {
+          "id": "room#s48:nook",
+          "kind": "nook",
+          "x": 11,
+          "y": 10
+        },
+        {
+          "id": "room#s53:stand",
+          "kind": "stand",
+          "x": 4,
+          "y": 9
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s57:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 3,
+      "slot": 0,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:meeting_table",
+          "kind": "meeting_table",
+          "x": 3,
+          "y": 5,
+          "w": 3,
+          "h": 2,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f34:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f36:bookshelf",
+          "kind": "bookshelf",
+          "x": 13,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:printer",
+          "kind": "printer",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 10
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 11,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s37:shelf",
+          "kind": "shelf",
+          "x": 14,
+          "y": 3
+        },
+        {
+          "id": "room#s39:window",
+          "kind": "window",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "id": "room#s49:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s52:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s53:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 3,
+      "slot": 1,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:meeting_table",
+          "kind": "meeting_table",
+          "x": 3,
+          "y": 5,
+          "w": 3,
+          "h": 2,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f34:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f36:bookshelf",
+          "kind": "bookshelf",
+          "x": 10,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f39:plant_small",
+          "kind": "plant_small",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 2
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 13,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s37:shelf",
+          "kind": "shelf",
+          "x": 11,
+          "y": 3
+        },
+        {
+          "id": "room#s49:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s52:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s53:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 4,
+      "slot": 0,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f37:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 13,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f49:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_tall",
+          "kind": "plant_tall",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 4,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f52:armchair",
+          "kind": "armchair",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f54:plant_small",
+          "kind": "plant_small",
+          "x": 2,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f55:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 10
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 11,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s34:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s36:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 14,
+          "y": 3
+        },
+        {
+          "id": "room#s41:window",
+          "kind": "window",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "id": "room#s53:nook",
+          "kind": "nook",
+          "x": 3,
+          "y": 10
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s57:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s58:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 4,
+      "slot": 1,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f37:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 10,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:plant_small",
+          "kind": "plant_small",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:printer",
+          "kind": "printer",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f49:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_tall",
+          "kind": "plant_tall",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 4,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f52:armchair",
+          "kind": "armchair",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f54:plant_small",
+          "kind": "plant_small",
+          "x": 2,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f55:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 2
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 13,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s34:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s36:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 11,
+          "y": 3
+        },
+        {
+          "id": "room#s53:nook",
+          "kind": "nook",
+          "x": 3,
+          "y": 10
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s57:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s58:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 5,
+      "slot": 0,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f37:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 13,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:beanbag",
+          "kind": "beanbag",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f47:beanbag",
+          "kind": "beanbag",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f49:plant_small",
+          "kind": "plant_small",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_tall",
+          "kind": "plant_tall",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f53:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f54:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 10
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 11,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s34:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s36:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 14,
+          "y": 3
+        },
+        {
+          "id": "room#s41:window",
+          "kind": "window",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "id": "room#s46:nook",
+          "kind": "nook",
+          "x": 13,
+          "y": 10
+        },
+        {
+          "id": "room#s48:nook",
+          "kind": "nook",
+          "x": 11,
+          "y": 10
+        },
+        {
+          "id": "room#s52:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s57:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 5,
+      "slot": 1,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:cafe_table",
+          "kind": "cafe_table",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f37:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 10,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:plant_small",
+          "kind": "plant_small",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:printer",
+          "kind": "printer",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:beanbag",
+          "kind": "beanbag",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f47:beanbag",
+          "kind": "beanbag",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f49:plant_small",
+          "kind": "plant_small",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_tall",
+          "kind": "plant_tall",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f53:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f54:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 2
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 13,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s34:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s36:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 11,
+          "y": 3
+        },
+        {
+          "id": "room#s46:nook",
+          "kind": "nook",
+          "x": 13,
+          "y": 10
+        },
+        {
+          "id": "room#s48:nook",
+          "kind": "nook",
+          "x": 11,
+          "y": 10
+        },
+        {
+          "id": "room#s52:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s57:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 6,
+      "slot": 0,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:meeting_table",
+          "kind": "meeting_table",
+          "x": 3,
+          "y": 5,
+          "w": 3,
+          "h": 2,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f34:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f36:bookshelf",
+          "kind": "bookshelf",
+          "x": 13,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:printer",
+          "kind": "printer",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 10
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 11,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s37:shelf",
+          "kind": "shelf",
+          "x": 14,
+          "y": 3
+        },
+        {
+          "id": "room#s39:window",
+          "kind": "window",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "id": "room#s49:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s52:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s53:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 6,
+      "slot": 1,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:meeting_table",
+          "kind": "meeting_table",
+          "x": 3,
+          "y": 5,
+          "w": 3,
+          "h": 2,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f34:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f36:bookshelf",
+          "kind": "bookshelf",
+          "x": 10,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f39:plant_small",
+          "kind": "plant_small",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f51:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 2
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 13,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "id": "room#s33:stool",
+          "kind": "stool",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s35:stool",
+          "kind": "stool",
+          "x": 3,
+          "y": 7
+        },
+        {
+          "id": "room#s37:shelf",
+          "kind": "shelf",
+          "x": 11,
+          "y": 3
+        },
+        {
+          "id": "room#s49:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s52:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s53:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "slot": 0,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:coffee_table",
+          "kind": "coffee_table",
+          "x": 4,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:armchair",
+          "kind": "armchair",
+          "x": 6,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:armchair",
+          "kind": "armchair",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:beanbag",
+          "kind": "beanbag",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f34:beanbag",
+          "kind": "beanbag",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f36:beanbag",
+          "kind": "beanbag",
+          "x": 4,
+          "y": 3,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 13,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:printer",
+          "kind": "printer",
+          "x": 1,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f49:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f52:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f53:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 10
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 11,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:nook",
+          "kind": "nook",
+          "x": 6,
+          "y": 5
+        },
+        {
+          "id": "room#s31:nook",
+          "kind": "nook",
+          "x": 3,
+          "y": 5
+        },
+        {
+          "id": "room#s33:nook",
+          "kind": "nook",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s35:nook",
+          "kind": "nook",
+          "x": 4,
+          "y": 7
+        },
+        {
+          "id": "room#s37:nook",
+          "kind": "nook",
+          "x": 4,
+          "y": 3
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 14,
+          "y": 3
+        },
+        {
+          "id": "room#s41:window",
+          "kind": "window",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "id": "room#s51:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "slot": 1,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 12,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 12,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 13,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 13,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 10,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 10,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 11,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 11,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 8,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 8,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 9,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 9,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 6,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:coffee_table",
+          "kind": "coffee_table",
+          "x": 4,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:armchair",
+          "kind": "armchair",
+          "x": 6,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:armchair",
+          "kind": "armchair",
+          "x": 3,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:beanbag",
+          "kind": "beanbag",
+          "x": 5,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f34:beanbag",
+          "kind": "beanbag",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f36:beanbag",
+          "kind": "beanbag",
+          "x": 4,
+          "y": 3,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f38:bookshelf",
+          "kind": "bookshelf",
+          "x": 10,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:plant_small",
+          "kind": "plant_small",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 1,
+          "y": 5,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f44:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 1,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f45:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f46:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 13,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f47:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 12,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 11,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f49:trash_bin",
+          "kind": "trash_bin",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:cafe_table",
+          "kind": "cafe_table",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f52:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f53:trash_bin",
+          "kind": "trash_bin",
+          "x": 5,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 9,
+          "y": 2
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 13,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 13,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 9,
+          "y": 7
+        },
+        {
+          "id": "room#s29:nook",
+          "kind": "nook",
+          "x": 6,
+          "y": 5
+        },
+        {
+          "id": "room#s31:nook",
+          "kind": "nook",
+          "x": 3,
+          "y": 5
+        },
+        {
+          "id": "room#s33:nook",
+          "kind": "nook",
+          "x": 5,
+          "y": 7
+        },
+        {
+          "id": "room#s35:nook",
+          "kind": "nook",
+          "x": 4,
+          "y": 7
+        },
+        {
+          "id": "room#s37:nook",
+          "kind": "nook",
+          "x": 4,
+          "y": 3
+        },
+        {
+          "id": "room#s39:shelf",
+          "kind": "shelf",
+          "x": 11,
+          "y": 3
+        },
+        {
+          "id": "room#s51:stand",
+          "kind": "stand",
+          "x": 3,
+          "y": 9
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 6,
+          "y": 3
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 14,
+          "y": 7
+        },
+        {
+          "id": "room#s56:stand",
+          "kind": "stand",
+          "x": 2,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 8,
+      "slot": 0,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 11,
+        "w": 2,
+        "h": 1
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 2,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 2,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 2,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 2,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 4,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 4,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 6,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 6,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 6,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 6,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 9,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:meeting_table",
+          "kind": "meeting_table",
+          "x": 10,
+          "y": 5,
+          "w": 3,
+          "h": 2,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 10,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 12,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:stool",
+          "kind": "stool",
+          "x": 10,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f34:stool",
+          "kind": "stool",
+          "x": 12,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f36:bookshelf",
+          "kind": "bookshelf",
+          "x": 1,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:plant_tall",
+          "kind": "plant_tall",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 14,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 14,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:beanbag",
+          "kind": "beanbag",
+          "x": 2,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f45:beanbag",
+          "kind": "beanbag",
+          "x": 4,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f47:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f49:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_small",
+          "kind": "plant_small",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 6,
+          "y": 10
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 2,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 4,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 6,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 6,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 10,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 12,
+          "y": 4
+        },
+        {
+          "id": "room#s33:stool",
+          "kind": "stool",
+          "x": 10,
+          "y": 7
+        },
+        {
+          "id": "room#s35:stool",
+          "kind": "stool",
+          "x": 12,
+          "y": 7
+        },
+        {
+          "id": "room#s37:shelf",
+          "kind": "shelf",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "id": "room#s39:window",
+          "kind": "window",
+          "x": 12,
+          "y": 2
+        },
+        {
+          "id": "room#s44:nook",
+          "kind": "nook",
+          "x": 2,
+          "y": 10
+        },
+        {
+          "id": "room#s46:nook",
+          "kind": "nook",
+          "x": 4,
+          "y": 10
+        },
+        {
+          "id": "room#s51:stand",
+          "kind": "stand",
+          "x": 11,
+          "y": 9
+        },
+        {
+          "id": "room#s52:stand",
+          "kind": "stand",
+          "x": 12,
+          "y": 9
+        },
+        {
+          "id": "room#s53:stand",
+          "kind": "stand",
+          "x": 9,
+          "y": 3
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 1,
+          "y": 7
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 13,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "seed": 8,
+      "slot": 1,
+      "width": 16,
+      "height": 12,
+      "door": {
+        "x": 7,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      "furniture": [
+        {
+          "id": "room#f8:desk_back",
+          "kind": "desk_back",
+          "x": 2,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f9:desk",
+          "kind": "desk",
+          "x": 2,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f10:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 2,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f12:office_chair",
+          "kind": "office_chair",
+          "x": 2,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f14:desk_back",
+          "kind": "desk_back",
+          "x": 4,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f15:desk",
+          "kind": "desk",
+          "x": 4,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f16:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 4,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f18:office_chair",
+          "kind": "office_chair",
+          "x": 4,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f20:desk_back",
+          "kind": "desk_back",
+          "x": 6,
+          "y": 5,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f21:desk",
+          "kind": "desk",
+          "x": 6,
+          "y": 6,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f22:office_chair_front",
+          "kind": "office_chair_front",
+          "x": 6,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f24:office_chair",
+          "kind": "office_chair",
+          "x": 6,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f26:trash_bin",
+          "kind": "trash_bin",
+          "x": 9,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f27:meeting_table",
+          "kind": "meeting_table",
+          "x": 10,
+          "y": 5,
+          "w": 3,
+          "h": 2,
+          "blocks": true
+        },
+        {
+          "id": "room#f28:stool",
+          "kind": "stool",
+          "x": 10,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f30:stool",
+          "kind": "stool",
+          "x": 12,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f32:stool",
+          "kind": "stool",
+          "x": 10,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f34:stool",
+          "kind": "stool",
+          "x": 12,
+          "y": 7,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f36:bookshelf",
+          "kind": "bookshelf",
+          "x": 4,
+          "y": 2,
+          "w": 2,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f38:plant_tall",
+          "kind": "plant_tall",
+          "x": 14,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f39:plant_small",
+          "kind": "plant_small",
+          "x": 1,
+          "y": 2,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f40:binder_shelf",
+          "kind": "binder_shelf",
+          "x": 14,
+          "y": 4,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f41:printer",
+          "kind": "printer",
+          "x": 14,
+          "y": 6,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f42:floor_lamp",
+          "kind": "floor_lamp",
+          "x": 14,
+          "y": 8,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f43:beanbag",
+          "kind": "beanbag",
+          "x": 2,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f45:beanbag",
+          "kind": "beanbag",
+          "x": 4,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": false
+        },
+        {
+          "id": "room#f47:plant_small",
+          "kind": "plant_small",
+          "x": 3,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f48:plant_tall",
+          "kind": "plant_tall",
+          "x": 1,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f49:filing_cabinet",
+          "kind": "filing_cabinet",
+          "x": 14,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        },
+        {
+          "id": "room#f50:plant_small",
+          "kind": "plant_small",
+          "x": 10,
+          "y": 10,
+          "w": 1,
+          "h": 1,
+          "blocks": true
+        }
+      ],
+      "spots": [
+        {
+          "id": "room#s6:switch",
+          "kind": "switch",
+          "x": 6,
+          "y": 2
+        },
+        {
+          "id": "room#s7:whiteboard",
+          "kind": "whiteboard",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "id": "room#s11:desk",
+          "kind": "desk",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "id": "room#s13:desk",
+          "kind": "desk",
+          "x": 2,
+          "y": 7
+        },
+        {
+          "id": "room#s17:desk",
+          "kind": "desk",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "id": "room#s19:desk",
+          "kind": "desk",
+          "x": 4,
+          "y": 7
+        },
+        {
+          "id": "room#s23:desk",
+          "kind": "desk",
+          "x": 6,
+          "y": 4
+        },
+        {
+          "id": "room#s25:desk",
+          "kind": "desk",
+          "x": 6,
+          "y": 7
+        },
+        {
+          "id": "room#s29:stool",
+          "kind": "stool",
+          "x": 10,
+          "y": 4
+        },
+        {
+          "id": "room#s31:stool",
+          "kind": "stool",
+          "x": 12,
+          "y": 4
+        },
+        {
+          "id": "room#s33:stool",
+          "kind": "stool",
+          "x": 10,
+          "y": 7
+        },
+        {
+          "id": "room#s35:stool",
+          "kind": "stool",
+          "x": 12,
+          "y": 7
+        },
+        {
+          "id": "room#s37:shelf",
+          "kind": "shelf",
+          "x": 4,
+          "y": 3
+        },
+        {
+          "id": "room#s44:nook",
+          "kind": "nook",
+          "x": 2,
+          "y": 10
+        },
+        {
+          "id": "room#s46:nook",
+          "kind": "nook",
+          "x": 4,
+          "y": 10
+        },
+        {
+          "id": "room#s51:stand",
+          "kind": "stand",
+          "x": 11,
+          "y": 9
+        },
+        {
+          "id": "room#s52:stand",
+          "kind": "stand",
+          "x": 12,
+          "y": 9
+        },
+        {
+          "id": "room#s53:stand",
+          "kind": "stand",
+          "x": 9,
+          "y": 3
+        },
+        {
+          "id": "room#s54:stand",
+          "kind": "stand",
+          "x": 1,
+          "y": 7
+        },
+        {
+          "id": "room#s55:stand",
+          "kind": "stand",
+          "x": 13,
+          "y": 9
+        }
+      ],
+      "grid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ]
+}
