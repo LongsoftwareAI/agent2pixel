@@ -1,5 +1,6 @@
 """Independent real-HTTP Phase5 acceptance. Only model inference uses a local fixture."""
 import argparse
+from decimal import Decimal
 import hashlib
 import json
 from pathlib import Path
@@ -7,7 +8,7 @@ import sys
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'phase4'))
-from acceptance_support import API, ProviderFixture  # noqa: E402
+from acceptance_support import API, ProviderFixture, tool_envelope  # noqa: E402
 from live_acceptance import agent, finish, graph  # noqa: E402
 
 
@@ -43,6 +44,11 @@ def run(args):
             completed = finish(api, item, run, provider)
             assert completed['artifacts'], completed
             assert provider.requests, 'Actual runtime did not call local HTTP adapter'
+            analysis = tool_envelope(provider.requests[0])['result']
+            assert Decimal(analysis['columns']['amount']['sum']) == Decimal('2.00')
+            assert Decimal(analysis['groups']['A']['amount']['sum']) == Decimal('0.30')
+            durable = api.ok('/api/runs/'+run['id']+'/tool-results')
+            assert len(durable) == 1 and json.loads(durable[0]['output'])['result'] == analysis
             current = api.ok('/api/console/conversations/'+cid+'?workspace_id='+wid)
             assert current['messages'], current
             report['checks'].append('chat creates real CSV workflow, generated artifact, separate approvals/QC/work acceptance; duplicate same key stable and changed payload409')
