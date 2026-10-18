@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 review candidate — real data tools and company operations
+
+- Scoped source ingestion, exact Decimal CSV analysis/grouping, provenance and protected bounded HTTPS reader implementation.
+- Actual tool nodes, durable human review gates, bounded rework/versioned artifacts and up to4 concurrent independent readonly tool steps.
+- Manual priority/deadline queue, observed task/tool workload, memory provenance/edit/delete/history, verified artifact reader and linked-run diffs.
+- New Sources/flow/review/evidence controls; persisted historical timeline, Vitest5.0.5 upgrade, both npm audits0; main bundle ~472kB.
+- 166 Python aggregate checks +48 control +10 office PASS, actual browser8screenshots, independent scoped APPROVE; actual Docker/freshdata and stopped-data backup/restore verified.
+- Live inference UNRUN (no key); actual public web fetch fails environmentDNS even after escalated retry. Model quality/livebilling/general parallelagents/backgroundqueue/arbitrarycode remain outside tested scope. See docs/PHASE_4_VALIDATION.md.
+
 ## 0.3.0 review candidate — multi-purpose company workspace
 
 - Durable work briefs/criteria, linked workflow runs, revision history and explicit human acceptance.

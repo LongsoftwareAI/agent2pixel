@@ -19,3 +19,5 @@ Phase2 planning: sessions/2026-10-17/architect-phase2-plan.md; proposed ADR-0004
 Phase2 implementation/resume: sessions/2026-10-18/; handoffs/P2-*; independent review reviews/P2-08-final-review.md. Integration evidence docs/PHASE_2_VALIDATION.md supersedes proposed-only plan status. Phase2 approval is limited to tested localhost slice, not arbitrary autonomous coding.
 
 Phase3 company implementation: sessions/2026-10-18/integrator-phase3.json, backend-phase3.md, frontend-phase3.md, harness-phase3.md, pixel-phase3.md and qa-phase3.md. Handoffs P3-BE-001.md/P3-FE.md. Validation docs/PHASE_3_VALIDATION.md; immutable generated-output policy docs/contracts/phase3/GENERATED_OUTPUT.md. Independent final review must explicitly approve this scope; prior Phase2 verdict is historical.
+
+Phase4 source/tools/runtime/company: sessions/2026-10-18/integrator-phase4.json and ownerhandoffs P4-*; independent reviews/P4-FINAL-review.md and separate root reviews/P4-INT-review.md. Validation docs/PHASE_4_VALIDATION.md includes actualDocker/restore and explicit failed publicDNS / UNRUNliveprovider outcomes. No full live-service completion claim.

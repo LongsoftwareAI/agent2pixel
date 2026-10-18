@@ -56,11 +56,13 @@ Plan docs/plans/PHASE_3_COMPANY_WORKSPACE.md; contract docs/contracts/phase3/IMP
 
 | Task | Owner | State |
 |---|---|---|
-| P4-01 tool/review/rework runtime and timing | Runtime Backend | IN_PROGRESS |
-| P4-02 source/web/CSV tools and isolation | Tools | IN_PROGRESS |
-| P4-03 queue/workload/review artifacts/memory provenance | Operations | IN_PROGRESS |
-| P4-04 frontend controls/product review/dependency audit | Frontend | IN_PROGRESS |
-| P4-05 independent execution/failure/browser acceptance | QA | IN_PROGRESS |
-| P4-06 Docker/backup/restore/reproducibility/integration | Root | IN_PROGRESS; backup3checksPASS, independentreview pending |
+| P4-01 tool/review/rework runtime and timing | Runtime Backend | INTEGRATED; bounded rework/restart +actual4-readtool concurrency tested |
+| P4-02 source/web/CSV tools and isolation | Tools | INTEGRATED local source/CSV; live publicweb FAILED DNS, acceptance open |
+| P4-03 queue/workload/review artifacts/memory provenance | Operations | INTEGRATED; manualdispatch/workload/provenance/diff verified |
+| P4-04 frontend controls/product review/dependency audit | Frontend | INTEGRATED;48tests/type/lint/build +audit0 |
+| P4-05 independent execution/failure/browser acceptance | QA | APPROVED localhost slice bcd1ff4; live model UNRUN and webDNS remainopen |
+| P4-06 Docker/backup/restore/reproducibility/integration | Root | INTEGRATED;166Python/48control/10office; Docker+restorePASS; reviewbranch phase-4/company-tools |
 
 Contract docs/contracts/phase4/IMPLEMENTATION.md. No live provider credential present; secure optional DeepSeek binding saved as draft. Real-model acceptance remains UNRUN until configured, never replaced by a stub claim. Parallel branch support must be tested if implemented, otherwise explicit remaining gap. No automatic outbound messages/public deployment.
+
+Phase4 evidence: docs/PHASE_4_VALIDATION.md. Full live-service acceptance remains open; localhost production review is not universal task/live-provider approval. Main unchanged; no SaaS/public deployment.
