@@ -161,6 +161,13 @@ def validate_graph(graph, store, workspace):
                             "Rework segment may contain agent/tool nodes only"
                         )
                         break
+                    if any(
+                        cursor + "~" + n["id"] + "~r" + str(r) in by_id
+                        for r in range(1, 4)
+                    ):
+                        errors.append(
+                            "Rework revision node identity collides with base graph"
+                        )
                     prior_node = by_id[cursor]
                     if prior_node.get("deliverable"):
                         try:

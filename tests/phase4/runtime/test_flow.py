@@ -435,3 +435,42 @@ def test_revision_gate_restart_preserves_output_and_never_recharges(tmp_path):
         assert after["state"] == "completed", after
         assert after["tasks"] == before["tasks"]
         assert after["token_spent"] == before["token_spent"]
+
+
+def test_malformed_review_tool_configs_and_revision_identity_collision(tmp_path):
+    import copy
+
+    with TestClient(create_app(tmp_path)) as client:
+        wf, agent, ws = setup(client)
+        for node_index, field, value in [
+            (3, "rework_target", []),
+            (3, "max_revisions", True),
+            (3, "max_revisions", 4),
+            (1, "tool", {"id": [], "payload": {}}),
+        ]:
+            graph = copy.deepcopy(wf["graph"])
+            graph["nodes"][node_index][field] = value
+            response = client.post(
+                "/api/workflows",
+                json={
+                    "workspace_id": ws["id"],
+                    "name": "Invalid config",
+                    "graph": graph,
+                },
+            )
+            assert response.status_code == 400, response.text
+        graph = copy.deepcopy(wf["graph"])
+        graph["nodes"].insert(
+            -1, {"id": "writer~review~r1", "type": "agent", "agent_id": agent["id"]}
+        )
+        graph["edges"][-1]["target"] = "writer~review~r1"
+        graph["edges"].append({"source": "writer~review~r1", "target": "end"})
+        response = client.post(
+            "/api/workflows",
+            json={
+                "workspace_id": ws["id"],
+                "name": "Identity collision",
+                "graph": graph,
+            },
+        )
+        assert response.status_code == 400 and "identity collides" in response.text

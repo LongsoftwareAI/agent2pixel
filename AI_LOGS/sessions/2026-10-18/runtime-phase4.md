@@ -28,3 +28,7 @@
 ## Inspectable durable tool evidence
 - Added GET /api/runs/{id}/tool-results, filtered both workspace and exact run, returning actual persisted result body/provenance plus observed timing. Failed record persists observed duration, no raw potentially sensitive exception text. FE informed of wire shape and JSON envelope.
 - Validation9runtimePASS; scoped test injects foreignworkspace record with same run ID and sameworkspace other-run record, verifies only exact owned result is exposed. Actual readtool result classification and duration asserted.
+
+## Revision identity validation
+- Explicit base node IDs must not collide with generated revision node IDs; otherwise a malicious/custom graph could reuse cached revision output in a later base node. Reject at graph validation. Additional malformed review targets/revision booleans/out-of-range/tool IDs return400 rather than500.
+- Validation10P4PASS. Source/data router integration remains pending Tools handoff, not silently omitted.
