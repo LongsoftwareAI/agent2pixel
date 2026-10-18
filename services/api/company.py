@@ -3,7 +3,10 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, ConfigDict, Field
 from services.api.store import now, uid
+from services.api.operations import validate_operations_fields
 from functools import wraps
+from datetime import datetime
+from typing import Literal
 
 
 class WorkItemInput(BaseModel):
@@ -13,6 +16,10 @@ class WorkItemInput(BaseModel):
     title: str = Field(min_length=1, max_length=200)
     description: str = Field(min_length=1, max_length=20000)
     acceptance_criteria: list[str] = Field(default_factory=list, max_length=30)
+    priority: Literal["low", "normal", "high"] = "normal"
+    due_at: datetime | None = None
+    owner_agent_id: str | None = None
+    queue_requested: bool = False
 
 
 TEMPLATES = [
@@ -121,7 +128,7 @@ def projected_item(store, item):
         else None
     )
     if not run or run.get("brief_revision", 1) != item.get("brief_revision", 1):
-        value["status"] = "backlog"
+        value["status"] = "queued" if item.get("queue_requested") else "backlog"
     elif run["state"] == "completed":
         reviews = [r for r in item.get("reviews", []) if r["run_id"] == run["id"]]
         value["status"] = (
@@ -134,9 +141,18 @@ def projected_item(store, item):
             "queued": "running",
             "running": "running",
             "waiting_approval": "waiting_approval",
+            "waiting_review": "waiting_review",
             "failed": "failed",
             "cancelled": "cancelled",
         }.get(run["state"], "backlog")
+    if item.get("queue_requested") and value["status"] not in (
+        "running",
+        "waiting_approval",
+        "waiting_review",
+        "review",
+        "done",
+    ):
+        value["status"] = "queued"
     return value
 
 
@@ -188,9 +204,12 @@ def create_company_router(app, start_run, run_model):
         workflow = get("workflow", body.workflow_id)
         if workflow["workspace_id"] != body.workspace_id:
             raise HTTPException(403, "Workflow outside workspace")
+        validate_operations_fields(
+            store(), body.workspace_id, body.model_dump(mode="json")
+        )
         criteria(body.acceptance_criteria)
         value = dict(
-            body.model_dump(),
+            body.model_dump(mode="json"),
             id=uid(),
             run_ids=[],
             latest_run_id=None,
@@ -210,17 +229,34 @@ def create_company_router(app, start_run, run_model):
     @serialized
     def patch(id: str, body: dict):
         value = get("work_item", id)
-        if projected_item(store(), value)["status"] in ("running", "waiting_approval"):
+        if projected_item(store(), value)["status"] in (
+            "running",
+            "waiting_approval",
+            "waiting_review",
+        ):
             raise HTTPException(409, "Active brief is immutable")
-        if set(body) - {"title", "description", "acceptance_criteria"}:
+        if set(body) - {
+            "title",
+            "description",
+            "acceptance_criteria",
+            "priority",
+            "due_at",
+            "owner_agent_id",
+            "queue_requested",
+        }:
             raise HTTPException(422, "Only brief fields can change")
         for key, maximum in (("title", 200), ("description", 20000)):
             if key in body and (
                 not isinstance(body[key], str) or not 1 <= len(body[key]) <= maximum
             ):
                 raise HTTPException(422, "Invalid " + key)
+        validate_operations_fields(store(), value["workspace_id"], body)
         criteria(body.get("acceptance_criteria", value["acceptance_criteria"]))
-        if any(value.get(key) != content for key, content in body.items()):
+        if any(
+            value.get(key) != content
+            for key, content in body.items()
+            if key in ("title", "description", "acceptance_criteria")
+        ):
             value["brief_revision"] = value.get("brief_revision", 1) + 1
         value.update(body, updated_at=now())
         store().put("work_item", value)
@@ -246,6 +282,7 @@ def create_company_router(app, start_run, run_model):
             parsed = run_model(**{"input": prompt, **body})
         except ValidationError:
             raise HTTPException(422, "Invalid run fields") from None
+        value["queue_requested"] = False
         return start_run(value["workflow_id"], parsed, work_item=value)
 
     @router.post("/api/work-items/{id}/review")
