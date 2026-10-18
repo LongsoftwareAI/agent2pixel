@@ -107,6 +107,7 @@ class MemoryInput(Input):
     kind: str = "note"
     agent_id: str | None = None
     scope: str = "workspace"
+    source_id: str | None = None
 
 
 class ProviderInput(Input):
@@ -390,7 +391,7 @@ def create_app(data_dir=None):
         value["agent_specs"] = {
             n["agent_id"]: snapshot_spec(get("agent", n["agent_id"]), store())
             for n in value["graph"]["nodes"]
-            if n["type"] == "agent"
+            if n["type"] in ("agent", "tool")
         }
         value.update(
             artifacts=[],
@@ -571,7 +572,8 @@ def create_app(data_dir=None):
         return [
             m
             for m in store().list("memory", workspace_id)
-            if (
+            if not m.get("deleted_at")
+            and (
                 m.get("agent_id") == agent_id
                 if scope == "agent"
                 else not m.get("agent_id")
@@ -594,8 +596,20 @@ def create_app(data_dir=None):
             raise HTTPException(403, "Agent outside workspace")
         if body.agent_id and body.scope != "agent":
             raise HTTPException(422, "Agent-owned memory requires agent scope")
+        if body.source_id:
+            source = get("source", body.source_id)
+            if source["workspace_id"] != body.workspace_id:
+                raise HTTPException(403, "Source outside workspace")
+        provenance = (
+            {"source_id": source["id"], "sha256": source["sha256"]}
+            if body.source_id
+            else None
+        )
         return store().put(
-            "memory", dict(id=uid(), created_at=now(), **body.model_dump())
+            "memory",
+            dict(
+                id=uid(), created_at=now(), provenance=provenance, **body.model_dump()
+            ),
         )
 
     @app.get("/api/documents")
@@ -836,6 +850,53 @@ def create_app(data_dir=None):
         store().put("run", value)
         app.state.runtime.schedule(value, resume=True)
         return approval
+
+    @app.get("/api/runs/{id}/gates")
+    def gates(id: str):
+        value = get("run", id)
+        return [
+            g for g in store().list("gate", value["workspace_id"]) if g["run_id"] == id
+        ]
+
+    @app.post("/api/gates/{id}/decision")
+    async def gate_decision(id: str, body: dict):
+        if (
+            set(body) != {"decision", "comment"}
+            or not isinstance(body.get("comment"), str)
+            or len(body["comment"]) > 8000
+        ):
+            raise HTTPException(422, "Decision requires decision and comment max8000")
+        with store().lock:
+            gate = get("gate", id)
+            value = get("run", gate["run_id"])
+            if gate["status"] != "pending" or value["state"] != "waiting_approval":
+                raise HTTPException(409, "Gate is not pending")
+            if body["decision"] not in gate["allowed_decisions"]:
+                raise HTTPException(422, "Decision is not allowed at this revision")
+            gate.update(
+                status=body["decision"], comment=body["comment"], decided_at=now()
+            )
+            store().put("gate", gate)
+            store().event(
+                value["workspace_id"],
+                "review.decided",
+                {
+                    "gate_id": id,
+                    "decision": body["decision"],
+                    "revision": gate["revision"],
+                },
+                value["id"],
+            )
+        job = app.state.runtime.jobs.get(value["id"])
+        if job:
+            await asyncio.shield(job)
+        value = get("run", value["id"])
+        if value["state"] == "cancelled":
+            raise HTTPException(409, "Run was cancelled")
+        value["state"] = "queued"
+        store().put("run", value)
+        app.state.runtime.schedule(value, resume=True)
+        return gate
 
     @app.post("/api/runs/{id}/resume")
     async def resume(id: str):
