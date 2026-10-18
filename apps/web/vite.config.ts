@@ -1,4 +1,4 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 const proxyTarget=process.env.AGENTVERSE_API_PROXY || 'http://127.0.0.1:8000';
-export default defineConfig({base:process.env.AGENTVERSE_CONTROL_BASE || "/",plugins:[react()],server:{host:'127.0.0.1',port:3000,strictPort:true,proxy:{'/api':proxyTarget,'/health':proxyTarget,'/ws':{target:proxyTarget.replace(/^http/,'ws'),ws:true}}},test:{environment:'jsdom'}});
+export default defineConfig({base:process.env.AGENTVERSE_CONTROL_BASE || "/",plugins:[react(),{name:'legacy-control-redirect',configureServer(server){server.middlewares.use((req,res,next)=>{if(req.url==='/control'||req.url?.startsWith('/control/')){res.statusCode=302;res.setHeader('Location',req.url.replace(/^\/control\/?/,'/'));res.end();return}next()})}}],server:{host:'127.0.0.1',port:3000,strictPort:true,proxy:{'/office':{target:process.env.AGENTVERSE_OFFICE_PROXY || 'http://127.0.0.1:3002',ws:true},'/api':proxyTarget,'/health':proxyTarget,'/ws':{target:proxyTarget.replace(/^http/,'ws'),ws:true}}},test:{environment:'jsdom'}});
