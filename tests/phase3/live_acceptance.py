@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import sqlite3
 import threading
 import time
 import urllib.error
@@ -117,11 +118,24 @@ def run(args):
             assert payload['content'] == LocalProvider.outputs[index], (payload, LocalProvider.outputs)
             expected = hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
             assert expected == approval['payload_hash'], approval
+            assert current['tasks'][index]['output'] == payload['content'], current['tasks']
+            assert current['tasks'][index]['output_generated_at'] and current['tasks'][index]['tokens'] > 0
+            assert approval['node_id'] == 'step-' + str(index), approval
             assert instructions[index] in LocalProvider.requests[index]['messages'][-1]['content']
             assert 'LOCAL_SOURCE_QA' in LocalProvider.requests[index]['messages'][-1]['content']
             assert 'BRIEF_QA' in LocalProvider.requests[index]['messages'][-1]['content']
             assert 'CRITERION_QA' in LocalProvider.requests[index]['messages'][-1]['content']
             assert not list(Path(ws['root_path']).rglob(payload['filename'])), 'Export happened before approval'
+            if index == 0:
+                db_path = Path(ws['root_path']).parents[1] / 'agentverse.sqlite3'
+                def raw_item():
+                    with sqlite3.connect(db_path.resolve().as_uri() + '?mode=ro', uri=True) as db:
+                        return db.execute('SELECT body FROM resources WHERE kind=? AND id=?', ('work_item', item['id'])).fetchone()
+                before_read = raw_item()
+                assert before_read is not None, 'Work item is not durably stored'
+                api.ok('/api/work-items/' + item['id'])
+                api.ok('/api/work-items?workspace_id=' + ws['id'])
+                assert raw_item() == before_read, 'GET rewrote stored work item'
             if index == 0 and args.restart_marker:
                 marker = Path(args.restart_marker)
                 assert not marker.exists(), 'Restart marker must be new'
@@ -136,6 +150,8 @@ def run(args):
                 current = api.wait(run_id)
                 assert current['state'] == 'waiting_approval', current
                 assert len(LocalProvider.requests) == 1, 'Provider called again during paused restart'
+                assert current['tasks'][0]['output'] == payload['content'] and current['tasks'][0]['tokens'] == 30
+                assert current['tasks'][0]['output_generated_at']
                 assert api.ok('/api/runs/' + run_id + '/approvals') == [approval]
                 restart_checked = True
             approvals.append(approval['id'])
@@ -150,12 +166,33 @@ def run(args):
             data = file.read_bytes()
             assert data.decode() == LocalProvider.outputs[index], artifact
             assert hashlib.sha256(data).hexdigest() == artifact['sha256'] and len(data) == artifact['size'], artifact
+            assert artifact['node_id'] == 'step-' + str(index) and artifact['agent_id'] == agents[index]['id'] and artifact['run_id'] == run_id, artifact
             artifacts.append(artifact)
         review_item = api.ok('/api/work-items/' + item['id'])
         assert review_item['status'] == 'review', review_item
+        changed = api.ok('/api/work-items/' + item['id'] + '/review', {'decision': 'changes_requested', 'comment': 'HUMAN_QA: clarify limitations before acceptance'})
+        assert changed['status'] == 'backlog', changed
+        api.ok('/api/work-items/' + item['id'], {'title': 'P3_QA revised brief'}, 'PATCH')
+        second = api.ok('/api/work-items/' + item['id'] + '/runs', {})
+        for _ in range(2):
+            paused = api.wait(second['id'])
+            assert paused['state'] == 'waiting_approval', paused
+            pending = [a for a in api.ok('/api/runs/' + second['id'] + '/approvals') if a['status'] == 'pending']
+            assert len(pending) == 1
+            api.ok('/api/approvals/' + pending[0]['id'] + '/decision', {'decision': 'approved'})
+        assert api.wait(second['id'])['state'] == 'completed'
+        assert len(LocalProvider.requests) == 4, 'Each fresh node called provider exactly once'
         accepted = api.ok('/api/work-items/' + item['id'] + '/review', {'decision': 'accepted', 'comment': 'HUMAN_QA: inspected exact generated exports and source limitations'})
         assert accepted['status'] == 'done', accepted
+        review = accepted['reviews'][-1]
+        assert review['reviewer'] == 'human' and review['run_id'] == second['id'] and review['created_at'] and review['comment'].startswith('HUMAN_QA:'), review
+        api.denied('/api/work-items/' + item['id'] + '/review', {'decision': 'accepted', 'comment': 'Duplicate review forbidden'})
         api.denied('/api/approvals/' + approvals[0] + '/decision', {'decision': 'approved'})
+        api.ok('/api/agents/' + agents[0]['id'], {'tool_grants': [{'id': 'documents.read', 'allow': True}]}, 'PATCH')
+        no_grant_item = api.ok('/api/work-items', {**brief, 'title': 'P3 QA missing export grant'})
+        no_grant = api.ok('/api/work-items/' + no_grant_item['id'] + '/runs', {})
+        denied_run = api.wait(no_grant['id'])
+        assert denied_run['state'] == 'failed' and not denied_run.get('artifacts'), denied_run
         other = api.ok('/api/workspaces', {'name': 'P3 Foreign QA ' + str(time.time_ns())})
         api.denied('/api/work-items', {**brief, 'workspace_id': other['id']})
         for filename in ('../escape.md', 'script.py', '/tmp/escape.txt'):
@@ -164,10 +201,10 @@ def run(args):
             api.denied('/api/workflows', {'workspace_id': ws['id'], 'name': 'Invalid export', 'graph': {**graph, 'nodes': bad_nodes}})
         evidence = {'passed': True, 'application_sha': args.sha, 'provider': 'local HTTP Ollama-compatible stub; no live inference',
                     'runtime': 'actual API/LangGraph/SQLite/output export', 'workspace_id': ws['id'], 'work_item_id': item['id'], 'run_id': run_id,
-                    'provider_requests': len(LocalProvider.requests), 'restart_checked': restart_checked, 'approvals': approvals,
-                    'artifacts': artifacts, 'human_review': accepted, 'checks': ['custom instructions/source docs/brief/criteria reach actual provider',
+                    'provider_requests': len(LocalProvider.requests), 'first_run_provider_requests': 2, 'rerun_provider_requests': 2, 'restart_checked': restart_checked, 'approvals': approvals,
+                    'artifacts': artifacts, 'human_review': accepted, 'changes_requested': changed, 'revised_run_id': second['id'], 'no_grant_run_id': no_grant['id'], 'checks': ['custom instructions/source docs/brief/criteria reach actual provider',
                     'exact actual output export after approval only', 'no regeneration or duplicate file', 'artifact bytes/hash/size', 'completed means review, human accepted means done',
-                    'active duplicate/edit and premature review denied', 'cross-workspace workflow denied', 'traversal/executable/absolute filename denied', 'approval reuse denied']}
+                    'GET does not mutate raw stored item', 'changes requested returns backlog; revised run accepted', 'missing export grant fails without artifact', 'active duplicate/edit and premature review denied', 'cross-workspace workflow denied', 'traversal/executable/absolute filename denied', 'approval reuse denied']}
         (out / 'live-acceptance.json').write_text(json.dumps(evidence, indent=2) + '\n')
         print(json.dumps(evidence, indent=2), flush=True)
     finally:
