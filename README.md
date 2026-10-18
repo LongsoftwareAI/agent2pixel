@@ -66,6 +66,14 @@ QA E2E và ảnh chụp: xem [hướng dẫn](tests/e2e/README.md), [review đ�
 
 Mỗi coding agent dùng branch/worktree riêng; một writer mỗi path. QA review độc lập, không tự sửa file owner khác. Không task nào DONE nếu thiếu commit, tests, session log, reviewer approval và integrator verification.
 
+## Ảnh Phase 3 localhost
+
+![Bảng công việc và nghiệm thu của người dùng](docs/evidence/phase3/browser/human-reviewed-done-1366.png)
+
+![Hướng dẫn riêng từng bước workflow](docs/evidence/phase3/browser/workflow-node-instructions-1366.png)
+
+Kết quả và giới hạn: [Phase3 validation](docs/PHASE_3_VALIDATION.md).
+
 ## Ảnh Phase 2 localhost
 
 ![Office Habblaud với dữ liệu AgentVerse](tests/phase2/evidence/final/live-office-1366.png)
