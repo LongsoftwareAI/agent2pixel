@@ -29,6 +29,9 @@ EVENTS = {
     'task.cancelled': ('wait','■','Đã hủy công việc'),
     'tool.requested': ('read','⚒','Yêu cầu sử dụng tool'),
     'tool.completed': ('read','✓','Tool đã trả kết quả'),
+    'tool.failed': ('error','!','Tool thất bại'),
+    'review.required': ('ask','?','Chờ người dùng review'),
+    'review.decided': ('respond','✓','Đã nhận quyết định review'),
     'approval.required': ('ask','?','Cần phê duyệt'),
     'skill.activated': ('skill','✦','Đã kích hoạt skill'),
     'memory.read': ('read','▤','Đọc memory được phép'),
@@ -75,6 +78,8 @@ def project(store, workspace_id=None):
     agents=[]
     all_agents=[a for a in store.list('agent') if a['workspace_id'] in ids and a.get('enabled',True)]
     runs=[r for r in store.list('run') if r['workspace_id'] in ids]
+    run_by_id={r['id']:r for r in runs}
+    tool_records=[t for t in store.list('flow_tool_result') if t.get('workspace_id') in ids and t.get('run_id') in run_by_id and run_by_id[t['run_id']]['workspace_id']==t.get('workspace_id')]
     for a in all_agents:
         recent_events=[e for e in events if e.get('agent_id')==a['id']]
         recent=[activity(e) for e in recent_events[-30:]]
@@ -84,7 +89,13 @@ def project(store, workspace_id=None):
                 if task.get('agent_id')==a['id']:
                     state=task['state']
                     tasks.append(dict(id=task['id'],title=task.get('node_id','Task'),status=state if state in ('completed','failed','cancelled') else 'in_progress' if state in ('running','waiting_approval') else 'pending',domainState=state))
-        original=a.get('status','idle')
+        agent_tools=[t for t in tool_records if t.get('agent_id')==a['id'] and t['workspace_id']==a['workspace_id']]
+        active_tools=[t for t in agent_tools if t.get('status')=='started' and run_by_id[t['run_id']]['state']=='running']
+        for record in agent_tools:
+            run_state=run_by_id[record['run_id']]['state']
+            status='completed' if record['status']=='completed' else 'cancelled' if run_state=='cancelled' else 'failed' if record['status']=='failed' or run_state=='failed' else 'in_progress' if record in active_tools else 'pending'
+            tasks.append(dict(id=record['id'],title='Tool: '+record.get('tool',{}).get('id','unknown'),status=status,domainState=record['status']))
+        original='working' if active_tools else a.get('status','idle')
         state='working' if original in ('working','running') else 'waiting' if original in ('waiting','waiting_approval','queued') else 'idle'
         appearance=a.get('appearance') or {}
         agent_seed=appearance.get('seed',seed_for(a['id']))

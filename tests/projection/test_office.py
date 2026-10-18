@@ -89,3 +89,23 @@ def test_room_slots_seed_and_terminal_task_semantics(tmp_path):
     layout=client.get('/api/office/rooms/coding/furniture')
     assert layout.status_code==200 and layout.json()['version']==0
     s.db.close()
+
+
+def test_tool_only_work_reflects_actual_scoped_runtime_records(tmp_path):
+    s,client=setup(tmp_path)
+    run=dict(id='tool-run',workspace_id='coding',state='running',tasks=[])
+    s.put('run',run)
+    record=dict(id='tool-run:tool:csv',workspace_id='coding',run_id='tool-run',agent_id='planner',node_id='csv',status='started',tool={'id':'csv.analyze'})
+    s.put('flow_tool_result',record)
+    s.put('flow_tool_result',dict(record,id='foreign',workspace_id='research'))
+    agent=project(s,'coding')['agents'][0]
+    assert agent['status']=='working' and len(agent['tasks'])==1
+    assert agent['tasks'][0]['status']=='in_progress'
+    run['state']='cancelled';s.put('run',run)
+    agent=project(s,'coding')['agents'][0]
+    assert agent['status']=='idle' and agent['tasks'][0]['status']=='cancelled'
+    record['status']='failed';s.put('flow_tool_result',record)
+    s.event('coding','tool.failed',{'secret':'not exposed'},run='tool-run',agent='planner')
+    agent=project(s,'coding')['agents'][0]
+    assert agent['activity']['error'] and 'not exposed' not in str(agent)
+    s.db.close()
