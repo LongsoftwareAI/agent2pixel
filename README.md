@@ -12,7 +12,11 @@ bash scripts/install.sh
 python3 scripts/dev.py
 ```
 
-Mở localhost port 3000 trong trình duyệt. API port 8000; tất cả port dev bind 127.0.0.1. Ctrl-C dừng hai service. SQLite và workspace files trong `var/`, bị Git bỏ qua. Không xóa `var/` nếu muốn giữ dữ liệu. MockBrain không cần key hoặc model. Nó thực thi workflow thật với output deterministic; không được hiểu là model AI bên ngoài đã được gọi.
+Mở localhost port 3000 trong trình duyệt. API port 8000; tất cả port dev bind 127.0.0.1. Office Habblaud port 3000, trang cấu hình `/control/` được proxy đến port 3001. Ctrl-C dừng cả ba service. Dùng `python3 scripts/dev.py --legacy` để chạy giao diện v0.1. SQLite và workspace files trong `var/`, bị Git bỏ qua. Không xóa `var/` nếu muốn giữ dữ liệu. MockBrain không cần key hoặc model. Nó thực thi workflow thật với output deterministic; không được hiểu là model AI bên ngoài đã được gọi.
+
+## Phase 2 đang review
+
+Tái sử dụng renderer, giao diện và đồ họa procedural Canvas2D Habblaud theo MIT; giữ nguyên attribution và font OFL trong `vendor/habblaud/`. Agent có role, skill, tool grants, memory và execution engine riêng. LangGraph lưu checkpoint SQLite; DeepSeek Harness dùng SDK/runtime chính thức và Cordis bridge giới hạn quyền. [Phạm vi và bằng chứng Phase 2](docs/PHASE_2_VALIDATION.md).
 
 ## Docker Compose
 
@@ -37,7 +41,7 @@ Shell và tool có side effect bị chặn mặc định. Không có auth: giữ
 ## Kiểm thử
 
 ```sh
-.venv/bin/python -m pytest tests/backend -q
+.venv/bin/python -m pytest tests/backend tests/phase2/runtime tests/harness tests/projection tests/office_layout -q
 npm --prefix apps/web test
 npm --prefix apps/web run build
 ```
@@ -47,12 +51,18 @@ QA E2E và ảnh chụp: xem [hướng dẫn](tests/e2e/README.md), [review đ�
 ## Nguồn tham khảo và cộng tác
 
 - [Reuse audit](docs/reuse/REUSE_AUDIT.md): commit, source, license và quyết định inspiration-only cho sáu repo + ChatDev legacy.
-- [Visual board](docs/references/VISUAL_REFERENCE_BOARD.md): Habblaud và Pixel Agents đã xem ảnh thực tế; artwork ứng dụng được viết mới.
+- [Visual board](docs/references/VISUAL_REFERENCE_BOARD.md) và [audit Phase 2](docs/reuse/HABBLAUD_PHASE2_REUSE_PLAN.md): v0.1 dùng artwork mới; Phase 2 dùng source và artwork Habblaud có license.
 - [Contracts](docs/contracts/API.md), [ownership/task board](TASKS.md), [agent rules](AGENTS.md), [AI logs](AI_LOGS/INDEX.md).
 
 Mỗi coding agent dùng branch/worktree riêng; một writer mỗi path. QA review độc lập, không tự sửa file owner khác. Không task nào DONE nếu thiếu commit, tests, session log, reviewer approval và integrator verification.
 
-## Ảnh giao diện localhost
+## Ảnh Phase 2 localhost
+
+![Office Habblaud với dữ liệu AgentVerse](tests/phase2/evidence/final/live-office-1366.png)
+
+![Cấu hình agent](tests/phase2/evidence/final/live-agents-1366.png)
+
+## Ảnh v0.1 trước đây
 
 Ảnh chụp ứng dụng thực tế với MockBrain.
 

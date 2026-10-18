@@ -15,3 +15,5 @@ Current task status and ownership: [TASKS.md](../TASKS.md). Product baseline: do
 Application review APPROVE candidate826c74c. Integrator approval of QA tests and final verification: reviews/INT-001-review.md. Architecture/dependency/coordination decisions: decisions/ADR-0001 through ADR-0003. Actual invalid concurrent-install attempt: incidents/INC-001-concurrent-install.md. JSON schema: schemas/log-entry.schema.json. Screenshots/tests and integrity manifest: ../tests/e2e/evidence/.
 
 Phase2 planning: sessions/2026-10-17/architect-phase2-plan.md; proposed ADR-0004; docs/plans/PHASE_2_HABBLAUD_RUNTIME.md. v0.1APPROVE does not approve planned phase2 visual/runtime work.
+
+Phase2 implementation/resume: sessions/2026-10-18/; handoffs/P2-*; independent review reviews/P2-08-final-review.md. Integration evidence docs/PHASE_2_VALIDATION.md supersedes proposed-only plan status. Phase2 approval is limited to tested localhost slice, not arbitrary autonomous coding.

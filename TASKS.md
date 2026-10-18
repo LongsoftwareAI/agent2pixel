@@ -20,22 +20,22 @@ All rows above passed their lifecycle gates; candidate cherry-picks were provisi
 
 Integrator independently ran locked installation,29Python+9frontend+4pixel checks, lint/type/build, actual Docker web-proxy7checks and final tightened browser7interactions; screenshots10 hashes/dimensions verified. No app source changed after approved candidate; subsequent commits contain tests/evidence/docs. Full evidence: docs/VALIDATION.md and docs/evidence/.
 
-## Phase 2 — proposed, not implemented
+## Phase 2 — implemented localhost slice, independent final review
 
-User requests Habblaud-equivalent visuals and clarifies DeepSeekHarness plug-and-play runtime. Complete plan/owner/branch/path/dependency/acceptance table: [PHASE_2_HABBLAUD_RUNTIME.md](docs/plans/PHASE_2_HABBLAUD_RUNTIME.md). Existing DONE rows apply to v0.1 only.
+User authorized coding. Ownership/contracts: docs/contracts/phase2/IMPLEMENTATION.md. Actual scope and remaining limitations: docs/PHASE_2_VALIDATION.md. Historical v0.1 DONE/approval is unchanged and does not approve Phase 2.
 
-| Task | Owner | State |
+| Task | Owner | State / evidence |
 |---|---|---|
-| PLAN-P2 | Architect root | READY_FOR_REVIEW (documents only) |
-| P2-00 source/license/reference baseline | Architect/Research | BACKLOG |
-| P2-01 upstream Habblaud graphics/UI adoption | Pixel/Game | BACKLOG |
-| P2-02 official HarnessSDK/plugin/cancel/policy spike | Harness Integration | BACKLOG |
-| P2-03 Role/Brain/Skills/Tools/Memory domain v2 | Backend Domain | BACKLOG |
-| P2-04 LangGraph/native runtime | Backend Runtime | BACKLOG |
-| P2-05 backend-event to Habblaud snapshot/feed adapter | Integrator/Bridge | BACKLOG |
-| P2-06 Habblaud-themed AgentStudio/workflow UI | Frontend | BACKLOG |
-| P2-07 Harness executor/plugin full integration | Harness Integration | BACKLOG |
-| P2-08 independent visual/security/real-artifact acceptance | QA | BACKLOG |
-| P2-09 localhost integration/release | Integrator | BACKLOG |
+| PLAN-P2 | Architect | INTEGRATED, user authorized coding |
+| P2-00 source/license/reference baseline | Architect/Pixel/QA | READY_FOR_REVIEW; MIT/OFL notices, 334-file manifest; Harness binary notice closure limitation documented |
+| P2-01 Habblaud renderer/UI/graphics | Pixel | READY_FOR_REVIEW; actual upstream reuse, parity0pixels both sizes; furniture and appearance persistence |
+| P2-02 official Harness SDK/plugin policy | Harness | READY_FOR_REVIEW; actual SDK/runtime0.1.5rc1, sanitized process and reviewed Cordis bridge |
+| P2-03 full AgentSpec domain | Backend | READY_FOR_REVIEW; role/brain/skills/tools/memory, migration and isolation |
+| P2-04 LangGraph runtime | Backend | READY_FOR_REVIEW; SQLite checkpoints, approval interrupts, budgets/restart |
+| P2-05 projection/layout adapter | Integrator/Layout | READY_FOR_REVIEW; persistent custom decor, authoritative snapshots, exact SSE replay |
+| P2-06 control interface | Frontend | READY_FOR_REVIEW; 17 tests, full agent editor and approval UI |
+| P2-07 Harness domain integration | Harness | READY_FOR_REVIEW; actual SDK/provider-stub mixed workflows; arbitrary model-authored writes remain outside implemented slice |
+| P2-08 independent acceptance | QA | CHANGES_REQUESTED then retest: stats unknown-usage wire flag fixed3b7b138, provenance ledger fixedafc2b95; final verdict pending |
+| P2-09 localhost integration/review branch | Integrator | IN_PROGRESS; 88 Python +10 office +17 control pass, final QA and remote review branch pending |
 
-No phase2 code has started; proposedworktrees are not created. New runtime/provider/dependencies are not installed or validated. Keep v0.1 data/history and GitHubmain intact until reviewed phase2 milestones.
+No SaaS/city/public deployment. Live paid model verification UNRUN without credentials. Native approved fixed calculator actions execute before Harness retrieves results; do not report autonomous general coding complete.
