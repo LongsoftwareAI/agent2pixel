@@ -29,6 +29,9 @@ def env(tmp_path):
         store.put("agent", {"id": "agent-" + key, "workspace_id": key, "name": key})
 
     def start(id, body, work_item):
+        import asyncio
+
+        assert asyncio.get_running_loop().is_running()
         if any(
             r["state"] == "queued" for r in store.list("run", work_item["workspace_id"])
         ):

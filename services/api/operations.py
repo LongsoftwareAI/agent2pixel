@@ -121,8 +121,12 @@ def create_operations_router(app, start_run=None, run_model=None):
         return projected_item(store(), item)
 
     @router.post("/api/work-queue/dispatch")
+    async def dispatch(body: dict):
+        # Runtime.schedule creates asyncio tasks on the API event loop.
+        return dispatch_locked(body)
+
     @locked
-    def dispatch(body: dict):
+    def dispatch_locked(body: dict):
         if set(body) != {"workspace_id"} or not isinstance(body["workspace_id"], str):
             raise HTTPException(422, "workspace_id required")
         workspace_id = body["workspace_id"]

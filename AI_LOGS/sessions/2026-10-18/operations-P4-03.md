@@ -11,3 +11,4 @@
 - Status: IN_PROGRESS -> SELF_TESTED for focused scope; independent review required, no self-approval.
 - Risks / limitations: manual dispatch only, owner field does not reschedule workflow actors; no advertised background dispatch or cross-process multi-instance queue support.
 - Milestone: focused operations + baseline backend + Phase 3: 49 passed in 18.55s, one upstream Starlette deprecation warning; no failures suppressed.
+- Follow-up self-review: dispatch endpoint now async wrapper with synchronous locked mutation, matching real Runtime.schedule event-loop requirement. Added regression assertion that launcher executes on running API asyncio loop; 4 focused tests PASS. Initial synchronous-route implementation could schedule in worker thread; corrected before integration acceptance.
