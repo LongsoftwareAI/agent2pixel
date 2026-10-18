@@ -5,6 +5,21 @@ from fastapi import HTTPException
 
 TOOLS = [
     dict(
+        id="artifacts.write_text",
+        version=1,
+        name="Export generated text after review",
+        approval_required=True,
+        input_schema={
+            "type": "object",
+            "required": ["filename", "content"],
+            "additionalProperties": False,
+            "properties": {
+                "filename": {"type": "string"},
+                "content": {"type": "string"},
+            },
+        },
+    ),
+    dict(
         id="documents.list",
         version=1,
         name="List documents",

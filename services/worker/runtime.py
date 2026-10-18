@@ -2,7 +2,12 @@ import asyncio
 from collections import deque
 from services.api.store import now, uid
 from services.worker.adapters import run_brain
-from services.worker.tools import native_context, execute_action, payload_hash
+from services.worker.tools import (
+    native_context,
+    execute_action,
+    payload_hash,
+    validate_text_payload,
+)
 from services.api.domain import execution_prompt, engines, snapshot_spec
 from typing import TypedDict
 import json
@@ -61,6 +66,19 @@ def validate_graph(graph, store, workspace):
         if n.get("type") not in ("start", "agent", "condition", "end"):
             errors.append("Unknown node type")
         if n.get("type") == "agent":
+            if "instructions" in n and (
+                not isinstance(n["instructions"], str) or len(n["instructions"]) > 8000
+            ):
+                errors.append("Node instructions must be a string max8000")
+            if "deliverable" in n:
+                try:
+                    if not isinstance(n["deliverable"], dict) or set(
+                        n["deliverable"]
+                    ) != {"filename"}:
+                        raise ValueError("Invalid deliverable")
+                    validate_text_payload(dict(n["deliverable"], content=""))
+                except ValueError:
+                    errors.append("Deliverable requires safe text filename")
             agent = (
                 store.get("agent", n.get("agent_id"))
                 if isinstance(n.get("agent_id"), str)
@@ -188,6 +206,7 @@ class Runtime:
                 tool=action["tool"],
                 payload=action["payload"],
                 payload_hash=digest,
+                node_id=action.get("node_id"),
                 status="pending",
                 created_at=now(),
                 expires_at=(
@@ -216,16 +235,19 @@ class Runtime:
         interrupt({"approval_id": approval["id"]})
         approval = store.get("approval", approval["id"])
         if any(
-            approval[k] != v
+            approval.get(k) != v
             for k, v in dict(
                 run_id=run["id"],
                 workspace_id=run["workspace_id"],
                 agent_id=agent["id"],
                 tool=action["tool"],
                 payload_hash=digest,
+                node_id=action.get("node_id"),
             ).items()
         ):
             raise ValueError("Approval binding mismatch")
+        if payload_hash(approval.get("payload")) != digest:
+            raise ValueError("Approval payload mismatch")
         if existing and approval["status"] == "consumed":
             return existing["result"]
         if approval["status"] != "approved":
@@ -283,7 +305,8 @@ class Runtime:
             (
                 t
                 for t in run["tasks"]
-                if t["node_id"] == node["id"] and t["state"] in ("running", "queued")
+                if t["node_id"] == node["id"]
+                and t["state"] in ("running", "queued", "failed")
             ),
             None,
         )
@@ -342,6 +365,12 @@ class Runtime:
                 },
                 agent["id"],
             )
+        elif task["state"] == "failed":
+            task.update(state="running", error=None)
+            store.put("run", run)
+        generated = store.get("node_output", id + ":" + node["id"])
+        if generated:
+            return await self.finish_assignment(run, node, agent, generated)
         denied = [
             t
             for t in agent["tools"]
@@ -352,6 +381,7 @@ class Runtime:
                 "memory.read",
                 "artifacts.write_python",
                 "tests.run_pytest",
+                "artifacts.write_text",
             )
         ]
         if denied:
@@ -409,6 +439,12 @@ class Runtime:
         artifact_context = json.dumps(run.get("artifacts", []), ensure_ascii=False)
         model_input = (
             text
+            + (
+                "\n\nNode objective and acceptance requirements:\n"
+                + node["instructions"]
+                if node.get("instructions")
+                else ""
+            )
             + ("\n\nWorkspace context:\n" + context if context else "")
             + (
                 "\n\nCommitted artifacts and test evidence:\n" + artifact_context
@@ -510,10 +546,53 @@ class Runtime:
                     agent["id"],
                 )
                 await asyncio.sleep(0.05)
-        # Refresh task after interrupt/resume, then commit before checkpoint to allow idempotent recovery.
+        # Persist generated result and accounting before any post-generation interrupt.
+        generated = dict(
+            id=id + ":" + node["id"],
+            run_id=id,
+            workspace_id=ws,
+            node_id=node["id"],
+            agent_id=agent["id"],
+            output=output,
+            tokens=used_total,
+            accounting=accounting,
+        )
+        persisted = store.get("run", id)
+        persisted_task = next(
+            t for t in persisted["tasks"] if t["node_id"] == node["id"]
+        )
+        persisted_task.update(
+            output=output, tokens=used_total, output_generated_at=now()
+        )
+        store.put_many([("node_output", generated), ("run", persisted)])
+        return await self.finish_assignment(run, node, agent, generated)
+
+    async def finish_assignment(self, run, node, agent, generated):
+        store = self.store
+        id = run["id"]
+        output, used_total = generated["output"], generated["tokens"]
+        if node.get("deliverable"):
+            validate_text_payload(dict(node["deliverable"], content=output))
+            result = await self.action(
+                run,
+                agent,
+                "node:" + node["id"],
+                {
+                    "tool": "artifacts.write_text",
+                    "node_id": node["id"],
+                    "payload": dict(node["deliverable"], content=output),
+                },
+            )
+            latest = store.get("run", id)
+            if not any(a["id"] == result["id"] for a in latest["artifacts"]):
+                latest["artifacts"].append(result)
+            latest["state"] = "running"
+            store.put("run", latest)
+        # Refresh task after interrupt/resume and commit before checkpoint.
         run = store.get("run", id)
         task = next(t for t in run["tasks"] if t["node_id"] == node["id"])
         task.update(state="completed", output=output, tokens=used_total)
+        live = store.get("agent", agent["id"])
         live["status"] = "completed"
         store.put("agent", live)
         store.put("run", run)
@@ -524,7 +603,9 @@ class Runtime:
                 "task_id": task["id"],
                 "output": output,
                 "tokens": used_total,
-                "token_accounting": accounting.get("token_accounting", "estimated"),
+                "token_accounting": generated["accounting"].get(
+                    "token_accounting", "estimated"
+                ),
             },
             agent["id"],
         )

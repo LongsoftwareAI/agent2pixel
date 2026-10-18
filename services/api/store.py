@@ -102,6 +102,19 @@ class Store:
         return value
 
     @synchronized
+    def put_many(self, records):
+        """Commit linked resources atomically; no partially linked work item/run."""
+        with self.db:
+            for kind, value in records:
+                existing = self.resource_kind(value["id"])
+                if existing and existing != kind:
+                    raise ValueError("Resource identity collision")
+                self.db.execute(
+                    "INSERT INTO resources VALUES(?,?,?,?) ON CONFLICT(id) DO UPDATE SET kind=excluded.kind, workspace_id=excluded.workspace_id, body=excluded.body",
+                    (kind, value["id"], value.get("workspace_id"), json.dumps(value)),
+                )
+
+    @synchronized
     def get(self, kind, id):
         row = self.db.execute(
             "SELECT body FROM resources WHERE kind=? AND id=?", (kind, id)

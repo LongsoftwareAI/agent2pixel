@@ -86,6 +86,26 @@ def payload_hash(payload):
     ).hexdigest()
 
 
+def validate_text_payload(payload):
+    import re
+
+    if (
+        not isinstance(payload, dict)
+        or set(payload) != {"filename", "content"}
+        or not isinstance(payload.get("filename"), str)
+        or not re.fullmatch(
+            r"[A-Za-z0-9][A-Za-z0-9_.-]{0,95}\.(?:md|txt|json|csv)", payload["filename"]
+        )
+        or len(payload["filename"]) > 100
+        or not isinstance(payload.get("content"), str)
+        or len(payload["content"].encode("utf-8")) > 128 * 1024
+    ):
+        raise ValueError(
+            "Text deliverable requires safe basename .md/.txt/.json/.csv and at most128KiB UTF8"
+        )
+    return payload
+
+
 def artifact_root(store, workspace_id, run_id):
     root = Path(store.get("workspace", workspace_id)["root_path"]).resolve()
     target = root / "artifacts" / run_id
@@ -112,6 +132,30 @@ async def execute_action(store, run, agent, action):
     root = artifact_root(store, run["workspace_id"], run["id"])
     tool = action["tool"]
     payload = action["payload"]
+    if tool == "artifacts.write_text":
+        validate_text_payload(payload)
+        target = root / payload["filename"]
+        fd = os.open(
+            target, os.O_CREAT | os.O_EXCL | os.O_WRONLY | os.O_NOFOLLOW, 0o600
+        )
+        with os.fdopen(fd, "w", encoding="utf-8") as stream:
+            stream.write(payload["content"])
+        content = target.read_bytes()
+        return dict(
+            id=uid(),
+            path=str(
+                target.relative_to(
+                    Path(store.get("workspace", run["workspace_id"])["root_path"])
+                )
+            ),
+            sha256=hashlib.sha256(content).hexdigest(),
+            size=len(content),
+            tool=tool,
+            agent_id=agent["id"],
+            run_id=run["id"],
+            node_id=action["node_id"],
+            created_at=now(),
+        )
     if tool == "artifacts.write_python":
         template = TEMPLATES.get(payload.get("template"))
         if (

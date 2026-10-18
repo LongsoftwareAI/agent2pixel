@@ -346,7 +346,11 @@ def create_app(data_dir=None):
         errors = validate_graph(value["graph"], store(), value["workspace_id"])
         return dict(valid=not errors, errors=errors)
 
-    def start_run(id, body):
+    def start_run(id, body, work_item=None):
+        with store().lock:
+            return start_run_locked(id, body, work_item)
+
+    def start_run_locked(id, body, work_item=None):
         workflow = get("workflow", id)
         errors = validate_graph(workflow["graph"], store(), workflow["workspace_id"])
         if errors:
@@ -398,7 +402,22 @@ def create_app(data_dir=None):
             },
             token_spent=0,
         )
-        store().put("run", value)
+        if work_item:
+            value["work_item_id"] = work_item["id"]
+            value["brief_revision"] = work_item.get("brief_revision", 1)
+            value["brief_snapshot"] = {
+                key: work_item[key]
+                for key in ("title", "description", "acceptance_criteria")
+            }
+            work_item = dict(
+                work_item,
+                latest_run_id=value["id"],
+                run_ids=work_item["run_ids"] + [value["id"]],
+                updated_at=now(),
+            )
+            store().put_many([("run", value), ("work_item", work_item)])
+        else:
+            store().put("run", value)
         app.state.runtime.schedule(value)
         return value
 
@@ -841,7 +860,9 @@ def create_app(data_dir=None):
         return store().list("audit", workspace_id)
 
     from services.api.office_projection import create_office_router
+    from services.api.company import create_company_router
 
+    app.include_router(create_company_router(app, start_run, RunInput))
     app.include_router(create_office_router(app))
     return app
 
