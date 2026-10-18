@@ -17,3 +17,6 @@ Renderer/art/layout geometry are unchanged. Node server, CLI, deployment and hoo
 - client/src/ui/character-editor.ts: AgentVerse character editing uses confirmed local access independently of unavailable upstream PTY/terminal feature. Original saveCharacter/resetCharacter HTTP methods remain unchanged; Python API validates and persists these requests.
 
 - client/src/ui/composer.ts: query optional dictation only when message composition is ready and messages access is allowed; avoids unsupported API calls in disabled AgentVerse composer.
+
+- world/api.ts, world/index.ts, world/sim/sim.ts: optional room layout transform/signature and tile-coordinate access. Host injects persisted additive decorations; omitted transform preserves upstream original layout exactly. Layout refresh rebuilds native collision/path grid. Structural fixtures remain fixed.
+- shared/types.ts, ui/drawer.ts: explicit failed/cancelled task marks, error agent status text, unknown token/cost usage N/A. Native kanban only has three columns; failed/cancelled cards remain pending there while drawer retains actual terminal status.

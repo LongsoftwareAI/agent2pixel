@@ -14,7 +14,8 @@ const store = fixtureMode ? new OfficeStore({mock:false}) : new AgentVerseStore(
 // Fixture selection/history remains entirely local and never calls domain agent detail.
 if (fixtureMode) store.agentHistory = async id => store.agent(id)?.recent ?? [];
 const root = document.getElementById('ui')!;
-const world = createWorld(document.getElementById('world') as HTMLCanvasElement,store);
+const {withCustomFurniture,layoutSignature}=await import('./furniture');
+const world = createWorld(document.getElementById('world') as HTMLCanvasElement,store,fixtureMode?{}:{roomLayoutTransform:withCustomFurniture,roomLayoutSignature:layoutSignature});
 createUI(root,store,world,undefined,{agentverse:true});
 world.setOptions({theme:'none',ambientSocial:fixtureMode});
 const name = root.querySelector('.ui-brand__name');
@@ -32,6 +33,7 @@ if(fixtureMode){
  store.applySnapshot(parityFixture());store.connection='open';
  const badge=document.createElement('div');badge.className='av-fixture';badge.textContent='TEST FIXTURE — no live execution';root.append(badge);
 } else {
+ const {mountFurnitureEditor}=await import('./furniture-editor');mountFurnitureEditor(root,store,world);
  await loadAccess();
  void (store as InstanceType<typeof AgentVerseStore>).bootstrap().catch(error=>{
   console.error('[AgentVerse office]',error);

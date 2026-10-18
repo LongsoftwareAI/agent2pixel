@@ -56,6 +56,10 @@ export interface SoundCue {
 }
 
 export interface WorldApi {
+  /** AgentVerse additive editing seam: reads native layout, converts viewport CSS coordinates to tile. */
+  roomLayout?(id: string): import('./layout/types').AreaLayout | null;
+  screenToTile?(x: number, y: number): { x: number; y: number };
+  tileToScreen?(x: number, y: number): { x: number; y: number };
   /** Seleciona (ou limpa) um agente/sala. `focus` move a câmera até ele. */
   select(sel: Selection, opts?: { focus?: boolean }): void;
   getSelection(): Selection;

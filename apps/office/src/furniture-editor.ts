@@ -1,0 +1,17 @@
+import type {OfficeStore} from '../../../vendor/habblaud/client/src/net/store';
+import type {WorldApi} from '../../../vendor/habblaud/client/src/world/api';
+import {CUSTOM_KINDS,validateFurniture,type FurnitureState,type CustomFurniture} from './furniture';
+export function mountFurnitureEditor(root:HTMLElement,store:OfficeStore,world:WorldApi){
+ const details=document.createElement('details');details.className='av-furniture-toggle';details.innerHTML='<summary>Edit room furniture</summary><p>Base workstations remain fixed. Click room floor to choose a tile.</p>';
+ const room=document.createElement('select'),kind=document.createElement('select'),item=document.createElement('select'),x=document.createElement('input'),y=document.createElement('input'),message=document.createElement('p');
+ for(const [el,label] of [[room,'Furniture room'],[kind,'Furniture kind'],[item,'Custom decoration'],[x,'Tile X'],[y,'Tile Y']] as const)el.setAttribute('aria-label',label);
+ for(const el of [x,y]){el.type='number';el.value='2';el.style.width='50px';}for(const k of CUSTOM_KINDS)kind.add(new Option(k,k));message.role='status';
+ let state:FurnitureState={items:[],version:0,seed:0},busy=false;
+ const refresh=()=>item.replaceChildren(...state.items.map(i=>new Option(`${i.kind} (${i.x},${i.y})`,i.id)));
+ const load=async()=>{const r=await fetch(`/api/office/rooms/${encodeURIComponent(room.value)}/furniture`);if(!r.ok)throw new Error(`Load failed (${r.status})`);state=await r.json();refresh();world.focusRoom(room.value);message.textContent=`Layout v${state.version}`;};
+ const save=async(items:CustomFurniture[])=>{const base=world.roomLayout?.(room.value);if(!base)throw new Error('Room unavailable');validateFurniture(base,items);const r=await fetch(`/api/office/rooms/${encodeURIComponent(room.value)}/furniture`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({items,expected_version:state.version})});if(!r.ok)throw new Error(`Save rejected (${r.status}). Reload before retrying.`);state=await r.json();refresh();message.textContent=`Saved v${state.version}`;};
+ const button=(label:string,fn:()=>Promise<void>)=>{const b=document.createElement('button');b.textContent=label;b.onclick=()=>{if(busy)return;busy=true;void Promise.resolve().then(fn).catch(e=>message.textContent=e.message).finally(()=>busy=false);};return b;};
+ details.append(room,kind,x,y,button('Add',()=>save([...state.items,{id:crypto.randomUUID(),kind:kind.value as CustomFurniture['kind'],x:Number(x.value),y:Number(y.value)}])),item,button('Move selected',()=>{if(!item.value)throw new Error('Select a decoration');return save(state.items.map(i=>i.id===item.value?{...i,x:Number(x.value),y:Number(y.value)}:i));}),button('Delete selected',()=>{if(!item.value)throw new Error('Select a decoration');return save(state.items.filter(i=>i.id!==item.value));}),button('Reload',load),message);root.append(details);
+ details.ontoggle=()=>{if(!details.open)return;room.replaceChildren(...(store.snapshot?.rooms??[]).map(r=>new Option(r.name,r.id)));void load().catch(e=>message.textContent=e.message);};room.onchange=()=>void load().catch(e=>message.textContent=e.message);
+ document.getElementById('world')?.addEventListener('click',e=>{if(!details.open)return;const base=world.roomLayout?.(room.value),tile=world.screenToTile?.(e.clientX,e.clientY);if(base&&tile){x.value=String(tile.x-base.rect.x);y.value=String(tile.y-base.rect.y);}});
+}

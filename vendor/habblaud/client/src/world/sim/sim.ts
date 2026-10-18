@@ -9,7 +9,7 @@ import { assembleBuilding, type BuildingLayout } from '../layout/building';
 import { RECEPTION_ID } from '../layout/core';
 import { columnsFor, inRect } from '../layout/geometry';
 import { layoutProjectRoom } from '../layout/room';
-import type { SpotDef, SpotKind } from '../layout/types';
+import type { AreaLayout, SpotDef, SpotKind } from '../layout/types';
 import { PathFinder } from '../path/astar';
 import { BLOCKED, FREE, SEAT } from '../path/grid';
 import { PROGRAM_SEED } from '../social/gathering';
@@ -51,6 +51,9 @@ export { SHELL_DONE_TOOL } from './shell';
 
 /** Como o `Sim` roda (fixo na criação). */
 export interface SimMode {
+  /** AgentVerse: additive room decoration transform; absent preserves exact upstream layout. */
+  roomLayoutTransform?: (info: RoomInfo, base: AreaLayout) => AreaLayout;
+  roomLayoutSignature?: (info: RoomInfo) => string;
   /**
    * Visita a um prédio do mundo (cena Visita): nenhum tempo desce do mundo (os `statusSince` são "agora", na entrada),
    * então nada que dependa de há quanto tempo (pipoca, giros, teia, bocejos e cochilo de quem espera um shell, cochilo
@@ -147,7 +150,7 @@ export class Sim {
     private readonly art: ArtModule,
     private readonly options: () => WorldOptions,
     storage: StorageLike | null = browserStorage(),
-    mode: SimMode = {},
+    private readonly mode: SimMode = {},
   ) {
     this.visit = !!mode.visit;
     this.social = new Social(this, storage);
@@ -185,6 +188,12 @@ export class Sim {
         continue;
       }
       if (rs.info.name !== r.name || rs.info.seed !== r.seed) rs.version++;
+      if (this.mode.roomLayoutSignature?.(rs.info) !== this.mode.roomLayoutSignature?.(r)) {
+        const base = layoutProjectRoom({ id: r.id, slot: rs.slot, seed: rs.seed }, rs.theme);
+        rs.layout = this.mode.roomLayoutTransform?.(r, base) ?? base;
+        rs.version++;
+        layoutDirty = true;
+      }
       rs.info = r;
       if (!rs.listed) {
         rs.listed = true;
@@ -259,7 +268,8 @@ export class Sim {
     }
     // a primeira vaga livre do prédio (o slot do servidor só dá a ordem de chegada)
     const slot = this.freeSlot();
-    const layout = layoutProjectRoom({ id: r.id, slot, seed: r.seed }, theme);
+    const base = layoutProjectRoom({ id: r.id, slot, seed: r.seed }, theme);
+    const layout = this.mode.roomLayoutTransform?.(r, base) ?? base;
     const rs = new RoomState(r, theme, layout, first ? 'ready' : 'building', now, first, slot);
     this.rooms.set(r.id, rs);
     return rs;
@@ -688,7 +698,8 @@ export class Sim {
     });
 
     room.slot = slot;
-    room.layout = layoutProjectRoom({ id: room.id, slot, seed: room.seed }, room.theme);
+    const base = layoutProjectRoom({ id: room.id, slot, seed: room.seed }, room.theme);
+    room.layout = this.mode.roomLayoutTransform?.(room.info, base) ?? base;
     room.setPhase('building', now);
     room.lightOn = false;
     room.lightAt = -1e9;
@@ -760,7 +771,7 @@ export class Sim {
       for (const c of this.chars.values()) {
         if (c.roomId !== room.id || c.leaving) continue;
         accs.add(c.info.account);
-        if (c.info.kind === 'main') for (const t of c.info.tasks) if (board.length < 15) board.push({ status: t.status });
+        if (c.info.kind === 'main') for (const t of c.info.tasks) if (board.length < 15) board.push({ status: t.status === 'failed' || t.status === 'cancelled' ? 'pending' : t.status });
       }
       room.accounts = [...accs].sort();
       room.board = board;

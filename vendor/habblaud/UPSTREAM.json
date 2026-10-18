@@ -737,7 +737,7 @@
       "upstream_sha256": "99635187c6ebabaa252d73db7e9e75d960e4f0f24d5476275d34cf30138d2cab",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/ui/drawer.ts",
-      "vendored_sha256": "99635187c6ebabaa252d73db7e9e75d960e4f0f24d5476275d34cf30138d2cab"
+      "vendored_sha256": "ab0c77bd0e25a00a0c77a9a98fdf2cc332be3473b237b7e1c79afdb88df6451d"
     },
     {
       "path": "client/src/ui/feed.test.ts",
@@ -1248,7 +1248,7 @@
       "upstream_sha256": "c93e464a365f10fb05302c6c1e4b99b544ed5de4d9ba316c53e5e9a6bcb71cbb",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/api.ts",
-      "vendored_sha256": "c3f2b14105b5fad3becef4ddd1fa20079b531770d6cc20b3fd59c4cc70b1b42f"
+      "vendored_sha256": "d512c41cbeddd61c8163caf2feea74c6abcecbc91e848cd68403e60e84f64140"
     },
     {
       "path": "client/src/world/assets.ts",
@@ -1486,7 +1486,7 @@
       "upstream_sha256": "d7ed3dfe26c3fa6a931b40bab0aaf17e0e6b3354ab888481fc5905f113feddbc",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/index.ts",
-      "vendored_sha256": "9cc70ccb265046667242917aa6c28f561b955ccfed1c75986b78d60983f1e2b1"
+      "vendored_sha256": "0416c8b10aab373f4a19b1c64362a45b01a0fc3bf122fa5be3960a014559808e"
     },
     {
       "path": "client/src/world/input.test.ts",
@@ -1780,7 +1780,7 @@
       "upstream_sha256": "dbca4f39a9908e28bf0690674a118a95d84afb49230029e4e99cbd17ddcfcd97",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/client/src/world/sim/sim.ts",
-      "vendored_sha256": "7a647bc717a8a4a0a334cb903d230841b617fdcc7f3f4f933c1afc0d157d4171"
+      "vendored_sha256": "fb10988abdd46d26a20d0b484244fe9f68ef5d52904dd0e48743beb799c6303d"
     },
     {
       "path": "client/src/world/sim/spots.ts",
@@ -2151,7 +2151,7 @@
       "upstream_sha256": "086fe77a4fea492f457a069b506ce7306426c79c0d5ce1c734094fba16ddc9ae",
       "license": "MIT",
       "source": "https://github.com/marmottajr/habblaud/blob/faa1a012b5fbf632c66dc6801c5383e53a542406/shared/types.ts",
-      "vendored_sha256": "1c861a5088e8eff13d9e13ebb8681f13cc004a2ccf2e8b6166865a38dc3ae36e"
+      "vendored_sha256": "52fc65d48b0481df9d4f662749fbd62b7771668a5f10725cec941170a784123d"
     },
     {
       "path": "shared/world/README.md",

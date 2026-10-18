@@ -15,7 +15,7 @@ import type { AgentInfo } from '../../../shared/types';
 import { rebaseSnapshot } from './playback';
 import { Overlay } from './render/overlay';
 import { Renderer } from './render/renderer';
-import { Sim, type VisitLight } from './sim/sim';
+import { Sim, type SimMode, type VisitLight } from './sim/sim';
 import { NO_INTENT, VISITOR_ID, visitorInfo, type VisitorIntent } from './sim/visitor';
 import { SoundCues } from './sound-cues';
 
@@ -42,7 +42,7 @@ export interface VisitWorld {
   boardScreen(): { x: number; y: number; w: number; h: number } | null;
 }
 
-export interface CreateWorldOptions {
+export interface CreateWorldOptions extends Pick<SimMode, 'roomLayoutTransform' | 'roomLayoutSignature'> {
   /**
    * Visita a um prédio do mundo (cena Visita): `Sim` sem nada que dependa do tempo do status (SimMode.visit), o
    * visitante andando com o teclado e o clique (a câmera o segue) e as carteiras da vida social na chave `world:`.
@@ -55,7 +55,7 @@ export function createWorld(canvas: HTMLCanvasElement, store: OfficeStore, o: Cr
   const visitMode = !!o.visit;
   const camera = new Camera();
   // Simulação e desenho são recriados quando o timelapse entra, pula ou sai (rebuild).
-  let sim = new Sim(art, () => options, undefined, { visit: visitMode });
+  let sim = new Sim(art, () => options, undefined, { visit: visitMode, roomLayoutTransform: o.roomLayoutTransform, roomLayoutSignature: o.roomLayoutSignature });
   let renderer = new Renderer(canvas, art, sim, camera);
   let overlay = new Overlay(renderer.ctx, sim, renderer, camera);
   let assets: WorldAssets | null = null;
@@ -371,7 +371,7 @@ export function createWorld(canvas: HTMLCanvasElement, store: OfficeStore, o: Cr
   const rebuild = () => {
     // As carteiras ao vivo gravam a cada 5 s: não perde o que mudou desde a última vez (no replay, não grava nada).
     if (options.ambientSocial !== false) sim.social.wallets.save(Date.now());
-    sim = new Sim(art, () => options, playback ? null : undefined, { visit: visitMode });
+    sim = new Sim(art, () => options, playback ? null : undefined, { visit: visitMode, roomLayoutTransform: o.roomLayoutTransform, roomLayoutSignature: o.roomLayoutSignature });
     renderer = new Renderer(canvas, art, sim, camera);
     if (assets) renderer.setAssets(assets);
     if (playback) {
@@ -430,6 +430,9 @@ export function createWorld(canvas: HTMLCanvasElement, store: OfficeStore, o: Cr
       if (p.x < 0 || p.y < 0 || p.x > camera.viewW || p.y > camera.viewH) return null;
       return p;
     },
+    roomLayout: (id) => sim.rooms.get(id)?.layout ?? null,
+    screenToTile: (x, y) => { const p = camera.screenToWorld(x, y); return { x: Math.floor(p.x / TILE), y: Math.floor(p.y / TILE) }; },
+    tileToScreen: (x, y) => camera.worldToScreen(x * TILE, y * TILE),
     social: (id) => options.ambientSocial === false ? null : sim.social.info(id),
     onRoomContextMenu: (cb) => {
       roomMenuCbs.add(cb);

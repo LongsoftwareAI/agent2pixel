@@ -105,7 +105,7 @@ export interface AskQuestion {
   options: Array<{ index: number; label: string; description?: string }>;
 }
 
-export type TaskStatus = 'pending' | 'in_progress' | 'completed';
+export type TaskStatus = 'pending' | 'in_progress' | 'completed' | 'failed' | 'cancelled';
 
 export interface TaskItem {
   id: string;
@@ -116,6 +116,7 @@ export interface TaskItem {
 }
 
 export interface AgentStats {
+  usageKnown?: boolean;
   toolCalls: number;
   /** input + cache read + cache creation. */
   tokensIn: number;
@@ -128,6 +129,7 @@ export interface AgentStats {
 }
 
 export interface AgentInfo {
+  domainStatus?: string;
   /**
    * Estável enquanto o agente existir. Claude Code: principal "<conta>:<pid>", sub "<sessionId>:<agentId>".
    * Codex: principal e sub "<conta>:<threadId>" (o sub com `parentId`).

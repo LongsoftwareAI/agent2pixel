@@ -89,8 +89,8 @@ function copyButton(getText: () => string, label: string): HTMLButtonElement {
   return b;
 }
 
-const TASK_MARK: Record<TaskItem['status'], string> = { completed: '✓', in_progress: '◐', pending: '○' };
-const TASK_STATE: Record<TaskItem['status'], string> = { completed: tr('concluída'), in_progress: tr('em andamento'), pending: 'pendente' };
+const TASK_MARK: Record<TaskItem['status'], string> = { completed: '✓', in_progress: '◐', pending: '○', failed: '✕', cancelled: '⊘' };
+const TASK_STATE: Record<TaskItem['status'], string> = { completed: tr('concluída'), in_progress: tr('em andamento'), pending: 'pendente', failed: 'Failed', cancelled: 'Cancelled' };
 
 function createTaskItem(): HTMLElement {
   return h('li', { class: 'ui-task' }, h('span', { class: 'ui-task__mark', attrs: { 'aria-hidden': 'true' } }), h('span', { class: 'ui-task__text' }), h('span', { class: 'ui-task__owner' }));
@@ -557,7 +557,7 @@ class AgentView {
     const wait = live ? shellWaitIn(a, this.ctx.store.snapshot?.agents ?? [], now) : null;
     const status = wait ? 'shell' : a.status;
     updateStatusDot(this.dot, status);
-    setText(this.statusText, statusLabel(status));
+    setText(this.statusText, a.domainStatus === 'error' ? 'Execution failed' : statusLabel(status));
     // Parado num comando longo: o "desde" é o início do comando (o status do servidor continua 'working').
     const since = wait?.foreground ? wait.since : a.statusSince;
     setText(this.statusSince, relativeTime(since, now));
@@ -733,9 +733,9 @@ class AgentView {
     const s = a.stats;
     const st = this.stats;
     st.set('tools', formatInt(s.toolCalls));
-    st.set('tokensIn', formatTokens(s.tokensIn));
-    st.set('tokensOut', formatTokens(s.tokensOut));
-    st.set('cost', s.costUSD !== undefined ? formatUSD(s.costUSD) : null);
+    st.set('tokensIn', s.usageKnown === false ? 'N/A' : formatTokens(s.tokensIn));
+    st.set('tokensOut', s.usageKnown === false ? 'N/A' : formatTokens(s.tokensOut));
+    st.set('cost', s.usageKnown === false ? 'N/A' : s.costUSD !== undefined ? formatUSD(s.costUSD) : null);
     const codex = providerOf(a) === 'codex';
     const hasLines = s.linesAdded !== undefined || s.linesRemoved !== undefined;
     st.show('lines', hasLines);
