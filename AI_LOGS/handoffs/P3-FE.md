@@ -6,3 +6,5 @@ New /control/#workboard route/nav Công việc. WorkBoard consumes authoritative
 WorkflowTemplates GET /api/workflow-templates; roles mapped to existing enabled agents only; creates normal editable workflow, preserves actual instructions/output filename, no role/grant mutation. Explicit supplied-source-only guidance and artifacts.write_text grant warning. WorkflowEditor serializes per-node instructions/deliverable; retains branches/condition controls. All existing screens retained. No new dependencies/artwork.
 
 Checks: `npm --prefix apps/web test` 25 PASS; `npm --prefix apps/web run lint` PASS; `npm --prefix apps/web run build` PASS (largechunk advisory). Initial npm cache path failure corrected using --cache /tmp/agentverse-p3-fe-npm without bypassing integrity. Changes limited apps/web except office + own logs. QA/root own integrated localhost screenshots/review; those remain acceptance prerequisites.
+
+Follow-up: standalone WorkBoard workspace isolation/unmount response guard; delayed list and launch callback regression checks. App was already keyed, so this hardens component reuse and outstanding callback handling. 27 tests PASS, lint PASS; no scope expansion.
