@@ -35,7 +35,7 @@ User authorized coding. Ownership/contracts: docs/contracts/phase2/IMPLEMENTATIO
 | P2-05 projection/layout adapter | Integrator/Layout | READY_FOR_REVIEW; persistent custom decor, authoritative snapshots, exact SSE replay |
 | P2-06 control interface | Frontend | READY_FOR_REVIEW; 17 tests, full agent editor and approval UI |
 | P2-07 Harness domain integration | Harness | READY_FOR_REVIEW; actual SDK/provider-stub mixed workflows; arbitrary model-authored writes remain outside implemented slice |
-| P2-08 independent acceptance | QA | CHANGES_REQUESTED then retest: stats unknown-usage wire flag fixed3b7b138, provenance ledger fixedafc2b95; final verdict pending |
-| P2-09 localhost integration/review branch | Integrator | IN_PROGRESS; 88 Python +10 office +17 control pass, final QA and remote review branch pending |
+| P2-08 independent acceptance | QA | APPROVED implemented localhost slice at3b7b138; final review P2-08, corrected stats/ledger retested |
+| P2-09 localhost integration/review branch | Integrator | INTEGRATED; 88 Python +10 office +17 control pass; scoped independent APPROVE, GitHub review branch pending |
 
 No SaaS/city/public deployment. Live paid model verification UNRUN without credentials. Native approved fixed calculator actions execute before Harness retrieves results; do not report autonomous general coding complete.

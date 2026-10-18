@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 review candidate — Habblaud and persisted agent runtime
+
+- Actual MIT Habblaud graphics/UI, persistent agents, native furniture and character editor; preserved v0.1 data.
+- Per-agent role/brain/skills/tools/memory; actual LangGraph SQLite checkpoint and approved fixed artifact/test actions.
+- Official Harness SDK/runtime Cordis plugin integration with shared scoped registry; explicit failures and truthful unknown usage.
+- 88 Python +10 office +17 control checks pass; independent browser/parity/runtime review APPROVE for implemented localhost slice.
+- Live model UNRUN; arbitrary model-authored code writes unimplemented; development-test dependency advisories remain documented. See docs/PHASE_2_VALIDATION.md.
+
 ## 0.1.0 — trusted single-user localhost MVP
 
 - Added two isolated workspaces and agent CRUD with role, environment-backed brain config, skills, read-only tools, memory and original skin presets.
