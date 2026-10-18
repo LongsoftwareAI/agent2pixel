@@ -65,12 +65,11 @@
   ],
   "blockers": [],
   "next_steps": [
-    "Independent document review",
-    "Update handoff and verify remote branch"
+    "M0 exact API/migration/ownership contract before implementation"
   ],
   "handoff_to": "p5_video_review",
-  "commit_sha": null,
-  "review_status": "APPROVE by p5_video_review; pinned SHA confirmation pending",
+  "commit_sha": "a411159eead5d63058ff6e9c9868dd5f00456030",
+  "review_status": "APPROVE independent p5_video_review pinned a411159; documentation only",
   "references": [
     {
       "source": "user supplied video",
