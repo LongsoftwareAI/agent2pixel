@@ -24,6 +24,7 @@ def test_snapshot_real_state_and_workspace_scope(tmp_path):
     assert agent['status']=='idle' and agent['domainStatus']=='completed'
     assert agent['provider']=='agentverse' and value['accounts']==[]
     assert agent['activity']['kind']=='done' and agent['usageKnown'] is False
+    assert agent['stats']['usageKnown'] is False
     assert 'PRIVATE OUTPUT' not in str(value)
     assert client.get('/api/office/snapshot?workspace_id=missing').status_code==404
     assert client.get('/api/office/agents/planner').json()['history'][-1]['seq']==e['seq']

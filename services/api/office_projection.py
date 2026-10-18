@@ -99,7 +99,7 @@ def project(store, workspace_id=None):
             activity=recent[-1] if recent else None,recent=recent,tasks=tasks[-20:],
             model=(a.get('brain') or {}).get('model'),startedAt=start,lastEventAt=epoch(last.get('created_at')) if last else start,
             statusSince=epoch(last.get('created_at')) if last else start,
-            stats=dict(toolCalls=sum(e['event_type']=='tool.completed' for e in recent_events),tokensIn=0,tokensOut=0,subagents=0),
+            stats=dict(usageKnown=False,toolCalls=sum(e['event_type']=='tool.completed' for e in recent_events),tokensIn=0,tokensOut=0,subagents=0),
             seed=agent_seed,parts=appearance.get('parts',{}),custom=bool(appearance),
             source='agentverse',executionEngine=execution.get('engine','langchain'),brainProvider=a.get('brain',{}).get('provider','mock'),
             domainStatus=original,usageKnown=False,canMessage=False,waitingFor='Phê duyệt tool' if state=='waiting' else None))
