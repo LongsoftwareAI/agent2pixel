@@ -932,7 +932,9 @@ def create_app(data_dir=None):
     from services.api.office_projection import create_office_router
     from services.api.company import create_company_router
     from services.api.operations import create_operations_router
+    from services.api.data_sources import create_data_router
 
+    app.include_router(create_data_router(app))
     app.include_router(create_company_router(app, start_run, RunInput))
     app.include_router(create_operations_router(app, start_run, RunInput))
     app.include_router(create_office_router(app))

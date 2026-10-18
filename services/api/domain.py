@@ -64,6 +64,11 @@ TOOLS = [
 ]
 
 
+from services.worker.data_tools import DATA_TOOLS
+
+TOOLS.extend(DATA_TOOLS)
+
+
 def engines():
     values = []
     try:
