@@ -1,92 +1,92 @@
 [
   {
     "id": "overview",
-    "path": "/control/#overview",
-    "ready": ".console .c-content"
+    "path": "/#overview",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "room",
-    "path": "/control/#room",
-    "ready": ".console .c-content"
+    "path": "/#room",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "chat",
-    "path": "/control/#chat",
-    "ready": ".console .c-content"
+    "path": "/#chat",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "bots",
-    "path": "/control/#bots",
-    "ready": ".console .c-content"
+    "path": "/#bots",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "inbox",
-    "path": "/control/#inbox",
-    "ready": ".console .c-content"
+    "path": "/#inbox",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "workboard",
-    "path": "/control/#workboard",
-    "ready": ".console .c-content"
+    "path": "/#workboard",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "workflows",
-    "path": "/control/#workflows",
-    "ready": ".console .c-content"
+    "path": "/#workflows",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "skills",
-    "path": "/control/#skills",
-    "ready": ".console .c-content"
+    "path": "/#skills",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "memory",
-    "path": "/control/#memory",
-    "ready": ".console .c-content"
+    "path": "/#memory",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "sources",
-    "path": "/control/#sources",
-    "ready": ".console .c-content"
+    "path": "/#sources",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "channels",
-    "path": "/control/#channels",
-    "ready": ".console .c-content"
+    "path": "/#channels",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "topology",
-    "path": "/control/#topology",
-    "ready": ".console .c-content"
+    "path": "/#topology",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "usage",
-    "path": "/control/#usage",
-    "ready": ".console .c-content"
+    "path": "/#usage",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "schedules",
-    "path": "/control/#schedules",
-    "ready": ".console .c-content"
+    "path": "/#schedules",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "sessions",
-    "path": "/control/#sessions",
-    "ready": ".console .c-content"
+    "path": "/#sessions",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "logs",
-    "path": "/control/#logs",
-    "ready": ".console .c-content"
+    "path": "/#logs",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "audit",
-    "path": "/control/#audit",
-    "ready": ".console .c-content"
+    "path": "/#audit",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   },
   {
     "id": "preferences",
-    "path": "/control/#preferences",
-    "ready": ".console .c-content"
+    "path": "/#preferences",
+    "ready": ".console .c-content[aria-busy=\"false\"]"
   }
 ]

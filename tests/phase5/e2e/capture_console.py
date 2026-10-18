@@ -37,6 +37,8 @@ def run(args):
                     response = page.goto(args.base.rstrip('/')+row['path'])
                     assert response is None or response.ok, (row, response.status)
                     page.locator(row['ready']).first.wait_for(state='visible')
+                    page.get_by_text('Đang tải dữ liệu…', exact=True).wait_for(state='hidden')
+                    assert page.get_by_role('alert').count() == 0, (row['id'], page.get_by_role('alert').all_text_contents())
                     page.evaluate('document.fonts.ready')
                     page.wait_for_timeout(400)
                     # Exact viewport screenshots preserve comparison geometry; no full-page resizing.
