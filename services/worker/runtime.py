@@ -839,7 +839,11 @@ class Runtime:
             )
             return output
         except Exception:
-            record.update(status="failed", ended_at=now())
+            record.update(
+                status="failed",
+                ended_at=now(),
+                duration_ms=round((time.monotonic() - started) * 1000),
+            )
             self.store.put("flow_tool_result", record)
             self.event(
                 run,

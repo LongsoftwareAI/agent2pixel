@@ -24,3 +24,7 @@
 ## Operations integration
 - Cherry-picked owner Operations commits8c939fa/642e293/47adea4 as dependencies only (root already has corresponding commits); mounted create_operations_router(app,start_run,RunInput). Existing main memorycreation validates source sameworkspace + provenance snapshot and GET excludes tombstone. Shared tool readers handled Tools owner.
 - Actual15 tests runtime+operations PASS after mount, including queue dispatch through actual Runtime. Router mount commit changes only main+ownlog.
+
+## Inspectable durable tool evidence
+- Added GET /api/runs/{id}/tool-results, filtered both workspace and exact run, returning actual persisted result body/provenance plus observed timing. Failed record persists observed duration, no raw potentially sensitive exception text. FE informed of wire shape and JSON envelope.
+- Validation9runtimePASS; scoped test injects foreignworkspace record with same run ID and sameworkspace other-run record, verifies only exact owned result is exposed. Actual readtool result classification and duration asserted.

@@ -83,6 +83,33 @@ def test_read_tool_rework_bound_and_exact_once(tmp_path):
         first = wait(client, rid)
         assert first["state"] == "waiting_approval", first
         assert len(first["tasks"]) == 1
+        other_ws = client.post(
+            "/api/workspaces", json={"name": "Other evidence scope"}
+        ).json()
+        client.app.state.store.put(
+            "flow_tool_result",
+            {
+                "id": "foreign-tool-record",
+                "workspace_id": other_ws["id"],
+                "run_id": rid,
+                "output": "FOREIGN",
+            },
+        )
+        client.app.state.store.put(
+            "flow_tool_result",
+            {
+                "id": "other-run-record",
+                "workspace_id": ws["id"],
+                "run_id": "other-run",
+                "output": "OTHER_RUN",
+            },
+        )
+        records = client.get("/api/runs/" + rid + "/tool-results").json()
+        assert len(records) == 1 and records[0]["status"] == "completed"
+        assert (
+            "UNTRUSTED_TOOL_DATA" in records[0]["output"]
+            and records[0]["duration_ms"] >= 0
+        )
         g = gate(client, rid)
         assert g["revision"] == 0 and "rework" in g["allowed_decisions"]
         assert (

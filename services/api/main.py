@@ -851,6 +851,15 @@ def create_app(data_dir=None):
         app.state.runtime.schedule(value, resume=True)
         return approval
 
+    @app.get("/api/runs/{id}/tool-results")
+    def tool_results(id: str):
+        value = get("run", id)
+        return [
+            r
+            for r in store().list("flow_tool_result", value["workspace_id"])
+            if r["run_id"] == id
+        ]
+
     @app.get("/api/runs/{id}/gates")
     def gates(id: str):
         value = get("run", id)
