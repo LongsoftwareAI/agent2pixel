@@ -34,16 +34,16 @@ def run(args):
             conversation = api.ok('/api/console/conversations', {'workspace_id': wid, 'agent_id': actor['id'], 'title': 'Synthetic QA conversation'})
             cid = conversation['id']
             payload = {'content': 'Analyze supplied CSV evidence, preserve unknowns.', 'client_request_id': 'qa-'+str(time.time_ns()), 'workflow_id': flow['id']}
-            message = api.ok('/api/console/conversations/'+cid+'/messages', payload)
-            duplicate = api.ok('/api/console/conversations/'+cid+'/messages', payload)
+            message = api.ok('/api/console/conversations/'+cid+'/messages?workspace_id='+wid, payload)
+            duplicate = api.ok('/api/console/conversations/'+cid+'/messages?workspace_id='+wid, payload)
             assert duplicate['run_id'] == message['run_id']
-            assert api.request('/api/console/conversations/'+cid+'/messages', {**payload, 'content': 'Changed request'})[0] == 409
+            assert api.request('/api/console/conversations/'+cid+'/messages?workspace_id='+wid, {**payload, 'content': 'Changed request'})[0] == 409
             run = api.ok('/api/runs/'+message['run_id'])
             item = api.ok('/api/work-items/'+message['work_item_id'])
             completed = finish(api, item, run, provider)
             assert completed['artifacts'], completed
             assert provider.requests, 'Actual runtime did not call local HTTP adapter'
-            current = api.ok('/api/console/conversations/'+cid)
+            current = api.ok('/api/console/conversations/'+cid+'?workspace_id='+wid)
             assert current['messages'], current
             report['checks'].append('chat creates real CSV workflow, generated artifact, separate approvals/QC/work acceptance; duplicate same key stable and changed payload409')
             for endpoint in ('overview', 'inbox', 'sessions', 'health', 'topology', 'usage', 'schedules', 'skills', 'capabilities'):
