@@ -22,6 +22,7 @@ def run(base, output, sha):
                 page.goto(url, wait_until='domcontentloaded')
                 if screen == 'office':
                     page.wait_for_function('window.agentverseOffice?.world && agentverseOffice.store.snapshot?.agents?.length > 0')
+                    page.wait_for_function("agentverseOffice.store.connection === 'open'")
                     state = page.evaluate('''() => ({fixture:agentverseOffice.fixture,connection:agentverseOffice.store.connection,agents:agentverseOffice.store.snapshot.agents.length,rooms:agentverseOffice.store.snapshot.rooms.length,meta:agentverseOffice.store.snapshot.meta})''')
                     assert state['fixture'] is False and state['meta']['demo'] is False, state
                     assert state['rooms'] >= 2, state

@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "application_sha": "c4933ac",
+  "brain": "deterministic mock adapter; no live model asserted",
+  "runtime": "actual LangGraph + SQLite + sandbox writes + pytest subprocess",
+  "workspace_id": "ff7eb3a2-173c-4c79-8d36-518c02cb0c89",
+  "run_id": "a09b9794-ef8a-46df-81ce-5da83c1f4693",
+  "state": "completed",
+  "artifacts": [
+    {
+      "path": "artifacts/a09b9794-ef8a-46df-81ce-5da83c1f4693/calculator.py",
+      "sha256": "ba1a531f581d2e6094e978ed6f7aca7a8d92eeb62c6e7ad73ee692f7f18bc772"
+    },
+    {
+      "path": "artifacts/a09b9794-ef8a-46df-81ce-5da83c1f4693/test_calculator.py",
+      "sha256": "5d4eb3a42d7823c2e14427bce28c4e5ca189b7b6ef5fc29977ad8381278f62b3"
+    }
+  ],
+  "test_report": "..                                                                       [100%]\n2 passed in 0.02s\n",
+  "event_counts": {
+    "task.completed": 3,
+    "tool.completed": 6,
+    "skill.activated": 1,
+    "memory.read": 1,
+    "approval.required": 3
+  },
+  "sse_expected": [
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184
+  ],
+  "sse_observed": [
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184
+  ],
+  "approval_ids": [
+    "5deef5cb-3023-47c1-bc93-d28c4e13847d",
+    "40400ac2-d01c-469a-8bf2-fd458d7a23c8",
+    "3990522c-1c37-4821-96bd-8ad9ababcbb9"
+  ],
+  "checks": [
+    "workspace scoped memory read/write denied",
+    "event isolation",
+    "reused approval denied",
+    "artifact hashes match actual files",
+    "Reviewer output includes real pytest report",
+    "exact fresh-run SSE replay",
+    "remote Origin mutation denied",
+    "remote Origin SSE denied"
+  ]
+}

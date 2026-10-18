@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "application_sha": "c4933ac",
+  "brain": "deterministic mock adapter; no live model asserted",
+  "runtime": "actual LangGraph + SQLite + sandbox writes + pytest subprocess",
+  "workspace_id": "d0cc5656-3765-4a5e-b5ef-e49526915097",
+  "run_id": "e1626a63-9add-42a1-ba7c-c40f30bfc879",
+  "state": "completed",
+  "artifacts": [
+    {
+      "path": "artifacts/e1626a63-9add-42a1-ba7c-c40f30bfc879/calculator.py",
+      "sha256": "ba1a531f581d2e6094e978ed6f7aca7a8d92eeb62c6e7ad73ee692f7f18bc772"
+    },
+    {
+      "path": "artifacts/e1626a63-9add-42a1-ba7c-c40f30bfc879/test_calculator.py",
+      "sha256": "5d4eb3a42d7823c2e14427bce28c4e5ca189b7b6ef5fc29977ad8381278f62b3"
+    }
+  ],
+  "test_report": "..                                                                       [100%]\n2 passed in 0.01s\n",
+  "event_counts": {
+    "task.completed": 3,
+    "tool.completed": 5,
+    "skill.activated": 1,
+    "memory.read": 0,
+    "approval.required": 3
+  },
+  "sse_expected": [
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151
+  ],
+  "sse_observed": [
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151
+  ],
+  "approval_ids": [
+    "336c2683-1ff0-4a27-bdd4-eb272b57502e",
+    "c60bff77-06fe-4bbe-b3fe-532966f68836",
+    "5b076c12-232e-4f85-8338-d0eca182a36f"
+  ],
+  "checks": [
+    "workspace scoped memory read/write denied",
+    "event isolation",
+    "reused approval denied",
+    "artifact hashes match actual files",
+    "Reviewer output includes real pytest report",
+    "exact fresh-run SSE replay",
+    "remote Origin mutation denied",
+    "remote Origin SSE denied"
+  ]
+}

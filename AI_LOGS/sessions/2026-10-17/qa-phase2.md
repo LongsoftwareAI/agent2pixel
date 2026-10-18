@@ -63,3 +63,11 @@ Reviewer decision: PENDING
 - Added live localhost browser capture runner for actual office + Agent Studio/Workflows/Runs/Settings at1366/1920, recording source SHA, nonfixture projection metadata, room/agent counts, HTTP/page errors. Screenshots do not assert model execution.
 - PASS comparator regressions2 using host Python. No application code modified, no dependency changes, no assets copied. Existing evidence preserved.
 - Handoff Integrator: review QA runner separately; live acceptance UNRUN until startup handoff. Reference remains Habblaud MIT pinned faa1a012 and Harness pin per original log. Visual deviations/final decision pending captures.
+
+## Live release milestone c4933ac (intermediate before furniture integration)
+- PASS actual office+four control screens at1366/1920, ten PNGs and contactsheets; no pageerrors/HTTPfailures. Fixturefalse/meta.demofalse and original v1 Coding/Research+existing QA workspaces. Initial state JSON connection was read before wait although screenshot visiblyConnected; final runner now requires connectionopen.
+- PASS independent realHTTP LangGraph sandbox workflow a09b9794: Planner memory.read1, Reviewer skillactivation1, tools6, three payloadapprovals, two artifactSHA256 verified against actual files, pytest2passed and Reviewer actualreport. Deterministic Brain is explicitly labeled, no live model inference claim.
+- SSE exact fresh run158..184 equals persisted27events; other workspace hasnone. Memorycrossworkspace403, usedapproval409 and remoteOriginPOST/SSE403.
+- Earlier e1626a63 run memorycount0 retained honestly; strengthened plannergrant proves actualmemorycall. First helper expected422 but legitimate403 denial; corrected to accept either deniedHTTP result, not relaxed any successfulaccess.
+- v1 migration evidence supplied by Integrator copied unchanged:63resources/11terminalruns/116events retain IDs/ownership/historysha. Additive6registryrecords. QA direct readonly verification next final.
+- Final review PENDING latest furniture/harness and owner adversarial corrections. QA code requires independent Integrator review.

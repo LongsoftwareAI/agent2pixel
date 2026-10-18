@@ -1,0 +1,184 @@
+{
+  "application_sha": "c4933ac",
+  "fixture": false,
+  "provider_execution": "not asserted by screenshots",
+  "checks": [
+    {
+      "screen": "office",
+      "width": 1366,
+      "url": "http://127.0.0.1:3000/",
+      "state": {
+        "fixture": false,
+        "connection": "connecting",
+        "agents": 11,
+        "rooms": 5,
+        "meta": {
+          "demo": false,
+          "sources": [
+            {
+              "label": "AgentVerse Python runtime",
+              "provider": "agentverse",
+              "path": "local://agentverse",
+              "sessions": 11,
+              "ok": true
+            }
+          ],
+          "startedAt": 1792234043941,
+          "version": "agentverse-0.2",
+          "terminal": false,
+          "messages": false,
+          "world": {
+            "enabled": false,
+            "configured": false
+          },
+          "features": {
+            "cli": false,
+            "remote": false,
+            "city": false,
+            "syntheticTasks": false
+          }
+        }
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "agents",
+      "width": 1366,
+      "url": "http://127.0.0.1:3000/control/#agents",
+      "state": {
+        "heading": "Agent Studio",
+        "workspace": "2fddc09a-ef37-4244-80d9-6562c59fae88"
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "workflows",
+      "width": 1366,
+      "url": "http://127.0.0.1:3000/control/#workflows",
+      "state": {
+        "heading": "Workflow",
+        "workspace": "2fddc09a-ef37-4244-80d9-6562c59fae88"
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "runs",
+      "width": 1366,
+      "url": "http://127.0.0.1:3000/control/#runs",
+      "state": {
+        "heading": "Run Monitor",
+        "workspace": "2fddc09a-ef37-4244-80d9-6562c59fae88"
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "settings",
+      "width": 1366,
+      "url": "http://127.0.0.1:3000/control/#settings",
+      "state": {
+        "heading": "C\u00e0i \u0111\u1eb7t",
+        "workspace": "2fddc09a-ef37-4244-80d9-6562c59fae88"
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "office",
+      "width": 1920,
+      "url": "http://127.0.0.1:3000/",
+      "state": {
+        "fixture": false,
+        "connection": "connecting",
+        "agents": 11,
+        "rooms": 5,
+        "meta": {
+          "demo": false,
+          "sources": [
+            {
+              "label": "AgentVerse Python runtime",
+              "provider": "agentverse",
+              "path": "local://agentverse",
+              "sessions": 11,
+              "ok": true
+            }
+          ],
+          "startedAt": 1792234043941,
+          "version": "agentverse-0.2",
+          "terminal": false,
+          "messages": false,
+          "world": {
+            "enabled": false,
+            "configured": false
+          },
+          "features": {
+            "cli": false,
+            "remote": false,
+            "city": false,
+            "syntheticTasks": false
+          }
+        }
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "agents",
+      "width": 1920,
+      "url": "http://127.0.0.1:3000/control/#agents",
+      "state": {
+        "heading": "Agent Studio",
+        "workspace": "2fddc09a-ef37-4244-80d9-6562c59fae88"
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "workflows",
+      "width": 1920,
+      "url": "http://127.0.0.1:3000/control/#workflows",
+      "state": {
+        "heading": "Workflow",
+        "workspace": "2fddc09a-ef37-4244-80d9-6562c59fae88"
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "runs",
+      "width": 1920,
+      "url": "http://127.0.0.1:3000/control/#runs",
+      "state": {
+        "heading": "Run Monitor",
+        "workspace": "2fddc09a-ef37-4244-80d9-6562c59fae88"
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    },
+    {
+      "screen": "settings",
+      "width": 1920,
+      "url": "http://127.0.0.1:3000/control/#settings",
+      "state": {
+        "heading": "C\u00e0i \u0111\u1eb7t",
+        "workspace": "2fddc09a-ef37-4244-80d9-6562c59fae88"
+      },
+      "page_errors": [],
+      "http_failures": [],
+      "passed": true
+    }
+  ],
+  "passed": true
+}
