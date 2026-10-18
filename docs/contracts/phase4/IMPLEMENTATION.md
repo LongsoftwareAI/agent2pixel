@@ -1,0 +1,37 @@
+# Phase 4 authorized — real tools and company operations
+
+User authorized the proposed Phase4, preserve localhost and all olddata. Root baseline8bda89e. No SaaS/public deployment or unsolicited external messages. Actual live inference is required if a usable credential exists; absent credential is an explicit UNRUN blocker, never replace with stub claim. Finish independent work regardless. No newframework needed.
+
+## Ownership
+
+Runtime Backend: services/worker/runtime.py, services/api/main.py/domain.py/store.py, tests/phase4/runtime, ownlogs. Tools: services/worker/tools.py + new data_tools.py, services/api/data_sources.py, tests/phase4/tools, ownlogs. Operations: services/api/company.py +new operations.py, tests/phase4/operations, ownlogs. Frontend: apps/web except oldoffice, tests there, ownlogs. QA: tests/phase4 except runtime/tools/operations, reviewlogs, readonlyproduction. Root docs/config/officeprojection/integration. Existingclean dedicatedworktrees or explicit AGENTS branchprotocol, no concurrent writers. Coordinate signatures before coding; root cherry-picks owned commits only.
+
+## Tool/data contract
+
+Shared dispatch_tool(store,run,agent,tool_id,payload) remains identity/grant checked. New readtools `sources.read` {source_id}, `csv.analyze` {source_id,column?,group_by?}; optional `web.read` {url} bounded publicHTTPS allowlisted hosts, deny credentials/querysecrets/privateDNS/redirectescape/localhost, maxresponse1MiB,timeouts. Preserve URL,retrieved_at,sha256,text and citation sourceIDs; never claim searchengine support from URLfetch. Toolresults durable and auditable by runtime toolnodes; source text is untrusted data, not instructions that grant capabilities. csv realstdlibparser, boundedrows/columns/cells, strictnumeric finiteDecimal summaries/count/missing/min/max/sum/mean and optionalgroupaggregation, errors actionable. Formula cells untrustedstrings, never eval. Toolid constant `DATA_TOOLS` can be imported by domain.py. No externalwrite tools.
+
+Data API new router `create_data_router(app)`: GET/POST `/api/sources`, GET `/api/sources/{id}`; POST `{workspace_id,name,content,media_type:'text/plain'|'text/csv'|'text/markdown'}` <=1MiB UTF8, provenancehash/timestamps/row preview; scoped metadata +content stored local JSONresources. GET list requires workspace_id. POST `/api/sources/web` `{workspace_id,url}` uses same protected fetch (explicit user import, noagentgrant needed), returns source withURLcitation. Agent cannot chooseforeignworkspace/source. Export text retrieval will be separateoperations API below.
+
+## Runtime flow contract
+
+Existing nodes compatible; new `tool` node fields `{id,type:'tool',agent_id,tool:{id,payload}}`, readonly registeredtools only (documents/list/read,memory.read,sources.read,csv.analyze,web.read). Ownagentgrant/workspacesnapshot enforced. Actual durabletoolresult output feeds downstreamagent as JSON; record tool.requested/completed/failed and timing, never fabricate modeltoolcalls.
+
+New `review` node `{id,type:'review',instructions?,rework_target?:agentNodeId,max_revisions?:1..3}`. Actual human checkpoint with GET `/api/runs/{id}/gates` returning pending/history gate {id,node_id,status,instructions,input,revision,allowed_decisions}. POST `/api/gates/{id}/decision` `{decision:'approved'|'rework'|'denied',comment:string}`. Once bound run/node/workspace, noeditwhileactive. Approval continues; denial failsclosed; rework repeats explicit preceding agent segment underbounded revision then pauses same review withfreshgate and humancomment in assignment. Eachrevision hasdistinct durabletask/output/artifactname or explicit collisionfailure; nooverwrite. Requirevalid ancestor rework_target and reject cycles inbaseDAG. Explain actual supported semantics. Avoid silently ignoring max_revisions. Cancel/resume/restart preserve gates and outputs. Runtime Backend can refine wire withFE/QA early if necessary.
+
+Parallel branches/joins: implement only with deterministicmerge and safe per-node atomic persistence/checkpoints; explicit actual concurrency must be tested if claimed. Do not advertise parallel if scheduling remainssequential. Existing DAG max32nodes and budget limits preserved. Prioritize correcttool+review/rework before addingunsafeparallel. Report remaining gaps againstproposal, don'tsilentlydrop.
+
+Runtime Backend mounts data router+operations router via imports afterownerhandoff. Model assignments include immutablebrief, sourceprovenance and humanreworkcomments; sourcecontent labeledUNTRUSTED. Cost/timing uses observed vsestimated/unknown fields, never fake dollars. Record actualrequestlatency/retry/tooltiming. Sanitized events no credentials. Tool output beforecheckpoint usesdurableidempotencyrecords; consumeduncertain sideeffects reconciliation notautomaticrepeat.
+
+## Operations contract
+
+WorkItemInput/patch supports priority:'low'|'normal'|'high' defaultnormal, due_at ISOtimestamp|null, owner_agent_id|null, queue_requested booleanstored notclientfake status. POST `/api/work-items/{id}/enqueue` marks queued; POST `/api/work-items/{id}/dequeue` removes pending. GET `/api/work-queue?workspace_id` priority/dueordered. Explicit POST `/api/work-queue/dispatch` {workspace_id} starts highesteligible item onlyifworkspaceidle, otherqueueditems retained; honestmanualdispatch UI, no fake backgroundworker. Atomic locks and no multipleactiveworkperworkspace. Existingstatus projection adds queued whenpending/noactive; humanreviews unchanged. Expose workerload peragent fromrealrunstates usingGET `/api/operations?workspace_id`.
+
+Router create_operations_router(app) GET `/api/runs/{id}/artifacts/{artifact_id}` -> content+metadata safecontainedtext/hashverified; GET `/api/work-items/{id}/comparison?previous_run_id&current_run_id` -> bounded text unifieddiff of linkedcompletedrunoutputs only, criteria/review history; errorsforforeignruns. Memory existingPOST acceptsprovenance optional source_id (validate sameworkspace); operationsrouter PATCH/DELETE `/api/memories/{id}` content+provenance editor+updated_at, no silentlychangingowner/scope, logs audit. Avoidroutecollision. Memoryhistory records stored notdeleteaudit.
+
+## Frontend
+
+New Sources screen/importtext+CSV/web withprovenance/preview/analysis; Workboardpriority/deadline/owner enqueue/manualdispatch+queue/workload honestlabels. WorkflowEditor tool/reviewfields and boundedreworkconfig. RunEvidence gate review actions/comments, tooltimeline+observedlatency/tokens/unknowncost, readabletextartifact preview+versiondiff+criteria instead ofrawJSONonly; memoryedit/delete/provenance UI. PreserveHabblaud art, allP2/P3 controls. Coordinate APIs; no uncontrolleddependencyreinstallwhiledevrunning.
+
+## QA acceptance
+
+Actual CSV numbers, actual boundedwebfetch+citations or explicit networklimitation, sourceisolation/SSRF/redirect/bodybounds/formulanevereval, hostile source can'tgranttools, actual toolnode→agent→review→reworkbounded→export→humanaccept. Three workflows researchsource, CSVreport, contentrevision withlocalproviderstub distinctly labeled; liveprovider ifkeyonly. Real restart/gate/timeout/cancel/uncertainwrite tests, queueatomicpriority/load, memoryprovenance/diff/foreigndenial, data migration, freshlocalhostscreenshots, independent productionreview and rootreviewQAcontribution. DockerPhase4build/runtime and cleanstart/backuprestore requiredroot. Existingnpmtestadvisories must investigate safeupgrade/pins, notforceauditfix or disablechecks.
