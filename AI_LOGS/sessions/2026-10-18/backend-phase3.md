@@ -14,3 +14,9 @@
 - risks/limits: no live model credentials exercised; templates provide source-grounded guidance, no live external research. Persisted-result resume avoids duplicate charges after generated-output commit; a process crash during an in-flight external provider response cannot establish provider exactly-once semantics. Consume-before-write remains failclosed and requires reconciliation after crash, never automatic repeated effect.
 - sources/reuse: existing project runtime/store/API; accepted docs/contracts/phase3/IMPLEMENTATION.md; no upstream source/assets copied, no license/dependency change.
 - review/handoff: READY_FOR_REVIEW, independent QA/root pending; commit_sha see commit containing this log; next_steps integrator cherry-pick owned commit, Harness actualSDK mixedtask tests, independent live/screenshot/restart validation. No selfapproval or DONE claim.
+
+## Independent QA correction — immutable context on every node
+- finding: compact provider output does not necessarily repeat original brief; downstream agent lacked full acceptance criteria when relying only on predecessor text.
+- correction: every native/Harness assignment now explicitly includes immutable run.input and workitem brief_snapshot, alongside prior handoff, node instructions and sources. Explicit input overrides do not discard original brief/criteria.
+- regression: capture two-node compact-output provider; assert each call receives title/description/criteria/override, secondcall receives ownobjective+predecessoroutput; directworkflow secondcall retains originalinput.
+- executed:18 Phase3 testsPASS, RuffF PASS; full60baseline hadpassedbefore this targetedcorrection. Independent QA/root must rerun actualprovider/live evidence.

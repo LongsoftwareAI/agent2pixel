@@ -439,6 +439,14 @@ class Runtime:
         artifact_context = json.dumps(run.get("artifacts", []), ensure_ascii=False)
         model_input = (
             text
+            + "\n\nOriginal workflow objective (immutable run input):\n"
+            + run["input"]
+            + (
+                "\n\nOriginal work brief and acceptance criteria (immutable snapshot):\n"
+                + json.dumps(run["brief_snapshot"], ensure_ascii=False)
+                if run.get("brief_snapshot")
+                else ""
+            )
             + (
                 "\n\nNode objective and acceptance requirements:\n"
                 + node["instructions"]

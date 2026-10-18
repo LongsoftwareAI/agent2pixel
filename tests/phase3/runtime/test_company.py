@@ -324,6 +324,7 @@ def test_same_agent_distinct_nodes_objectives_exports_and_usage_once(
         assert "Analyze supplied operations data" in calls[0]
         assert "Review original analysis" in calls[1]
         assert "arbitrary business output 1" in calls[1]
+        assert "business brief" in calls[1]
         assert len(result["artifacts"]) == 2 and len(result["tasks"]) == 2
 
 
@@ -429,3 +430,60 @@ def test_invalid_node_configuration_rejected(tmp_path, node_patch):
             },
         )
         assert response.status_code == 400, response.text
+
+
+def test_every_node_receives_original_immutable_brief_without_echo_dependency(
+    tmp_path, monkeypatch
+):
+    captured = []
+
+    async def brain(agent, text, budget, metadata):
+        captured.append(text)
+        return "compact output; original brief deliberately omitted", 2
+
+    monkeypatch.setattr("services.worker.runtime.run_brain", brain)
+    with TestClient(create_app(tmp_path)) as client:
+        ws, agent, workflow, _ = fixture(client)
+        graph = workflow["graph"]
+        graph["nodes"][1].pop("deliverable")
+        graph["nodes"].insert(
+            2,
+            {
+                "id": "review",
+                "type": "agent",
+                "agent_id": agent["id"],
+                "instructions": "Verify immutable acceptance criteria independently",
+            },
+        )
+        graph["edges"] = [
+            {"source": "start", "target": "analysis"},
+            {"source": "analysis", "target": "review"},
+            {"source": "review", "target": "end"},
+        ]
+        wf = client.post(
+            "/api/workflows",
+            json={"workspace_id": ws["id"], "name": "Brief alignment", "graph": graph},
+        ).json()
+        item = client.post(
+            "/api/work-items",
+            json={
+                "workspace_id": ws["id"],
+                "workflow_id": wf["id"],
+                "title": "ORIGINAL_TITLE",
+                "description": "ORIGINAL_DESCRIPTION",
+                "acceptance_criteria": ["ORIGINAL_CRITERION"],
+            },
+        ).json()
+        run = client.post(
+            "/api/work-items/" + item["id"] + "/runs",
+            json={"input": "explicit override objective"},
+        ).json()
+        assert wait(client, run["id"])["state"] == "completed"
+        assert len(captured) == 2
+        for text in captured:
+            assert "ORIGINAL_TITLE" in text
+            assert "ORIGINAL_DESCRIPTION" in text
+            assert "ORIGINAL_CRITERION" in text
+            assert "explicit override objective" in text
+        assert "Verify immutable acceptance criteria independently" in captured[1]
+        assert "compact output; original brief deliberately omitted" in captured[1]
