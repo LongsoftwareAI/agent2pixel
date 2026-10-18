@@ -64,11 +64,14 @@ def run(args):
             page.wait_for_url('**/#usage')
             result['checks'].append('Ctrl+K command palette filters and navigates to costs')
             page.goto(args.base+'/#preferences')
+            page.locator('.c-content[aria-busy="false"]').wait_for()
+            page.get_by_role('button', name='Lưu cài đặt', exact=True).wait_for(state='visible')
             page.get_by_label('Giao diện', exact=True).select_option('light')
             page.get_by_label('Tự làm mới', exact=True).select_option('off')
             page.get_by_role('button', name='Lưu cài đặt', exact=True).click()
-            page.get_by_text('Đã lưu cài đặt', exact=True).wait_for()
+            page.get_by_role('status').filter(has_text='Đã lưu cài đặt').wait_for()
             page.reload()
+            page.locator('.c-content[aria-busy="false"]').wait_for()
             assert page.get_by_label('Giao diện', exact=True).input_value() == 'light'
             assert page.get_by_label('Tự làm mới', exact=True).input_value() == 'off'
             assert page.locator('html').get_attribute('data-console-theme') == 'light'
