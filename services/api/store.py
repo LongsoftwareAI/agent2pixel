@@ -54,6 +54,14 @@ class Store:
             backup.close()
             self.db.execute("INSERT INTO schema_migrations VALUES(2)")
             self.db.commit()
+        # Phase 5 additive console resources use the same durable resource table.
+        # Preserve a pre-migration snapshot without replacing prior backup evidence.
+        if not self.db.execute("SELECT 1 FROM schema_migrations WHERE version=3").fetchone():
+            backup = sqlite3.connect(self.root / "pre-schema-v3.sqlite3")
+            self.db.backup(backup)
+            backup.close()
+            self.db.execute("INSERT INTO schema_migrations VALUES(3)")
+            self.db.commit()
         # A process restart must never leave a run claiming to be executing.
         for run in self.list("run"):
             if run["state"] in ("queued", "running"):

@@ -228,6 +228,8 @@ def create_company_router(app, start_run, run_model):
     @serialized
     def patch(id: str, body: dict):
         value = get("work_item", id)
+        if value.get("archived"):
+            raise HTTPException(409, "Restore archived work before editing")
         if projected_item(store(), value)["status"] in (
             "running",
             "waiting_approval",
@@ -270,6 +272,8 @@ def create_company_router(app, start_run, run_model):
         from pydantic import ValidationError
 
         value = get("work_item", id)
+        if value.get("archived"):
+            raise HTTPException(409, "Restore archived work before running")
         prompt = (
             value["title"]
             + "\n\n"

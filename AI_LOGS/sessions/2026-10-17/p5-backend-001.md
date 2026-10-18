@@ -1,0 +1,47 @@
+# P5 backend implementation
+- timestamp: 2026-10-18T00:00:00Z
+- session_id: p5-backend-001
+- agent_id / agent_role: p5_backend_code / Backend
+- model/provider: inherited Codex
+- task_id: P5-BE
+- goal: Durable console projections and real chat dispatch
+- status: IN_PROGRESS
+- branch: agent/p5-backend
+- base_commit: bfd1341
+- workspace: /workspace/worktrees/p5-backend
+- owned_paths: services/, tests/phase5/backend/, own logs/handoff
+- inputs: AGENTS.md; docs/contracts/phase5/IMPLEMENTATION.md; requirements v0.5
+- assumptions: localhost single operator; existing runtime authoritative
+- constraints: no new dependencies; no shell/secret exposure; additive resources
+- plan: API models; durable dispatch/config; projections; failure/security tests
+- changes: pending
+- decisions: reuse Store and start_run, no second runtime
+- commands: repository reads
+- tests: pending
+- risks: unavailable external STT/provider/scheduler explicitly reported
+- blockers: none for local slice
+- next_steps: implement contract endpoints
+- handoff_to: root and independent QA
+- commit_sha: pending
+- review_status: pending
+- Reference IDs: P5-01..19
+- Source URL: internal requirement/reference board
+- Commit SHA: baseline bfd1341
+- Files inspected: main.py, store.py, domain.py, company.py, runtime.py
+- Asset rights: no copied assets
+- Copied/Adapted/Inspiration-only: internal reuse
+- Visual evidence: frontend/QA ownership
+- Deviation from reference: retain native runtime, no Hermes requirement
+- Reviewer decision: pending
+
+## Milestone / handoff 2026-10-18T17:17:00Z
+- Corrected base_commit: cf25d46 (contract commit; parent baseline bfd1341).
+- status: SELF_TESTED -> READY_FOR_REVIEW
+- changes: services/api/console.py new durable console router; console_extensions.py versioned budget/archive/history/rollback/export; main.py atomic chatdispatch and preserved configuration metadata; store.py additive migration3 backup; company.py/operations.py archived dispatch guards; tests/phase5/backend 15 tests; console_skills original MIT manifest license.
+- decisions: chat work/run/message transaction uses existing runtime; fixture/mock labels retained; global model split usage unavailable remains null; local declarative package v1/v2 supports reviewed install/update/rollback/remove without grants; preferences require expected revision to prevent lost update. Active run snapshots never change with editor/skill operations. Root was unavailable (capacity error); communicated additive endpoint refinements to FE/QA/root, no root-owned contract edits.
+- delegation: extensions child sole-writer console_extensions.py, company.py, operations.py, test_console_extensions.py; parent integrated and reviewed; independent QA remains separate.
+- commands/tests: `PYTHONPATH=$PWD /workspace/agent2pixel/.venv/bin/pytest -q tests/phase5/backend tests/backend tests/phase4/runtime tests/phase4/tools tests/phase4/operations` PASS89; `PYTHONPATH=$PWD /workspace/agent2pixel/.venv/bin/pytest -q tests/phase2/runtime tests/phase3/runtime tests/harness tests/integration tests/backup tests/projection tests/office_layout tests/phase4/test_recovery_acceptance.py tests/phase4/test_harness_data_acceptance.py tests/phase4/test_uncertain_export.py` PASS92; Ruff new console modules/tests PASS. One initial command FAIL collection due absent tests/phase2/backend path; corrected existing paths, no suppressed tests.
+- risks/blockers: live provider/STT/remote connector/schedule adapter UNRUN/unconfigured. Upload only validated UTF8 plain/CSV/Markdown, image/audio unsupported. Provider input/output/cache split and actual billing unknown; budgets monitor-only. Active workspace remains single-run bounded native runtime.
+- next_steps: root contract addendum; integrate commits; independent pinned QA; actual frontend screenshots and live capability acceptance separately.
+- service: temporary QA backend port13001 loopback PID80400, AGENTVERSE_DATA_DIR=/tmp/agentverse-p5-backend-qa13001, no original user DB touched; root/QA notified.
+- review_status: pending independent pinned review; no product DONE claim.

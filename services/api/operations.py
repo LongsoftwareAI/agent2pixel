@@ -65,6 +65,7 @@ def create_operations_router(app, start_run=None, run_model=None):
             item
             for item in values
             if item.get("queue_requested")
+            and not item.get("archived")
             and item["status"]
             not in ("running", "waiting_approval", "waiting_review", "review", "done")
         ]
@@ -98,6 +99,8 @@ def create_operations_router(app, start_run=None, run_model=None):
         from services.api.company import projected_item
 
         item = get("work_item", id)
+        if item.get("archived"):
+            raise HTTPException(409, "Restore archived work before enqueueing")
         if projected_item(store(), item)["status"] in (
             "running",
             "waiting_approval",

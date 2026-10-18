@@ -288,6 +288,10 @@ def create_app(data_dir=None):
 
     @app.patch("/api/agents/{id}")
     def patch_agent(id: str, body: dict):
+        with store().lock:
+            return patch_agent_locked(id, body)
+
+    def patch_agent_locked(id, body):
         value = get("agent", id)
         if "workspace_id" in body and body["workspace_id"] != value["workspace_id"]:
             raise HTTPException(403, "Agent workspace is immutable")
@@ -313,8 +317,31 @@ def create_app(data_dir=None):
         merged = normalize_agent(merged)
         validate_brain(merged["brain"])
         validate_spec(merged, store())
-        merged.update(id=id, status=value["status"])
-        store().put("agent", merged)
+        merged = {**value, **merged, "id": id, "status": value["status"]}
+        records = []
+        if any(merged.get(key) != value.get(key) for key in AgentInput.model_fields):
+            from services.api.console import config_revision_record
+
+            records.append(("agent_config_history", config_revision_record(value)))
+            merged["agent_config_revision"] = value.get("agent_config_revision", 1) + 1
+        if merged["system_prompt"] != value["system_prompt"]:
+            revision = value.get("soul_revision", 1)
+            records.append(
+                (
+                    "agent_document_revision",
+                    dict(
+                        id=uid(),
+                        workspace_id=value["workspace_id"],
+                        agent_id=id,
+                        content=value["system_prompt"],
+                        revision=revision,
+                        created_at=now(),
+                    ),
+                )
+            )
+            merged.update(soul_revision=revision + 1, soul_updated_at=now())
+        records.append(("agent", merged))
+        store().put_many(records)
         store().event(
             value["workspace_id"], "agent.updated", {"name": merged["name"]}, agent=id
         )
@@ -347,11 +374,11 @@ def create_app(data_dir=None):
         errors = validate_graph(value["graph"], store(), value["workspace_id"])
         return dict(valid=not errors, errors=errors)
 
-    def start_run(id, body, work_item=None):
+    def start_run(id, body, work_item=None, dispatch_message=None):
         with store().lock:
-            return start_run_locked(id, body, work_item)
+            return start_run_locked(id, body, work_item, dispatch_message)
 
-    def start_run_locked(id, body, work_item=None):
+    def start_run_locked(id, body, work_item=None, dispatch_message=None):
         workflow = get("workflow", id)
         errors = validate_graph(workflow["graph"], store(), workflow["workspace_id"])
         if errors:
@@ -416,7 +443,11 @@ def create_app(data_dir=None):
                 run_ids=work_item["run_ids"] + [value["id"]],
                 updated_at=now(),
             )
-            store().put_many([("run", value), ("work_item", work_item)])
+            records = [("run", value), ("work_item", work_item)]
+            if dispatch_message is not None:
+                dispatch_message["run_id"] = value["id"]
+                records.append(("console_message", dispatch_message))
+            store().put_many(records)
         else:
             store().put("run", value)
         app.state.runtime.schedule(value)
@@ -934,6 +965,11 @@ def create_app(data_dir=None):
     from services.api.operations import create_operations_router
     from services.api.data_sources import create_data_router
 
+    from services.api.console import create_console_router
+    from services.api.console_extensions import create_console_extensions_router
+
+    app.include_router(create_console_router(app, start_run, RunInput))
+    app.include_router(create_console_extensions_router(app))
     app.include_router(create_data_router(app))
     app.include_router(create_company_router(app, start_run, RunInput))
     app.include_router(create_operations_router(app, start_run, RunInput))
