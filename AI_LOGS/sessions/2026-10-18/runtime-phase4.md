@@ -20,3 +20,7 @@
 - Rework runs are real graph work: count every repeated agent/tool toward max_steps and carry count into later checkpoints/downstream nodes. Prevalidate safe revision export names. New actual max_steps denial regression verifies no extra model task executes after budget denial.
 - Validation8P4PASS, including7corecases; first local run during tuple-return refactor caught mismatched return unpack, corrected before commit and reran8PASS. No suppressed tests.
 - Additional replay regression9P4PASS: process restart after actual rework reaches revision1 pendinggate; approve afterrestart preserves exact taskrecords and token_spent (no duplicate model request/charge).
+
+## Operations integration
+- Cherry-picked owner Operations commits8c939fa/642e293/47adea4 as dependencies only (root already has corresponding commits); mounted create_operations_router(app,start_run,RunInput). Existing main memorycreation validates source sameworkspace + provenance snapshot and GET excludes tombstone. Shared tool readers handled Tools owner.
+- Actual15 tests runtime+operations PASS after mount, including queue dispatch through actual Runtime. Router mount commit changes only main+ownlog.
