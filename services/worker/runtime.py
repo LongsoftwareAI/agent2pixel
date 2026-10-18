@@ -161,6 +161,26 @@ def validate_graph(graph, store, workspace):
                             "Rework segment may contain agent/tool nodes only"
                         )
                         break
+                    prior_node = by_id[cursor]
+                    if prior_node.get("deliverable"):
+                        try:
+                            filename = PurePosixPath(
+                                prior_node["deliverable"]["filename"]
+                            )
+                            validate_text_payload(
+                                {
+                                    "filename": filename.stem
+                                    + "-"
+                                    + n["id"]
+                                    + "-r3"
+                                    + filename.suffix,
+                                    "content": "",
+                                }
+                            )
+                        except (ValueError, KeyError, TypeError):
+                            errors.append(
+                                "Rework requires safe versioned deliverable filenames"
+                            )
                     if len(outgoing[cursor]) != 1:
                         errors.append("Rework segment cannot branch")
                         break
@@ -838,6 +858,7 @@ class Runtime:
         current_text = text
         revisions = node.get("max_revisions", 1)
         used = 0
+        rework_steps = 0
         for revision in range(revisions + 1):
             key = run["id"] + ":gate:" + node["id"] + ":" + str(revision)
             gate = store.get("gate", key)
@@ -880,7 +901,7 @@ class Runtime:
             ):
                 raise ValueError("Review gate binding mismatch")
             if gate["status"] == "approved":
-                return current_text, used
+                return current_text, used, rework_steps
             if gate["status"] != "rework" or "rework" not in gate["allowed_decisions"]:
                 raise ValueError("Human review denied")
             # Re-run only the validated linear ancestor segment, with fresh durable identities.
@@ -894,6 +915,7 @@ class Runtime:
                     next(n for n in run["graph"]["nodes"] if n["id"] == cursor)
                 )
             segment.reverse()
+            rework_steps += len(segment)
             if state["steps"] + 1 + len(segment) * (revision + 1) > run["max_steps"]:
                 raise ValueError("Maximum workflow steps exceeded during rework")
             first = segment[0]["id"]
@@ -985,12 +1007,13 @@ class Runtime:
                     )
                     output = text
                     used = 0
+                    extra_steps = 0
                     if node["type"] == "agent":
                         output, used = await self.assignment(current, node, text, state)
                     elif node["type"] == "tool":
                         output = await self.tool_node(current, node)
                     elif node["type"] == "review":
-                        output, used = await self.review_node(
+                        output, used, extra_steps = await self.review_node(
                             current, node, text, state
                         )
                     active = list(state["active"])
@@ -1006,7 +1029,7 @@ class Runtime:
                     return dict(
                         outputs={**state["outputs"], node["id"]: output},
                         active=active,
-                        steps=steps,
+                        steps=steps + extra_steps,
                         tokens=state["tokens"] - used,
                     )
 

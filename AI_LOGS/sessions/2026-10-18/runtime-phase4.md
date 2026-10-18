@@ -15,3 +15,7 @@
 - validation final:66 combined testsPASS (61 legacy+5firstP4); expanded7P4PASS includes twoactual approved revisionexports with distinctpaths and commentreceived by actualmodeladapter, plus failedtool resume neverreexecutes. Ruff E9/F63/F7/F82 PASS.
 - exact APIs: GET runs/{id}/gates returns history+pending; POST gates/{id}/decision exact decision/comment, statusbound, once-only, autoschedule samecheckpoint. Pending uses waiting_approval for backward-compatible active-work locks. Newtasks revisionnode IDs original~review~rN, export stem-review-rN.ext.
 - subsequent integration: Data/Operations routers and DATA_TOOLS catalogue require owner handoffs; core commit intentionally does not import unavailable modules. Human approval/render depends FE branchintegration. READY_FOR_REVIEW core, no final approval claim.
+
+## Step-budget correction
+- Rework runs are real graph work: count every repeated agent/tool toward max_steps and carry count into later checkpoints/downstream nodes. Prevalidate safe revision export names. New actual max_steps denial regression verifies no extra model task executes after budget denial.
+- Validation8P4PASS, including7corecases; first local run during tuple-return refactor caught mismatched return unpack, corrected before commit and reran8PASS. No suppressed tests.

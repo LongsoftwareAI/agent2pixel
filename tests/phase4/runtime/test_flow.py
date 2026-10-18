@@ -353,3 +353,26 @@ def test_failed_tool_result_never_silently_reexecutes_on_resume(tmp_path, monkey
         result = wait(client, rid)
         assert result["state"] == "failed" and "reconcile" in result["error"]
         assert calls == [1]
+
+
+def test_rework_respects_global_step_budget(tmp_path):
+    with TestClient(create_app(tmp_path)) as client:
+        wf, _, _ = setup(client)
+        response = client.post(
+            "/api/workflows/" + wf["id"] + "/runs",
+            json={"input": "Report", "max_steps": 4},
+        )
+        assert response.status_code == 200, response.text
+        rid = response.json()["id"]
+        assert wait(client, rid)["state"] == "waiting_approval"
+        g = gate(client, rid)
+        assert (
+            client.post(
+                "/api/gates/" + g["id"] + "/decision",
+                json={"decision": "rework", "comment": "Again"},
+            ).status_code
+            == 200
+        )
+        result = wait(client, rid)
+        assert result["state"] == "failed" and "steps" in result["error"]
+        assert len(result["tasks"]) == 1
