@@ -14,6 +14,16 @@ python3 scripts/dev.py
 
 Mở localhost port 3000 trong trình duyệt. API port 8000; tất cả port dev bind 127.0.0.1. Office Habblaud port 3000, trang cấu hình `/control/` được proxy đến port 3001. Ctrl-C dừng cả ba service. Dùng `python3 scripts/dev.py --legacy` để chạy giao diện v0.1. SQLite và workspace files trong `var/`, bị Git bỏ qua. Không xóa `var/` nếu muốn giữ dữ liệu. MockBrain không cần key hoặc model. Nó thực thi workflow thật với output deterministic; không được hiểu là model AI bên ngoài đã được gọi.
 
+## Phase 4 — công cụ và vận hành công ty
+
+Đã có Sources văn bản/CSV, tool node, human review/rework có giới hạn, hàng đợi ưu tiên dispatch thủ công, tải task/tool thực tế, memory provenance/history và xem/diff sản phẩm. [Báo cáo kiểm chứng và giới hạn](docs/PHASE_4_VALIDATION.md). Model thật chưa chạy vì thiếu key; đọc web public đang lỗi DNS trong môi trường này.
+
+Cách dùng: nhập nguồn ở **Nguồn dữ liệu**, lấy source ID → cấp grant `sources.read`/`csv.analyze` cho agent → thêm Tool node trong Workflow và payload source_id → nối vào agent viết báo cáo → thêm Review node nếu cần. Chọn target agent/max revisions để yêu cầu sửa có giới hạn. Duyệt payload export khác với duyệt nội dung tại review gate, và cả hai khác nghiệm thu work item.
+
+![Nguồn CSV có provenance](tests/phase4/evidence/bcd1ff4/browser/sources-csv-provenance-1366.png)
+
+Backup dữ liệu: dừng ứng dụng và hoàn tất/hủy các run đang active, chạy `python3 scripts/data_backup.py backup --source var/acceptance-final --destination /path/to/new-backup`. Restore vào thư mục **chưa tồn tại** bằng `python3 scripts/data_backup.py restore --source /path/to/new-backup --destination /path/to/new-data`, rồi đặt AGENTVERSE_DATA_DIR đến thư mục đó. Không ghi đè hoặc xóa dữ liệu cũ.
+
 ## Công ty agent đa nhiệm — Phase 3
 
 Định hướng mới: giao công việc đa dạng cho đội ngũ agent, không chỉ lập trình. [Kế hoạch](docs/plans/PHASE_3_COMPANY_WORKSPACE.md) mô tả Work board, brief/tiêu chí nghiệm thu, flow có hướng dẫn riêng từng bước, sản phẩm tài liệu và human review. Work board ở `/control/#workboard`, có nút mở từ office. Bằng chứng nghiệm thu Phase3 được ghi riêng, không suy từ test Phase2.
@@ -51,7 +61,7 @@ Shell và tool có side effect bị chặn mặc định. Không có auth: giữ
 ## Kiểm thử
 
 ```sh
-.venv/bin/python -m pytest tests/backend tests/phase2/runtime tests/phase3/runtime tests/harness tests/projection tests/office_layout -q
+.venv/bin/python -m pytest tests/backend tests/phase2/runtime tests/phase3/runtime tests/phase4 tests/backup tests/integration tests/harness tests/projection tests/office_layout -q
 npm --prefix apps/web test
 npm --prefix apps/web run build
 ```
