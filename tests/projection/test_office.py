@@ -108,4 +108,9 @@ def test_tool_only_work_reflects_actual_scoped_runtime_records(tmp_path):
     s.event('coding','tool.failed',{'secret':'not exposed'},run='tool-run',agent='planner')
     agent=project(s,'coding')['agents'][0]
     assert agent['activity']['error'] and 'not exposed' not in str(agent)
+    run['state']='failed';s.put('run',run)
+    assert project(s,'coding')['agents'][0]['domainStatus']=='error'
+    s.put('run',dict(id='new-run',workspace_id='coding',state='completed',tasks=[]))
+    s.event('coding','task.completed',run='new-run',agent='planner')
+    assert project(s,'coding')['agents'][0]['domainStatus']=='completed'
     s.db.close()

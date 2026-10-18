@@ -95,7 +95,9 @@ def project(store, workspace_id=None):
             run_state=run_by_id[record['run_id']]['state']
             status='completed' if record['status']=='completed' else 'cancelled' if run_state=='cancelled' else 'failed' if record['status']=='failed' or run_state=='failed' else 'in_progress' if record in active_tools else 'pending'
             tasks.append(dict(id=record['id'],title='Tool: '+record.get('tool',{}).get('id','unknown'),status=status,domainState=record['status']))
-        original='working' if active_tools else a.get('status','idle')
+        latest_run=recent_events[-1].get('run_id') if recent_events else None
+        failed_tool=any(t['run_id']==latest_run and t.get('status')=='failed' and run_by_id[t['run_id']]['state']=='failed' for t in agent_tools)
+        original='working' if active_tools else 'error' if failed_tool else a.get('status','idle')
         state='working' if original in ('working','running') else 'waiting' if original in ('waiting','waiting_approval','queued') else 'idle'
         appearance=a.get('appearance') or {}
         agent_seed=appearance.get('seed',seed_for(a['id']))
