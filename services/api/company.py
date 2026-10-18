@@ -1,11 +1,10 @@
 """Local company briefs, explicit human acceptance, and reusable workflow guidance."""
 
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from services.api.store import now, uid
 from services.api.operations import validate_operations_fields
 from functools import wraps
-from datetime import datetime
 from typing import Literal
 
 
@@ -17,9 +16,9 @@ class WorkItemInput(BaseModel):
     description: str = Field(min_length=1, max_length=20000)
     acceptance_criteria: list[str] = Field(default_factory=list, max_length=30)
     priority: Literal["low", "normal", "high"] = "normal"
-    due_at: datetime | None = None
+    due_at: str | None = None
     owner_agent_id: str | None = None
-    queue_requested: bool = False
+    queue_requested: StrictBool = False
 
 
 TEMPLATES = [

@@ -225,3 +225,77 @@ def test_memory_provenance_history_tombstone(env):
     )
     assert len(client.get("/api/memories/memo/history").json()) == 2
     assert store.get("memory", "memo")["deleted_at"]
+
+
+def test_real_runtime_manual_dispatch_completes(tmp_path):
+    import inspect
+    import time
+    from services.api.main import create_app, RunInput as ActualRunInput
+
+    app = create_app(tmp_path)
+    # Before runtime owner's mount lands, obtain the real launcher closure; no mocked scheduler.
+    if not any(
+        getattr(route, "path", "") == "/api/work-queue/dispatch" for route in app.routes
+    ):
+        endpoint = next(
+            route.endpoint
+            for route in app.routes
+            if getattr(route, "path", "") == "/api/workflows/{id}/runs"
+        )
+        launcher = inspect.getclosurevars(endpoint).nonlocals["start_run"]
+        app.include_router(create_operations_router(app, launcher, ActualRunInput))
+    with TestClient(app) as client:
+        ws = client.get("/api/workspaces").json()[0]
+        boot = client.get("/api/bootstrap", params={"workspace_id": ws["id"]}).json()
+        item = client.post(
+            "/api/work-items",
+            json={
+                "workspace_id": ws["id"],
+                "workflow_id": boot["workflows"][0]["id"],
+                "title": "Queue proof",
+                "description": "Produce a brief",
+                "queue_requested": True,
+            },
+        ).json()
+        response = client.post(
+            "/api/work-queue/dispatch", json={"workspace_id": ws["id"]}
+        )
+        assert response.status_code == 200, response.text
+        run_id = response.json()["id"]
+        for _ in range(200):
+            run = client.get("/api/runs/" + run_id).json()
+            if run["state"] not in ("queued", "running"):
+                break
+            time.sleep(0.01)
+        assert run["state"] == "completed", run
+        assert client.get("/api/work-items/" + item["id"]).json()["status"] == "review"
+        assert (
+            client.get("/api/work-queue", params={"workspace_id": ws["id"]}).json()
+            == []
+        )
+
+
+def test_strict_create_metadata_and_epoch_deadline(env):
+    client, _ = env
+    for fields in (
+        {"queue_requested": "yes"},
+        {"queue_requested": 1},
+        {"due_at": 0},
+        {"due_at": "2026-01-01"},
+    ):
+        response = client.post(
+            "/api/work-items",
+            json={
+                "workspace_id": "w",
+                "workflow_id": "flow-w",
+                "title": "Brief",
+                "description": "Work",
+                **fields,
+            },
+        )
+        assert response.status_code == 422
+    no_deadline = create(client, queue_requested=True)
+    epoch = create(client, queue_requested=True, due_at="1970-01-01T00:00:00Z")
+    assert [
+        item["id"] for item in client.get("/api/work-queue?workspace_id=w").json()
+    ] == [epoch["id"], no_deadline["id"]]

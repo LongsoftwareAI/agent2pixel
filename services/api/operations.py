@@ -72,11 +72,11 @@ def create_operations_router(app, start_run=None, run_model=None):
             values,
             key=lambda item: (
                 {"high": 0, "normal": 1, "low": 2}[item.get("priority", "normal")],
-                item.get("due_at")
-                and datetime.fromisoformat(
+                datetime.fromisoformat(
                     item["due_at"].replace("Z", "+00:00")
                 ).timestamp()
-                or float("inf"),
+                if item.get("due_at")
+                else float("inf"),
                 item["created_at"],
                 item["id"],
             ),
