@@ -376,3 +376,35 @@ def test_rework_respects_global_step_budget(tmp_path):
         result = wait(client, rid)
         assert result["state"] == "failed" and "steps" in result["error"]
         assert len(result["tasks"]) == 1
+
+
+def test_revision_gate_restart_preserves_output_and_never_recharges(tmp_path):
+    with TestClient(create_app(tmp_path)) as client:
+        wf, _, _ = setup(client)
+        rid = launch(client, wf)
+        assert wait(client, rid)["state"] == "waiting_approval"
+        g = gate(client, rid)
+        assert (
+            client.post(
+                "/api/gates/" + g["id"] + "/decision",
+                json={"decision": "rework", "comment": "Clarify source"},
+            ).status_code
+            == 200
+        )
+        before = wait(client, rid)
+        assert before["state"] == "waiting_approval"
+        revision_gate = gate(client, rid)
+        assert revision_gate["revision"] == 1
+    with TestClient(create_app(tmp_path)) as client:
+        assert gate(client, rid) == revision_gate
+        assert (
+            client.post(
+                "/api/gates/" + revision_gate["id"] + "/decision",
+                json={"decision": "approved", "comment": "OK"},
+            ).status_code
+            == 200
+        )
+        after = wait(client, rid)
+        assert after["state"] == "completed", after
+        assert after["tasks"] == before["tasks"]
+        assert after["token_spent"] == before["token_spent"]

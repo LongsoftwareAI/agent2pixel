@@ -19,3 +19,4 @@
 ## Step-budget correction
 - Rework runs are real graph work: count every repeated agent/tool toward max_steps and carry count into later checkpoints/downstream nodes. Prevalidate safe revision export names. New actual max_steps denial regression verifies no extra model task executes after budget denial.
 - Validation8P4PASS, including7corecases; first local run during tuple-return refactor caught mismatched return unpack, corrected before commit and reran8PASS. No suppressed tests.
+- Additional replay regression9P4PASS: process restart after actual rework reaches revision1 pendinggate; approve afterrestart preserves exact taskrecords and token_spent (no duplicate model request/charge).
