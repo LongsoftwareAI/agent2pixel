@@ -1,3 +1,4 @@
+import {consoleLink,selectedAgentLink} from './navigation';
 import { registerDictionary, getLocale } from '../../../vendor/habblaud/shared/i18n';
 import { EN } from '../../../vendor/habblaud/shared/locales/en';
 import './style.css';
@@ -22,8 +23,17 @@ const name = root.querySelector('.ui-brand__name');
 if (name) {name.textContent='AgentVerse';name.setAttribute('aria-label','AgentVerse');}
 const links = document.createElement('nav'); links.className='av-controls';links.setAttribute('aria-label','AgentVerse controls');
 for(const [label,hash] of [['Work board','workboard'],['Agents','agents'],['Workflows','workflows'],['Runs','runs'],['Settings','settings']]) {
- const a=document.createElement('a');a.href=`/control/#${hash}`;a.textContent=label;links.append(a);
+ const a=document.createElement('a');a.href=consoleLink(hash);a.textContent=label;links.append(a);
 }
+const selectedLink=document.createElement('a');selectedLink.textContent='Open selected agent';selectedLink.hidden=true;selectedLink.className='av-selected-agent';
+selectedLink.setAttribute('aria-label','Open selected agent in AI console');root.append(selectedLink);
+const updateSelectedLink=()=>{
+ const selection=world.getSelection();
+ const href=selection?.type==='agent'?selectedAgentLink(selection.id,store.snapshot?.agents??[]):null;
+ selectedLink.hidden=!href;
+ if(href) selectedLink.href=href; else selectedLink.removeAttribute('href');
+};
+world.onSelect(updateSelectedLink);store.on('snapshot',updateSelectedLink);
 root.querySelector('.ui-topbar__right')?.prepend(links);
 const attribution=document.createElement('a');attribution.className='av-attribution';attribution.href='https://github.com/marmottajr/habblaud';attribution.textContent='Office art & renderer: Habblaud · MIT';attribution.target='_blank';attribution.rel='noopener noreferrer';root.append(attribution);
 if(fixtureMode){
