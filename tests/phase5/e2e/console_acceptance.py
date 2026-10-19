@@ -68,7 +68,20 @@ def run(args):
             report['checks'].append('attachment actual content hash; traversal and unsupported audio rejected')
             foreign_actor = agent(api, foreign, provider, 'Foreign Synthetic Analyst', [])
             api.denied('/api/console/conversations', {'workspace_id': wid, 'agent_id': foreign_actor['id'], 'title': 'Rejected mixed scope'})
-            report['checks'].append('foreign agent cannot bind conversation')
+            assert api.request('/api/console/conversations/'+cid+'?workspace_id='+foreign['id'])[0] == 404
+            foreign_send = '/api/console/conversations/'+cid+'/messages?workspace_id='+foreign['id']
+            assert api.request(foreign_send, payload)[0] == 404
+            foreign_attachment = api.ok('/api/console/attachments', {**attachment_body, 'workspace_id': foreign['id']})
+            assert api.request('/api/console/conversations/'+cid+'/messages?workspace_id='+wid,
+                {**payload, 'client_request_id': 'foreign-attachment', 'attachment_ids': [foreign_attachment['id']]})[0] == 404
+            assert len(api.ok('/api/console/conversations/'+cid+'?workspace_id='+wid)['messages']) == len(current['messages'])
+            report['checks'].append('foreign agent, conversation read/send and attachment references rejected without creating message/run')
+            room = api.ok('/api/console/conversations', {'workspace_id': wid, 'title': 'Synthetic explicit-workflow room'})
+            room_send = '/api/console/conversations/'+room['id']+'/messages?workspace_id='+wid
+            assert api.request(room_send, {'content': 'Do not infer an agent or permissions.', 'client_request_id': 'room-no-workflow'})[0] == 422
+            assert api.ok('/api/console/conversations/'+room['id']+'?workspace_id='+wid)['messages'] == []
+            assert api.ok('/api/console/conversations/'+cid+'?workspace_id='+wid)['messages'] == current['messages']
+            report['checks'].append('common-room dispatch requires explicit workflow; rejected dispatch leaves durable conversation unchanged')
             prefs_path = '/api/console/preferences?workspace_id='+wid
             prefs = api.ok(prefs_path)
             updated = api.ok(prefs_path, {'revision': prefs['revision'], 'theme': 'light', 'refresh': 'off'}, 'PATCH')
