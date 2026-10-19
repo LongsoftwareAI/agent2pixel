@@ -81,6 +81,30 @@ def run(args):
             assert actor['system_prompt'] in diff.locator('pre').nth(1).inner_text()
             page.screenshot(path=str(out/'actual-revision-diff-1366.png'))
             report['checks'].append('SOUL save refreshes prior-only history and displays saved current content against previous revision')
+            grants_before = {a['id']: api.ok('/api/agents/'+a['id'])['tool_grants'] for a in actors}
+            page.goto(args.base+'/#topology')
+            node = page.locator('.react-flow__node').first
+            node.wait_for()
+            total_nodes = page.locator('.react-flow__node').count()
+            viewport = page.locator('.react-flow__viewport')
+            initial_transform = viewport.get_attribute('style')
+            page.get_by_role('button', name='Zoom In', exact=True).click()
+            page.wait_for_timeout(300)
+            assert viewport.get_attribute('style') != initial_transform
+            page.get_by_role('button', name='Fit View', exact=True).click()
+            page.wait_for_timeout(300)
+            node.click()
+            page.locator('.c-topology-inspector').wait_for()
+            page.get_by_role('button', name='Đóng chi tiết node', exact=True).click()
+            page.get_by_label('Tìm dữ liệu', exact=True).fill('Synthetic Bot A')
+            page.wait_for_timeout(200)
+            assert page.locator('.react-flow__node').count() < total_nodes
+            assert page.locator('.react-flow__node').count() > 0
+            page.get_by_label('Tìm dữ liệu', exact=True).fill('')
+            page.get_by_role('button', name='Xếp lại', exact=True).click()
+            assert {a['id']: api.ok('/api/agents/'+a['id'])['tool_grants'] for a in actors} == grants_before
+            page.screenshot(path=str(out/'actual-topology-controls-1366.png'))
+            report['checks'].append('actual topology search/zoom/fit/detail/rearrange leaves backend tool grants unchanged')
             assert not errors, errors
             browser.close()
             report.update(passed=True, workspace_id=ws['id'])
