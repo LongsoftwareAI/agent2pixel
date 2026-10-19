@@ -51,3 +51,7 @@ Groq authenticated model discovery returned HTTP403; reason not established, so 
 Native success requires actual source tool facts, exact structured semantic output, fetched artifact identical to approved content with verified hash, model.completed event, unchanged grants, QC and separate automated synthetic work acceptance. This is actual configured official endpoint inference, not MockBrain. Research unknown capacity and content unknown warranty remainNOT_PROVIDED. Content headline is fixed by test; no general creative quality or universal task execution certification. Provider usage is not billing verification.
 
 New API process stopped after execution, data isolated from earlier runs. No keys in repository/evidence. Overall live acceptance remains partial: three native scenarios passed; Harness failed, Groq unavailable. Existing fullsystem/visual/backup/parity gates remain open.
+
+## Groq Prompt Guard direct probe — 2026-10-19
+
+User requested `meta-llama/llama-prompt-guard-2-86m` with latest Groq credential. One direct chat/completions request, benign synthetic prompt, max_tokens8. [Evidence](evidence/phase6/groq-prompt-guard-1792417428860648155/probe.json): HTTP403, non-JSON edge error1010. No classification output or usage received. This is not proof model/key invalid; edge access is blocked before a useful model response. Prompt Guard is a safety classifier, not a replacement general company-task model. No source changes or credential persistence.

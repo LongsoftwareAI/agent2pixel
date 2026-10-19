@@ -1,0 +1,10 @@
+{
+  "provider": "groq",
+  "model": "meta-llama/llama-prompt-guard-2-86m",
+  "purpose": "Single direct bounded classification probe; not general agent workflow",
+  "application_commit": "bda05a68b346baebddb7a32833b614834025f3ba",
+  "status": "FAILED_HTTP",
+  "http_status": 403,
+  "non_json_error": true,
+  "edge_error_1010": true
+}
