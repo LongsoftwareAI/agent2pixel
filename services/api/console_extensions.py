@@ -98,13 +98,19 @@ def create_console_extensions_router(app):
             if e["event_type"] == "model.completed"
             and e["created_at"].startswith(month)
         ]
-        total = sum(e.get("payload", {}).get("tokens", 0) for e in events)
+        from services.api.console import token_summary
+
+        accounting = token_summary(events)
+        total = accounting["total_tokens"]
         threshold = value["monthly_token_threshold"]
         return dict(
             policy=value,
             period=month,
             timezone="UTC",
             total_tokens=total,
+            token_accounting=accounting["token_accounting"],
+            accounting_counts=accounting["accounting_counts"],
+            tokens_by_accounting=accounting["tokens_by_accounting"],
             actual_cost=None,
             enforcement="monitor-only",
             alerts=[
@@ -112,6 +118,7 @@ def create_console_extensions_router(app):
                     kind="token_threshold",
                     state="exceeded",
                     observed=total,
+                    token_accounting=accounting["token_accounting"],
                     threshold=threshold,
                 )
             ]

@@ -585,3 +585,38 @@ def test_reviewed_skill_update_and_rollback_versions(client):
         == 409
     )
     assert len(client.app.state.store.list("skill_activation", p["workspace_id"])) == 3
+
+
+def test_usage_retains_estimated_provider_and_unknown_provenance(client):
+    p, _, _ = context(client)
+    store = client.app.state.store
+    store.event(p["workspace_id"], "model.completed", {"tokens": 25, "token_accounting": "estimated"})
+    usage = client.get("/api/console/usage", params=p).json()
+    assert usage["accounting"] == "estimated"
+    for row in [usage["totals"], *usage["daily"], *usage["by_agent"], *usage["by_model"]]:
+        assert row["token_accounting"] == "estimated"
+        assert row["accounting_counts"] == {"estimated": 1, "provider": 0, "unknown": 0}
+        assert row["tokens_by_accounting"]["estimated"] == 25
+        assert row["actual_cost"] is None and row["estimated_cost"] is None
+    store.event(p["workspace_id"], "model.completed", {"tokens": 75, "token_accounting": "provider"})
+    # Legacy usage and invalid provenance must never acquire provider certainty.
+    store.event(p["workspace_id"], "model.completed", {"tokens": 10})
+    store.event(p["workspace_id"], "model.completed", {"tokens": -3, "token_accounting": "provider"})
+    usage = client.get("/api/console/usage", params=p).json()
+    assert usage["accounting"] == "mixed"
+    for row in [usage["totals"], *usage["daily"], *usage["by_agent"], *usage["by_model"]]:
+        assert row["token_accounting"] == "mixed"
+        assert row["total_tokens"] == 110
+        assert row["accounting_counts"] == {"estimated": 1, "provider": 1, "unknown": 2}
+        assert row["tokens_by_accounting"] == {"estimated": 25, "provider": 75, "unknown": 10}
+        assert row["actual_cost"] is None and row["estimated_cost"] is None
+    overview = client.get("/api/console/overview", params=p).json()
+    assert overview["usage"] == usage["totals"]
+    budget = client.get("/api/console/budget", params=p).json()
+    assert budget["token_accounting"] == "mixed"
+    assert budget["accounting_counts"] == usage["totals"]["accounting_counts"]
+    assert budget["tokens_by_accounting"] == usage["totals"]["tokens_by_accounting"]
+    assert budget["actual_cost"] is None
+    alert = client.patch("/api/console/budget", params=p, json={"revision": 1, "monthly_token_threshold": 100}).json()
+    assert client.get("/api/console/budget", params=p).json()["alerts"][0]["token_accounting"] == "mixed"
+    assert alert["policy"]["revision"] == 2

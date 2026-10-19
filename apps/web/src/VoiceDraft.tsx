@@ -1,10 +1,93 @@
-import {useEffect,useRef,useState} from 'react';
-interface RecognitionResult {results:ArrayLike<ArrayLike<{transcript:string}>>}
-export interface SpeechAdapter {lang:string;continuous:boolean;interimResults:boolean;onresult:((event:RecognitionResult)=>void)|null;onerror:((event:{error:string})=>void)|null;onend:(()=>void)|null;start:()=>void;stop:()=>void;abort:()=>void}
-type SpeechWindow=Window&{SpeechRecognition?:new()=>SpeechAdapter;webkitSpeechRecognition?:new()=>SpeechAdapter};
-export function browserSpeechAdapter():SpeechAdapter|null{const browser=window as SpeechWindow;const Constructor=browser.SpeechRecognition??browser.webkitSpeechRecognition;return Constructor?new Constructor():null}
-export function VoiceDraft({onTranscript,createAdapter=browserSpeechAdapter}:{onTranscript:(text:string)=>void;createAdapter?:()=>SpeechAdapter|null}){const [supported]=useState(()=>{const w=window as SpeechWindow;return createAdapter!==browserSpeechAdapter||!!(w.SpeechRecognition??w.webkitSpeechRecognition)}),[recording,setRecording]=useState(false),[error,setError]=useState('');const current=useRef<SpeechAdapter|null>(null),[permission,setPermission]=useState(false),[draft,setDraft]=useState('');const cancelled=useRef(false);
- useEffect(()=>()=>{cancelled.current=true;current.current?.abort()},[]);
- function start(){const adapter=createAdapter();if(!adapter){setError('Trình duyệt chưa hỗ trợ nhận dạng giọng nói.');return}cancelled.current=false;current.current=adapter;adapter.lang='vi-VN';adapter.continuous=false;adapter.interimResults=false;adapter.onresult=e=>{if(cancelled.current)return;setDraft(Array.from(e.results).map(result=>result[0]?.transcript??'').join(' '))};adapter.onerror=e=>{if(!cancelled.current){setError('Nhận dạng giọng nói: '+e.error);setRecording(false)}};adapter.onend=()=>{if(!cancelled.current)setRecording(false)};try{setError('');setDraft('');adapter.start();setRecording(true);setPermission(false)}catch(e){setError(String(e));setRecording(false)}}
- return <><button title={supported?'Nhập bản nháp bằng giọng nói':'Trình duyệt chưa có SpeechRecognition; hãy nhập văn bản.'} disabled={!supported||recording} onClick={()=>setPermission(true)}>♩ {supported?'Giọng nói':'Giọng nói chưa khả dụng'}</button>{recording&&<span role="status" className="c-recording">● Đang nghe <button onClick={()=>{current.current?.stop();setRecording(false)}}>Dừng</button><button onClick={()=>{cancelled.current=true;current.current?.abort();setRecording(false);setDraft('')}}>Hủy ghi âm</button></span>}{permission&&<section role="dialog" aria-label="Cho phép giọng nói" className="c-voice-confirm"><p>Nhận dạng của trình duyệt có thể gửi âm thanh đến dịch vụ của nhà cung cấp trình duyệt. Chỉ bắt đầu sau khi bạn đồng ý cấp microphone. Bản ghi được đưa vào nháp, không tự gửi.</p><button onClick={()=>setPermission(false)}>Hủy</button><button onClick={start}>Đồng ý & bắt đầu</button></section>}{draft&&<section className="c-voice-confirm" aria-label="Bản nháp giọng nói"><p>{draft}</p><button onClick={()=>setDraft('')}>Bỏ bản ghi</button><button onClick={()=>{onTranscript(draft);setDraft('')}}>Dùng làm bản nháp</button></section>}{error&&<span role="alert" className="c-error">{error}</span>}</>
+import { useEffect, useRef, useState } from 'react';
+interface RecognitionResult {
+    results: ArrayLike<ArrayLike<{
+        transcript: string;
+    }>>;
+}
+export interface SpeechAdapter {
+    lang: string;
+    continuous: boolean;
+    interimResults: boolean;
+    onresult: ((event: RecognitionResult) => void) | null;
+    onerror: ((event: {
+        error: string;
+    }) => void) | null;
+    onend: (() => void) | null;
+    start: () => void;
+    stop: () => void;
+    abort: () => void;
+}
+type SpeechWindow = Window & {
+    SpeechRecognition?: new () => SpeechAdapter;
+    webkitSpeechRecognition?: new () => SpeechAdapter;
+};
+export function browserSpeechAdapter(): SpeechAdapter | null { const browser = window as SpeechWindow; const Constructor = browser.SpeechRecognition ?? browser.webkitSpeechRecognition; return Constructor ? new Constructor() : null; }
+export function VoiceDraft({ onTranscript, createAdapter = browserSpeechAdapter }: {
+    onTranscript: (text: string) => void;
+    createAdapter?: () => SpeechAdapter | null;
+}) {
+    const [supported] = useState(() => { const w = window as SpeechWindow; return createAdapter !== browserSpeechAdapter || !!(w.SpeechRecognition ?? w.webkitSpeechRecognition); }), [recording, setRecording] = useState(false), [error, setError] = useState('');
+    const current = useRef<SpeechAdapter | null>(null), [permission, setPermission] = useState(false), [draft, setDraft] = useState('');
+    const cancelled = useRef(false);
+    useEffect(() => () => { cancelled.current = true; current.current?.abort(); }, []);
+    function start() {
+        const adapter = createAdapter();
+        if (!adapter) {
+            setError('Trình duyệt chưa hỗ trợ nhận dạng giọng nói.');
+            return;
+        }
+        cancelled.current = false;
+        current.current = adapter;
+        adapter.lang = 'vi-VN';
+        adapter.continuous = false;
+        adapter.interimResults = false;
+        adapter.onresult = e => {
+            if (cancelled.current)
+                return;
+            setDraft(Array.from(e.results).map(result => result[0]?.transcript ?? '').join(' '));
+        };
+        adapter.onerror = e => {
+            if (!cancelled.current) {
+                setError('Nhận dạng giọng nói: ' + e.error);
+                setRecording(false);
+            }
+        };
+        adapter.onend = () => {
+            if (!cancelled.current)
+                setRecording(false);
+        };
+        try {
+            setError('');
+            setDraft('');
+            adapter.start();
+            setRecording(true);
+            setPermission(false);
+        }
+        catch (e) {
+            setError(String(e));
+            setRecording(false);
+        }
+    }
+    return <>
+    <button title={supported ? 'Nhập bản nháp bằng giọng nói' : 'Trình duyệt chưa có SpeechRecognition; hãy nhập văn bản.'} disabled={!supported || recording} onClick={() => setPermission(true)}>♩ {supported ? 'Giọng nói' : 'Giọng nói chưa khả dụng'}
+    </button>
+    {recording && <span role="status" className="c-recording">● Đang nghe <button onClick={() => { current.current?.stop(); setRecording(false); }}>Dừng</button>
+        <button onClick={() => { cancelled.current = true; current.current?.abort(); setRecording(false); setDraft(''); }}>Hủy ghi âm</button>
+    </span>}
+    {permission && <section role="dialog" aria-label="Cho phép giọng nói" className="c-voice-confirm">
+        <p>Nhận dạng của trình duyệt có thể gửi âm thanh đến dịch vụ của nhà cung cấp trình duyệt. Chỉ bắt đầu sau khi bạn đồng ý cấp microphone. Bản ghi được đưa vào nháp, không tự gửi.</p>
+        <button onClick={() => setPermission(false)}>Hủy</button>
+        <button onClick={start}>Đồng ý & bắt đầu</button>
+    </section>}
+    {draft && <section className="c-voice-confirm" aria-label="Bản nháp giọng nói">
+        <p>
+            {draft}
+        </p>
+        <button onClick={() => setDraft('')}>Bỏ bản ghi</button>
+        <button onClick={() => { onTranscript(draft); setDraft(''); }}>Dùng làm bản nháp</button>
+    </section>}
+    {error && <span role="alert" className="c-error">
+        {error}
+    </span>}
+    </>;
 }

@@ -1,5 +1,57 @@
-import {useEffect,useState} from 'react';
-import {ReactFlow,Background,Controls,applyNodeChanges,type Node,type Edge} from '@xyflow/react';
-import {pretty} from './api';
-type Row=Record<string,unknown>;
-export function ConsoleTopology({nodes:registry,edges:connections,search}:{nodes:Row[];edges:Row[];search:string}){const [nodes,setNodes]=useState<Node[]>([]),[selected,setSelected]=useState<Row|null>(null),[layout,setLayout]=useState(0);useEffect(()=>setNodes(registry.map((n,i)=>({id:String(n.id),position:{x:i%4*230,y:Math.floor(i/4)*150},data:{...n,label:<><span className="c-topology-kind">{String(n.kind??'resource')}</span><strong>{String(n.label??n.name??n.id)}</strong><small>{String(n.state??'unknown')}</small></>},hidden:!!search&&!pretty(n).toLowerCase().includes(search.toLowerCase()),style:{background:'#18253b',border:'1px solid #3a5682',borderRadius:9,color:'#dbe5f5',fontSize:11,width:175,padding:12}}))),[registry,search,layout]);const visibleIds=new Set(nodes.filter(n=>!n.hidden).map(n=>n.id));const edges:Edge[]=connections.filter(e=>visibleIds.has(String(e.source))&&visibleIds.has(String(e.target))).map((e,i)=>({id:String(e.id??i),source:String(e.source),target:String(e.target),label:typeof e.label==='string'?e.label:undefined,style:{stroke:'#4c6b9e'},animated:false}));return <><div className="c-topology-tools"><button onClick={()=>setLayout(x=>x+1)}>Xếp lại</button><span>Chỉ đọc · kéo nền để pan · cuộn để zoom · bấm node xem chi tiết</span></div><div className="c-topology-flow"><ReactFlow nodes={nodes} edges={edges} fitView nodesConnectable={false} deleteKeyCode={null} onNodesChange={changes=>setNodes(ns=>applyNodeChanges(changes,ns))} onNodeClick={(_,n)=>setSelected(registry.find(r=>r.id===n.id)??null)}><Background color="#334058" gap={18}/><Controls showInteractive={false}/></ReactFlow>{selected&&<aside className="c-topology-inspector"><button aria-label="Đóng chi tiết node" onClick={()=>setSelected(null)}>×</button><h3>{String(selected.label??selected.id)}</h3><pre>{pretty(selected)}</pre></aside>}</div></>}
+import { useEffect, useState } from 'react';
+import { ReactFlow, Background, Controls, applyNodeChanges, type Node, type Edge } from '@xyflow/react';
+import { pretty } from './api';
+type Row = Record<string, unknown>;
+export function ConsoleTopology({ nodes: registry, edges: connections, search }: {
+    nodes: Row[];
+    edges: Row[];
+    search: string;
+}) {
+    const [nodes, setNodes] = useState<Node[]>([]), [selected, setSelected] = useState<Row | null>(null), [layout, setLayout] = useState(0);
+    useEffect(() => setNodes(registry.map((n, i) => ({
+        id: String(n.id), position: {
+            x: i % 4 * 230, y: Math.floor(i / 4) * 150
+        }, data: {
+            ...n, label: <>
+    <span className="c-topology-kind">
+        {String(n.kind ?? 'resource')}
+    </span>
+    <strong>
+        {String(n.label ?? n.name ?? n.id)}
+    </strong>
+    <small>
+        {String(n.state ?? 'unknown')}
+    </small>
+            </>
+        }, hidden: !!search && !pretty(n).toLowerCase().includes(search.toLowerCase()), style: {
+            background: '#18253b', border: '1px solid #3a5682', borderRadius: 9, color: '#dbe5f5', fontSize: 11, width: 175, padding: 12
+        }
+    }))), [registry, search, layout]);
+    const visibleIds = new Set(nodes.filter(n => !n.hidden).map(n => n.id));
+    const edges: Edge[] = connections.filter(e => visibleIds.has(String(e.source)) && visibleIds.has(String(e.target))).map((e, i) => ({
+        id: String(e.id ?? i), source: String(e.source), target: String(e.target), label: typeof e.label === 'string' ? e.label : undefined, style: {
+            stroke: '#4c6b9e'
+        }, animated: false
+    }));
+    return <>
+    <div className="c-topology-tools">
+        <button onClick={() => setLayout(x => x + 1)}>Xếp lại</button>
+        <span>Chỉ đọc · kéo nền để pan · cuộn để zoom · bấm node xem chi tiết</span>
+    </div>
+    <div className="c-topology-flow">
+        <ReactFlow nodes={nodes} edges={edges} fitView nodesConnectable={false} deleteKeyCode={null} onNodesChange={changes => setNodes(ns => applyNodeChanges(changes, ns))} onNodeClick={(_, n) => setSelected(registry.find(r => r.id === n.id) ?? null)}>
+            <Background color="#334058" gap={18}/>
+            <Controls showInteractive={false}/>
+        </ReactFlow>
+        {selected && <aside className="c-topology-inspector">
+            <button aria-label="Đóng chi tiết node" onClick={() => setSelected(null)}>×</button>
+            <h3>
+                {String(selected.label ?? selected.id)}
+            </h3>
+            <pre>
+                {pretty(selected)}
+            </pre>
+        </aside>}
+    </div>
+    </>;
+}

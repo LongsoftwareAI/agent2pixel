@@ -1,0 +1,11 @@
+# Phase 5 integration fixes handoff
+
+Owner: p5_fix_code. Branch: agent/p5-fixes. Baseline: bb9d07f. Status: READY_FOR_REVIEW.
+
+Scope/output: frontend operational corrections and UI provenance; console.py and console_extensions.py token accounting projections; focused unit/contract regressions; readable TSX. File ownership retained: apps/web excluding office, assigned console modules/tests. New PNG media backend and useConsoleEvents hook are separately owned and must be integrated from root commits before this commit is built. No dependency/license change, no copied reference artwork.
+
+Checks: frontend 73 PASS; TypeScript/Vite build PASS; ESLint PASS; git diff --check PASS. Backend local TestClient blocked by sandbox; root must rerun tests/phase5/backend (especially test_usage_retains_estimated_provider_and_unknown_provenance). Its budget assertion uses actual policy.revision. Root validation needed for actual media endpoint and live WebSocket/browser behavior, screenshot visual review, independent review. Formatting verification compares normalized transpiled JavaScript AST before/after whitespace formatting.
+
+Behavior: runtime estimates/provider reports/legacy unknown remain distinct per day/agent/model/total and budget alerts; all monetary costs stay unknown. Preferences revision initialization no longer races first edit. History responses contain historical records only and current content is passed separately; rollback never guesses current revision. Log export limit is backend-supported 200. Direct bot switch cannot reuse prior selected conversation. Memory mutations send workspace and expected revision, conflicts retain draft. PNG is actual stored/uploaded preview with explicit unsupported pixel interpretation, not a vision claim. Existing legacy app available through VITE_AGENTVERSE_LEGACY_UI=1. Console lifecycle updates remain subscribed when periodic refresh is off; reconnect status is separate from snapshot health.
+
+Known limits: unchanged bundle size warning ~529 kB, optional browser speech adapter remains capability-dependent, image decoding intentionally unavailable, no CRM, no provider invoices. Review must assess screenshot fidelity; no claim that all UI matches video exactly.

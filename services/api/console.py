@@ -105,6 +105,39 @@ def digest(value):
     ).hexdigest()
 
 
+def token_summary(events):
+    """Keep runtime estimates separate from provider-reported and unknown usage.
+
+    Totals describe recorded token counts only; none establish provider billing.
+    Legacy events without provenance remain unknown rather than becoming estimates.
+    """
+    counts = {kind: 0 for kind in ("estimated", "provider", "unknown")}
+    tokens = {kind: 0 for kind in counts}
+    for event in events:
+        payload = event.get("payload", {})
+        amount = payload.get("tokens")
+        valid = type(amount) is int and amount >= 0
+        kind = payload.get("token_accounting", "unknown")
+        if not isinstance(kind, str) or kind not in counts or not valid:
+            kind = "unknown"
+        counts[kind] += 1
+        if valid:
+            tokens[kind] += amount
+    present = [kind for kind, count in counts.items() if count]
+    return dict(
+        requests=len(events),
+        total_tokens=sum(tokens.values()),
+        token_accounting=present[0] if len(present) == 1 else "mixed" if present else "unknown",
+        accounting_counts=counts,
+        tokens_by_accounting=tokens,
+        input_tokens=None,
+        output_tokens=None,
+        cache_tokens=None,
+        actual_cost=None,
+        estimated_cost=None,
+    )
+
+
 def config_revision_record(agent):
     """Snapshot operator-editable configuration, never runtime status or credentials."""
     from services.api.main import AgentInput
@@ -601,37 +634,18 @@ def create_console_router(app, start_run, run_model):
                 (by_agent, event.get("agent_id") or "unknown"),
                 (by_model, model),
             ):
-                row = target.setdefault(
-                    key,
-                    dict(
-                        id=key,
-                        requests=0,
-                        total_tokens=0,
-                        input_tokens=None,
-                        output_tokens=None,
-                        cache_tokens=None,
-                        actual_cost=None,
-                        estimated_cost=None,
-                    ),
-                )
-                row["requests"] += 1
-                row["total_tokens"] += event["payload"].get("tokens", 0)
-        totals = dict(
-            requests=len(events),
-            total_tokens=sum(e["payload"].get("tokens", 0) for e in events),
-            input_tokens=None,
-            output_tokens=None,
-            cache_tokens=None,
-            actual_cost=None,
-            estimated_cost=None,
-        )
+                target.setdefault(key, []).append(event)
+        daily = {key: dict(id=key, **token_summary(value)) for key, value in daily.items()}
+        by_agent = {key: dict(id=key, **token_summary(value)) for key, value in by_agent.items()}
+        by_model = {key: dict(id=key, **token_summary(value)) for key, value in by_model.items()}
+        totals = token_summary(events)
         return dict(
             daily=[dict(v, date=k) for k, v in sorted(daily.items())],
             by_agent=[dict(v, agent_id=k) for k, v in by_agent.items()],
             by_model=[dict(v, model=k) for k, v in by_model.items()],
             totals=totals,
             pricing=[],
-            accounting="runtime-total-only; provider split/cost unavailable",
+            accounting=totals["token_accounting"],
             period=period,
             timezone="UTC",
             observed_at=now(),
