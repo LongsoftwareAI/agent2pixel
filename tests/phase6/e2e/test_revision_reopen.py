@@ -15,6 +15,8 @@ def test_stale_multi_panel_edits_after_app_reopen_and_legacy_writer(tmp_path):
         memory = client.post('/api/memories', json={
             'workspace_id': workspace, 'content': 'initial evidence',
         }).json()
+        # Legacy creation response omits revision; the API's initial version is1.
+        initial_revision = memory.get('revision', 1)
         path = '/api/memories/' + memory['id']
         pref_revision = client.get(preferences, params=params).json()['revision']
         budget_revision = client.get(budget, params=params).json()['policy']['revision']
@@ -36,13 +38,13 @@ def test_stale_multi_panel_edits_after_app_reopen_and_legacy_writer(tmp_path):
             'revision': budget_revision, 'monthly_token_threshold': 999,
         }).status_code == 409
         assert client.patch(path, params=params, json={
-            'expected_revision': memory['revision'], 'content': 'stale overwrite',
+            'expected_revision': initial_revision, 'content': 'stale overwrite',
         }).status_code == 409
         assert client.delete(path, params={
-            **params, 'expected_revision': memory['revision'],
+            **params, 'expected_revision': initial_revision,
         }).status_code == 409
         assert client.patch(path, params={'workspace_id': foreign}, json={
-            'expected_revision': memory['revision'] + 1, 'content': 'foreign overwrite',
+            'expected_revision': initial_revision + 1, 'content': 'foreign overwrite',
         }).status_code == 404
         assert client.get(preferences, params=params).json()['theme'] == 'light'
         policy = client.get(budget, params=params).json()['policy']
@@ -51,7 +53,7 @@ def test_stale_multi_panel_edits_after_app_reopen_and_legacy_writer(tmp_path):
         stored = next(m for m in client.get('/api/memories', params=params).json()
                       if m['id'] == memory['id'])
         assert stored['content'] == 'legacy committed fact'
-        assert stored['revision'] == memory['revision'] + 1
+        assert stored['revision'] == initial_revision + 1
         assert len(client.get(path + '/history').json()) == 1
         assert len(client.get(budget + '/history', params=params).json()) == 1
         # Reload-and-retry succeeds: conflict handling has not wedged the record.
@@ -67,7 +69,7 @@ def test_stale_multi_panel_edits_after_app_reopen_and_legacy_writer(tmp_path):
         stored = next(m for m in client.get('/api/memories', params=params).json()
                       if m['id'] == memory['id'])
         assert stored['content'] == 'reconciled evidence'
-        assert stored['revision'] == memory['revision'] + 2
+        assert stored['revision'] == initial_revision + 2
         policy = client.get(budget, params=params).json()['policy']
         assert policy['monthly_token_threshold'] == 71
         assert policy['monthly_cost_threshold'] == 2
