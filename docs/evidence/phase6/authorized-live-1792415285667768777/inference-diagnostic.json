@@ -1,0 +1,12 @@
+{
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite",
+  "purpose": "Bounded inference diagnostic; initial diagnostic parser failed on list-shaped error; no workflow retry",
+  "http_status": 404,
+  "provider_status": [
+    "NOT_FOUND"
+  ],
+  "quota_or_rate_limit": false,
+  "model_not_found": true,
+  "invalid_credential": false
+}

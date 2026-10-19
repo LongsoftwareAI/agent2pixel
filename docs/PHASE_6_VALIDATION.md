@@ -29,3 +29,11 @@ Current application baseline remains `e9f5465756ad1ed6607d2fc8c032ef3387c43812`;
 Bind `AGENTVERSE_GROQ_API_KEY` and `AGENTVERSE_GEMINI_API_KEY` through secure Environment settings, apply configuration, then run a fresh `--profile live` using new data/evidence directories. Configuration currently declares names/domains only; no key value was copied from chat. Official endpoint connectivity must also work. Setup skill requires: “Do not put secret values in scripts, tool arguments, files, logs, or chat.” [Skill](skill://plugin_connector_1p_ed5feb9070a08191b08c81c47947bc16/setup/SKILL.md).
 
 Then run the final committed full runner once, complete independent full visual review and fresh stopped backup/restore operational acceptance. Existing backup suite passed but actual new stopped-data backup was not repeated. Retain all Phase5 missing feature/integration scope and CRM deferral. No whole-system, live-provider or fullPhase5 DONE claim; no main merge or SaaS deployment.
+
+## Authorized live retry — 2026-10-19
+
+User explicitly authorized use of supplied credentials for this test, overriding earlier skill credential-transfer restriction. Keys used in process only; not added to repository or report. [Actual live attempt](evidence/phase6/authorized-live-1792415285667768777/live.json).
+
+Groq authenticated model discovery returned HTTP403; reason not established, so do not classify key invalid. Gemini authenticated discovery succeeded and selected gemini-2.5-flash-lite. Real isolated CSV workflow reached model execution then failed; no model completion, artifact acceptance or observed token usage. Remaining three Gemini scenarios and four Groq scenarios UNRUN. API process stopped after test; prior data untouched.
+
+[Bounded inference diagnostic](evidence/phase6/authorized-live-1792415285667768777/inference-diagnostic.json) returned HTTP404/NOT_FOUND on Gemini OpenAI-compatible chat endpoint. No quota or invalid-key error identified. Initial diagnostic parser failed on list-shaped error; corrected parser confirmed404, no successful inference claim. Endpoint/model compatibility needs investigation before another workflow run. Historical missing-binding report remains original evidence; this retry supersedes that blocker for this process only, without saving persistent secret bindings.
