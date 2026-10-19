@@ -47,3 +47,17 @@ def test_refuses_active_run_and_nested_destination(tmp_path,state):
         db.execute('UPDATE resources SET body=? WHERE id=?',(json.dumps({'id':'r','state':state}),'r'))
     with pytest.raises(ValueError,match='active runs'):backup(data,tmp_path/'backup')
     with pytest.raises(ValueError,match='outside'):backup(data,data/'backup')
+
+
+def test_stopped_wal_database_reader_sidecars_do_not_invalidate_backup(tmp_path):
+    data = seed(tmp_path / 'wal-data')
+    with sqlite3.connect(data / 'checkpoints.sqlite3') as db:
+        db.execute('PRAGMA journal_mode=WAL')
+        db.execute('CREATE TABLE checkpoints(id INTEGER PRIMARY KEY, content TEXT)')
+        db.execute('INSERT INTO checkpoints(content) VALUES(?)', ('durable checkpoint',))
+    db.close()
+    saved, recovered = tmp_path / 'wal-backup', tmp_path / 'wal-restored'
+    assert backup(data, saved)['verified']
+    assert restore(saved, recovered)['verified']
+    with sqlite3.connect(recovered / 'checkpoints.sqlite3') as result:
+        assert result.execute('SELECT content FROM checkpoints').fetchone()[0] == 'durable checkpoint'

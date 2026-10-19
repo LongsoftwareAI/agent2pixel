@@ -31,6 +31,20 @@ def files(root):
     return result
 
 
+def backup_fingerprint(root):
+    """Ignore reader-maintained SQLite shared memory and empty WAL sidecars.
+
+    Opening a stopped WAL database read-only may create these files. Nonempty
+    WAL/journal contents and all durable files still participate in the guard.
+    Symlinks and total-size validation remain enforced by files().
+    """
+    return {
+        relative: value for relative, value in files(root).items()
+        if not relative.endswith('-shm')
+        and not (relative.endswith('-wal') and (root / relative).stat().st_size == 0)
+    }
+
+
 def validate_db(path):
     with closing(sqlite3.connect(path.as_uri() + '?mode=ro', uri=True)) as db:
         if db.execute('PRAGMA integrity_check').fetchone()[0] != 'ok':
@@ -61,7 +75,7 @@ def backup(data, destination):
     with tempfile.TemporaryDirectory(prefix='.agentverse-backup-', dir=destination.parent) as scratch:
         stage = Path(scratch) / 'data'
         stage.mkdir()
-        before = files(data)
+        before = backup_fingerprint(data)
         live = sqlite3.connect((data / 'agentverse.sqlite3').as_uri() + '?mode=ro', uri=True)
         try:
             quiescent(live)
@@ -79,7 +93,7 @@ def backup(data, destination):
                     validate_db(target)
                 else:
                     shutil.copyfile(source, target)
-            if version != live.execute('PRAGMA data_version').fetchone()[0] or before != files(data):
+            if version != live.execute('PRAGMA data_version').fetchone()[0] or before != backup_fingerprint(data):
                 raise ValueError('Source changed during backup; stop application and retry')
         finally:
             live.close()
