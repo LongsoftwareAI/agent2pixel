@@ -1,0 +1,169 @@
+{
+  "providers": {
+    "groq": {
+      "readiness": {
+        "status": "FAILED_HTTP",
+        "http_status": 403,
+        "reason": "Official model discovery rejected request; response body deliberately not logged"
+      },
+      "cases": [
+        {
+          "kind": "csv",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "FAILED_HTTP"
+        },
+        {
+          "kind": "research",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "FAILED_HTTP"
+        },
+        {
+          "kind": "content",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "FAILED_HTTP"
+        },
+        {
+          "kind": "csv",
+          "engine": "deepseek_harness",
+          "status": "UNRUN",
+          "reason": "FAILED_HTTP"
+        }
+      ]
+    },
+    "gemini": {
+      "readiness": {
+        "status": "READY",
+        "model": "gemini-3.1-flash-lite",
+        "discovery": "actual official HTTPS metadata; not an inference or free-plan proof"
+      },
+      "cases": [
+        {
+          "provider": "gemini",
+          "model": "gemini-3.1-flash-lite",
+          "kind": "csv",
+          "engine": "langchain",
+          "run_id": "501afdbc-d777-4c4d-a974-c87166978d69",
+          "work_item_id": "487cdb35-6bcb-4a36-8769-c76570dbf727",
+          "workspace_id": "fda5d2d6-23c6-4699-8e84-8fbb17101d26",
+          "status": "PASS",
+          "inference": "real configured official endpoint; no fixture fallback",
+          "semantic_output": {
+            "source_id": "c98ce73a-14a4-4f60-9873-29424637015b",
+            "total": 2.0,
+            "groups": {
+              "A": 0.3,
+              "B": 1.7
+            },
+            "rows": 3
+          },
+          "artifact_sha256": "a47378fbede4883dc79e0034ea99299fe2a3e425897d14b15789fe0db3ad4185",
+          "tokens": 1086,
+          "usage": [
+            {
+              "tokens": 1086,
+              "token_accounting": "provider"
+            }
+          ],
+          "checks": [
+            "actual tool facts",
+            "model semantic schema/facts",
+            "artifact hash/payload approval",
+            "QC distinct from work acceptance",
+            "unchanged tool grants"
+          ]
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-3.1-flash-lite",
+          "kind": "research",
+          "engine": "langchain",
+          "run_id": "796c3923-81ea-42e5-b710-03565f22453d",
+          "work_item_id": "0d21a147-48de-45cf-b5d7-773f3056988e",
+          "workspace_id": "da3c5536-ea5a-4cf9-a8dd-b9bc07136580",
+          "status": "PASS",
+          "inference": "real configured official endpoint; no fixture fallback",
+          "semantic_output": {
+            "source_id": "a4f88f94-cb7b-47e3-9966-76f56c1e7db9",
+            "tickets": 12,
+            "reviewer_capacity": "NOT_PROVIDED"
+          },
+          "artifact_sha256": "62002b4e7f68d896e612539cfed3ade2dbb7939f7d4d9a3acdc97d6500184e21",
+          "tokens": 717,
+          "usage": [
+            {
+              "tokens": 717,
+              "token_accounting": "provider"
+            }
+          ],
+          "checks": [
+            "actual tool facts",
+            "model semantic schema/facts",
+            "artifact hash/payload approval",
+            "QC distinct from work acceptance",
+            "unchanged tool grants"
+          ]
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-3.1-flash-lite",
+          "kind": "content",
+          "engine": "langchain",
+          "run_id": "198840f7-3a89-45af-ab69-2bf87c22d08b",
+          "work_item_id": "fd711f9a-067d-43b5-b61d-aafe206eb5e5",
+          "workspace_id": "1e3e4c33-8e62-40ce-836e-adfcb90439a6",
+          "status": "PASS",
+          "inference": "real configured official endpoint; no fixture fallback",
+          "semantic_output": {
+            "source_id": "d4342d60-595c-4a0e-a661-7fa12874d98b",
+            "headline": "A team workshop",
+            "seats": 12,
+            "warranty": "NOT_PROVIDED"
+          },
+          "artifact_sha256": "eb46be65f26f94905771a4c1cd60a6dee3b3b8876312c5328cff26c00689c1ac",
+          "tokens": 728,
+          "usage": [
+            {
+              "tokens": 728,
+              "token_accounting": "provider"
+            }
+          ],
+          "checks": [
+            "actual tool facts",
+            "model semantic schema/facts",
+            "artifact hash/payload approval",
+            "QC distinct from work acceptance",
+            "unchanged tool grants"
+          ]
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-3.1-flash-lite",
+          "kind": "csv",
+          "engine": "deepseek_harness",
+          "run_id": "8a52039c-8871-4a15-a87e-90045fb656f7",
+          "work_item_id": "5b5c14aa-aa5c-4961-b9a6-192185cebd81",
+          "workspace_id": "fdfa723d-4174-40c3-af94-66dabceec944",
+          "status": "FAILED",
+          "inference": "real configured official endpoint; no fixture fallback",
+          "error_type": "ValueError",
+          "reason": "Live task or semantic acceptance failed; raw exception/provider body not persisted",
+          "run_state": "failed"
+        }
+      ],
+      "stop_reason": "No automatic retry/fallback after live failure",
+      "observed_tokens": 2531
+    }
+  },
+  "max_assignments_per_provider": 4,
+  "token_budget_per_assignment": 4096,
+  "provider_token_budget": 16384,
+  "paid_plan_or_free_status_verified": false,
+  "requested_models": {
+    "groq": "qwen/qwen3.8-27b",
+    "gemini": "gemini-3.1-flash-lite"
+  },
+  "application_commit": "a10b4d3b47e4bbe0378a72dbf4c74a540607e11f"
+}

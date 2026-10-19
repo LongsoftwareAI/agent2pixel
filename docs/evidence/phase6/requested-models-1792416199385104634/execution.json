@@ -1,0 +1,22 @@
+{
+  "runner": "Existing live_acceptance.run_live imported by process-only Python launcher",
+  "process_overrides": {
+    "PROVIDERS.groq.preferred": [
+      "qwen/qwen3.8-27b"
+    ],
+    "PROVIDERS.gemini.preferred": [
+      "gemini-3.1-flash-lite"
+    ],
+    "AGENTVERSE_PROVIDER_HOSTS": [
+      "api.openai.com",
+      "api.deepseek.com",
+      "api.groq.com",
+      "generativelanguage.googleapis.com"
+    ],
+    "api_bind": "127.0.0.1:19007",
+    "data_dir": "/tmp/agentverse-requested-models-1792416199385104634"
+  },
+  "credentials": "user-authorized values set in launcher environment, inherited by isolated API, not saved as config or report",
+  "usage_limit": "2531 observed tokens across successful native runs; failed Harness usage unknown/excluded",
+  "production_or_helper_default_models_changed": false
+}

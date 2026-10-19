@@ -48,7 +48,8 @@
   ],
   "decisions": [
     "Raw chat keys not re-embedded per setupskill; savedsecurebindingrequirements instead",
-    "ExistingOpenAIcompatible endpoint configuration, no applicationcode changes"
+    "ExistingOpenAIcompatible endpoint configuration, no applicationcode changes",
+    "User explicitly overrode skill restriction for supplied credentials; process-only test usage, no repository/evidence values"
   ],
   "commands": [
     "git status,df,manifests/instructions read",
@@ -65,7 +66,12 @@
     "office": "14PASS; types/buildPASS",
     "http_media_restart": "PASS",
     "browser_regressions": "FAILED current/prior configdiff; isolated repeat FAILED same assertion",
-    "screens_initial": "FAILED due concurrent runnerstackstop; fresh capture underway"
+    "screens_initial": "FAILED due concurrent runnerstackstop; fresh capture underway",
+    "live_requested_models": {
+      "gemini_native": "3PASS;2531provider_tokens",
+      "gemini_harness": "FAILED runtime turn error",
+      "groq": "HTTP403 discovery;4UNRUN; modelavailabilityunknown"
+    }
   },
   "risks": [
     "Workspace full; canonicaltestcheckouttemporary",

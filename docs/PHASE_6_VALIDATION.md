@@ -37,3 +37,17 @@ User explicitly authorized use of supplied credentials for this test, overriding
 Groq authenticated model discovery returned HTTP403; reason not established, so do not classify key invalid. Gemini authenticated discovery succeeded and selected gemini-2.5-flash-lite. Real isolated CSV workflow reached model execution then failed; no model completion, artifact acceptance or observed token usage. Remaining three Gemini scenarios and four Groq scenarios UNRUN. API process stopped after test; prior data untouched.
 
 [Bounded inference diagnostic](evidence/phase6/authorized-live-1792415285667768777/inference-diagnostic.json) returned HTTP404/NOT_FOUND on Gemini OpenAI-compatible chat endpoint. No quota or invalid-key error identified. Initial diagnostic parser failed on list-shaped error; corrected parser confirmed404, no successful inference claim. Endpoint/model compatibility needs investigation before another workflow run. Historical missing-binding report remains original evidence; this retry supersedes that blocker for this process only, without saving persistent secret bindings.
+
+## Requested-model test — 2026-10-19
+
+[Current live evidence](evidence/phase6/requested-models-1792416199385104634/live.json), application a10b4d3 (application source unchanged). Supersedes earlier no-success status for the following limited scope only. User provided replacement Groq key and exact requested models; no fallback model used.
+
+| Provider/model | Actual outcome |
+|---|---|
+| Gemini `gemini-3.1-flash-lite`, native engine |3 PASS: Decimal CSV, grounded research, constrained content;1086+717+728=2531 provider-reported tokens|
+| Gemini same model, DeepSeek Harness CSV |FAILED; runtime error: Harness turn did not complete: error. No successful Harness inference claim|
+| Groq `qwen/qwen3.8-27b` |Authenticated discovery HTTP403; all4scenariosUNRUN; requested model availability unknown|
+
+Native success requires actual source tool facts, exact structured semantic output, fetched artifact identical to approved content with verified hash, model.completed event, unchanged grants, QC and separate automated synthetic work acceptance. This is actual configured official endpoint inference, not MockBrain. Research unknown capacity and content unknown warranty remainNOT_PROVIDED. Content headline is fixed by test; no general creative quality or universal task execution certification. Provider usage is not billing verification.
+
+New API process stopped after execution, data isolated from earlier runs. No keys in repository/evidence. Overall live acceptance remains partial: three native scenarios passed; Harness failed, Groq unavailable. Existing fullsystem/visual/backup/parity gates remain open.
