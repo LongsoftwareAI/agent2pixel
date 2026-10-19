@@ -1,0 +1,442 @@
+{
+  "application_sha": "f2fe033",
+  "base": "http://127.0.0.1:3000",
+  "workspace_id": "8a8f057b-76bd-41d9-8a4d-007b47f8b699",
+  "captured_at": "2026-10-19T08:04:19.688919+00:00",
+  "images": [
+    {
+      "file": "overview-1108x636.png",
+      "route": "/#overview",
+      "screen_id": "overview",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "422ddde652cc1bd6a637205d0e2ae8e8ded0e5a062ffbd3bc881805dd9b5fc39",
+      "nonblank_stddev": 27.529469475142164,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "room-1108x636.png",
+      "route": "/#room",
+      "screen_id": "room",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "2f21c71addf6b1fe9995d3551f7ba29869032a1531c8c31cd504a1082853a954",
+      "nonblank_stddev": 19.509259191919956,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "chat-1108x636.png",
+      "route": "/#chat",
+      "screen_id": "chat",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "23cd1dff251333eb9df4aad90c4178ac7b6a5e2f43dec46c5e9d11a13b2d8311",
+      "nonblank_stddev": 19.340369246443494,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "bots-1108x636.png",
+      "route": "/#bots",
+      "screen_id": "bots",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "1948a4ba6b38d20ed1ff7518a7bf417e4e4533d076816f2eaa1cb04dd43a41c9",
+      "nonblank_stddev": 26.417416540701282,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "inbox-1108x636.png",
+      "route": "/#inbox",
+      "screen_id": "inbox",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "252472b568bce8815521fd2ae27f3fdd8c5b89f77ebc7bc0b879b80dc7b5d07a",
+      "nonblank_stddev": 17.298326083213972,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "workboard-1108x636.png",
+      "route": "/#workboard",
+      "screen_id": "workboard",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "63e1a6f749925f1b054f1a63cf3adad0be506a77bab105c265dd504d47cd7dac",
+      "nonblank_stddev": 24.015264768546185,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "workflows-1108x636.png",
+      "route": "/#workflows",
+      "screen_id": "workflows",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "605fed9a6c2c19e219a5a163c119efd2e2cfda17fbdf66bc2adf49da52f52ead",
+      "nonblank_stddev": 23.18076409331296,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "skills-1108x636.png",
+      "route": "/#skills",
+      "screen_id": "skills",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "0371476a2acdad7eb1e452ac245bb01f992627ca9f0d4f9493f0f428d51e0a20",
+      "nonblank_stddev": 22.563422907736985,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "memory-1108x636.png",
+      "route": "/#memory",
+      "screen_id": "memory",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "b125f42c2ac89d7f42fab26e0590f5d10b69992bbd6bf5f3e0f99609b707d913",
+      "nonblank_stddev": 19.717724374211407,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "sources-1108x636.png",
+      "route": "/#sources",
+      "screen_id": "sources",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "966f5087bf5d71bef92e21cd57a8fb96c25aa566cce563f093921dfd4422b603",
+      "nonblank_stddev": 20.69203832584193,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "channels-1108x636.png",
+      "route": "/#channels",
+      "screen_id": "channels",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "c845fb1a983ee602919b77577dedb2f8a8ebe8e72663e4ef0fa61f9c6a6def13",
+      "nonblank_stddev": 27.957486160578746,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "topology-1108x636.png",
+      "route": "/#topology",
+      "screen_id": "topology",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "09f1e07c92c1f3811d64e934bca1ffbbdda33952aeca58ecfec7c120f2853705",
+      "nonblank_stddev": 114.73317263985757,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "usage-1108x636.png",
+      "route": "/#usage",
+      "screen_id": "usage",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "afb89b75db7d97c26a3bac02a46adbf238e95c2504487542d0ad2f1c42bd2611",
+      "nonblank_stddev": 23.07469143535738,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "schedules-1108x636.png",
+      "route": "/#schedules",
+      "screen_id": "schedules",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "8535ec86f7433191163975f9ccd52bc699a5a1042372f12e5287975da5763aa6",
+      "nonblank_stddev": 20.33897976453343,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "sessions-1108x636.png",
+      "route": "/#sessions",
+      "screen_id": "sessions",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "ba76e7669320d8a59d4b312ee681c67bda59da6a3ddb612da6542ce33dfbf082",
+      "nonblank_stddev": 20.761401624008673,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "logs-1108x636.png",
+      "route": "/#logs",
+      "screen_id": "logs",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "543a973f158bd334865a65a57d505aa47a811782dd293a3311c2fa03a7e74715",
+      "nonblank_stddev": 27.00490564218461,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "audit-1108x636.png",
+      "route": "/#audit",
+      "screen_id": "audit",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "4584e5d093ea4d1a856b31a3fa9314db6c7c664bc077f5089be09219c1b93532",
+      "nonblank_stddev": 26.927469230140943,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "preferences-1108x636.png",
+      "route": "/#preferences",
+      "screen_id": "preferences",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "96deaf937bafa508dd610f4a812506e17e1074fe1658e68b11afe3ec5232a3e8",
+      "nonblank_stddev": 22.24576835895923,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "overview-1366x768.png",
+      "route": "/#overview",
+      "screen_id": "overview",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "1634e52df63af5a6a9dcf2dad55e4abb830923128dd37aa952c6fc3d64975751",
+      "nonblank_stddev": 24.87628774365835,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "room-1366x768.png",
+      "route": "/#room",
+      "screen_id": "room",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "686acd74c73ddb0a5119a80cd68d5b0ee3892a6bb06805b81cecbfbb47a31fd3",
+      "nonblank_stddev": 16.669738776351092,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "chat-1366x768.png",
+      "route": "/#chat",
+      "screen_id": "chat",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "e77056a9ef71d854ff48c1c2a6b1001ecf999a11b2ced72329ae50f78c339cf2",
+      "nonblank_stddev": 16.542708482833707,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "bots-1366x768.png",
+      "route": "/#bots",
+      "screen_id": "bots",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "44406833874ac4f1bfb33350338cb5b1c891042544ed7d7d287aef3bacffe624",
+      "nonblank_stddev": 23.730022014883275,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "inbox-1366x768.png",
+      "route": "/#inbox",
+      "screen_id": "inbox",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "88436c118851acbaecb2dc8c005107c98acb4d0359a520dff19683a8569a9fa9",
+      "nonblank_stddev": 14.715428553743479,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "workboard-1366x768.png",
+      "route": "/#workboard",
+      "screen_id": "workboard",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "8f5a6c8986b51af73f02d3f4f95d78394c19cbea7682e0faf9d990bc46393747",
+      "nonblank_stddev": 20.80845061732844,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "workflows-1366x768.png",
+      "route": "/#workflows",
+      "screen_id": "workflows",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "68fe1066a93587ed7cbf2acdd34860f1f08fde9105cc0522032a2532ae00da05",
+      "nonblank_stddev": 52.86653609065301,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "skills-1366x768.png",
+      "route": "/#skills",
+      "screen_id": "skills",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "55e48332b3f28c0abb8a7fb27336e1f48d2c16a813fff0e8010d00fca5b64401",
+      "nonblank_stddev": 19.618425314817333,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "memory-1366x768.png",
+      "route": "/#memory",
+      "screen_id": "memory",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "107f37904e67ca8c362fa71325ebca64c5b008647ce33fd7e92bec2cfac978af",
+      "nonblank_stddev": 16.745544533844765,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "sources-1366x768.png",
+      "route": "/#sources",
+      "screen_id": "sources",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "923cbfbf90d3431d2f4d503a99397107d77a537601b7137e7e4beeb93a574b51",
+      "nonblank_stddev": 18.609435682584046,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "channels-1366x768.png",
+      "route": "/#channels",
+      "screen_id": "channels",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "d14d5d43a91257a4fca78097e5eb3945d8810282214e8da3850520b17f3fd50e",
+      "nonblank_stddev": 25.19033317040385,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "topology-1366x768.png",
+      "route": "/#topology",
+      "screen_id": "topology",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "1c84c1546511cc979cfa571d523de3bb9c1938e38c800ee4fc2e9eb64c6c04e5",
+      "nonblank_stddev": 114.46073443858344,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "usage-1366x768.png",
+      "route": "/#usage",
+      "screen_id": "usage",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "ea18d6decb615fbe81f61dc66d80802407cecb59f75b0bae8347f87f18b0bed5",
+      "nonblank_stddev": 21.555955659623113,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "schedules-1366x768.png",
+      "route": "/#schedules",
+      "screen_id": "schedules",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "20d64df736648665ca3fe9d26011700138d7eb7a46a114b0a78520082eac47f1",
+      "nonblank_stddev": 17.70678950396847,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "sessions-1366x768.png",
+      "route": "/#sessions",
+      "screen_id": "sessions",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "47a4dc18e554bee93a2b0ec207036534d02fded159986c7e383a0acec3ef3a5f",
+      "nonblank_stddev": 17.459664786112054,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "logs-1366x768.png",
+      "route": "/#logs",
+      "screen_id": "logs",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "eaedfc959dd2fc61deeb44ead977dbac136a78dcaecfc8f5b1e06819a35acbcf",
+      "nonblank_stddev": 24.62776486147333,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "audit-1366x768.png",
+      "route": "/#audit",
+      "screen_id": "audit",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "059ad65bc9d7ac6b8a32bc8485b9fc154a579cac857aba6d5c06e915d04f5980",
+      "nonblank_stddev": 24.61598954428974,
+      "manual_review": "PENDING"
+    },
+    {
+      "file": "preferences-1366x768.png",
+      "route": "/#preferences",
+      "screen_id": "preferences",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "22d81d244b78cfc3360f862dfc1c9adf3e51247ce1428a334fe47738574e1670",
+      "nonblank_stddev": 20.651098625714877,
+      "manual_review": "PENDING"
+    }
+  ],
+  "page_errors": [],
+  "passed": false
+}

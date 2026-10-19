@@ -1,0 +1,11 @@
+{
+  "application_sha": "a64eb45a64ada8f1a81e3c48005df500ad718072",
+  "passed": true,
+  "checks": [
+    "real PNG upload/browser decoded preview/hash/context; no vision claim; foreign preview denied",
+    "actual light setting-label foreground/background contrast >=4.5 after legacy CSS override",
+    "nonfixture Habblaud real backend snapshot, canvas, selected actual agent\u2192console profile bridge"
+  ],
+  "light_label_contrast": 13.072486697901159,
+  "workspace_id": "f6e27b9f-7d6f-4952-a3a9-fefb36457fae"
+}

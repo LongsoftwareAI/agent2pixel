@@ -1,0 +1,343 @@
+{
+  "test_commit": "a64eb45a64ada8f1a81e3c48005df500ad718072",
+  "application_baseline": "e9f5465756ad1ed6607d2fc8c032ef3387c43812",
+  "started_at": "2026-10-19T08:01:53.996143+00:00",
+  "profile": "full",
+  "checks": [
+    {
+      "name": "python",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 92.5,
+      "counts": {
+        "passed": 221
+      },
+      "command": [
+        "/tmp/agentverse-p5-final/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/backend",
+        "tests/phase2/runtime",
+        "tests/phase3/runtime",
+        "tests/phase4",
+        "tests/phase5/backend",
+        "tests/phase5/integration",
+        "tests/phase5/media",
+        "tests/phase6",
+        "tests/backup",
+        "tests/integration",
+        "tests/harness",
+        "tests/projection",
+        "tests/office_layout",
+        "-q"
+      ]
+    },
+    {
+      "name": "frontend-tests",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 8.3,
+      "counts": {
+        "passed": 73
+      },
+      "command": [
+        "npm",
+        "--prefix",
+        "apps/web",
+        "test"
+      ]
+    },
+    {
+      "name": "frontend-build",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 11.41,
+      "counts": {},
+      "command": [
+        "npm",
+        "--prefix",
+        "apps/web",
+        "run",
+        "build"
+      ]
+    },
+    {
+      "name": "frontend-lint",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 1.92,
+      "counts": {},
+      "command": [
+        "npm",
+        "--prefix",
+        "apps/web",
+        "run",
+        "lint"
+      ]
+    },
+    {
+      "name": "office-tests",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 1.78,
+      "counts": {
+        "passed": 14
+      },
+      "command": [
+        "npm",
+        "--prefix",
+        "apps/office",
+        "test"
+      ]
+    },
+    {
+      "name": "office-types",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 1.41,
+      "counts": {},
+      "command": [
+        "npm",
+        "--prefix",
+        "apps/office",
+        "run",
+        "typecheck"
+      ]
+    },
+    {
+      "name": "office-build",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 1.3,
+      "counts": {},
+      "command": [
+        "npm",
+        "--prefix",
+        "apps/office",
+        "run",
+        "build"
+      ]
+    },
+    {
+      "name": "legacy-model",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.19,
+      "counts": {},
+      "command": [
+        "node",
+        "--test",
+        "apps/web/src/office/model.check.ts"
+      ]
+    },
+    {
+      "name": "correctness",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.03,
+      "counts": {},
+      "command": [
+        "/tmp/agentverse-p5-final/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "--select",
+        "E9,F63,F7,F82",
+        "services",
+        "tests/phase6",
+        "scripts/phase6_system_test.py"
+      ]
+    },
+    {
+      "name": "http-company",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 2.13,
+      "counts": {},
+      "command": [
+        "python3",
+        "tests/phase5/e2e/console_acceptance.py",
+        "--base",
+        "http://127.0.0.1:8000",
+        "--sha",
+        "a64eb45a64ada8f1a81e3c48005df500ad718072",
+        "--output",
+        "/tmp/agentverse-p5-final/docs/evidence/phase6/run-20261019-a/http"
+      ]
+    },
+    {
+      "name": "browser",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 6.59,
+      "counts": {},
+      "command": [
+        "python3",
+        "tests/phase5/e2e/browser_behaviors.py",
+        "--base",
+        "http://127.0.0.1:3000",
+        "--api",
+        "http://127.0.0.1:8000",
+        "--sha",
+        "a64eb45a64ada8f1a81e3c48005df500ad718072",
+        "--output",
+        "/tmp/agentverse-p5-final/docs/evidence/phase6/run-20261019-a/browser"
+      ]
+    },
+    {
+      "name": "browser-regressions",
+      "status": "FAILED",
+      "exit_code": 1,
+      "seconds": 35.31,
+      "counts": {},
+      "command": [
+        "python3",
+        "tests/phase5/e2e/browser_regressions.py",
+        "--base",
+        "http://127.0.0.1:3000",
+        "--api",
+        "http://127.0.0.1:8000",
+        "--sha",
+        "a64eb45a64ada8f1a81e3c48005df500ad718072",
+        "--output",
+        "/tmp/agentverse-p5-final/docs/evidence/phase6/run-20261019-a/regressions"
+      ]
+    },
+    {
+      "name": "media-office",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 9.96,
+      "counts": {},
+      "command": [
+        "python3",
+        "tests/phase5/integration/visual_media_probe.py",
+        "--base",
+        "http://127.0.0.1:3000",
+        "--api",
+        "http://127.0.0.1:8000",
+        "--sha",
+        "a64eb45a64ada8f1a81e3c48005df500ad718072",
+        "--output",
+        "/tmp/agentverse-p5-final/docs/evidence/phase6/run-20261019-a/media-office"
+      ]
+    },
+    {
+      "name": "restart-prepare",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.63,
+      "counts": {},
+      "command": [
+        "python3",
+        "tests/phase5/e2e/restart_probe.py",
+        "prepare",
+        "--base",
+        "http://127.0.0.1:8000",
+        "--sha",
+        "a64eb45a64ada8f1a81e3c48005df500ad718072",
+        "--snapshot",
+        "/tmp/agentverse-p5-final/docs/evidence/phase6/run-20261019-a/restart.json"
+      ]
+    },
+    {
+      "name": "restart-verify",
+      "status": "PASS",
+      "exit_code": 0,
+      "seconds": 0.16,
+      "counts": {},
+      "command": [
+        "python3",
+        "tests/phase5/e2e/restart_probe.py",
+        "verify",
+        "--base",
+        "http://127.0.0.1:8000",
+        "--sha",
+        "a64eb45a64ada8f1a81e3c48005df500ad718072",
+        "--snapshot",
+        "/tmp/agentverse-p5-final/docs/evidence/phase6/run-20261019-a/restart.json"
+      ]
+    }
+  ],
+  "secret_bindings": {
+    "AGENTVERSE_GROQ_API_KEY": false,
+    "AGENTVERSE_GEMINI_API_KEY": false
+  },
+  "live": {
+    "providers": {
+      "groq": {
+        "readiness": {
+          "status": "BLOCKED_CREDENTIAL",
+          "reason": "Secure runtime binding missing",
+          "secret_name": "AGENTVERSE_GROQ_API_KEY"
+        },
+        "cases": [
+          {
+            "kind": "csv",
+            "engine": "langchain",
+            "status": "UNRUN",
+            "reason": "BLOCKED_CREDENTIAL"
+          },
+          {
+            "kind": "research",
+            "engine": "langchain",
+            "status": "UNRUN",
+            "reason": "BLOCKED_CREDENTIAL"
+          },
+          {
+            "kind": "content",
+            "engine": "langchain",
+            "status": "UNRUN",
+            "reason": "BLOCKED_CREDENTIAL"
+          },
+          {
+            "kind": "csv",
+            "engine": "deepseek_harness",
+            "status": "UNRUN",
+            "reason": "BLOCKED_CREDENTIAL"
+          }
+        ]
+      },
+      "gemini": {
+        "readiness": {
+          "status": "BLOCKED_CREDENTIAL",
+          "reason": "Secure runtime binding missing",
+          "secret_name": "AGENTVERSE_GEMINI_API_KEY"
+        },
+        "cases": [
+          {
+            "kind": "csv",
+            "engine": "langchain",
+            "status": "UNRUN",
+            "reason": "BLOCKED_CREDENTIAL"
+          },
+          {
+            "kind": "research",
+            "engine": "langchain",
+            "status": "UNRUN",
+            "reason": "BLOCKED_CREDENTIAL"
+          },
+          {
+            "kind": "content",
+            "engine": "langchain",
+            "status": "UNRUN",
+            "reason": "BLOCKED_CREDENTIAL"
+          },
+          {
+            "kind": "csv",
+            "engine": "deepseek_harness",
+            "status": "UNRUN",
+            "reason": "BLOCKED_CREDENTIAL"
+          }
+        ]
+      }
+    },
+    "max_assignments_per_provider": 4,
+    "token_budget_per_assignment": 4096,
+    "provider_token_budget": 16384,
+    "paid_plan_or_free_status_verified": false
+  },
+  "overall": "FAILED",
+  "scope": "Current implemented localhost core; known full-P5 functional gaps remain OPEN",
+  "ended_at": "2026-10-19T08:04:50.460843+00:00"
+}

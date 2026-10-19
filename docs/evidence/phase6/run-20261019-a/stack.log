@@ -1,0 +1,760 @@
+
+> @agentverse/office@0.2.0 dev
+> vite --host 127.0.0.1 --port 3002 --host 127.0.0.1 --port 3002 --strictPort
+
+
+> @agentverse/web@0.1.0 dev
+> vite --host 127.0.0.1 --port 3000 --host 127.0.0.1 --port 3000 --strictPort
+
+
+  VITE v7.3.7  ready in 172 ms
+
+  ➜  Local:   http://127.0.0.1:3000/
+
+  VITE v8.3.4  ready in 228 ms
+
+  ➜  Local:   http://127.0.0.1:3002/office/
+INFO:     Started server process [134705]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:42232 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42242 - "POST /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42246 - "POST /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42254 - "POST /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42268 - "POST /api/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42284 - "POST /api/workflows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42294 - "POST /api/console/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42308 - "POST /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04/messages?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42310 - "POST /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04/messages?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42312 - "POST /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04/messages?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:42326 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42332 - "GET /api/work-items/2a60af27-42c8-4de1-9aa1-655c2de48830 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42340 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42356 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42366 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42382 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97/approvals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42390 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97/gates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42394 - "POST /api/approvals/a5b6daad-510a-4d62-98a5-9f2fcccda995/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42396 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42406 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42410 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42418 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97/approvals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42430 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97/gates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42432 - "POST /api/gates/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97%3Agate%3Areview%3A0/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42434 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42444 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42456 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42460 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42464 - "GET /api/work-items/2a60af27-42c8-4de1-9aa1-655c2de48830 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42466 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97/artifacts/d0b8448c-c854-417b-95ba-61560c2b4da8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42468 - "POST /api/work-items/2a60af27-42c8-4de1-9aa1-655c2de48830/review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42484 - "GET /api/runs/5899ad5d-3fe7-429e-9bc8-0fbeff8afc97/tool-results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42494 - "GET /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42510 - "GET /api/console/overview?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42524 - "GET /api/console/inbox?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42532 - "GET /api/console/sessions?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42540 - "GET /api/console/health?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42544 - "GET /api/console/topology?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42560 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42570 - "GET /api/console/schedules?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42576 - "GET /api/console/skills?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42590 - "GET /api/console/capabilities?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42602 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=invalid HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42604 - "POST /api/console/attachments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42606 - "POST /api/console/attachments HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42618 - "POST /api/console/attachments HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42632 - "POST /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42634 - "POST /api/console/conversations HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42642 - "GET /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04?workspace_id=a8620ccd-713a-4016-9702-896643f6a5c8 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42652 - "POST /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04/messages?workspace_id=a8620ccd-713a-4016-9702-896643f6a5c8 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42660 - "POST /api/console/attachments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42676 - "POST /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04/messages?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42680 - "GET /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42692 - "POST /api/console/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42704 - "POST /api/console/conversations/324e405b-e7fb-4044-b473-2f6d824afed5/messages?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42710 - "GET /api/console/conversations/324e405b-e7fb-4044-b473-2f6d824afed5?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42726 - "GET /api/console/conversations/e8a3a743-d515-49de-b7a1-3a59496a3b04?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42736 - "GET /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42750 - "PATCH /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42766 - "GET /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42768 - "PATCH /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:42784 - "PATCH /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42788 - "GET /api/console/agents/a88ce3c0-74c0-4842-8ccd-d9d6d7060f65/soul?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42796 - "PATCH /api/console/agents/a88ce3c0-74c0-4842-8ccd-d9d6d7060f65/soul?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42804 - "PATCH /api/console/agents/a88ce3c0-74c0-4842-8ccd-d9d6d7060f65/soul?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:42806 - "GET /api/console/agents/a88ce3c0-74c0-4842-8ccd-d9d6d7060f65/soul?workspace_id=a8620ccd-713a-4016-9702-896643f6a5c8 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42808 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=system&limit=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42810 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=system&limit=0 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42820 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=system&before=not-a-valid-cursor HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42826 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=system&limit=1&before=ea1fa518-8d26-4d79-97ed-48fd1930f652 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42828 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=audit&limit=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42840 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=audit&limit=0 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42852 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=audit&before=not-a-valid-cursor HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:42856 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=audit&limit=1&before=88cab4d7-de98-40aa-8f39-a2b5c2ce809d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42860 - "POST /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42862 - "POST /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42870 - "POST /api/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42874 - "POST /api/workflows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42888 - "GET /api/console/conversations?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 42894) - "WebSocket /ws/workspaces/8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:42902 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42916 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42942 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42944 - "GET /api/console/conversations?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42932 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+8:03:58 AM [vite] ws proxy error:
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+8:03:58 AM [vite] ws proxy socket error:
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+INFO:     connection closed
+INFO:     127.0.0.1:42948 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42964 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 42970) - "WebSocket /ws/workspaces/8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:42984 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42986 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42994 - "POST /api/console/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43006 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43020 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43016 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43032 - "GET /api/console/conversations?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43034 - "POST /api/console/conversations/33e3a51f-15b1-4ba8-bfa3-a0169fcf65b8/messages?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43050 - "GET /api/console/conversations/33e3a51f-15b1-4ba8-bfa3-a0169fcf65b8?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43064 - "GET /api/console/conversations/33e3a51f-15b1-4ba8-bfa3-a0169fcf65b8?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43076 - "GET /api/console/sessions?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43088 - "GET /api/runs/b326b92f-7811-4ff6-8260-30f0527dd827 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43094 - "GET /api/console/conversations/33e3a51f-15b1-4ba8-bfa3-a0169fcf65b8?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43098 - "GET /api/console/sessions?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43100 - "GET /api/console/conversations/33e3a51f-15b1-4ba8-bfa3-a0169fcf65b8?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43112 - "GET /api/runs/b326b92f-7811-4ff6-8260-30f0527dd827 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43118 - "GET /api/runs/b326b92f-7811-4ff6-8260-30f0527dd827 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43128 - "GET /api/runs/b326b92f-7811-4ff6-8260-30f0527dd827/tool-results HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:43138 - "GET /api/console/conversations?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43150 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43176 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 43202) - "WebSocket /ws/workspaces/8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:43192 - "GET /api/console/conversations?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43164 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43172 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43216 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43204 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43228 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43236 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43248 - "GET /api/console/conversations/33e3a51f-15b1-4ba8-bfa3-a0169fcf65b8?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43262 - "GET /api/console/sessions?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43296 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43266 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43282 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43318 - "GET /api/console/sessions?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43308 - "GET /api/console/conversations/33e3a51f-15b1-4ba8-bfa3-a0169fcf65b8?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43332 - "GET /api/console/usage?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe&period=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43348 - "GET /api/console/usage?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe&period=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43360 - "GET /api/console/budget?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43368 - "GET /api/console/budget?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43384 - "PATCH /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     ('127.0.0.1', 43392) - "WebSocket /ws/workspaces/8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe/events?after=0" [accepted]
+INFO:     connection open
+8:04:01 AM [vite] ws proxy error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+8:04:01 AM [vite] ws proxy socket error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+INFO:     connection closed
+INFO:     127.0.0.1:43406 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 43444) - "WebSocket /ws/workspaces/8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:43440 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43434 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43422 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43448 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43456 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43474 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43464 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43488 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43516 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43500 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43520 - "GET /api/console/logs?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe&kind=system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43526 - "GET /api/console/logs?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe&kind=system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43538 - "GET /api/console/logs/export?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe&kind=system&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43540 - "GET /api/bootstrap?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43556 - "GET /api/console/overview?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43558 - "GET /api/console/preferences?workspace_id=8f5cbe07-cdae-4f4f-aa20-3dca08e8aafe HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:43564 - "POST /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43566 - "POST /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43580 - "POST /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40844 - "GET /api/console/conversations?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 40868) - "WebSocket /ws/workspaces/dc7ff19e-2430-4b76-affc-724c4bba36c8/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:40848 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40854 - "GET /api/bootstrap?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+8:04:04 AM [vite] ws proxy error:
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+INFO:     127.0.0.1:40866 - "GET /api/console/preferences?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+8:04:04 AM [vite] ws proxy socket error:
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+INFO:     127.0.0.1:40858 - "GET /api/console/overview?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:40884 - "GET /api/console/conversations?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 40936) - "WebSocket /ws/workspaces/dc7ff19e-2430-4b76-affc-724c4bba36c8/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:40896 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40908 - "GET /api/bootstrap?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40916 - "GET /api/console/preferences?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40930 - "GET /api/console/overview?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40968 - "GET /api/console/preferences?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40954 - "GET /api/console/overview?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40948 - "GET /api/bootstrap?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40974 - "POST /api/console/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40988 - "GET /api/console/conversations?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40996 - "GET /api/console/conversations/d85f93c1-8e5e-441c-9ec2-3cad9edd6440?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41012 - "POST /api/console/conversations/d85f93c1-8e5e-441c-9ec2-3cad9edd6440/messages?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41020 - "GET /api/console/conversations/d85f93c1-8e5e-441c-9ec2-3cad9edd6440?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41034 - "GET /api/console/sessions?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41040 - "GET /api/console/conversations/d85f93c1-8e5e-441c-9ec2-3cad9edd6440?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41064 - "GET /api/bootstrap?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41052 - "GET /api/console/sessions?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41078 - "GET /api/console/preferences?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41042 - "GET /api/console/conversations?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41084 - "GET /api/console/conversations/d85f93c1-8e5e-441c-9ec2-3cad9edd6440?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41088 - "GET /api/console/conversations/d85f93c1-8e5e-441c-9ec2-3cad9edd6440?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41074 - "GET /api/console/overview?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41094 - "GET /api/runs/4f184af2-0df5-4eb6-995f-3f519bc2719e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41108 - "GET /api/runs/4f184af2-0df5-4eb6-995f-3f519bc2719e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41120 - "GET /api/runs/4f184af2-0df5-4eb6-995f-3f519bc2719e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41134 - "POST /api/console/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41140 - "GET /api/console/conversations?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41148 - "GET /api/console/conversations/444e91a5-961a-406e-be44-bade8177a9ef?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41150 - "POST /api/console/conversations/444e91a5-961a-406e-be44-bade8177a9ef/messages?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41154 - "GET /api/console/conversations/444e91a5-961a-406e-be44-bade8177a9ef?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41162 - "GET /api/console/sessions?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41170 - "GET /api/console/conversations?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41182 - "GET /api/bootstrap?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41198 - "GET /api/console/preferences?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41166 - "GET /api/console/conversations/444e91a5-961a-406e-be44-bade8177a9ef?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41200 - "GET /api/console/conversations/444e91a5-961a-406e-be44-bade8177a9ef?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41194 - "GET /api/console/overview?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41174 - "GET /api/console/sessions?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41212 - "GET /api/runs/81872cc9-b9d0-42b0-a708-88b86d1f03a5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41218 - "GET /api/console/conversations/444e91a5-961a-406e-be44-bade8177a9ef?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41232 - "GET /api/runs/81872cc9-b9d0-42b0-a708-88b86d1f03a5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41236 - "GET /api/runs/81872cc9-b9d0-42b0-a708-88b86d1f03a5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41238 - "GET /api/runs/81872cc9-b9d0-42b0-a708-88b86d1f03a5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41244 - "PATCH /api/agents/34e37625-0adc-4bbe-ad16-12bf8549ecd0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41246 - "GET /api/console/agents/34e37625-0adc-4bbe-ad16-12bf8549ecd0/config/history?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41254 - "GET /api/console/agents/34e37625-0adc-4bbe-ad16-12bf8549ecd0/soul?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41256 - "GET /api/console/agents/34e37625-0adc-4bbe-ad16-12bf8549ecd0/soul?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41270 - "GET /api/console/agents/34e37625-0adc-4bbe-ad16-12bf8549ecd0/config/history?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41278 - "GET /api/console/agents/34e37625-0adc-4bbe-ad16-12bf8549ecd0/config/history?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41284 - "GET /api/bootstrap?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41302 - "GET /api/console/preferences?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41294 - "GET /api/console/overview?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41304 - "GET /api/console/agents/34e37625-0adc-4bbe-ad16-12bf8549ecd0/config/history?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55746 - "GET /api/bootstrap?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55754 - "GET /api/console/overview?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55756 - "GET /api/console/preferences?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55758 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=30 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 55798) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55760 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55788 - "GET /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55782 - "GET /api/console/overview?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55768 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55820 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55814 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=30 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 55854) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55822 - "GET /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55838 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55834 - "GET /api/console/overview?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+8:04:21 AM [vite] ws proxy error:
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+8:04:21 AM [vite] ws proxy socket error:
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+INFO:     connection closed
+INFO:     127.0.0.1:55862 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55870 - "GET /api/console/overview?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55892 - "GET /api/console/conversations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55894 - "GET /api/console/conversations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55908 - "GET /api/console/conversations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55924 - "GET /api/console/conversations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55934 - "GET /api/console/agents/a88ce3c0-74c0-4842-8ccd-d9d6d7060f65/soul?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55946 - "GET /api/console/agents/a88ce3c0-74c0-4842-8ccd-d9d6d7060f65/soul?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42118 - "GET /api/console/inbox?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42130 - "GET /api/console/inbox?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42134 - "GET /api/work-queue?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42142 - "GET /api/operations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42154 - "GET /api/work-items?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42162 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42178 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42186 - "GET /api/work-queue?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42200 - "GET /api/work-items?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 42220) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:42196 - "GET /api/operations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+8:04:24 AM [vite] ws proxy error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+INFO:     127.0.0.1:42212 - "GET /api/workspaces HTTP/1.1" 200 OK
+8:04:24 AM [vite] ws proxy socket error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+INFO:     connection closed
+INFO:     127.0.0.1:42222 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 42228) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:42242 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42256 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42268 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42270 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42274 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42290 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42294 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42302 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42308 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42316 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42320 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42332 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42340 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42354 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42362 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42368 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42378 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42394 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42408 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42410 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42422 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42434 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42450 - "GET /api/workflow-templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42454 - "GET /api/workflow-templates HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:42470 - "GET /api/console/skills?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&agent_id=a88ce3c0-74c0-4842-8ccd-d9d6d7060f65 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42478 - "GET /api/console/skills?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&agent_id=a88ce3c0-74c0-4842-8ccd-d9d6d7060f65 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42484 - "GET /api/memories?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42496 - "GET /api/memories?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "GET /api/sources?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 42534) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:42514 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42526 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42536 - "GET /api/sources?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42548 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42540 - "GET /api/workspaces HTTP/1.1" 200 OK
+8:04:26 AM [vite] ws proxy error:
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+8:04:26 AM [vite] ws proxy socket error:
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+INFO:     ('127.0.0.1', 42564) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:42570 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42582 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42588 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42592 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42596 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42598 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42610 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42616 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42626 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42632 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42638 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42652 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42664 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42674 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42678 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42682 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42688 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42700 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42702 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42706 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42722 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42738 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:42744 - "GET /api/console/health?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42748 - "GET /api/console/health?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42764 - "GET /api/console/topology?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42770 - "GET /api/console/topology?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42780 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42786 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42800 - "GET /api/console/budget?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42802 - "GET /api/console/budget?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42818 - "GET /api/console/schedules?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42822 - "GET /api/console/schedules?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42824 - "GET /api/console/sessions?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42836 - "GET /api/console/sessions?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42852 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42862 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42872 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=audit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42874 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=audit HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     ('127.0.0.1', 42914) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:42876 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42892 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42902 - "GET /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42884 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42900 - "GET /api/console/overview?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+8:04:33 AM [vite] ws proxy error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+8:04:33 AM [vite] ws proxy socket error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+INFO:     connection closed
+INFO:     ('127.0.0.1', 42932) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:42922 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42960 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42936 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42948 - "GET /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42962 - "GET /api/console/overview?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43114 - "GET /api/console/preferences?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43098 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43102 - "GET /api/console/overview?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43116 - "GET /api/console/conversations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43126 - "GET /api/bootstrap?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43134 - "GET /api/console/preferences?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43146 - "GET /api/console/conversations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43130 - "GET /api/console/overview?workspace_id=dc7ff19e-2430-4b76-affc-724c4bba36c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43150 - "GET /api/console/conversations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43158 - "GET /api/console/conversations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43160 - "GET /api/console/agents/a88ce3c0-74c0-4842-8ccd-d9d6d7060f65/soul?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43170 - "GET /api/console/agents/a88ce3c0-74c0-4842-8ccd-d9d6d7060f65/soul?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43182 - "GET /api/console/inbox?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43186 - "GET /api/console/inbox?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43206 - "GET /api/work-items?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43204 - "GET /api/operations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43220 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43222 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43194 - "GET /api/work-queue?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43234 - "GET /api/work-items?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43246 - "GET /api/operations?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43256 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43276 - "GET /api/work-queue?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43270 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 43286) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:43288 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43294 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43298 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43306 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43312 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43314 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43326 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43332 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43340 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43354 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43358 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:43374 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43376 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43388 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43394 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43398 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43410 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43412 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43414 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43418 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43428 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43444 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43460 - "POST /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43462 - "POST /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43470 - "GET /api/workflow-templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43486 - "GET /api/workflow-templates HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:43490 - "GET /api/console/skills?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&agent_id=a88ce3c0-74c0-4842-8ccd-d9d6d7060f65 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43504 - "GET /api/console/skills?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&agent_id=a88ce3c0-74c0-4842-8ccd-d9d6d7060f65 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43520 - "GET /api/memories?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43524 - "GET /api/memories?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43536 - "GET /api/console/conversations?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 43544) - "WebSocket /ws/workspaces/f6e27b9f-7d6f-4952-a3a9-fefb36457fae/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:43556 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43562 - "GET /api/console/overview?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43584 - "GET /api/console/conversations?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43560 - "GET /api/bootstrap?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43572 - "GET /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 43610) - "WebSocket /ws/workspaces/f6e27b9f-7d6f-4952-a3a9-fefb36457fae/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:43586 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:43592 - "GET /api/console/overview?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43600 - "GET /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43594 - "GET /api/bootstrap?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43612 - "POST /api/console/attachments/image HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43618 - "GET /api/console/attachments/cb90f7a3-45b8-4f66-ba2d-5ac67ccae74a/image?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43620 - "GET /api/bootstrap?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43622 - "GET /api/console/overview?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43628 - "GET /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43632 - "GET /api/sources?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43644 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 43672) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+8:04:41 AM [vite] ws proxy error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at Readable.read (node:internal/streams/readable:784:10)
+    at Socket.read (node:net:990:39)
+    at flow (node:internal/streams/readable:1290:53)
+    at emitReadable_ (node:internal/streams/readable:849:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+8:04:41 AM [vite] ws proxy socket error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at Readable.read (node:internal/streams/readable:784:10)
+    at Socket.read (node:net:990:39)
+    at flow (node:internal/streams/readable:1290:53)
+    at emitReadable_ (node:internal/streams/readable:849:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+INFO:     127.0.0.1:43658 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43678 - "GET /api/sources?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:43690 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 43710) - "WebSocket /ws/workspaces/8a8f057b-76bd-41d9-8a4d-007b47f8b699/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:43702 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43726 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43712 - "POST /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43732 - "GET /api/console/attachments/cb90f7a3-45b8-4f66-ba2d-5ac67ccae74a/image?workspace_id=4440c190-748d-4719-81b3-f834324137ee HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43734 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43742 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43758 - "GET /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43752 - "GET /api/bootstrap?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43756 - "GET /api/console/overview?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43768 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43770 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43786 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43790 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43804 - "POST /api/console/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43810 - "POST /api/console/conversations/f15e2129-61f0-412e-ba8c-11f35a7a9bc0/messages?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43812 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43826 - "GET /api/console/conversations/f15e2129-61f0-412e-ba8c-11f35a7a9bc0?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43828 - "GET /api/console/sessions?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43836 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43838 - "GET /api/console/conversations/f15e2129-61f0-412e-ba8c-11f35a7a9bc0?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43850 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:43870 - "GET /api/console/health?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43868 - "GET /api/console/sessions?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43852 - "GET /api/console/conversations?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43902 - "GET /api/console/health?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43894 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43882 - "GET /api/console/conversations/f15e2129-61f0-412e-ba8c-11f35a7a9bc0?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43908 - "GET /api/console/conversations/f15e2129-61f0-412e-ba8c-11f35a7a9bc0?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43918 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43924 - "GET /api/runs/53b5c3f8-4b1d-42dd-9466-c19b5c15e733 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43936 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43952 - "GET /api/runs/53b5c3f8-4b1d-42dd-9466-c19b5c15e733 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43958 - "GET /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43970 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43980 - "PATCH /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43982 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43988 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43998 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44008 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44014 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44024 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44036 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44042 - "GET /api/bootstrap?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44080 - "GET /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44052 - "GET /api/bootstrap?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44068 - "GET /api/console/overview?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:44300 - "GET /api/console/topology?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44302 - "GET /api/console/topology?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44304 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44308 - "GET /api/console/usage?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&period=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44318 - "GET /api/console/budget?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44324 - "GET /api/console/budget?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44326 - "GET /api/console/schedules?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44342 - "GET /api/console/schedules?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44354 - "GET /api/console/sessions?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44360 - "GET /api/console/sessions?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44368 - "GET /api/access HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44372 - "GET /api/office/snapshot HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44382 - "GET /api/office/stream?after=65 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44392 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44404 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44412 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=audit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44428 - "GET /api/console/logs?workspace_id=8a8f057b-76bd-41d9-8a4d-007b47f8b699&kind=audit HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 44468) - "WebSocket /ws/workspaces/f6e27b9f-7d6f-4952-a3a9-fefb36457fae/events?after=0" [accepted]
+INFO:     connection open
+8:04:47 AM [vite] ws proxy error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+8:04:47 AM [vite] ws proxy socket error:
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:1171:11)
+    at Socket._write (node:net:1183:8)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.ondata (node:internal/streams/readable:1012:24)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+INFO:     127.0.0.1:44434 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44452 - "GET /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44440 - "GET /api/bootstrap?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:44442 - "GET /api/console/overview?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 44482) - "WebSocket /ws/workspaces/f6e27b9f-7d6f-4952-a3a9-fefb36457fae/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:44474 - "GET /api/console/preferences?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44480 - "GET /api/bootstrap?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44490 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44500 - "GET /api/console/overview?workspace_id=f6e27b9f-7d6f-4952-a3a9-fefb36457fae HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     ('127.0.0.1', 44512) - "WebSocket /ws/workspaces/34a466ba-1da4-421b-82b9-665e756f26ae/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:44528 - "GET /api/console/preferences?workspace_id=34a466ba-1da4-421b-82b9-665e756f26ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44518 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44520 - "GET /api/bootstrap?workspace_id=34a466ba-1da4-421b-82b9-665e756f26ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44540 - "GET /api/console/preferences?workspace_id=34a466ba-1da4-421b-82b9-665e756f26ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44522 - "GET /api/console/overview?workspace_id=34a466ba-1da4-421b-82b9-665e756f26ae HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 44562) - "WebSocket /ws/workspaces/34a466ba-1da4-421b-82b9-665e756f26ae/events?after=0" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:44542 - "GET /api/workspaces HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:44556 - "GET /api/bootstrap?workspace_id=34a466ba-1da4-421b-82b9-665e756f26ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44578 - "GET /api/console/overview?workspace_id=34a466ba-1da4-421b-82b9-665e756f26ae HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44590 - "GET /api/console/agents/40fd9205-88da-44f9-b2ab-9d3c259ccd77/soul?workspace_id=34a466ba-1da4-421b-82b9-665e756f26ae HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:44604 - "POST /api/workspaces HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44610 - "POST /api/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44612 - "POST /api/workflows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44622 - "POST /api/console/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44636 - "POST /api/console/conversations/b1b8b061-de76-4618-91cd-7e71dc0514ff/messages?workspace_id=4f63801c-aff0-4949-90b1-80d06c648324 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44642 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:44646 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44660 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44668 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44674 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13/approvals HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44676 - "POST /api/approvals/1b979932-7bfe-478b-b4bc-0139084980f4/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44690 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44694 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13/gates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44706 - "GET /api/console/conversations/b1b8b061-de76-4618-91cd-7e71dc0514ff?workspace_id=4f63801c-aff0-4949-90b1-80d06c648324 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [134705]

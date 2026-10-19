@@ -1,0 +1,74 @@
+{
+  "providers": {
+    "groq": {
+      "readiness": {
+        "status": "BLOCKED_CREDENTIAL",
+        "reason": "Secure runtime binding missing",
+        "secret_name": "AGENTVERSE_GROQ_API_KEY"
+      },
+      "cases": [
+        {
+          "kind": "csv",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "BLOCKED_CREDENTIAL"
+        },
+        {
+          "kind": "research",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "BLOCKED_CREDENTIAL"
+        },
+        {
+          "kind": "content",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "BLOCKED_CREDENTIAL"
+        },
+        {
+          "kind": "csv",
+          "engine": "deepseek_harness",
+          "status": "UNRUN",
+          "reason": "BLOCKED_CREDENTIAL"
+        }
+      ]
+    },
+    "gemini": {
+      "readiness": {
+        "status": "BLOCKED_CREDENTIAL",
+        "reason": "Secure runtime binding missing",
+        "secret_name": "AGENTVERSE_GEMINI_API_KEY"
+      },
+      "cases": [
+        {
+          "kind": "csv",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "BLOCKED_CREDENTIAL"
+        },
+        {
+          "kind": "research",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "BLOCKED_CREDENTIAL"
+        },
+        {
+          "kind": "content",
+          "engine": "langchain",
+          "status": "UNRUN",
+          "reason": "BLOCKED_CREDENTIAL"
+        },
+        {
+          "kind": "csv",
+          "engine": "deepseek_harness",
+          "status": "UNRUN",
+          "reason": "BLOCKED_CREDENTIAL"
+        }
+      ]
+    }
+  },
+  "max_assignments_per_provider": 4,
+  "token_budget_per_assignment": 4096,
+  "provider_token_budget": 16384,
+  "paid_plan_or_free_status_verified": false
+}

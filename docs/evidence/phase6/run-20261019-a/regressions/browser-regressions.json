@@ -1,0 +1,9 @@
+{
+  "application_sha": "a64eb45a64ada8f1a81e3c48005df500ad718072",
+  "passed": false,
+  "checks": [
+    "A\u2192B bot dropdown creates separately bound conversations and exact actual run agent snapshots"
+  ],
+  "inference": "deterministic mock; tests actual routing/store/UI, not model intelligence",
+  "failure": "TimeoutError('Locator.inner_text: Timeout 30000ms exceeded.\\nCall log:\\n  - waiting for locator(\".c-revision-diff\").locator(\"pre\").first\\n')"
+}

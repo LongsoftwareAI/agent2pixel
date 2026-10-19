@@ -1,0 +1,12 @@
+{
+  "application_sha": "f2fe033",
+  "passed": true,
+  "checks": [
+    "A\u2192B bot dropdown creates separately bound conversations and exact actual run agent snapshots",
+    "config UI displays actual current/prior diff and rollback uses current revision with prior-only backend history",
+    "SOUL save refreshes prior-only history and displays saved current content against previous revision",
+    "actual topology search/zoom/fit/detail/rearrange leaves backend tool grants unchanged"
+  ],
+  "inference": "deterministic mock; tests actual routing/store/UI, not model intelligence",
+  "workspace_id": "9356367c-3368-4dbe-ae82-0382157d8ae4"
+}

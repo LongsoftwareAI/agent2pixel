@@ -1,0 +1,13 @@
+✔ BFS deterministic route avoids occupied tile (2.329658ms)
+✔ blocked/out of bounds destination fails (0.262021ms)
+✔ layout accepts legal placement and rejects collision and blocked access (0.829916ms)
+✔ backend states preserve failure/completion and unknown status never succeeds (0.18431ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 142.678757
+

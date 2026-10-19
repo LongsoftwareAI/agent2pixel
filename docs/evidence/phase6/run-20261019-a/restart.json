@@ -1,0 +1,56 @@
+{
+  "application_sha": "a64eb45a64ada8f1a81e3c48005df500ad718072",
+  "prepared_at": 1792397088.486101,
+  "provider": "deterministic mock; not live inference",
+  "workspace_id": "4f63801c-aff0-4949-90b1-80d06c648324",
+  "conversation_id": "b1b8b061-de76-4618-91cd-7e71dc0514ff",
+  "dispatch": {
+    "message": {
+      "id": "console-message:a371e355687185b372550b389913da5fe7d6ef1a210089be0281a5aa067d1c58",
+      "workspace_id": "4f63801c-aff0-4949-90b1-80d06c648324",
+      "conversation_id": "b1b8b061-de76-4618-91cd-7e71dc0514ff",
+      "role": "user",
+      "content": "Synthetic restart evidence; deterministic mock inference only.",
+      "attachment_ids": [],
+      "client_request_id": "restart-probe",
+      "payload_hash": "c6ab4d674b5dd1ce4806580733e4799d57b6394f2764fcd4c1ffd1c2446e33f1",
+      "run_id": "890eb296-60ed-45b5-bb20-317e45a20a13",
+      "work_item_id": "8ca0f10a-f782-4709-9133-0ef4bcb53c9b",
+      "created_at": "2026-10-19T08:04:47.971823+00:00"
+    },
+    "run_id": "890eb296-60ed-45b5-bb20-317e45a20a13",
+    "work_item_id": "8ca0f10a-f782-4709-9133-0ef4bcb53c9b"
+  },
+  "payload": {
+    "content": "Synthetic restart evidence; deterministic mock inference only.",
+    "client_request_id": "restart-probe",
+    "workflow_id": "99247290-419e-4b9a-a069-0642116d0ec2"
+  },
+  "gate_id": "890eb296-60ed-45b5-bb20-317e45a20a13:gate:review:0",
+  "artifacts": [
+    {
+      "id": "dfbd9395-1861-4b3d-84be-65b10a3bccd6",
+      "path": "artifacts/890eb296-60ed-45b5-bb20-317e45a20a13/restart-synthetic.md",
+      "sha256": "ea64bdc1b185dabd6747abb430cb9a2122d7b2d8b2e1e1edc8b1b41645f2c572",
+      "size": 688,
+      "tool": "artifacts.write_text",
+      "agent_id": "7c387dc2-7254-4da8-9c98-70b6a279483b",
+      "run_id": "890eb296-60ed-45b5-bb20-317e45a20a13",
+      "node_id": "draft",
+      "created_at": "2026-10-19T08:04:48.473332+00:00"
+    }
+  ],
+  "message_ids": [
+    "console-message:a371e355687185b372550b389913da5fe7d6ef1a210089be0281a5aa067d1c58",
+    "console-result:console-message:a371e355687185b372550b389913da5fe7d6ef1a210089be0281a5aa067d1c58"
+  ],
+  "passed": true,
+  "state": "VERIFIED_AFTER_OPERATOR_PROCESS_RESTART",
+  "verified_at": 1792397090.152711,
+  "checks": [
+    "stable conversation/message/run/work/gate IDs",
+    "same-key duplicate dispatch after restart deduplicates",
+    "artifact hashes unchanged",
+    "pending QC resumes to completed and separate human acceptance"
+  ]
+}

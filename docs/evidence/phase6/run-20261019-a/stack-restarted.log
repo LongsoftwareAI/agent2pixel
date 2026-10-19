@@ -1,0 +1,34 @@
+
+> @agentverse/office@0.2.0 dev
+> vite --host 127.0.0.1 --port 3002 --host 127.0.0.1 --port 3002 --strictPort
+
+
+> @agentverse/web@0.1.0 dev
+> vite --host 127.0.0.1 --port 3000 --host 127.0.0.1 --port 3000 --strictPort
+
+
+  VITE v7.3.7  ready in 191 ms
+
+  ➜  Local:   http://127.0.0.1:3000/
+
+  VITE v8.3.4  ready in 225 ms
+
+  ➜  Local:   http://127.0.0.1:3002/office/
+INFO:     Started server process [135521]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:44746 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44752 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44756 - "GET /api/console/conversations/b1b8b061-de76-4618-91cd-7e71dc0514ff?workspace_id=4f63801c-aff0-4949-90b1-80d06c648324 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44768 - "POST /api/console/conversations/b1b8b061-de76-4618-91cd-7e71dc0514ff/messages?workspace_id=4f63801c-aff0-4949-90b1-80d06c648324 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44782 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13/gates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44792 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13/artifacts/dfbd9395-1861-4b3d-84be-65b10a3bccd6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44804 - "POST /api/gates/890eb296-60ed-45b5-bb20-317e45a20a13%3Agate%3Areview%3A0/decision HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44806 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44822 - "GET /api/runs/890eb296-60ed-45b5-bb20-317e45a20a13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44830 - "POST /api/work-items/8ca0f10a-f782-4709-9133-0ef4bcb53c9b/review HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [135521]

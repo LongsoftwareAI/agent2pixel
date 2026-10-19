@@ -57,6 +57,15 @@ def run(args):
             assert history and all(h['revision'] < actual_revision for h in history), history
             page.goto(args.base+'/#bots?agent='+actor['id'])
             page.locator('.c-tabs').get_by_role('button', name='Cấu hình', exact=True).click()
+            # Wait for the externally changed configuration to reach the rendered
+            # panel before selecting history; refresh clears an old selection.
+            page.wait_for_function("""expected => {
+                const pre = document.querySelector('.c-profile-body > pre');
+                if (!pre) return false;
+                try { const a = JSON.parse(pre.innerText);
+                    return a.role === expected.role && a.agent_config_revision === expected.revision;
+                } catch { return false; }
+            }""", arg={'role':'QA changed role A','revision':actual_revision}, timeout=25000)
             page.get_by_role('button', name='revision 1', exact=True).click()
             diff = page.locator('.c-revision-diff')
             assert 'QA changed role A' in diff.locator('pre').nth(0).inner_text()

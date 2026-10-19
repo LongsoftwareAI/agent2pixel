@@ -1,0 +1,16 @@
+{
+  "test_helpers_commit": "f2fe033",
+  "application_baseline": "e9f5465756ad1ed6607d2fc8c032ef3387c43812",
+  "provenance_note": "Run a began from a64eb45 with uncommitted new helpers; these were finalized/committed as f2fe033 during execution. Aggregate Python collected 221 before extra negative headline case; focused final suite subsequently20PASS. Runner in-memory lacked later timeout/count changes, so do not claim final runner fully exercised. Live module loaded final code but both providers blocked before API calls.",
+  "files": {
+    "scripts/phase6_system_test.py": "78dfc209f53b2cf84cdc6ec53e8cf2390a3832a6c098aba8c4065f9df513b75b",
+    "tests/phase6/live/live_acceptance.py": "84564342304a87d9ed90601d1673b62d9edec391093659a1d1928a896dd4f055",
+    "tests/phase6/live/semantics.py": "90008daf0e62240999ecb26d3b8149c7ad7b9dcab3039dbe1e13c78f649e58b6",
+    "tests/phase6/live/test_semantics.py": "009fed58966153fb936f7c06fc420afa6a4b885dabfb14fa16924b26c6a4ccdb"
+  },
+  "focused_final_phase6": {
+    "passed": 20,
+    "failed": 0,
+    "seconds": 0.83
+  }
+}

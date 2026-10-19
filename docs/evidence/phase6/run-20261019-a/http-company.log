@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "application_sha": "a64eb45a64ada8f1a81e3c48005df500ad718072",
+  "workspace_id": "8a8f057b-76bd-41d9-8a4d-007b47f8b699",
+  "checks": [
+    "chat creates real CSV workflow, generated artifact, separate approvals/QC/work acceptance; duplicate same key stable and changed payload409",
+    "actual read projections and unknown monetary spend; invalid usage period denied",
+    "attachment actual content hash; traversal and unsupported audio rejected",
+    "foreign agent, conversation read/send and attachment references rejected without creating message/run",
+    "common-room dispatch requires explicit workflow; rejected dispatch leaves durable conversation unchanged",
+    "settings and SOUL actual persisted revisions, stale writes rejected, foreign SOUL hidden",
+    "system/audit bounded pagination without payload dumps, invalid cursors/limits denied"
+  ]
+}
+

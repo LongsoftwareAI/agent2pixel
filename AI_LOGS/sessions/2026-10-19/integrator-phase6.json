@@ -6,7 +6,7 @@
   "provider": "codex",
   "task_id": "P6-SYSTEM-TEST",
   "goal": "Prepare and execute comprehensive current system validation including configured Groq/Gemini live providers",
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_REVIEW",
   "branch": "work",
   "base_commit": "25df32e406628447b91718e3462b4341c54ac9c1",
   "workspace": "/tmp/agentverse-p5-final",
@@ -57,8 +57,15 @@
   ],
   "tests": {
     "initial_new_QA_case": "FAILED testcontractKeyError on initialmemoryrevision; correctedlegacydefault pendingrerun",
-    "live": "BLOCKED_MISSING_SECURE_BINDINGS initially",
-    "network_probe": "UNAUTHENTICATED endpoint URLError; investigateDNS/proxy"
+    "live": "BLOCKED both securebindingsmissing; 8explicitUNRUN scenarios",
+    "network_probe": "UNAUTHENTICATED endpoint URLError; investigateDNS/proxy",
+    "focused_final_phase6": "20PASS; .83s",
+    "aggregate": "221PASS; 92.5s; collected before additional headline negativecase",
+    "frontend": "73PASS; build/lintPASS",
+    "office": "14PASS; types/buildPASS",
+    "http_media_restart": "PASS",
+    "browser_regressions": "FAILED current/prior configdiff; isolated repeat FAILED same assertion",
+    "screens_initial": "FAILED due concurrent runnerstackstop; fresh capture underway"
   },
   "risks": [
     "Workspace full; canonicaltestcheckouttemporary",
@@ -70,13 +77,13 @@
     "Officialendpointnetworkprobe failed"
   ],
   "next_steps": [
-    "Runfreshregression",
-    "Writeboundedliveharness/semantictests",
-    "Recheckbindingsafterconfigupdates"
+    "Investigate configdiff regression",
+    "Bind secure runtime secrets and repair network for actual provider tests",
+    "Preserve fullscope gaps"
   ],
   "handoff_to": "p6_system_qa",
   "commit_sha": null,
-  "review_status": "PENDING",
+  "review_status": "Helpers independently reviewed; evidence review pending",
   "references": {
     "Reference IDs": [
       "P5-v0.5",

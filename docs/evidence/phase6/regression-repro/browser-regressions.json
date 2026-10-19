@@ -1,0 +1,9 @@
+{
+  "application_sha": "f2fe033",
+  "passed": false,
+  "checks": [
+    "A\u2192B bot dropdown creates separately bound conversations and exact actual run agent snapshots"
+  ],
+  "inference": "deterministic mock; tests actual routing/store/UI, not model intelligence",
+  "failure": "AssertionError()"
+}
