@@ -51,7 +51,9 @@ exit_code = 1
 try:
     children.append(subprocess.Popen([str(python), '-m', 'uvicorn', 'services.api.main:app', '--host', '127.0.0.1', '--port', '8000'], start_new_session=True))
     if args.legacy:
-        children.append(subprocess.Popen(['npm', '--prefix', 'apps/web', 'run', 'dev', '--', '--host', '127.0.0.1', '--port', '3000', '--strictPort'], start_new_session=True))
+        legacy_env = {**os.environ, 'VITE_AGENTVERSE_LEGACY_UI': '1',
+                      'AGENTVERSE_CONTROL_BASE': '/'}
+        children.append(subprocess.Popen(['npm', '--prefix', 'apps/web', 'run', 'dev', '--', '--host', '127.0.0.1', '--port', '3000', '--strictPort'], env=legacy_env, start_new_session=True))
     else:
         console_env = {**os.environ, 'AGENTVERSE_CONTROL_BASE': '/',
                        'AGENTVERSE_OFFICE_PROXY': 'http://127.0.0.1:3002'}

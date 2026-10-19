@@ -964,6 +964,7 @@ def create_app(data_dir=None):
     from services.api.company import create_company_router
     from services.api.operations import create_operations_router
     from services.api.data_sources import create_data_router
+    from services.api.console_media import create_console_media_router
 
     from services.api.console import create_console_router
     from services.api.console_extensions import create_console_extensions_router
@@ -971,6 +972,7 @@ def create_app(data_dir=None):
     app.include_router(create_console_router(app, start_run, RunInput))
     app.include_router(create_console_extensions_router(app))
     app.include_router(create_data_router(app))
+    app.include_router(create_console_media_router(app))
     app.include_router(create_company_router(app, start_run, RunInput))
     app.include_router(create_operations_router(app, start_run, RunInput))
     app.include_router(create_office_router(app))
