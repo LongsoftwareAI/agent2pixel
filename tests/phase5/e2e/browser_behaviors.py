@@ -77,6 +77,15 @@ def run(args):
             assert page.locator('html').get_attribute('data-console-theme') == 'light'
             page.screenshot(path=str(out/'preferences-persisted-1366.png'))
             result['checks'].append('theme/refresh preferences persist actual backend and reload')
+            page.goto(args.base+'/#logs')
+            page.locator('.c-content[aria-busy="false"]').wait_for()
+            with page.expect_download() as download_info:
+                page.get_by_role('button', name='↓ Xuất JSON đã redaction', exact=True).click()
+            download = download_info.value
+            exported = json.loads(Path(download.path()).read_text())
+            assert exported['kind'] == 'system' and exported['workspace_id'] == ws['id']
+            assert all('payload' not in row and 'content' not in row for row in exported['items'])
+            result['checks'].append('actual UI log export downloads scoped redacted JSON through backend')
             page.route('**/api/**', lambda route: route.abort())
             page.get_by_role('button', name='↻ Làm mới', exact=True).first.click()
             page.get_by_role('alert').first.wait_for()
