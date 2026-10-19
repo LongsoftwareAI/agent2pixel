@@ -2,9 +2,15 @@
 
 Văn phòng pixel cho agent thực thi workflow có lưu lịch sử. Phạm vi: một người dùng trên localhost, một tòa nhà, hai workspace độc lập; không SaaS/thành phố. Requirement gốc: [v0.1](docs/requirements/AGENTVERSE_REQUIREMENTS_v0.1.md).
 
-## Phase 5 — requirement mới, chưa triển khai
+## Phase 5 — AI Operations Console
 
-Theo video người dùng: làm đầy đủ console vận hành AI trước, CRM sau. [Requirement v0.5](docs/requirements/AGENTVERSE_REQUIREMENTS_v0.5.md), [video reference board](docs/references/VIDEO_CONSOLE_REFERENCE_BOARD.md) và [kế hoạch Phase 5](docs/plans/PHASE_5_VIDEO_CONSOLE.md). App hiện tại vẫn là Phase 4; tài liệu kế hoạch không phải bằng chứng tính năng mới đã hoạt động.
+Console mới theo bố cục video: Tổng quan, Phòng chung/Chat, bot/SOUL/config history, giao việc & QC, kho skill, memory, health/topology, usage/budget, sessions, log/audit và cài đặt. Chat tạo work item/run thật trong runtime hiện có; model MockBrain/provider fixture luôn được ghi nhãn, không phải live inference. CRM để sau. [Requirement v0.5](docs/requirements/AGENTVERSE_REQUIREMENTS_v0.5.md), [reference board](docs/references/VIDEO_CONSOLE_REFERENCE_BOARD.md), [kế hoạch](docs/plans/PHASE_5_VIDEO_CONSOLE.md), [kiểm chứng và giới hạn](docs/PHASE_5_VALIDATION.md).
+
+Mở **Chat với bot** → chọn bot/workflow đã cấu hình → nhập yêu cầu → gửi. Run/card kết quả dẫn tới Run Monitor và công việc; phê duyệt ghi artifact, duyệt QC và nghiệm thu là các bước riêng. Phòng chung yêu cầu chọn workflow cụ thể; không tự cấp quyền cho mọi bot. Skill cài/cập nhật/gỡ chỉ áp dụng package khai báo local đã review, không chạy installer tùy ý. Ngưỡng ngân sách chỉ cảnh báo, không phải hard cap của nhà cung cấp.
+
+Chưa có key model thật, STT thật và hóa đơn provider được xác minh; external schedule observer chưa cấu hình. Voice tùy khả năng trình duyệt, cần đồng ý ghi âm và duyệt transcript trước khi gửi. Không tự hiểu nội dung pixel ảnh nếu chưa có vision adapter. Các giới hạn còn mở được ghi riêng, không coi toàn bộ live Phase5 đã hoàn tất.
+
+Môi trường cloud hiện hết dung lượng ở `/workspace`; bản kiểm chứng cuối chạy trong `/tmp/agentverse-p5-final` với dữ liệu restore riêng. Xem báo cáo kiểm chứng trước khi tiếp tục môi trường này; GitHub review branch giữ bản code cuối.
 
 ## Chạy development
 
@@ -16,7 +22,7 @@ bash scripts/install.sh
 python3 scripts/dev.py
 ```
 
-Mở localhost port 3000 trong trình duyệt. API port 8000; tất cả port dev bind 127.0.0.1. Office Habblaud port 3000, trang cấu hình `/control/` được proxy đến port 3001. Ctrl-C dừng cả ba service. Dùng `python3 scripts/dev.py --legacy` để chạy giao diện v0.1. SQLite và workspace files trong `var/`, bị Git bỏ qua. Không xóa `var/` nếu muốn giữ dữ liệu. MockBrain không cần key hoặc model. Nó thực thi workflow thật với output deterministic; không được hiểu là model AI bên ngoài đã được gọi.
+Mở localhost port 3000 trong trình duyệt. API port 8000; tất cả port dev bind 127.0.0.1. Console ở port 3000; mở Habblaud qua menu Văn phòng AI (`/office/`, proxy đến port nội bộ 3002). Đường dẫn `/control/` cũ chuyển về console mới. Ctrl-C dừng cả ba service. Dùng `python3 scripts/dev.py --legacy` để chạy giao diện v0.1. SQLite và workspace files trong `var/`, bị Git bỏ qua. Không xóa `var/` nếu muốn giữ dữ liệu. MockBrain không cần key hoặc model. Nó thực thi workflow thật với output deterministic; không được hiểu là model AI bên ngoài đã được gọi.
 
 ## Phase 4 — công cụ và vận hành công ty
 
@@ -30,7 +36,7 @@ Backup dữ liệu: dừng ứng dụng và hoàn tất/hủy các run đang act
 
 ## Công ty agent đa nhiệm — Phase 3
 
-Định hướng mới: giao công việc đa dạng cho đội ngũ agent, không chỉ lập trình. [Kế hoạch](docs/plans/PHASE_3_COMPANY_WORKSPACE.md) mô tả Work board, brief/tiêu chí nghiệm thu, flow có hướng dẫn riêng từng bước, sản phẩm tài liệu và human review. Work board ở `/control/#workboard`, có nút mở từ office. Bằng chứng nghiệm thu Phase3 được ghi riêng, không suy từ test Phase2.
+Định hướng mới: giao công việc đa dạng cho đội ngũ agent, không chỉ lập trình. [Kế hoạch](docs/plans/PHASE_3_COMPANY_WORKSPACE.md) mô tả Work board, brief/tiêu chí nghiệm thu, flow có hướng dẫn riêng từng bước, sản phẩm tài liệu và human review. Work board ở `/#workboard`, có nút mở từ office. Bằng chứng nghiệm thu Phase3 được ghi riêng, không suy từ test Phase2.
 
 Research, nội dung, vận hành và coding là các mẫu flow chỉnh được. Khả năng làm việc thực tế phụ thuộc model, nguồn dữ liệu và tool được cấp. Template không tự tạo quyền tìm web, gửi email hoặc đăng bài. Không tự nhận hỗ trợ mọi task khi tool tương ứng chưa có.
 

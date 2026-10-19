@@ -1,0 +1,573 @@
+{
+  "application_sha": "e9f5465756ad1ed6607d2fc8c032ef3387c43812",
+  "images": [
+    {
+      "path": "browser/actual-chat-persisted-1366.png",
+      "sha256": "3dd81aa3fb0896e906ed2b941922e2d910a03aa8cc07591b0490cf2f3c173c3c",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "browser/disconnected-explicit-1366.png",
+      "sha256": "03735db9e0ad839e33ec8f5ef83e355153d5d20d01c9f4389049916308886b1c",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "browser/preferences-persisted-1366.png",
+      "sha256": "16105baaed28b704cd350d02f5511bc39edad5bf7e18380b59cd981a3a2df208",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "media-office/light-contrast-1366.png",
+      "sha256": "4a6ffe59ee00c26b3a09cfbda7c1989d12d7f20f350bba47e2b5f4e5e6c43b29",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "media-office/office-actual-backend-1366.png",
+      "sha256": "39542173ba5a4e8b60643087ff65ca3e802c4487db5268ea923cdcca35e42aab",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "media-office/png-real-preview-1366.png",
+      "sha256": "0e11b4667512af0682073944c53f0ffa6140b954f510a1499c0075655378fbcb",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "regressions/actual-revision-diff-1366.png",
+      "sha256": "8afecc7d21a1e6a7fc1b105c6e914fdcf39ac745077689e39ec7396124c79c75",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "regressions/actual-topology-controls-1366.png",
+      "sha256": "2c3070d295201d8604b1022b08ee60598ae8ae43452d3baf9f96467c475e4bc1",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "regressions/chat-agent-switch-1366.png",
+      "sha256": "8abcdcb8772d0816f563f35e26c66efa38349b0fd139419263e65928afe0d088",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/audit-1108x636.png",
+      "sha256": "53c205a19e97cfa0d5e02f8e7faad280375fc1ac4dc7479fb6d3013717f6027e",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/audit-1366x768.png",
+      "sha256": "9103e4514bb7075e0442a0713627e38886dc1b64161e97a479d49f817f29046c",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/audit-1920x1080.png",
+      "sha256": "afa201340e8e1ec60fbea28d0e822091b435c007effe0ace53078200e9cbe6bc",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/bots-1108x636.png",
+      "sha256": "3c7bba6c4c5008b243e21b344b8ee7d5f30deda4b0d20616688cbc147a25c1ef",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/bots-1366x768.png",
+      "sha256": "b4eb078751a5032f9ade6a28c082e1caae7eaf029088a7aec06b2c6891dc1897",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/bots-1920x1080.png",
+      "sha256": "ac13723419b2ca056415bf5b0b97b6ad31786ba71641f8bd1650a3c7d098d1e9",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/channels-1108x636.png",
+      "sha256": "f3085051d1d3a51f411d1b16d417f7e663f9a297641656ec06da92f810342bf8",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/channels-1366x768.png",
+      "sha256": "37e679eb03a2a200d8107bea66ee1271abbb39f898b21dd52ec2919d0216a871",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/channels-1920x1080.png",
+      "sha256": "a4740de1c308f753469bb83a6ef5f9827f90572b5a482bbc5f52446bedfe75ab",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/chat-1108x636.png",
+      "sha256": "fff3b69794c855ed5651ab63745e187e47e5fd7523070983b243a85132065169",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/chat-1366x768.png",
+      "sha256": "89e1847159d585128d630f6d70a60635c658c36a2186bca0194b399f438d3318",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/chat-1920x1080.png",
+      "sha256": "bde4f83d68d2e5d1a63b525a869d9bf2954fe8cb8645cb27c13a1acf5ee31b05",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/inbox-1108x636.png",
+      "sha256": "ac3d6acf6961648a49edfbf311b9392416509962a0a9491e6046b9c0fb6ee82f",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/inbox-1366x768.png",
+      "sha256": "0406f18eecc20950064bc1f943fa70a6602acd25579bbe7e15dbe4ad60c69f56",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/inbox-1920x1080.png",
+      "sha256": "38eef9688bef3d3c8b5b88aa555a06ca170c63fde6911fbb5d6c80f00bee5830",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/logs-1108x636.png",
+      "sha256": "5e4f49c07195bb876f7133e933240a4bdf23ab39102dcfcc5c3fc719f4c41e94",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/logs-1366x768.png",
+      "sha256": "cb2e21c1528caf89ee247de03bb788f4668e2b9415dda7ab232392efe31b2b29",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/logs-1920x1080.png",
+      "sha256": "a57a674a5fe55ed29325ca6788f57a93bd5f4156b4ce23f81b6aa21592b4607a",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/memory-1108x636.png",
+      "sha256": "8f38f138545bb4f820c98a2e5c78cbef5d1f8e00898be048fe82dc4518cca2b4",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/memory-1366x768.png",
+      "sha256": "43579d30b193aa61520ea2f45d2aa521e9d81f2f3e431aced568ec1323ef45b5",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/memory-1920x1080.png",
+      "sha256": "60edcdc03d352a8a85535f7db5ee75417be0050df9f7f8e7083eba34077fc92f",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/overview-1108x636.png",
+      "sha256": "00898b8bbd10b974ec33a3ee54a2321894efe493b174b22f286380ead8a9186f",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/overview-1366x768.png",
+      "sha256": "f0fb2791b72e6727b608fd6ea70278fcc99231336bf4f56f15977bca616b7b43",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/overview-1920x1080.png",
+      "sha256": "7c73cd17fb0b2d8ce1e8086017c5d0e64b2a5abfc5ccbe68243693781818ff48",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/preferences-1108x636.png",
+      "sha256": "33b28a2e3fe5a3cf0f37ad1b3e791bd52b7807aebe71dde9ae3e4c6855bda366",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/preferences-1366x768.png",
+      "sha256": "a3ca0309c875b444957a563e3282fbb12e644d8efdb318e6fa672e7cc53c9517",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/preferences-1920x1080.png",
+      "sha256": "5b856279b3b71a0c295aa99425ae247e66138cacf6fdfc172981128021f7a1ed",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/room-1108x636.png",
+      "sha256": "4e8e03c3a2d02a9b76dbc1e4ec851f62c315ea8517ca1c6ddbf75ce5cd33e158",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/room-1366x768.png",
+      "sha256": "9d19989dea946fd735b56dd8ca448b2a8cd0a785d72f353fd329c4c132aa8776",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/room-1920x1080.png",
+      "sha256": "7048f4923d2e931e7177128497920d06729f1d6d317f4c48e3cee6c4f97fa985",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/schedules-1108x636.png",
+      "sha256": "28c0b10392b17bc7bf4587b2cc5e2300bb574843036e3d7115d775b4c2704b2e",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/schedules-1366x768.png",
+      "sha256": "14944b80fea17e3ac05f760ffef6535c56a9647b620ba272a678f7ee383cd5b9",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/schedules-1920x1080.png",
+      "sha256": "d4d8ae584b33a70ea6e3cd7badd28b94280109fb5bf66bb0be73c8b9d46a6b55",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/sessions-1108x636.png",
+      "sha256": "76ca5b071ea2d060eb6b0a6f5447689695d71a6ff0d9908a11865584d999030f",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/sessions-1366x768.png",
+      "sha256": "511ce4a4bdd0c443caf7cfe4aab8c9abf74a7be72ca8258c43bc62c12ab8179c",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/sessions-1920x1080.png",
+      "sha256": "63519abd77894a191022d44f6adeca5baf0c3475fbfabc9f374787c36edc5ddf",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/skills-1108x636.png",
+      "sha256": "2fd7e7008d6fb0fc22ed5cae608c157fd276f26a255a49a66ccdc19f760abafb",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/skills-1366x768.png",
+      "sha256": "9d7ceb10a9589bb4a1e5d848b3500115ad435704d240f2f80f96c0b86dafce33",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/skills-1920x1080.png",
+      "sha256": "8034168f629aa433554aeefed05b8e6b0c5ca7dfc8acbdc7824ff9e83593a97f",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/sources-1108x636.png",
+      "sha256": "d7fca97a28e342588819d6f035754463d06d130ac45fd5211f25aed5b8716210",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/sources-1366x768.png",
+      "sha256": "e06b35708859f8a20e07075201b0fd6a1502d54bf87d960ae1350eb468d607f7",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/sources-1920x1080.png",
+      "sha256": "cd4ee31d4a11950c508ae4a0c6eb90916d477be53602c5328c73e6a5501944e8",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/topology-1108x636.png",
+      "sha256": "2fac48c7dc9514890ebf2093a77ce08e4be3cdb5dc800dca7995711fe3efa8b6",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/topology-1366x768.png",
+      "sha256": "4ffecba9f9558adc79c9e369e423b531101282f8d397021b171eaa88639fe9c6",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/topology-1920x1080.png",
+      "sha256": "c02bff701c1a71f1d8c93cc26c72794485b8b7ba8b298c4aee83cd90f0ea217d",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/usage-1108x636.png",
+      "sha256": "5abfc4ccf3462ee786535ad965294c3c738a89aebb6927d1747662e4ba13bf85",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/usage-1366x768.png",
+      "sha256": "4786805743124de7e7855963cef506d4a58e9a45b06a695db8714bf58ae34025",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/usage-1920x1080.png",
+      "sha256": "114f14ce56b6ddf3708168cad0a1a133edfd7e43c9fd182e8552f861807fb322",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/workboard-1108x636.png",
+      "sha256": "6901d0669a44fa08b4c67ee1dfbbc760f21d548236125a0d058c2017f38379b8",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/workboard-1366x768.png",
+      "sha256": "b45326503963d87d3ac3f2f3d33e03e1b7b62ac9e9e8135733de9ca1fe25da16",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/workboard-1920x1080.png",
+      "sha256": "76c3786b5700f565ca82135af8b1b61c5056c4777ad5e1e910547e7c48694dfd",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/workflows-1108x636.png",
+      "sha256": "31b64a5807e0543c7017a7a063f8923ef8e1ac861a6cc83c5b87ae589d346700",
+      "size": [
+        1108,
+        636
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/workflows-1366x768.png",
+      "sha256": "9b3b961982bcce325d796d74fc1948c9c890768aa58c3910a8bd9d4dc01834de",
+      "size": [
+        1366,
+        768
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    },
+    {
+      "path": "screens/workflows-1920x1080.png",
+      "sha256": "bf0e9fb770561f9db52a9841898b68a91a45bf972b668287b6e3366181520c48",
+      "size": [
+        1920,
+        1080
+      ],
+      "data_mode": "synthetic local task data; provider fixture or deterministic mock, not live inference"
+    }
+  ],
+  "raw_user_video_copied": false
+}

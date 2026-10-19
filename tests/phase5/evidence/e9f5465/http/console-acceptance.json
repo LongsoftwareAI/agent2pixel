@@ -1,0 +1,559 @@
+{
+  "application_sha": "e9f5465",
+  "passed": true,
+  "inference": "loopback HTTP fixture; not live inference",
+  "checks": [
+    "chat creates real CSV workflow, generated artifact, separate approvals/QC/work acceptance; duplicate same key stable and changed payload409",
+    "actual read projections and unknown monetary spend; invalid usage period denied",
+    "attachment actual content hash; traversal and unsupported audio rejected",
+    "foreign agent, conversation read/send and attachment references rejected without creating message/run",
+    "common-room dispatch requires explicit workflow; rejected dispatch leaves durable conversation unchanged",
+    "settings and SOUL actual persisted revisions, stale writes rejected, foreign SOUL hidden",
+    "system/audit bounded pagination without payload dumps, invalid cursors/limits denied"
+  ],
+  "reads": {
+    "overview": {
+      "agents": {
+        "total": 1,
+        "busy": 0
+      },
+      "work": {
+        "total": 1,
+        "pending_review": 0,
+        "completed": 1
+      },
+      "runs": {
+        "total": 1,
+        "active": 0
+      },
+      "usage": {
+        "requests": 1,
+        "total_tokens": 30,
+        "token_accounting": "provider",
+        "accounting_counts": {
+          "estimated": 0,
+          "provider": 1,
+          "unknown": 0
+        },
+        "tokens_by_accounting": {
+          "estimated": 0,
+          "provider": 30,
+          "unknown": 0
+        },
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_tokens": null,
+        "actual_cost": null,
+        "estimated_cost": null
+      },
+      "activity": [
+        {
+          "id": "a2b1b4ff-3e90-4ca2-b98b-349f8bdc57fb",
+          "event_type": "workflow.completed",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": null,
+          "created_at": "2026-10-19T03:35:09.075818+00:00",
+          "seq": 98
+        },
+        {
+          "id": "f1890a98-dd8e-47c4-ab99-c81fbe9885a6",
+          "event_type": "review.decided",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": null,
+          "created_at": "2026-10-19T03:35:09.046945+00:00",
+          "seq": 97
+        },
+        {
+          "id": "28e6402b-6160-4a65-8e97-ad3b5476728c",
+          "event_type": "review.required",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": null,
+          "created_at": "2026-10-19T03:35:08.993750+00:00",
+          "seq": 96
+        },
+        {
+          "id": "85652e58-7d39-484a-b198-cf97aa5d8ff4",
+          "event_type": "task.completed",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.984748+00:00",
+          "seq": 95
+        },
+        {
+          "id": "427b671b-5984-4486-a845-e2129d1d6efb",
+          "event_type": "tool.completed",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.983892+00:00",
+          "seq": 94
+        },
+        {
+          "id": "a2e812ed-e8de-4749-8168-acb8e90c0b95",
+          "event_type": "tool.requested",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.980491+00:00",
+          "seq": 93
+        },
+        {
+          "id": "d539f462-13c2-4cc3-bb18-3865d4dc7eac",
+          "event_type": "approval.decided",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.958674+00:00",
+          "seq": 92
+        },
+        {
+          "id": "f617b534-8832-4b07-bb14-0ecef2de5ddc",
+          "event_type": "approval.required",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.911654+00:00",
+          "seq": 91
+        },
+        {
+          "id": "770b797e-bdad-4837-84a6-9b0ff4007c83",
+          "event_type": "model.completed",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.910595+00:00",
+          "seq": 90
+        },
+        {
+          "id": "f87f8a1e-2b62-43bc-b885-aa23c7936871",
+          "event_type": "task.started",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.343688+00:00",
+          "seq": 89
+        },
+        {
+          "id": "681f0eac-16b0-4ebe-a7a0-fae02a6c116a",
+          "event_type": "task.queued",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.343379+00:00",
+          "seq": 88
+        },
+        {
+          "id": "18aa30f9-a911-494d-b3aa-e6045d7b9758",
+          "event_type": "tool.completed",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.341647+00:00",
+          "seq": 87
+        },
+        {
+          "id": "92464842-d31e-44eb-bf06-099db4f3d64b",
+          "event_type": "tool.requested",
+          "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.341075+00:00",
+          "seq": 86
+        },
+        {
+          "id": "a92cde25-a1a5-4ea0-ba4d-c445448a348d",
+          "event_type": "console.message.dispatched",
+          "run_id": null,
+          "agent_id": null,
+          "created_at": "2026-10-19T03:35:08.313174+00:00",
+          "seq": 85
+        },
+        {
+          "id": "2e89af3c-aa8d-46ac-bac8-b7655e77fa1c",
+          "event_type": "console.conversation.created",
+          "run_id": null,
+          "agent_id": null,
+          "created_at": "2026-10-19T03:35:08.308428+00:00",
+          "seq": 84
+        },
+        {
+          "id": "459818d0-02cb-4f22-8a09-db2611c44a7f",
+          "event_type": "source.created",
+          "run_id": null,
+          "agent_id": null,
+          "created_at": "2026-10-19T03:35:08.299392+00:00",
+          "seq": 83
+        },
+        {
+          "id": "c2827a91-c3aa-4667-8286-539e47e2a7f7",
+          "event_type": "agent.created",
+          "run_id": null,
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "created_at": "2026-10-19T03:35:08.289263+00:00",
+          "seq": 82
+        }
+      ],
+      "services": [
+        {
+          "id": "sqlite",
+          "name": "SQLite persistence",
+          "kind": "service",
+          "state": "healthy",
+          "reason": "Current database query succeeded",
+          "observed_at": "2026-10-19T03:35:09.145899+00:00"
+        },
+        {
+          "id": "runtime",
+          "name": "Local LangGraph runtime",
+          "kind": "service",
+          "state": "healthy",
+          "reason": "Local runtime initialized; not a remote gateway probe",
+          "observed_at": "2026-10-19T03:35:09.145899+00:00"
+        },
+        {
+          "id": "provider:8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "name": "Synthetic QA Analyst / ollama",
+          "kind": "provider",
+          "state": "unknown",
+          "reason": "Not actively probed",
+          "secret_names": [],
+          "configured": false,
+          "observed_at": "2026-10-19T03:35:09.145899+00:00"
+        },
+        {
+          "id": "stt",
+          "name": "stt",
+          "kind": "capability",
+          "observed_at": "2026-10-19T03:35:09.145899+00:00",
+          "state": "unconfigured",
+          "reason": "No speech-to-text adapter installed; no audio is captured or transcribed"
+        },
+        {
+          "id": "schedules",
+          "name": "schedules",
+          "kind": "capability",
+          "observed_at": "2026-10-19T03:35:09.145899+00:00",
+          "state": "unconfigured",
+          "reason": "No reviewed local scheduler observation adapter configured"
+        },
+        {
+          "id": "outbound",
+          "name": "outbound",
+          "kind": "capability",
+          "observed_at": "2026-10-19T03:35:09.145899+00:00",
+          "state": "unconfigured",
+          "reason": "No external messaging connector"
+        }
+      ],
+      "observed_at": "2026-10-19T03:35:09.145949+00:00"
+    },
+    "inbox": [],
+    "sessions": [
+      {
+        "id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+        "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+        "workflow_id": "8a80dccb-fe2c-4f72-932a-d1325f98bfc3",
+        "work_item_id": "63ef3312-cb6f-44e3-abfc-17db9680c094",
+        "conversation_id": "617f0da2-f5fa-40e8-8e8d-047349f627f4",
+        "state": "completed",
+        "started_at": "2026-10-19T03:35:08.313579+00:00",
+        "ended_at": "2026-10-19T03:35:09.075583+00:00",
+        "agent_ids": [
+          "8d62b3b2-e184-4507-b78e-a1e689dfbf5f"
+        ],
+        "error": null
+      }
+    ],
+    "health": {
+      "items": [
+        {
+          "id": "sqlite",
+          "name": "SQLite persistence",
+          "kind": "service",
+          "state": "healthy",
+          "reason": "Current database query succeeded",
+          "observed_at": "2026-10-19T03:35:09.155831+00:00"
+        },
+        {
+          "id": "runtime",
+          "name": "Local LangGraph runtime",
+          "kind": "service",
+          "state": "healthy",
+          "reason": "Local runtime initialized; not a remote gateway probe",
+          "observed_at": "2026-10-19T03:35:09.155831+00:00"
+        },
+        {
+          "id": "provider:8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "name": "Synthetic QA Analyst / ollama",
+          "kind": "provider",
+          "state": "unknown",
+          "reason": "Not actively probed",
+          "secret_names": [],
+          "configured": false,
+          "observed_at": "2026-10-19T03:35:09.155831+00:00"
+        },
+        {
+          "id": "stt",
+          "name": "stt",
+          "kind": "capability",
+          "observed_at": "2026-10-19T03:35:09.155831+00:00",
+          "state": "unconfigured",
+          "reason": "No speech-to-text adapter installed; no audio is captured or transcribed"
+        },
+        {
+          "id": "schedules",
+          "name": "schedules",
+          "kind": "capability",
+          "observed_at": "2026-10-19T03:35:09.155831+00:00",
+          "state": "unconfigured",
+          "reason": "No reviewed local scheduler observation adapter configured"
+        },
+        {
+          "id": "outbound",
+          "name": "outbound",
+          "kind": "capability",
+          "observed_at": "2026-10-19T03:35:09.155831+00:00",
+          "state": "unconfigured",
+          "reason": "No external messaging connector"
+        }
+      ],
+      "observed_at": "2026-10-19T03:35:09.155831+00:00"
+    },
+    "topology": {
+      "nodes": [
+        {
+          "id": "8b87967b-9aa9-4a95-8d66-82b77a69ff4f",
+          "label": "Workspace",
+          "kind": "workspace",
+          "state": "healthy"
+        },
+        {
+          "id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "label": "Synthetic QA Analyst",
+          "kind": "agent",
+          "state": "completed"
+        },
+        {
+          "id": "provider:8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "label": "ollama: qa-local-fixture",
+          "kind": "model",
+          "state": "unknown",
+          "reason": "Not actively probed"
+        },
+        {
+          "id": "tool:csv.analyze",
+          "label": "csv.analyze",
+          "kind": "tool",
+          "state": "configured"
+        },
+        {
+          "id": "tool:artifacts.write_text",
+          "label": "artifacts.write_text",
+          "kind": "tool",
+          "state": "configured"
+        },
+        {
+          "id": "8a80dccb-fe2c-4f72-932a-d1325f98bfc3",
+          "label": "P5 real CSV review",
+          "kind": "workflow",
+          "state": "configured"
+        }
+      ],
+      "edges": [
+        {
+          "source": "8b87967b-9aa9-4a95-8d66-82b77a69ff4f",
+          "target": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f"
+        },
+        {
+          "source": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "target": "provider:8d62b3b2-e184-4507-b78e-a1e689dfbf5f"
+        },
+        {
+          "source": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "target": "tool:csv.analyze",
+          "allowed": true,
+          "approval_required": true
+        },
+        {
+          "source": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "target": "tool:artifacts.write_text",
+          "allowed": true,
+          "approval_required": true
+        },
+        {
+          "source": "8b87967b-9aa9-4a95-8d66-82b77a69ff4f",
+          "target": "8a80dccb-fe2c-4f72-932a-d1325f98bfc3"
+        },
+        {
+          "source": "8a80dccb-fe2c-4f72-932a-d1325f98bfc3",
+          "target": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f"
+        },
+        {
+          "source": "8a80dccb-fe2c-4f72-932a-d1325f98bfc3",
+          "target": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f"
+        }
+      ],
+      "observed_at": "2026-10-19T03:35:09.158558+00:00"
+    },
+    "usage": {
+      "daily": [
+        {
+          "id": "2026-10-19",
+          "requests": 1,
+          "total_tokens": 30,
+          "token_accounting": "provider",
+          "accounting_counts": {
+            "estimated": 0,
+            "provider": 1,
+            "unknown": 0
+          },
+          "tokens_by_accounting": {
+            "estimated": 0,
+            "provider": 30,
+            "unknown": 0
+          },
+          "input_tokens": null,
+          "output_tokens": null,
+          "cache_tokens": null,
+          "actual_cost": null,
+          "estimated_cost": null,
+          "date": "2026-10-19"
+        }
+      ],
+      "by_agent": [
+        {
+          "id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f",
+          "requests": 1,
+          "total_tokens": 30,
+          "token_accounting": "provider",
+          "accounting_counts": {
+            "estimated": 0,
+            "provider": 1,
+            "unknown": 0
+          },
+          "tokens_by_accounting": {
+            "estimated": 0,
+            "provider": 30,
+            "unknown": 0
+          },
+          "input_tokens": null,
+          "output_tokens": null,
+          "cache_tokens": null,
+          "actual_cost": null,
+          "estimated_cost": null,
+          "agent_id": "8d62b3b2-e184-4507-b78e-a1e689dfbf5f"
+        }
+      ],
+      "by_model": [
+        {
+          "id": "qa-local-fixture",
+          "requests": 1,
+          "total_tokens": 30,
+          "token_accounting": "provider",
+          "accounting_counts": {
+            "estimated": 0,
+            "provider": 1,
+            "unknown": 0
+          },
+          "tokens_by_accounting": {
+            "estimated": 0,
+            "provider": 30,
+            "unknown": 0
+          },
+          "input_tokens": null,
+          "output_tokens": null,
+          "cache_tokens": null,
+          "actual_cost": null,
+          "estimated_cost": null,
+          "model": "qa-local-fixture"
+        }
+      ],
+      "totals": {
+        "requests": 1,
+        "total_tokens": 30,
+        "token_accounting": "provider",
+        "accounting_counts": {
+          "estimated": 0,
+          "provider": 1,
+          "unknown": 0
+        },
+        "tokens_by_accounting": {
+          "estimated": 0,
+          "provider": 30,
+          "unknown": 0
+        },
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_tokens": null,
+        "actual_cost": null,
+        "estimated_cost": null
+      },
+      "pricing": [],
+      "accounting": "provider",
+      "period": "30",
+      "timezone": "UTC",
+      "observed_at": "2026-10-19T03:35:09.161167+00:00"
+    },
+    "schedules": {
+      "items": [],
+      "capability": {
+        "state": "unconfigured",
+        "reason": "No reviewed local scheduler observation adapter configured"
+      },
+      "observed_at": "2026-10-19T03:35:09.164454+00:00"
+    },
+    "skills": {
+      "packages": [
+        {
+          "id": "console-evidence-v1",
+          "registry_id": "console-evidence",
+          "version": 1,
+          "license": "MIT",
+          "description": "Reviewed local evidence-writing instructions v1",
+          "dependencies": [],
+          "tool_grants": [],
+          "instructions": "Preserve evidence, state assumptions and report unexecuted checks honestly.",
+          "name": "Evidence-based work",
+          "sha256": "9235ac5321a5c4e01acda89c7ab2f46b1d7d5b70240087109f849075fad7583d"
+        },
+        {
+          "id": "console-evidence",
+          "registry_id": "console-evidence",
+          "version": 2,
+          "license": "MIT",
+          "description": "Reviewed local evidence-writing instructions v2",
+          "dependencies": [],
+          "tool_grants": [],
+          "instructions": "Preserve evidence, state assumptions and report unexecuted checks honestly. Distinguish observed facts from estimates and attach source identifiers to conclusions.",
+          "name": "Evidence-based work",
+          "sha256": "9c68a2b7470a1317dd87654547b7a266eaf23ef61d0181e583d29396d8196aa0"
+        }
+      ],
+      "bindings": []
+    },
+    "capabilities": {
+      "chat": {
+        "state": "healthy",
+        "reason": "Uses configured agent workflow runtime; mock brains remain labeled"
+      },
+      "attachments": {
+        "state": "healthy",
+        "reason": "UTF-8 text, CSV and Markdown only"
+      },
+      "images": {
+        "state": "unconfigured",
+        "reason": "No validated image adapter"
+      },
+      "stt": {
+        "state": "unconfigured",
+        "reason": "No speech-to-text adapter installed; no audio is captured or transcribed"
+      },
+      "schedules": {
+        "state": "unconfigured",
+        "reason": "No reviewed local scheduler observation adapter configured"
+      },
+      "outbound": {
+        "state": "unconfigured",
+        "reason": "No external messaging connector"
+      },
+      "observed_at": "2026-10-19T03:35:09.173382+00:00"
+    }
+  },
+  "workspace_id": "8b87967b-9aa9-4a95-8d66-82b77a69ff4f",
+  "conversation_id": "617f0da2-f5fa-40e8-8e8d-047349f627f4",
+  "run_id": "3877d65a-fa0c-4a96-8948-88abf7cbdee6",
+  "work_item_id": "63ef3312-cb6f-44e3-abfc-17db9680c094"
+}

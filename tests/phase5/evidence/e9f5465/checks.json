@@ -1,0 +1,52 @@
+{
+  "application_sha": "e9f5465756ad1ed6607d2fc8c032ef3387c43812",
+  "backend": {
+    "passed": 202,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 114.37,
+    "command": ".venv/bin/python -m pytest tests/backend tests/phase2/runtime tests/phase3/runtime tests/phase4 tests/phase5/backend tests/phase5/integration tests/phase5/media tests/backup tests/integration tests/harness tests/projection tests/office_layout -q"
+  },
+  "frontend": {
+    "passed": 73,
+    "failed": 0,
+    "skipped": 0,
+    "build": "PASS",
+    "lint": "PASS"
+  },
+  "office": {
+    "passed": 14,
+    "typecheck": "PASS",
+    "build": "PASS",
+    "scope": "reviewed office commit unchanged in final candidate; actual nonfixture office browser independently evidenced"
+  },
+  "legacy_model_checks": {
+    "passed": 4
+  },
+  "sqlite_backup_restore": {
+    "verified": true,
+    "files": 16,
+    "original_data": "preserved",
+    "wal_regression_tests": 6
+  },
+  "docker": {
+    "fresh_api_build": "FAILED DNS/proxy; retried outside sandbox with same failure",
+    "dependency_lock_hashes_match_prior_images": true,
+    "cached_code_image_builds": "PASS before cache tags removed",
+    "cached_container_smoke": "FAILED daemon disk full; no containers created",
+    "image_prune": "USER_ABORTED; not executed",
+    "test_network": "removed own empty network"
+  },
+  "environment": {
+    "workspace_disk": "FULL; verification relocated to /tmp/agentverse-p5-final",
+    "canonical_working_tree": "Original /workspace checkout preserved at82cc0d8; final branch published from temporary clone",
+    "live_inference": "UNRUN; no credentials present",
+    "public_web": "FAILED DNS normal/outside sandbox",
+    "live_STT": "UNRUN; browser optional adapter mock-tested",
+    "vision": "UNSUPPORTED; PNG metadata only"
+  },
+  "warnings": [
+    "Existing AnyIO BlockingPortal deprecation",
+    "Web main chunk approx529kB; warning retained, no threshold suppression"
+  ]
+}

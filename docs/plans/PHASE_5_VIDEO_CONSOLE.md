@@ -1,6 +1,6 @@
 # Phase 5 — kế hoạch AI Operations Console
 
-Ngày 2026-10-18. Trạng thái: PREPARED / chưa bắt đầu code. Phạm vi được người dùng chọn: console vận hành đầy đủ trước, CRM sau. [Requirement chuẩn v0.5](../requirements/AGENTVERSE_REQUIREMENTS_v0.5.md); [video evidence board](../references/VIDEO_CONSOLE_REFERENCE_BOARD.md). Không thay bằng một dashboard trang trí; mọi action phải nối runtime có thật.
+Ngày 2026-10-18. Trạng thái cập nhật: local core đã tích hợp và được review độc lập; toàn bộ Phase 5 còn OPEN. Xem [kiểm chứng và phần còn thiếu](../PHASE_5_VALIDATION.md). Các milestone bên dưới giữ lại phạm vi đầy đủ, không phải tuyên bố tất cả đã xong. Phạm vi được người dùng chọn: console vận hành đầy đủ trước, CRM sau. [Requirement chuẩn v0.5](../requirements/AGENTVERSE_REQUIREMENTS_v0.5.md); [video evidence board](../references/VIDEO_CONSOLE_REFERENCE_BOARD.md). Không thay bằng một dashboard trang trí; mọi action phải nối runtime có thật.
 
 ## 1. Baseline và tái sử dụng
 

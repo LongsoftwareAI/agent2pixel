@@ -1,0 +1,659 @@
+{
+  "application_sha": "e9f5465",
+  "base": "http://127.0.0.1:3000",
+  "workspace_id": "8b87967b-9aa9-4a95-8d66-82b77a69ff4f",
+  "captured_at": "2026-10-19T03:36:18.601469+00:00",
+  "images": [
+    {
+      "file": "overview-1108x636.png",
+      "route": "/#overview",
+      "screen_id": "overview",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "00898b8bbd10b974ec33a3ee54a2321894efe493b174b22f286380ead8a9186f",
+      "nonblank_stddev": 27.393635005543462,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "room-1108x636.png",
+      "route": "/#room",
+      "screen_id": "room",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "4e8e03c3a2d02a9b76dbc1e4ec851f62c315ea8517ca1c6ddbf75ce5cd33e158",
+      "nonblank_stddev": 19.92322750225826,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "chat-1108x636.png",
+      "route": "/#chat",
+      "screen_id": "chat",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "fff3b69794c855ed5651ab63745e187e47e5fd7523070983b243a85132065169",
+      "nonblank_stddev": 19.663157474563913,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "bots-1108x636.png",
+      "route": "/#bots",
+      "screen_id": "bots",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "3c7bba6c4c5008b243e21b344b8ee7d5f30deda4b0d20616688cbc147a25c1ef",
+      "nonblank_stddev": 25.485874286331473,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "inbox-1108x636.png",
+      "route": "/#inbox",
+      "screen_id": "inbox",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "ac3d6acf6961648a49edfbf311b9392416509962a0a9491e6046b9c0fb6ee82f",
+      "nonblank_stddev": 18.670634887318858,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "workboard-1108x636.png",
+      "route": "/#workboard",
+      "screen_id": "workboard",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "6901d0669a44fa08b4c67ee1dfbbc760f21d548236125a0d058c2017f38379b8",
+      "nonblank_stddev": 25.096425244021443,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "workflows-1108x636.png",
+      "route": "/#workflows",
+      "screen_id": "workflows",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "31b64a5807e0543c7017a7a063f8923ef8e1ac861a6cc83c5b87ae589d346700",
+      "nonblank_stddev": 24.6543114238943,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "skills-1108x636.png",
+      "route": "/#skills",
+      "screen_id": "skills",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "2fd7e7008d6fb0fc22ed5cae608c157fd276f26a255a49a66ccdc19f760abafb",
+      "nonblank_stddev": 22.753461690099723,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "memory-1108x636.png",
+      "route": "/#memory",
+      "screen_id": "memory",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "8f38f138545bb4f820c98a2e5c78cbef5d1f8e00898be048fe82dc4518cca2b4",
+      "nonblank_stddev": 20.079686744654882,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "sources-1108x636.png",
+      "route": "/#sources",
+      "screen_id": "sources",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "d7fca97a28e342588819d6f035754463d06d130ac45fd5211f25aed5b8716210",
+      "nonblank_stddev": 21.73202066392142,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "channels-1108x636.png",
+      "route": "/#channels",
+      "screen_id": "channels",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "f3085051d1d3a51f411d1b16d417f7e663f9a297641656ec06da92f810342bf8",
+      "nonblank_stddev": 18.57970389330028,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "topology-1108x636.png",
+      "route": "/#topology",
+      "screen_id": "topology",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "2fac48c7dc9514890ebf2093a77ce08e4be3cdb5dc800dca7995711fe3efa8b6",
+      "nonblank_stddev": 21.3633243794929,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "usage-1108x636.png",
+      "route": "/#usage",
+      "screen_id": "usage",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "5abfc4ccf3462ee786535ad965294c3c738a89aebb6927d1747662e4ba13bf85",
+      "nonblank_stddev": 22.30798514200282,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "schedules-1108x636.png",
+      "route": "/#schedules",
+      "screen_id": "schedules",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "28c0b10392b17bc7bf4587b2cc5e2300bb574843036e3d7115d775b4c2704b2e",
+      "nonblank_stddev": 19.999978852089317,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "sessions-1108x636.png",
+      "route": "/#sessions",
+      "screen_id": "sessions",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "76ca5b071ea2d060eb6b0a6f5447689695d71a6ff0d9908a11865584d999030f",
+      "nonblank_stddev": 19.005063662029627,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "logs-1108x636.png",
+      "route": "/#logs",
+      "screen_id": "logs",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "5e4f49c07195bb876f7133e933240a4bdf23ab39102dcfcc5c3fc719f4c41e94",
+      "nonblank_stddev": 18.926425826591313,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "audit-1108x636.png",
+      "route": "/#audit",
+      "screen_id": "audit",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "53c205a19e97cfa0d5e02f8e7faad280375fc1ac4dc7479fb6d3013717f6027e",
+      "nonblank_stddev": 18.792859515877243,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "preferences-1108x636.png",
+      "route": "/#preferences",
+      "screen_id": "preferences",
+      "viewport": [
+        1108,
+        636
+      ],
+      "sha256": "33b28a2e3fe5a3cf0f37ad1b3e791bd52b7807aebe71dde9ae3e4c6855bda366",
+      "nonblank_stddev": 22.66458533797169,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "overview-1366x768.png",
+      "route": "/#overview",
+      "screen_id": "overview",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "f0fb2791b72e6727b608fd6ea70278fcc99231336bf4f56f15977bca616b7b43",
+      "nonblank_stddev": 24.051724378080944,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "room-1366x768.png",
+      "route": "/#room",
+      "screen_id": "room",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "9d19989dea946fd735b56dd8ca448b2a8cd0a785d72f353fd329c4c132aa8776",
+      "nonblank_stddev": 17.021288914009094,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "chat-1366x768.png",
+      "route": "/#chat",
+      "screen_id": "chat",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "89e1847159d585128d630f6d70a60635c658c36a2186bca0194b399f438d3318",
+      "nonblank_stddev": 16.819625084900785,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "bots-1366x768.png",
+      "route": "/#bots",
+      "screen_id": "bots",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "b4eb078751a5032f9ade6a28c082e1caae7eaf029088a7aec06b2c6891dc1897",
+      "nonblank_stddev": 22.926595406941694,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "inbox-1366x768.png",
+      "route": "/#inbox",
+      "screen_id": "inbox",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "0406f18eecc20950064bc1f943fa70a6602acd25579bbe7e15dbe4ad60c69f56",
+      "nonblank_stddev": 16.19609615894375,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "workboard-1366x768.png",
+      "route": "/#workboard",
+      "screen_id": "workboard",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "b45326503963d87d3ac3f2f3d33e03e1b7b62ac9e9e8135733de9ca1fe25da16",
+      "nonblank_stddev": 21.706732135726686,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "workflows-1366x768.png",
+      "route": "/#workflows",
+      "screen_id": "workflows",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "9b3b961982bcce325d796d74fc1948c9c890768aa58c3910a8bd9d4dc01834de",
+      "nonblank_stddev": 23.197802149779395,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "skills-1366x768.png",
+      "route": "/#skills",
+      "screen_id": "skills",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "9d7ceb10a9589bb4a1e5d848b3500115ad435704d240f2f80f96c0b86dafce33",
+      "nonblank_stddev": 19.62038865608762,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "memory-1366x768.png",
+      "route": "/#memory",
+      "screen_id": "memory",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "43579d30b193aa61520ea2f45d2aa521e9d81f2f3e431aced568ec1323ef45b5",
+      "nonblank_stddev": 17.506023312402064,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "sources-1366x768.png",
+      "route": "/#sources",
+      "screen_id": "sources",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "e06b35708859f8a20e07075201b0fd6a1502d54bf87d960ae1350eb468d607f7",
+      "nonblank_stddev": 19.516613205009673,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "channels-1366x768.png",
+      "route": "/#channels",
+      "screen_id": "channels",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "37e679eb03a2a200d8107bea66ee1271abbb39f898b21dd52ec2919d0216a871",
+      "nonblank_stddev": 16.51328974398436,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "topology-1366x768.png",
+      "route": "/#topology",
+      "screen_id": "topology",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "4ffecba9f9558adc79c9e369e423b531101282f8d397021b171eaa88639fe9c6",
+      "nonblank_stddev": 20.940329013747185,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "usage-1366x768.png",
+      "route": "/#usage",
+      "screen_id": "usage",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "4786805743124de7e7855963cef506d4a58e9a45b06a695db8714bf58ae34025",
+      "nonblank_stddev": 19.93789524281554,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "schedules-1366x768.png",
+      "route": "/#schedules",
+      "screen_id": "schedules",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "14944b80fea17e3ac05f760ffef6535c56a9647b620ba272a678f7ee383cd5b9",
+      "nonblank_stddev": 17.586722002012333,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "sessions-1366x768.png",
+      "route": "/#sessions",
+      "screen_id": "sessions",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "511ce4a4bdd0c443caf7cfe4aab8c9abf74a7be72ca8258c43bc62c12ab8179c",
+      "nonblank_stddev": 16.44717515315548,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "logs-1366x768.png",
+      "route": "/#logs",
+      "screen_id": "logs",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "cb2e21c1528caf89ee247de03bb788f4668e2b9415dda7ab232392efe31b2b29",
+      "nonblank_stddev": 16.485257842748158,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "audit-1366x768.png",
+      "route": "/#audit",
+      "screen_id": "audit",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "9103e4514bb7075e0442a0713627e38886dc1b64161e97a479d49f817f29046c",
+      "nonblank_stddev": 16.303292952980033,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "preferences-1366x768.png",
+      "route": "/#preferences",
+      "screen_id": "preferences",
+      "viewport": [
+        1366,
+        768
+      ],
+      "sha256": "a3ca0309c875b444957a563e3282fbb12e644d8efdb318e6fa672e7cc53c9517",
+      "nonblank_stddev": 22.713151981615162,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "overview-1920x1080.png",
+      "route": "/#overview",
+      "screen_id": "overview",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "7c73cd17fb0b2d8ce1e8086017c5d0e64b2a5abfc5ccbe68243693781818ff48",
+      "nonblank_stddev": 18.85184422274815,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "room-1920x1080.png",
+      "route": "/#room",
+      "screen_id": "room",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "7048f4923d2e931e7177128497920d06729f1d6d317f4c48e3cee6c4f97fa985",
+      "nonblank_stddev": 12.94925859510584,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "chat-1920x1080.png",
+      "route": "/#chat",
+      "screen_id": "chat",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "bde4f83d68d2e5d1a63b525a869d9bf2954fe8cb8645cb27c13a1acf5ee31b05",
+      "nonblank_stddev": 12.812749482277534,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "bots-1920x1080.png",
+      "route": "/#bots",
+      "screen_id": "bots",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "ac13723419b2ca056415bf5b0b97b6ad31786ba71641f8bd1650a3c7d098d1e9",
+      "nonblank_stddev": 17.583118968230764,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "inbox-1920x1080.png",
+      "route": "/#inbox",
+      "screen_id": "inbox",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "38eef9688bef3d3c8b5b88aa555a06ca170c63fde6911fbb5d6c80f00bee5830",
+      "nonblank_stddev": 12.575588147554713,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "workboard-1920x1080.png",
+      "route": "/#workboard",
+      "screen_id": "workboard",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "76c3786b5700f565ca82135af8b1b61c5056c4777ad5e1e910547e7c48694dfd",
+      "nonblank_stddev": 17.324465751255772,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "workflows-1920x1080.png",
+      "route": "/#workflows",
+      "screen_id": "workflows",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "bf0e9fb770561f9db52a9841898b68a91a45bf972b668287b6e3366181520c48",
+      "nonblank_stddev": 32.44668059976118,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "skills-1920x1080.png",
+      "route": "/#skills",
+      "screen_id": "skills",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "8034168f629aa433554aeefed05b8e6b0c5ca7dfc8acbdc7824ff9e83593a97f",
+      "nonblank_stddev": 15.437481462870263,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "memory-1920x1080.png",
+      "route": "/#memory",
+      "screen_id": "memory",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "60edcdc03d352a8a85535f7db5ee75417be0050df9f7f8e7083eba34077fc92f",
+      "nonblank_stddev": 13.66908264177,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "sources-1920x1080.png",
+      "route": "/#sources",
+      "screen_id": "sources",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "cd4ee31d4a11950c508ae4a0c6eb90916d477be53602c5328c73e6a5501944e8",
+      "nonblank_stddev": 15.609454862819865,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "channels-1920x1080.png",
+      "route": "/#channels",
+      "screen_id": "channels",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "a4740de1c308f753469bb83a6ef5f9827f90572b5a482bbc5f52446bedfe75ab",
+      "nonblank_stddev": 13.407424102888818,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "topology-1920x1080.png",
+      "route": "/#topology",
+      "screen_id": "topology",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "c02bff701c1a71f1d8c93cc26c72794485b8b7ba8b298c4aee83cd90f0ea217d",
+      "nonblank_stddev": 20.276147196956288,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "usage-1920x1080.png",
+      "route": "/#usage",
+      "screen_id": "usage",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "114f14ce56b6ddf3708168cad0a1a133edfd7e43c9fd182e8552f861807fb322",
+      "nonblank_stddev": 17.586551186652418,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "schedules-1920x1080.png",
+      "route": "/#schedules",
+      "screen_id": "schedules",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "d4d8ae584b33a70ea6e3cd7badd28b94280109fb5bf66bb0be73c8b9d46a6b55",
+      "nonblank_stddev": 14.00014095284715,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "sessions-1920x1080.png",
+      "route": "/#sessions",
+      "screen_id": "sessions",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "63519abd77894a191022d44f6adeca5baf0c3475fbfabc9f374787c36edc5ddf",
+      "nonblank_stddev": 12.9491912165761,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "logs-1920x1080.png",
+      "route": "/#logs",
+      "screen_id": "logs",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "a57a674a5fe55ed29325ca6788f57a93bd5f4156b4ce23f81b6aa21592b4607a",
+      "nonblank_stddev": 13.042888415240155,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "audit-1920x1080.png",
+      "route": "/#audit",
+      "screen_id": "audit",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "afa201340e8e1ec60fbea28d0e822091b435c007effe0ace53078200e9cbe6bc",
+      "nonblank_stddev": 13.037319211413871,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    },
+    {
+      "file": "preferences-1920x1080.png",
+      "route": "/#preferences",
+      "screen_id": "preferences",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "sha256": "5b856279b3b71a0c295aa99425ae247e66138cacf6fdfc172981128021f7a1ed",
+      "nonblank_stddev": 17.784710435168588,
+      "manual_review": "QA contact-sheet inspected; representative full-size checked"
+    }
+  ],
+  "page_errors": [],
+  "passed": true,
+  "independent_manual_review": "All54 contact sheets reviewed; representative full-resolution screens checked by /root/p5_independent_review; source-video visual signoff remains pending user review."
+}

@@ -1,0 +1,56 @@
+{
+  "application_sha": "e9f5465",
+  "prepared_at": 1792380910.4495587,
+  "provider": "deterministic mock; not live inference",
+  "workspace_id": "26565362-e695-4040-bc00-1f0004df3ef2",
+  "conversation_id": "95b5b163-857c-4949-88ab-2c155d4b801a",
+  "dispatch": {
+    "message": {
+      "id": "console-message:4f6a0c66ef29ee456e5096367be8c5eac4ba33fbe651ef719a02151ac6632587",
+      "workspace_id": "26565362-e695-4040-bc00-1f0004df3ef2",
+      "conversation_id": "95b5b163-857c-4949-88ab-2c155d4b801a",
+      "role": "user",
+      "content": "Synthetic restart evidence; deterministic mock inference only.",
+      "attachment_ids": [],
+      "client_request_id": "restart-probe",
+      "payload_hash": "09746cf0eab08b758d0e484e323cf700957273e75d04982d5dd5ad047d22a35f",
+      "run_id": "d9347194-268f-4e04-b4df-cb6281e1254c",
+      "work_item_id": "bfa46c00-26ff-41ac-bc1e-cfe656034e76",
+      "created_at": "2026-10-19T03:35:09.744299+00:00"
+    },
+    "run_id": "d9347194-268f-4e04-b4df-cb6281e1254c",
+    "work_item_id": "bfa46c00-26ff-41ac-bc1e-cfe656034e76"
+  },
+  "payload": {
+    "content": "Synthetic restart evidence; deterministic mock inference only.",
+    "client_request_id": "restart-probe",
+    "workflow_id": "1f2ff11c-e53b-400f-a6c3-1faf49c593de"
+  },
+  "gate_id": "d9347194-268f-4e04-b4df-cb6281e1254c:gate:review:0",
+  "artifacts": [
+    {
+      "id": "36ba1279-378c-4e9e-aa13-09fa0da01d22",
+      "path": "artifacts/d9347194-268f-4e04-b4df-cb6281e1254c/restart-synthetic.md",
+      "sha256": "ea64bdc1b185dabd6747abb430cb9a2122d7b2d8b2e1e1edc8b1b41645f2c572",
+      "size": 688,
+      "tool": "artifacts.write_text",
+      "agent_id": "d47baec2-b982-4e1c-a785-bf7fa50f19f4",
+      "run_id": "d9347194-268f-4e04-b4df-cb6281e1254c",
+      "node_id": "draft",
+      "created_at": "2026-10-19T03:35:10.418665+00:00"
+    }
+  ],
+  "message_ids": [
+    "console-message:4f6a0c66ef29ee456e5096367be8c5eac4ba33fbe651ef719a02151ac6632587",
+    "console-result:console-message:4f6a0c66ef29ee456e5096367be8c5eac4ba33fbe651ef719a02151ac6632587"
+  ],
+  "passed": true,
+  "state": "VERIFIED_AFTER_OPERATOR_PROCESS_RESTART",
+  "verified_at": 1792381148.4516516,
+  "checks": [
+    "stable conversation/message/run/work/gate IDs",
+    "same-key duplicate dispatch after restart deduplicates",
+    "artifact hashes unchanged",
+    "pending QC resumes to completed and separate human acceptance"
+  ]
+}

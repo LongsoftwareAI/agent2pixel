@@ -1,0 +1,15 @@
+{
+  "application_sha": "e9f5465",
+  "passed": true,
+  "provider": "local HTTP fixture, not live inference",
+  "checks": [
+    "UI composer dispatches actual CSV tool/native model adapter; reload/history restores same durable conversation",
+    "Ctrl+K command palette filters and navigates to costs",
+    "theme/refresh preferences persist actual backend and reload",
+    "actual UI log export downloads scoped redacted JSON through backend",
+    "real request failure displays disconnected state; retry recovers without fabricated success"
+  ],
+  "workspace_id": "cf636876-7e8a-4bad-8df4-60f947d48d9b",
+  "conversation_id": "c2896d1f-6c50-41bd-8933-9c1eee3cfb2a",
+  "run_id": "fd4c2836-7643-403a-b7bf-52627ef32eda"
+}
