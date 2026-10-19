@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run localhost office/API/control. --legacy starts the original v0.1 UI."""
+"""Run the localhost console/API/office. --legacy starts the original v0.1 UI."""
 import argparse
 import os
 from pathlib import Path
@@ -53,9 +53,12 @@ try:
     if args.legacy:
         children.append(subprocess.Popen(['npm', '--prefix', 'apps/web', 'run', 'dev', '--', '--host', '127.0.0.1', '--port', '3000', '--strictPort'], start_new_session=True))
     else:
-        control_env = {**os.environ, 'AGENTVERSE_CONTROL_BASE': '/control/'}
-        children.append(subprocess.Popen(['npm', '--prefix', 'apps/web', 'run', 'dev', '--', '--host', '127.0.0.1', '--port', '3001', '--strictPort'], env=control_env, start_new_session=True))
-        children.append(subprocess.Popen(['npm', '--prefix', 'apps/office', 'run', 'dev', '--', '--host', '127.0.0.1', '--port', '3000', '--strictPort'], start_new_session=True))
+        console_env = {**os.environ, 'AGENTVERSE_CONTROL_BASE': '/',
+                       'AGENTVERSE_OFFICE_PROXY': 'http://127.0.0.1:3002'}
+        children.append(subprocess.Popen(['npm', '--prefix', 'apps/web', 'run', 'dev', '--', '--host', '127.0.0.1', '--port', '3000', '--strictPort'], env=console_env, start_new_session=True))
+        office_env = {**os.environ, 'AGENTVERSE_OFFICE_BASE': '/office/',
+                      'AGENTVERSE_CONTROL_PROXY': 'http://127.0.0.1:3000'}
+        children.append(subprocess.Popen(['npm', '--prefix', 'apps/office', 'run', 'dev', '--', '--host', '127.0.0.1', '--port', '3002', '--strictPort'], env=office_env, start_new_session=True))
     while all(child.poll() is None for child in children):
         time.sleep(.3)
     exit_code = next((child.returncode for child in children if child.poll() is not None), 1)

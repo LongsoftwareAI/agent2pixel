@@ -325,13 +325,23 @@ def create_operations_router(app, start_run=None, run_model=None):
 
     @router.patch("/api/memories/{id}")
     @locked
-    def edit_memory(id: str, body: dict):
+    def edit_memory(id: str, body: dict, workspace_id: str | None = None):
         memory = get("memory", id)
+        if workspace_id is not None and memory["workspace_id"] != workspace_id:
+            raise HTTPException(404, "Memory not found in workspace")
         if memory.get("deleted_at"):
             raise HTTPException(410, "Memory deleted")
+        expected_revision = body.get("expected_revision")
+        if "expected_revision" in body and (
+            type(expected_revision) is not int or expected_revision < 1
+        ):
+            raise HTTPException(422, "expected_revision must be a positive integer")
+        if expected_revision is not None and expected_revision != memory.get("revision", 1):
+            raise HTTPException(409, "Memory revision conflict; reload before editing")
         if (
             not body
-            or set(body) - {"content", "source_id"}
+            or set(body) - {"content", "source_id", "expected_revision"}
+            or not ({"content", "source_id"} & set(body))
             or (
                 "content" in body
                 and (
@@ -344,7 +354,11 @@ def create_operations_router(app, start_run=None, run_model=None):
         before = {key: value for key, value in memory.items() if key != "history"}
         if "source_id" in body:
             memory["provenance"] = provenance(memory, body["source_id"])
-        memory.update(body, updated_at=now(), editor="human")
+        memory.update(
+            {key: value for key, value in body.items() if key != "expected_revision"},
+            revision=memory.get("revision", 1) + 1,
+            updated_at=now(), editor="human",
+        )
         memory.setdefault("history", []).append(
             {
                 "action": "edited",
@@ -359,12 +373,24 @@ def create_operations_router(app, start_run=None, run_model=None):
 
     @router.delete("/api/memories/{id}")
     @locked
-    def delete_memory(id: str):
+    def delete_memory(
+        id: str, workspace_id: str | None = None, expected_revision: int | None = None
+    ):
         memory = get("memory", id)
+        if workspace_id is not None and memory["workspace_id"] != workspace_id:
+            raise HTTPException(404, "Memory not found in workspace")
         if memory.get("deleted_at"):
             raise HTTPException(410, "Memory already deleted")
+        if expected_revision is not None:
+            if expected_revision < 1:
+                raise HTTPException(422, "expected_revision must be positive")
+            if expected_revision != memory.get("revision", 1):
+                raise HTTPException(409, "Memory revision conflict; reload before deleting")
         before = {key: value for key, value in memory.items() if key != "history"}
-        memory.update(deleted_at=now(), updated_at=now(), editor="human")
+        memory.update(
+            deleted_at=now(), updated_at=now(), editor="human",
+            revision=memory.get("revision", 1) + 1,
+        )
         memory.setdefault("history", []).append(
             {
                 "action": "deleted",

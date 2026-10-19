@@ -30,3 +30,26 @@ New prefix `/api/console`; existing APIs remain unchanged. JSON; errors `{detail
 ## Review/test gates
 
 Success+failure checks all new endpoints; idempotency/restart/isolation/migration and security mandatory. New dependencies ADR before adding. Frontend no hard-coded sample metrics or success on failed request. Existing flow/source/workboard/run screens remain accessible inside shell. Screenshots synthetic localhost data at1108×636,1366×768,1920×1080. Independent QA pinned commit; root separately reviews QA tests. All19IDs have acceptance status, no full completion claim with OPEN capabilities. For absent live credentials recordUNRUN, continue local implementation. API refinements require root+FE notification.
+
+## Integrated API addendum
+
+Backend handoff P5-BE is accepted with these refinements: all scoped console GET/PATCH/POST resource requests include `workspace_id` query, except conversation/attachment creation bodies. Preferences PATCH requires expected `revision` (422missing/409stale). Agent aliases bots/preferences plus legacy agent routes remain supported. Cancellation uses existing POST `/api/runs/{id}/cancel`. Usage returns actual stored `total_tokens` and requests; split/cost unknown remains null; token-accounting provenance is required, including provider/estimated/unknown or mixed, never implied observed providerusage.
+
+Extensions implemented by Backend in services/api/console_extensions.py, mounted in main.py:
+
+- GET/PATCH `/api/console/budget` (`workspace_id`): PATCH `{revision,monthly_token_threshold?:positiveint|null,monthly_cost_threshold?:positivefinitefloat|null,currency:'USD'}`; omitted fields preserved. Returns policy/month/UTC, total token provenance, unknown actualcost, alerts and enforcement monitor-only. GET `/budget/history`.
+- POST `/api/console/work-items/{id}/archive` `{archived:boolean,revision}`; GET `/archive/history`; active/queued archive409, dispatch/edit/enqueue guard archived records. All existing IDs/history retained.
+- GET `/api/console/agents/{id}/soul/history`; POST `/soul/rollback` `{revision:current,target_revision}`. History contains prior revisions, not current document. PATCH SOUL creates next revision for future runs.
+- GET `/api/console/agents/{id}/config/history`; POST `/config/rollback` `{revision:currentAgentConfigRevision,target_revision}`. Must validate restored config against current grants/workspace policies. UI uses actual current agent revision, not latest historical revision.
+- GET `/api/console/logs/export` bounded limit1..200, same redacted filters/cursors as logs; JSON metadata and allowlisted entries only.
+
+Migration3 is additive resource kinds and pre-schema-v3.sqlite3 snapshot. No record reset. Original local declarative skill `console-evidence` v1/v2 has MIT notice, no scripts/dependencies/new tool grants. Preview/installv1/updatev2/rollbackv1/remove is real binding change; activation immediate for future run snapshots. Approval replay only while exact current binding matches; superseded approval409. This does not implement arbitrary executable package installation.
+
+P5-19 implemented capability: bounded text/CSV/Markdown source-backed attachments; unsupported images/audio explicit. Browser-native SpeechRecognition adapter is optional client capability with consent/recording/cancel/transcript draft review; it is not serverASR and no live voice acceptance is inferred from mocktests. Image/audio adapter, external schedule observer and provider billing remain OPEN integration capabilities. Original fullscope remains tracked; these limitations are not relabeled complete.
+
+Root coordinated integration takes ownership only after owner commits; assigned p5_fix_code sole writer of newconsoleFE and console.py/extensions.py during review-fix round. Root owns launcher, docs, CI and container supervisor. Default console port3000 base `/`; office internal3002 base `/office/`; API8000. Console proxy office path unchanged incl websocket; `/control/*` legacy redirect. All published host ports loopback only. No new dependencies.
+
+
+### Memory compare-and-swap integration
+
+New console sends PATCH `/api/memories/{id}?workspace_id=...` with `{content,source_id,expected_revision:memory.revision??1}`; optional field validated strict positive integer. Stale revision409 and foreign scoped record404. DELETE same scoped query includes expected_revision. Successful edit/delete increments revision and preserves history/tombstone. Legacy unversioned clients remain compatible and advance version but do not provide stale-write protection themselves; only version-aware client guarantee is claimed. Root owns operations.py for this integration fix; FE owns MemoryManager changes. Root integration tests under tests/phase5/integration/ and media tests under tests/phase5/media/ are added to CI.
